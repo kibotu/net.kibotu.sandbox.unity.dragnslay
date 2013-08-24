@@ -67,6 +67,9 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
  <Reference Include="SimpleJson">
  <HintPath>Assets\Plugins\SimpleJson.dll</HintPath>
  </Reference>

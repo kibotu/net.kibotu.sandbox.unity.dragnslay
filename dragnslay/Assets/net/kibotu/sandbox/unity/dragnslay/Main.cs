@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using System.Collections;
 using SocketIOClient;
+using SimpleJSON;
+using SocketIOClient.Messages;
 
 public class Main : MonoBehaviour {
 	
@@ -22,10 +24,31 @@ public class Main : MonoBehaviour {
     }
 	
 	void startGame() {
+		
+		Planet [] p = new Planet[10] { new Planet() };
+		// add planets to stage
+		
+		// spawn ships
+		
+		// touch events
+		
+		// server conection + transmitting touch events
+	}
+	
+	void connectToServer() {
 		socket = new Client("http://172.16.3.13:3000");
 		socket.Connect();
 		
 		
+		socket.C((data) => { 
+			Debug.Log("received message : " + data);
+		});
+		
+		socket.On ("message", (data) => { 
+			Debug.Log("received message : " + data);
+		});
+		
+	 	socket.Emit("send", new JSONMessage("{ message : \"hallo world\", username : \"unity\" }")); //, "", (data) => { Debug.Log("successfully send event: " + data); } );	
 	}
 	
 	void Start () {
