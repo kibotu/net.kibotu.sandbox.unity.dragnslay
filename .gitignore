@@ -18,6 +18,8 @@ ExportedObj/
 *.suo
 *.user
 *.booproj
+*/Backup
+*/_UpgradeReport_Files
  
 # ============ #
 # OS generated #
