@@ -1,3 +1,6 @@
 [submodule "UnitySocketIO"]
 	path = UnitySocketIO
 	url = ../UnitySocketIO.git
+[submodule "simple-json"]
+	path = simple-json
+	url = ../simple-json.git
