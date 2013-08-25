@@ -1,0 +1,3 @@
+[submodule "UnitySocketIO"]
+	path = UnitySocketIO
+	url = ../UnitySocketIO.git

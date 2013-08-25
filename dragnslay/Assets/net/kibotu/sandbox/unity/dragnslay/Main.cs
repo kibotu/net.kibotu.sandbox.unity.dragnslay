@@ -6,6 +6,7 @@ public class Main : MonoBehaviour {
 	
 	public Texture btnTexture;
 	private bool buttonIsVisible = true;
+	private UnitySocketIOClient socket; 
 	
     void OnGUI() {
         if (!btnTexture) {
@@ -29,6 +30,8 @@ public class Main : MonoBehaviour {
 		// touch events
 		
 		// server conection + transmitting touch events
+		socket = new UnitySocketIOClient();
+		socket.Execute();
 	}
 	
 	/*void connectToServer() {
@@ -48,7 +51,6 @@ public class Main : MonoBehaviour {
 	}*/
 	
 	void Start () {
-	
 	}
 	
 	void Update () {
