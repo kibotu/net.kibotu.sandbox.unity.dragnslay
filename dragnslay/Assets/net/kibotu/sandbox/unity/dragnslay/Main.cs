@@ -30,8 +30,6 @@ public class Main : MonoBehaviour {
 		// touch events
 		
 		// server conection + transmitting touch events
-		socket = new UnitySocketIOClient();
-		socket.Execute();
 	}
 	
 	/*void connectToServer() {
