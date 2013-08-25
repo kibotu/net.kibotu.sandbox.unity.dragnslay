@@ -9,7 +9,6 @@ public class Planet : MonoBehaviour
 	public float [] position;
 	public float [] scalling;
 	public float [] rotation;
-	public IShip ship;
 	
 	public Planet() {
 		

@@ -1,15 +1,11 @@
 using UnityEngine;
 using System;
 using System.Collections;
-using SocketIOClient;
-using SimpleJSON;
-using SocketIOClient.Messages;
 
 public class Main : MonoBehaviour {
 	
 	public Texture btnTexture;
 	private bool buttonIsVisible = true;
-	private Client socket;
 	
     void OnGUI() {
         if (!btnTexture) {
@@ -25,7 +21,7 @@ public class Main : MonoBehaviour {
 	
 	void startGame() {
 		
-		Planet [] p = new Planet[10] { new Planet() };
+		//Planet [] p = new Planet[10] { new Planet() };
 		// add planets to stage
 		
 		// spawn ships
@@ -35,8 +31,8 @@ public class Main : MonoBehaviour {
 		// server conection + transmitting touch events
 	}
 	
-	void connectToServer() {
-		socket = new Client("http://172.16.3.13:3000");
+	/*void connectToServer() {
+		socket = new Client("http://127.0.0.1:3000");
 		socket.Connect();
 		
 		
@@ -49,7 +45,7 @@ public class Main : MonoBehaviour {
 		});
 		
 	 	socket.Emit("send", new JSONMessage("{ message : \"hallo world\", username : \"unity\" }")); //, "", (data) => { Debug.Log("successfully send event: " + data); } );	
-	}
+	}*/
 	
 	void Start () {
 	
