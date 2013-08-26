@@ -61,14 +61,26 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
- <Reference Include="SocketIOClient">
- <HintPath>Assets\Plugins\SocketIOClient.dll</HintPath>
+ <Reference Include="SimpleJson">
+ <HintPath>Assets\Plugins\SimpleJson.dll</HintPath>
+ </Reference>
+ <Reference Include="SocketIO">
+ <HintPath>Assets\Plugins\SocketIO.dll</HintPath>
+ </Reference>
+ <Reference Include="SuperSocket.ClientEngine.Common">
+ <HintPath>Assets\Plugins\SuperSocket.ClientEngine.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="SuperSocket.ClientEngine.Core">
+ <HintPath>Assets\Plugins\SuperSocket.ClientEngine.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="SuperSocket.ClientEngine.Protocol">
+ <HintPath>Assets\Plugins\SuperSocket.ClientEngine.Protocol.dll</HintPath>
+ </Reference>
+ <Reference Include="SuperSocket.ClientEngine.Proxy">
+ <HintPath>Assets\Plugins\SuperSocket.ClientEngine.Proxy.dll</HintPath>
  </Reference>
  <Reference Include="WebSocket4Net">
  <HintPath>Assets\Plugins\WebSocket4Net.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>Assets\Plugins\Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
