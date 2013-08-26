@@ -38,13 +38,15 @@ public class ClientSocket
 			Debug.Log("message received " + data );
 		});
 		
-		
 		JsonObject message = new JsonObject();
-		message.Add("message", "test");
+		message.Add("message", "hello world");
 		message.Add("username", "unity");
-		socket.Send(message.ToString());
+		socket.Emit("message", message);
 		
 		//socket.Emit("send", getJsonObject);
+		
+		Debug.Log("sender : " + sender == null);
+		Debug.Log("message : " + message == null);
 		
 		
 		Debug.Log("SocketMessage: " + e.Message.Json.ToJsonString());
@@ -52,14 +54,18 @@ public class ClientSocket
 		    //Debug.Log("Generic SocketMessage: {0}", e.Message.MessageText);
 		//else
 	    Debug.Log("Generic SocketMessage: " +  e.Message.Event + " " + e.Message.Json.ToJsonString());
+		
+		
+		Debug.Log("dump message "  + ObjectDumper.Dump(e));
+		Debug.Log("dump sender " + ObjectDumper.Dump(sender));
 	}
 	
- 	private static JsonObject getJsonObject() {
+ 	/*private static JsonObject getJsonObject() {
         JsonObject jObject = new JsonObject();
         jObject.put("name", "message");
         jObject.put("message", "hallo welt").put("username", "unity");
         return jObject;
-    }
+    }*/
 	
 	void SocketError(object sender, ErrorEventArgs e)
 	{
