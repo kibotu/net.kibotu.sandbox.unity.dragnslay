@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player {
 	
+	// profile
 	public int uid;
 	public int fbId;
 	public string name;
