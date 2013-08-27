@@ -5,12 +5,9 @@ public class Orb {
 	
 	// grafic
 	public int textureId;
-	public float[] position;
-	public float[] scalling;
-	public float[] rotation;
 	
 	// spawning
-	public ShipPrototype type;
+	public TrabantPrototype type;
 	public float currentPopulation;
 	public int maxPopulation;
 	public float spawnPerSec;

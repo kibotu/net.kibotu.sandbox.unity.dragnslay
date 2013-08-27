@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PhysicProperty {
+public class PhysicalProperty {
 	
 	public float[] position;
 	public float[] scalling;

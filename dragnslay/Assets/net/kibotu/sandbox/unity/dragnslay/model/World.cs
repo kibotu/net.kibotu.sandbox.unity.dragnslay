@@ -3,7 +3,7 @@ using System.Collections;
 
 public class World {
 	
-	public Planet [] planets;
+	public Orb [] orbs;
 	public Player [] player;
 }
 

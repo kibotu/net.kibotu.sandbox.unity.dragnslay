@@ -8,7 +8,7 @@ public abstract class TrabantPrototype {
 	public int textureId; 
 	
 	public Life life;
-	public PhysicProperty physicalProperty;
+	public PhysicalProperty physicalProperty;
 	
 	public void moveTo(Orb dest) {
 	}
