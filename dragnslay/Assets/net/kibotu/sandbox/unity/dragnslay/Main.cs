@@ -14,7 +14,6 @@ public class Main : MonoBehaviour {
             return;
         }
         if (buttonIsVisible && GUI.Button(new Rect(10, 10, 50, 50), btnTexture)) {
-            Debug.Log("Clicked the button with an image");
 			buttonIsVisible = false;
 			startGame();
 		}
