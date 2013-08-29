@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public abstract class TrabantPrototype {
+public class TrabantPrototype {
 	
 	// graic
 	public int model; 		// mesh id/type
 	public int textureId; 
+	public GameObject go;
 	
 	public Life life;
 	public PhysicalProperty physicalProperty;

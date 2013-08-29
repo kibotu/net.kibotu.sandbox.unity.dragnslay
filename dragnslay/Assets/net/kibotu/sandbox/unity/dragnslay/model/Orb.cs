@@ -5,6 +5,7 @@ public class Orb {
 	
 	// grafic
 	public int textureId;
+	public GameObject go;
 	
 	// spawning
 	public TrabantPrototype type;

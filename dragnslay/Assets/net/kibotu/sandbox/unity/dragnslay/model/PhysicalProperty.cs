@@ -3,16 +3,16 @@ using System.Collections;
 
 public class PhysicalProperty {
 	
-	public float[] position;
-	public float[] scalling;
-	public float[] rotation;
+	public Vector3 position;
+	public Vector3 scalling;
+	public Quaternion rotation;
 	
-	public int acceleration;
-	public int mass;
+	public float acceleration;
+	public float mass;
 	public float rotationSpeed;
 	public float rotationDistance;
 	
-	public int speed(int t, int v0) {
+	public float speed(int t, int v0) {
 		return acceleration * t + v0;
 	}
 }
