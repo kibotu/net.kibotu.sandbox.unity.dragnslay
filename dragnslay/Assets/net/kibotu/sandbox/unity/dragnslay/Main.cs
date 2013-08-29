@@ -38,6 +38,21 @@ public class Main : MonoBehaviour {
 		//socket.Execute();
 	}
 	
+	public bool isDragging = false;
+	
+	public void OnMouseDrag () {
+	
+		if (!isDragging) {
+    		//Do something here
+    		isDragging = true;
+		}
+    }
+	
+	public void OnMouseUp () {
+    	isDragging = false;
+
+	}
+	
 	/*void connectToServer() {
 		socket = new Client("http://127.0.0.1:3000");
 		socket.Connect();
@@ -71,6 +86,7 @@ public class Main : MonoBehaviour {
 	
 	void Update () {
 		
+		if(isDragging) Debug.Log("is dragging");
 		
 		
 	  	foreach (Touch touch in Input.touches) {
