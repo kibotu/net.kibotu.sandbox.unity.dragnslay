@@ -1,3 +1,4 @@
+using SimpleJson;
 using UnityEngine;
 using System;
 using System.Collections;
@@ -6,7 +7,6 @@ public class Main : MonoBehaviour {
 	
 	public Texture btnTexture;
 	private bool buttonIsVisible = true;
-	private ClientSocket socket; 
 	
     void OnGUI() {
         if (!btnTexture) {
@@ -20,11 +20,15 @@ public class Main : MonoBehaviour {
     }
 	
 	void startGame() {
-		
+
+        ClientSocket.Instance.Connect("http://127.0.0.1:3000/");
+
 		Orb a = createOrb(new Vector3(0,2,0));
 		//Orb b = createOrb(new Vector3(5,0,0));
-		
-		
+
+        ClientSocket.Instance.On("message", (data) =>
+        { if (data != null) Debug.Log("received message : " + data); });
+
 		
 		//Planet [] p = new Planet[10] { n	ew Planet() };
 		// add planets to stage
@@ -32,16 +36,18 @@ public class Main : MonoBehaviour {
 		// spawn ships
 		
 		// touch events
-		
-		// server conection + transmitting touch events
-		//socket = new ClientSocket();
-		//socket.Execute();
 	}
 	
 	public bool isDragging = false;
 	
+	public void OnMouseDown () {
+		Debug.Log("OnMouseDown");
+	}
+	
 	public void OnMouseDrag () {
 	
+		Debug.Log("OnMouseDrag");
+		
 		if (!isDragging) {
     		//Do something here
     		isDragging = true;
@@ -49,28 +55,13 @@ public class Main : MonoBehaviour {
     }
 	
 	public void OnMouseUp () {
+		Debug.Log("OnMouseUp");
     	isDragging = false;
 
 	}
 	
-	/*void connectToServer() {
-		socket = new Client("http://127.0.0.1:3000");
-		socket.Connect();
-		
-		
-		socket.C((data) => { 
-			Debug.Log("received message : " + data);
-		});
-		
-		socket.On ("message", (data) => { 
-			Debug.Log("received message : " + data);
-		});
-		
-	 	socket.Emit("send", new JSONMessage("{ message : \"hallo world\", username : \"unity\" }")); //, "", (data) => { Debug.Log("successfully send event: " + data); } );	
-	}*/
-	
 	void Start () {
-		Particle[] particles = particleEmitter.particles;
+		/*Particle[] particles = particleEmitter.particles;
 	    int i = 0;
 	    while (i < particles.Length) {
 	        float yPosition = Mathf.Sin(Time.time) * Time.deltaTime;
@@ -80,16 +71,23 @@ public class Main : MonoBehaviour {
 	        i++;
 	    }
 	    particleEmitter.particles = particles;
+		
+	  	originalColor = renderer.sharedMaterial.color;*/
 	}
 	
-	private GameObject particle;
-	
 	void Update () {
+		
+		if(Input.GetMouseButtonDown(0))  {
+			Vector3 screenPos = Input.mousePosition;
+			screenPos.z = 30;
+			Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+			Debug.Log(screenPos + " " + worldPos);
+		}
 		
 		if(isDragging) Debug.Log("is dragging");
 		
 		
-	  	foreach (Touch touch in Input.touches) {
+	  	/*foreach (Touch touch in Input.touches) {
 			Debug.Log(touch.position);
 			if (touch.phase == TouchPhase.Began) {
 					// Construct a ray from the current touch coordinates
@@ -101,7 +99,7 @@ public class Main : MonoBehaviour {
 				}
 				Debug.Log(touch.position);
 			}
-		}
+		}*/
 	}
 	
 	public static Orb createOrb(Vector3 position) {
@@ -135,9 +133,12 @@ public class Main : MonoBehaviour {
         go.renderer.material.mainTexture = Resources.Load("glass") as Texture;
 		go.transform.position = orb.physicalProperty.position;
 		
-		//go.AddComponent<Orbitting>();
+		go.AddComponent<Orbitting>();
+        go.AddComponent<SendUnits>();
 		
+		//GameObject cube = new GameObject("spaseship");
 		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		
 		cube.transform.position = orb.type.physicalProperty.position;
 		cube.transform.parent = go.transform;
 		

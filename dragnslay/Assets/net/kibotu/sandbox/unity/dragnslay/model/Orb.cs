@@ -1,8 +1,10 @@
 using UnityEngine;
-using System.Collections;
 
 public class Orb {
 	
+    // id
+    public string id;
+
 	// grafic
 	public int textureId;
 	public GameObject go;

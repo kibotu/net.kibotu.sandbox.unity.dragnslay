@@ -1,18 +1,23 @@
 using UnityEngine;
-using System.Collections;
 using System;
 using SocketIO.socketio.Messages;
 using SocketIO.socketio;
 using SimpleJson;
 
-public class ClientSocket
+public class ClientSocket : MonoBehaviour
 {
-	Client socket;
+	private Client socket;
 	
-	public void Execute() {
+	private static ClientSocket _instance;
+
+ 	public static ClientSocket Instance {
+		get { return _instance ?? (_instance = new GameObject("ClientSocket").AddComponent<ClientSocket>()); }
+    }
+	
+	public void Connect(string url) {
 		Debug.Log("Starting Socket client...");
 		
-		socket = new Client("http://127.0.0.1:3000/");
+		socket = new Client(url);
 		
 		socket.Opened += SocketOpened;
 		socket.Message += SocketMessage;
@@ -26,12 +31,6 @@ public class ClientSocket
 	void SocketOpened(object sender, EventArgs e)
 	{
 		Debug.Log("SocketOpened");
-		
-		JsonObject message = new JsonObject();
-		message.Add("message", "hello world");
-		message.Add("username", "unity");
-		socket.Emit("message", message);
-		
 	}
 		
 	void SocketMessage(object sender, MessageEventArgs e)
@@ -53,5 +52,25 @@ public class ClientSocket
 	{
 		Debug.Log("SocketConnectionClosed");
 	}
+
+    public void Emit(string message, JsonMessage jsonString)
+    {
+        socket.Emit(message, jsonString);
+    }
+
+    public void Emit(string message, string jsonString)
+    {
+        Emit(message, new JsonMessage(jsonString));
+    }
+
+    public void Emit(string message, JsonObject jsonString) 
+    {
+		socket.Emit(message, jsonString);
+	}
+
+    public void On(string eventName, Action<IMessage> action)
+    {
+        socket.On(eventName, action);
+    }
 }
 
