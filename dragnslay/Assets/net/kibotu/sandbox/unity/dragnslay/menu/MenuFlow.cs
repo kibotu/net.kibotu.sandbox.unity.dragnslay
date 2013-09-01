@@ -1,4 +1,5 @@
-﻿using Assets.net.kibotu.sandbox.unity.dragnslay.pattern;
+﻿using Assets.net.kibotu.sandbox.unity.dragnslay.game;
+using Assets.net.kibotu.sandbox.unity.dragnslay.pattern;
 using UnityEngine;
 
 namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
@@ -80,6 +81,9 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
             GUI.DrawTexture(new Rect(300, 30, bannerTexture.width * scale, bannerTexture.height * scale), bannerTexture, ScaleMode.ScaleAndCrop, true, 1.6f);
 
+            GUIContent buttonContent = new GUIContent("Single Player", btnTexture);
+            style.alignment = TextAnchor.MiddleCenter;
+
             if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
                 _currentState = State.GAME_SCREEN_SINGLE_PLAYER;
@@ -105,7 +109,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
         private void ShowGameSinglePlayer()
         {
-            if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
+            if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale),btnTexture, style))
             {
                 _currentState = State.MAIN_MENU;
             }
@@ -115,6 +119,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
         {
             if (GUI.Button(new Rect(xOffset, btnHeight * 1 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
+                camera.AddComponent<Game1vs1>();
                 _currentState = State.MAIN_MENU;
             }
         }

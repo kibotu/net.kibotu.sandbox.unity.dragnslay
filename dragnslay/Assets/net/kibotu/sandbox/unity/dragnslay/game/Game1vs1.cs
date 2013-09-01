@@ -1,3 +1,4 @@
+using Assets.net.kibotu.sandbox.unity.dragnslay.menu;
 using Assets.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.net.kibotu.sandbox.unity.dragnslay.network;
 using Assets.net.kibotu.sandbox.unity.dragnslay.scripts;
@@ -8,17 +9,10 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
     public class Game1vs1 : MonoBehaviour {
 	
         public Texture btnTexture;
-        private bool buttonIsVisible = true;
+        private bool isRunning;
 	
         void OnGUI() {
-            if (!btnTexture) {
-                Debug.LogError("Please assign a texture on the inspector");
-                return;
-            }
-            if (buttonIsVisible && GUI.Button(new Rect(10, 10, 400, 220), btnTexture)) {
-                buttonIsVisible = false;
-                startGame();
-            }
+         
         }
 	
         void startGame() {
@@ -63,6 +57,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
         }
 	
         void Start () {
+            isRunning = false;
             /*Particle[] particles = particleEmitter.particles;
 	    int i = 0;
 	    while (i < particles.Length) {
@@ -78,15 +73,13 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
         }
 	
         void Update () {
-		
-            if(Input.GetMouseButtonDown(0))  {
-                Vector3 screenPos = Input.mousePosition;
-                screenPos.z = 30;
-                Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
-                Debug.Log(screenPos + " " + worldPos);
+
+            if (!isRunning)
+            {
+                Orb a = createOrb(new Vector3(0, 0, 0));
+                isRunning = true;
             }
-		
-            if(isDragging) Debug.Log("is dragging");
+
 		
 		
             /*foreach (Touch touch in Input.touches) {
