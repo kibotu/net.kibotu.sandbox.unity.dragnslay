@@ -123,9 +123,18 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
             orb.type.physicalProperty.rotationDistance = 0f;
             orb.type.physicalProperty.position = new Vector3(1.5f,0,0);
 
-            GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //Mesh mesh = (Mesh) Resources.Load("resources/meshes/island");
+            //Instantiate(Transform, new Vector3(x, y, 0), Quaternion.identity);
+
+            GameObject go = new GameObject("island");
+            MeshFilter filter = go.AddComponent<MeshFilter>();
+            MeshRenderer renderer = go.AddComponent<MeshRenderer>();
+            filter.mesh = Resources.Load("meshes/island", typeof(Mesh)) as Mesh;
+            renderer.material.mainTexture = Resources.Load("meshes/island", typeof(Texture)) as Texture;
+
             orb.go = go;
-            go.renderer.material.mainTexture = Resources.Load("glass") as Texture;
+            //go.renderer.material.mainTexture = Resources.Load("glass") as Texture;
             go.transform.position = orb.physicalProperty.position;
 		
             go.AddComponent<Orbitting>();
