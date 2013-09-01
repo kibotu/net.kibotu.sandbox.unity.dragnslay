@@ -1,4 +1,4 @@
-﻿using Assets.net.kibotu.sandbox.unity.dragnslay.singeltons.network;
+﻿using Assets.net.kibotu.sandbox.unity.dragnslay.network;
 using SimpleJson;
 using UnityEngine;
 

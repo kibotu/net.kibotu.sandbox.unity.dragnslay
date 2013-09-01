@@ -1,6 +1,6 @@
 using Assets.net.kibotu.sandbox.unity.dragnslay.model;
+using Assets.net.kibotu.sandbox.unity.dragnslay.network;
 using Assets.net.kibotu.sandbox.unity.dragnslay.scripts;
-using Assets.net.kibotu.sandbox.unity.dragnslay.singeltons.network;
 using UnityEngine;
 
 namespace Assets.net.kibotu.sandbox.unity.dragnslay.game

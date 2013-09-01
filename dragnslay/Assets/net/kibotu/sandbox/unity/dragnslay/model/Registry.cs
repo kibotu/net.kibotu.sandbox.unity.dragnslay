@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Assets.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 
-namespace Assets.net.kibotu.sandbox.unity.dragnslay.singeltons
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
 {
     class Registry : MonoBehaviour
     {

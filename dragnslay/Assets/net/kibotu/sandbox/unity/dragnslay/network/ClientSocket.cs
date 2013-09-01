@@ -4,7 +4,7 @@ using SocketIO.socketio.Messages;
 using SocketIO.socketio;
 using SimpleJson;
 
-namespace Assets.net.kibotu.sandbox.unity.dragnslay.singeltons.network
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.network
 {
     public class ClientSocket : MonoBehaviour
     {
