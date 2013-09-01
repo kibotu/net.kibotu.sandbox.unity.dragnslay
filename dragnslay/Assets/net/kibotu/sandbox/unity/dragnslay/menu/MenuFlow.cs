@@ -7,7 +7,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
     {
         private enum State
         {
-            MAIN_MENU, MAIN_MENU_CUSTOM_GAME, GAME_SCREEN_1VS1, GAME_SCREEN_SINGLE_PLAYER 
+            MAIN_MENU, MAIN_MENU_CUSTOM_GAME, GAME_SCREEN_1VS1, GAME_SCREEN_SINGLE_PLAYER
         }
 
         private State _currentState;
@@ -28,7 +28,21 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
         private void OnGUI()
         {
-            ShowMainMenu();
+            switch (_currentState)
+            {
+                case State.MAIN_MENU:
+                    ShowMainMenu();
+                    break;
+                case State.GAME_SCREEN_SINGLE_PLAYER:
+                    ShowGameSinglePlayer();
+                    break;
+                case State.GAME_SCREEN_1VS1:
+                    ShowGame1vs1();
+                    break;
+                case State.MAIN_MENU_CUSTOM_GAME:
+                    ShowCustomGame();
+                    break;
+            }
         }
 
         public void Update()
@@ -59,7 +73,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
             banner.transform.rotation = Quaternion.AngleAxis(270, new Vector3(1, 0, 0)) * Quaternion.AngleAxis(180, new Vector3(0, 1, 0));*/
         }
 
-        public void ShowMainMenu()
+        private void ShowMainMenu()
         {
 
             GUI.DrawTexture(new Rect(0, 0, 1280, 800), backgroundTexture, ScaleMode.ScaleAndCrop, true, 1.6f);
@@ -68,17 +82,17 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
             if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
-                Debug.Log("single clicked");
+                _currentState = State.GAME_SCREEN_SINGLE_PLAYER;
             }
 
             if (GUI.Button(new Rect(xOffset, btnHeight * 1 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
-                Debug.Log("1vs1 clicked");
+                _currentState = State.GAME_SCREEN_1VS1;
             }
 
             if (GUI.Button(new Rect(xOffset, btnHeight * 2 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
-                Debug.Log("Custom clicked");
+                _currentState = State.MAIN_MENU_CUSTOM_GAME;
             }
 
             if (GUI.Button(new Rect(930, 100, friendlistTexture.width * scale, friendlistTexture.height * scale), friendlistTexture, style))
@@ -86,6 +100,35 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
                 Debug.Log("friendlist clicked");
             }
 
+            // LogInput()
+        }
+
+        private void ShowGameSinglePlayer()
+        {
+            if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
+            {
+                _currentState = State.MAIN_MENU;
+            }
+        }
+
+        private void ShowGame1vs1()
+        {
+            if (GUI.Button(new Rect(xOffset, btnHeight * 1 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
+            {
+                _currentState = State.MAIN_MENU;
+            }
+        }
+
+        private void ShowCustomGame()
+        {
+            if (GUI.Button(new Rect(xOffset, btnHeight * 2 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
+            {
+                _currentState = State.MAIN_MENU;
+            }
+        }
+
+        public void LogInput()
+        {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 screenPos = Input.mousePosition;
@@ -93,7 +136,6 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
                 Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
                 Debug.Log(screenPos + " " + worldPos);
             }
-
         }
     }
 }
