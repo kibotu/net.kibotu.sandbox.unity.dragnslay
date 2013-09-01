@@ -12,6 +12,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
         private State _currentState;
         public Texture btnTexture;
+        public Texture friendlistTexture;
         private GUIStyle style;
         private float scale = 0.5f;
         private float yOffset = 200;
@@ -27,6 +28,16 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
         private void OnGUI()
         {
+            ShowMainMenu();
+        }
+
+        public void Update()
+        {
+          
+        }
+
+        public void ShowMainMenu()
+        {
             if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
                 Debug.Log("single clicked");
@@ -41,11 +52,11 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
             {
                 Debug.Log("Custom clicked");
             }
-        }
 
-        public void Update()
-        {
-          
+            if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
+            {
+                Debug.Log("friendlist clicked");
+            }
         }
     }
 }
