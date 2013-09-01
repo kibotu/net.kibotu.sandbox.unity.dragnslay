@@ -4,3 +4,6 @@
 [submodule "UnitySocketIO"]
 	path = UnitySocketIO
 	url = ../UnitySocketIO.git
+[submodule "net.kibotu.sandbox.unity.resources"]
+	path = net.kibotu.sandbox.unity.resources
+	url = https://github.com/JanPaschen/net.kibotu.sandbox.unity.resources.git
