@@ -7,3 +7,6 @@
 [submodule "net.kibotu.sandbox.unity.resources"]
 	path = net.kibotu.sandbox.unity.resources
 	url = https://github.com/JanPaschen/net.kibotu.sandbox.unity.resources.git
+[submodule "resources"]
+	path = resources
+	url = https://github.com/JanPaschen/net.kibotu.sandbox.unity.resources.git
