@@ -1,9 +1,9 @@
-using UnityEngine;
-using System.Collections;
-
-public class World {
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
+{
+    public class World {
 	
-	public Orb [] orbs;
-	public Player [] player;
+        public Orb [] orbs;
+        public Player [] player;
+    }
 }
 

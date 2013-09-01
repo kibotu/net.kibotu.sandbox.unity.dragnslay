@@ -1,23 +1,25 @@
 using UnityEngine;
-using System.Collections;
 
-public class TrabantPrototype {
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
+{
+    public class TrabantPrototype {
 	
-	// graic
-	public int model; 		// mesh id/type
-	public int textureId; 
-	public GameObject go;
+        // graic
+        public int model; 		// mesh id/type
+        public int textureId; 
+        public GameObject go;
 	
-	public Life life;
-	public PhysicalProperty physicalProperty;
+        public Life life;
+        public PhysicalProperty physicalProperty;
 	
-	public void moveTo(Orb dest) {
-	}
+        public void moveTo(Orb dest) {
+        }
 	
-	public void defend() {
-	}
+        public void defend() {
+        }
 	
-	public void attack() {
-	}
+        public void attack() {
+        }
+    }
 }
 

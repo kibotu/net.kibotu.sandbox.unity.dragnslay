@@ -1,12 +1,14 @@
 using UnityEngine;
-using System.Collections;
 
-public class Orbitting : MonoBehaviour {
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.scripts
+{
+    public class Orbitting : MonoBehaviour {
 
-	void Start () {
-	}
+        void Start () {
+        }
 	
-	void Update () {
-        transform.Rotate(Vector3.forward * Time.deltaTime * 100, Space.World);
-	}
+        void Update () {
+            transform.Rotate(Vector3.forward * Time.deltaTime * 100, Space.World);
+        }
+    }
 }

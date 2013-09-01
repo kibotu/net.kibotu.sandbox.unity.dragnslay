@@ -1,34 +1,37 @@
 using UnityEngine;
 
-public class Orb {
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
+{
+    public class Orb {
 	
-    // id
-    public string id;
+        // id
+        public string id;
 
-	// grafic
-	public int textureId;
-	public GameObject go;
+        // grafic
+        public int textureId;
+        public GameObject go;
 	
-	// spawning
-	public TrabantPrototype type;
-	public float currentPopulation;
-	public int maxPopulation;
-	public float spawnPerSec;
+        // spawning
+        public TrabantPrototype type;
+        public float currentPopulation;
+        public int maxPopulation;
+        public float spawnPerSec;
 	
-	// properties
-	public Life life;
-	public PhysicalProperty physicalProperty;
+        // properties
+        public Life life;
+        public PhysicalProperty physicalProperty;
 	
-	public void spawn(float dt) {
-	}
+        public void spawn(float dt) {
+        }
 	
-	public void moveUnitsTo(int amount, Orb destination) {
-	}
+        public void moveUnitsTo(int amount, Orb destination) {
+        }
 	
-	public void defend() {
-	}
+        public void defend() {
+        }
 	
-	public void attack() {
-	}
+        public void attack() {
+        }
+    }
 }
 

@@ -1,15 +1,18 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Assets.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 
-class Registry : MonoBehaviour
+namespace Assets.net.kibotu.sandbox.unity.dragnslay.singeltons
 {
-    public Dictionary<int, Orb> Orbs;
-
-    private static Registry _instance;
-
-    public static Registry Instance
+    class Registry : MonoBehaviour
     {
-        get { return _instance ?? (_instance = new GameObject("Registry").AddComponent<Registry>()); }
+        public Dictionary<int, Orb> Orbs;
+
+        private static Registry _instance;
+
+        public static Registry Instance
+        {
+            get { return _instance ?? (_instance = new GameObject("Registry").AddComponent<Registry>()); }
+        }
     }
 }
