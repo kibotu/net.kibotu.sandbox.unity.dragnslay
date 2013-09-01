@@ -13,18 +13,18 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
         private State _currentState;
         public Texture btnTexture;
         public Texture friendlistTexture;
+        public Texture bannerTexture;
+        public Texture backgroundTexture;
         private GUIStyle style;
-        private float scale = 0.5f;
-        private float yOffset = 200;
+        private float scale = 0.6f;
+        private float yOffset = 300;
         private float xOffset = 50;
         private float btnHeight;
-
-        public void Start()
-        {
-            _currentState = State.MAIN_MENU;
-            style = new GUIStyle();
-            btnHeight = (btnTexture.height - 100);
-        }
+        private GameObject background;
+        private GameObject banner;
+        private GameObject camera;
+        private Material transparencyMaterial;
+        public float aspectRatio;
 
         private void OnGUI()
         {
@@ -33,11 +33,39 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
         public void Update()
         {
-          
+
+        }
+
+        public void Start()
+        {
+            _currentState = State.MAIN_MENU;
+            camera = GameObject.Find("Main Camera");
+            style = new GUIStyle();
+            btnHeight = (btnTexture.height - 100);
+            aspectRatio = 1280 / 800; // 1.6
+        }
+
+        public void addFixedImages()
+        {
+            /*background = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            background.renderer.material.mainTexture = backgroundTexture;
+            background.transform.parent = camera.transform;
+            background.transform.rotation = Quaternion.AngleAxis(270, new Vector3(1, 0, 0)) * Quaternion.AngleAxis(180, new Vector3(0, 1, 0));
+            background.transform.localScale += new Vector3(9, 0, 5.625f);
+
+            banner = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            banner.renderer.material.mainTexture = bannerTexture;
+            banner.transform.parent = camera.transform;
+            banner.transform.rotation = Quaternion.AngleAxis(270, new Vector3(1, 0, 0)) * Quaternion.AngleAxis(180, new Vector3(0, 1, 0));*/
         }
 
         public void ShowMainMenu()
         {
+
+            GUI.DrawTexture(new Rect(0, 0, 1280, 800), backgroundTexture, ScaleMode.ScaleAndCrop, true, 1.6f);
+
+            GUI.DrawTexture(new Rect(300, 30, bannerTexture.width * scale, bannerTexture.height * scale), bannerTexture, ScaleMode.ScaleAndCrop, true, 1.6f);
+
             if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
                 Debug.Log("single clicked");
@@ -53,10 +81,19 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
                 Debug.Log("Custom clicked");
             }
 
-            if (GUI.Button(new Rect(xOffset, btnHeight * 0 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
+            if (GUI.Button(new Rect(930, 100, friendlistTexture.width * scale, friendlistTexture.height * scale), friendlistTexture, style))
             {
                 Debug.Log("friendlist clicked");
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 screenPos = Input.mousePosition;
+                screenPos.z = 30;
+                Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+                Debug.Log(screenPos + " " + worldPos);
+            }
+
         }
     }
 }
