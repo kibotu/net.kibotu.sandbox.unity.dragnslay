@@ -115,9 +115,16 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
             }
         }
 
+        private bool isRunning = false;
+
         private void ShowGame1vs1()
         {
-            camera.AddComponent<Game1vs1>();
+         
+            if (!isRunning)
+            {
+                camera.AddComponent<Game1vs1>();
+                isRunning = true;
+            }
             if (GUI.Button(new Rect(xOffset, btnHeight * 1 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
                 

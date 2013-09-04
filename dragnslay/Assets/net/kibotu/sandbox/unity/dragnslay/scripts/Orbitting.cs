@@ -8,7 +8,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.scripts
         }
 	
         void Update () {
-            transform.Rotate(Vector3.forward * Time.deltaTime * 100, Space.World);
+            transform.Rotate(new Vector3(0,1,0) * Time.deltaTime * 100, Space.World);
         }
     }
 }

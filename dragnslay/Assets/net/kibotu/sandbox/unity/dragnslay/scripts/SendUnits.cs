@@ -8,8 +8,8 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.scripts
 
         public void OnMouseDown()
         {
-            Debug.Log("OnMouseUp");
-
+            Debug.Log("clicked");
+            /*
             JsonObject message = new JsonObject();
             message.Add("name", "move-units");
             message.Add("source", this.gameObject.name);
@@ -17,6 +17,8 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.scripts
             message.Add("amount", "1");
 
             ClientSocket.Instance.Emit("game-event", message);
+
+            Debug.Log("game-event : " + message.ToString());*/
         }
     }
 }
