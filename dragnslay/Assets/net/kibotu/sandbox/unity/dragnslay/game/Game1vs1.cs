@@ -27,32 +27,23 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
                 if (data != null)
                 {
                     Debug.Log("received message : " + data); 
-                    OrbFactory.createIsland();   
                 }
             });
 
+           
+
             Orb island1 = OrbFactory.createIsland();
             island1.go.transform.position = new Vector3(1, 1, 0);
-           // island1.go.AddComponent<Orbitting>();
-            island1.go.AddComponent<SendUnits>();
-
                 
             Orb island2 = OrbFactory.createIsland();
             island2.go.transform.position = new Vector3(1, 20, 0);
-            //island2.go.AddComponent<Orbitting>();
-            island2.go.AddComponent<SendUnits>();
 
 
             Orb island3 = OrbFactory.createIsland();
             island3.go.transform.position = new Vector3(20, 1, 0);
-            //island3.go.AddComponent<Orbitting>();
-            island3.go.AddComponent<SendUnits>();
-
 
             Orb island4 = OrbFactory.createIsland();
             island4.go.transform.position = new Vector3(20, 20, 0);
-            //island4.go.AddComponent<Orbitting>();
-            island4.go.AddComponent<SendUnits>();
 
 
             //Planet [] p = new Planet[10] { n	ew Planet() };
