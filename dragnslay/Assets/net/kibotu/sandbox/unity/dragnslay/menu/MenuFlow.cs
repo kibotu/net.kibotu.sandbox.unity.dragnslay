@@ -117,9 +117,11 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
 
         private void ShowGame1vs1()
         {
+            camera.AddComponent<Game1vs1>();
             if (GUI.Button(new Rect(xOffset, btnHeight * 1 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
-                camera.AddComponent<Game1vs1>();
+                
+                Debug.Log("show game 1v1");
                 _currentState = State.MAIN_MENU;
             }
         }

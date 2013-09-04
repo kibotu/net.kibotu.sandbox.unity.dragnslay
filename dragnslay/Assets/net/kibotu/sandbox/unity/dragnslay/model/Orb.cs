@@ -20,7 +20,20 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
         // properties
         public Life life;
         public PhysicalProperty physicalProperty;
-	
+
+        public Orb(string id, int textureId, GameObject go, TrabantPrototype type, float currentPopulation, int maxPopulation, float spawnPerSec, Life life, PhysicalProperty physicalProperty)
+        {
+            this.id = id;
+            this.textureId = textureId;
+            this.go = go;
+            this.type = type;
+            this.currentPopulation = currentPopulation;
+            this.maxPopulation = maxPopulation;
+            this.spawnPerSec = spawnPerSec;
+            this.life = life;
+            this.physicalProperty = physicalProperty;
+        }
+
         public void spawn(float dt) {
         }
 	

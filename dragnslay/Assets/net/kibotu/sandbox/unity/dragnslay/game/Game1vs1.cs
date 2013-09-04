@@ -14,23 +14,47 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
         void OnGUI() {
          
         }
-	
-        void startGame() {
+
+        void Awake()
+        {
+            isRunning = false;
+        }
+
+        static void createWorld()
+        {
 
             ClientSocket.Instance.Connect("http://127.0.0.1:3000/");
 
-            Orb a = createOrb(new Vector3(0,2,0));
-            //Orb b = createOrb(new Vector3(5,0,0));
-
             ClientSocket.Instance.On("message", (data) =>
-                { if (data != null) Debug.Log("received message : " + data); });
+            {
+                if (data != null)
+                {
+                    Debug.Log("received message : " + data); 
+                    OrbFactory.createIsland();   
+                }
+            });
 
-		
+            Orb island1 = OrbFactory.createIsland();
+            island1.go.transform.position = new Vector3(1, 1, 0);
+
+                
+            Orb island2 = OrbFactory.createIsland();
+            island2.go.transform.position = new Vector3(1, 30, 0);
+
+
+            Orb island3 = OrbFactory.createIsland();
+            island3.go.transform.position = new Vector3(30, 1, 0);
+
+
+            Orb island4 = OrbFactory.createIsland();
+            island4.go.transform.position = new Vector3(30, 30, 0);
+
+
             //Planet [] p = new Planet[10] { n	ew Planet() };
             // add planets to stage
-		
+
             // spawn ships
-		
+
             // touch events
         }
 	
@@ -57,7 +81,15 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
         }
 	
         void Start () {
-            isRunning = false;
+
+
+            if (!isRunning)
+            {
+                isRunning = true;
+                //Debug.Log("start game1vs1");
+               // createWorld();
+            }
+
             /*Particle[] particles = particleEmitter.particles;
 	    int i = 0;
 	    while (i < particles.Length) {
@@ -73,15 +105,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
         }
 	
         void Update () {
-
-            if (!isRunning)
-            {
-                Orb a = createOrb(new Vector3(0, 0, 0));
-                isRunning = true;
-            }
-
-		
-		
+           
             /*foreach (Touch touch in Input.touches) {
 			Debug.Log(touch.position);
 			if (touch.phase == TouchPhase.Began) {
@@ -97,31 +121,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
 		}*/
         }
 	
-        public static Orb createOrb(Vector3 position) {
-            Orb orb = new Orb();
-            orb.currentPopulation = 0;
-            orb.maxPopulation = 10;
-            orb.textureId = 0;
-            orb.spawnPerSec = 0.5f;
-            orb.life = new Life();
-            orb.life.current_hp = orb.life.max_hp = 100;
-            orb.life.armor = orb.life.current_shield = orb.life.max_shield = 0;
-            orb.life.shield_regen = orb.life.hp_regen = 0f;
-            orb.physicalProperty = new PhysicalProperty();
-            orb.physicalProperty.acceleration = 0f;
-		
-            orb.physicalProperty.position = position;
-            orb.physicalProperty.scalling = new Vector3(1,1,1);
-            orb.physicalProperty.rotation = new Quaternion(0,0,0,0);
-		
-            orb.physicalProperty.mass = 0f;
-            orb.physicalProperty.rotationSpeed = 23f;
-            orb.physicalProperty.rotationDistance = 0f;
-		
-            orb.type = new TrabantPrototype();
-            orb.type.physicalProperty = new PhysicalProperty();
-            orb.type.physicalProperty.rotationDistance = 0f;
-            orb.type.physicalProperty.position = new Vector3(1.5f,0,0);
+        /*public static Orb createOrb(Vector3 position) {
 
             //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             //Mesh mesh = (Mesh) Resources.Load("resources/meshes/island");
@@ -133,9 +133,9 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
             filter.mesh = Resources.Load("meshes/island", typeof(Mesh)) as Mesh;
             renderer.material.mainTexture = Resources.Load("meshes/island", typeof(Texture)) as Texture;
 
-            orb.go = go;
+            // orb.go = go;
             //go.renderer.material.mainTexture = Resources.Load("glass") as Texture;
-            go.transform.position = orb.physicalProperty.position;
+            //go.transform.position = orb.physicalProperty.position;
 		
             go.AddComponent<Orbitting>();
             go.AddComponent<SendUnits>();
@@ -147,6 +147,6 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
             cube.transform.parent = go.transform;
 		
             return orb;
-        }
+        }*/
     }
 }
