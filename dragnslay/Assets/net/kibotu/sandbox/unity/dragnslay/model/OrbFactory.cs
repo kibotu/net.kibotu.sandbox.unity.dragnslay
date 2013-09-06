@@ -1,4 +1,5 @@
 ﻿using Assets.net.kibotu.sandbox.unity.dragnslay.scripts;
+using Assets.net.kibotu.sandbox.unity.dragnslay.utility;
 using UnityEngine;
 
 namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
@@ -16,11 +17,12 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
                 new Life(10,10,0,0,0,0,0), 
                 new PhysicalProperty(new Vector3(0,0,0),new Vector3(1,1,1),new Quaternion(0,0,0,0),0,0,0,0 ));
 
-            GameObject go = new GameObject("island");
+            GameObject go = new GameObject("Island_" + UidGenerator.GetNewUid());
             MeshFilter filter = go.AddComponent<MeshFilter>();
             MeshRenderer renderer = go.AddComponent<MeshRenderer>();
             filter.mesh = Resources.Load("meshes/island", typeof(Mesh)) as Mesh;
             renderer.material.mainTexture = Resources.Load("meshes/island", typeof(Texture)) as Texture;
+
 
             orb.go = go;
             go.transform.position = orb.physicalProperty.position;
@@ -28,7 +30,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
             go.AddComponent<Orbitting>();
             go.AddComponent<SendUnits>();
             go.AddComponent<SpawnUnits>();
-            go.AddComponent("SphereCollider"); 
+            go.AddComponent("SphereCollider");
 
             return orb;
         }
@@ -37,18 +39,19 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
         {
             TrabantPrototype plane = new TrabantPrototype(0,0,null,
                 new Life(10,10,0,0,0,0,0), 
-                new PhysicalProperty(new Vector3(0,0,0), new Vector3(0.3f,0.3f,0.3f), new Quaternion(0,0,0,0), 0,0,0,0));
+                new PhysicalProperty(new Vector3(7,0,0), new Vector3(0.1f,0.1f,0.1f), new Quaternion(0,0,0,0), 0,0,0,0));
 
-            GameObject go = new GameObject("papership");
+            GameObject go = new GameObject("Papership_" + UidGenerator.GetNewUid());
             MeshFilter filter = go.AddComponent<MeshFilter>();
             MeshRenderer renderer = go.AddComponent<MeshRenderer>();
             filter.mesh = Resources.Load("meshes/papership", typeof(Mesh)) as Mesh;
             renderer.material.mainTexture = Resources.Load("meshes/paperplant", typeof(Texture)) as Texture;
             
-            plane.go = go;
             go.transform.position = plane.physicalProperty.position;
             go.transform.localRotation = plane.physicalProperty.rotation;
             go.transform.localScale = plane.physicalProperty.scalling;
+            
+            plane.go = go;
 
             return plane;
         }

@@ -19,7 +19,9 @@ public class SpawnUnits : MonoBehaviour
         if (startTime > 3f)
         {
             startTime = 0;
-            OrbFactory.createPlane().go.transform.parent = gameObject.transform;
+            TrabantPrototype plane = OrbFactory.createPlane();
+            plane.go.transform.Translate(transform.position);
+            plane.go.transform.parent = transform;
         }
 	}
 }
