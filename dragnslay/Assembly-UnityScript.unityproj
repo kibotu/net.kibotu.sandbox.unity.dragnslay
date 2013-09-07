@@ -61,6 +61,7 @@
      <None Include="Assets\Plugins\UIToolkit\UIToolkit\Shaders\UIToolkit Premultiplied Alpha.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Resources\ui\ui_menu.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Plugins\UIToolkit\UIToolkit\Shaders\UIToolkit Alpha Enabled (Default).shader" />
@@ -71,25 +72,25 @@
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
  <Reference Include="SimpleJson">
- <HintPath>Assets\Plugins\sockets\SimpleJson.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\SimpleJson.dll</HintPath>
  </Reference>
  <Reference Include="SocketIO">
- <HintPath>Assets\Plugins\sockets\SocketIO.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\SocketIO.dll</HintPath>
  </Reference>
  <Reference Include="SuperSocket.ClientEngine.Common">
- <HintPath>Assets\Plugins\sockets\SuperSocket.ClientEngine.Common.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Common.dll</HintPath>
  </Reference>
  <Reference Include="SuperSocket.ClientEngine.Core">
- <HintPath>Assets\Plugins\sockets\SuperSocket.ClientEngine.Core.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Core.dll</HintPath>
  </Reference>
  <Reference Include="SuperSocket.ClientEngine.Protocol">
- <HintPath>Assets\Plugins\sockets\SuperSocket.ClientEngine.Protocol.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Protocol.dll</HintPath>
  </Reference>
  <Reference Include="SuperSocket.ClientEngine.Proxy">
- <HintPath>Assets\Plugins\sockets\SuperSocket.ClientEngine.Proxy.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Proxy.dll</HintPath>
  </Reference>
  <Reference Include="WebSocket4Net">
- <HintPath>Assets\Plugins\sockets\WebSocket4Net.dll</HintPath>
+ <HintPath>Assets\Plugins\Sockets\WebSocket4Net.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
