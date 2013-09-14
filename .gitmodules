@@ -10,3 +10,6 @@
 [submodule "resources"]
 	path = resources
 	url = https://github.com/JanPaschen/net.kibotu.sandbox.unity.resources.git
+[submodule "net.kibotu.sandbox.node.chat"]
+	path = net.kibotu.sandbox.node.chat
+	url = https://github.com/kibotu/net.kibotu.sandbox.node.chat.git
