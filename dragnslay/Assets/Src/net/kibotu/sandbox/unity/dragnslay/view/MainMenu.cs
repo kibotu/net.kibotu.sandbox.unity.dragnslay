@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.net.kibotu.sandbox.unity.dragnslay.model;
+using SimpleJson;
 using UnityEngine;
 using System.Collections;
 
@@ -17,7 +18,7 @@ public class MainMenu : MonoBehaviour {
         playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
         playButton.scale = new Vector3(0.3f, 0.3f, 0);
         AndroidJNI.AttachCurrentThread();
-        AndroidJNIHelper.debug = true; 
+        AndroidJNIHelper.debug = false; 
 	}
 	
 	// Update is called once per frame
@@ -26,28 +27,44 @@ public class MainMenu : MonoBehaviour {
         if (startTime > 3f)
         {
             startTime = 0;
-            Emit("hallo", "welt");
+            Emit("send", createHelloWorldMessage());
         }
 	}
 
-    // @see http://forum.unity3d.com/threads/100751-Android-Plugin-JNI-Question
-    private void useJNI()
+    public void Emit(string name, JsonObject message)
     {
-        using (AndroidJavaClass clsUnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-        {
-            using (AndroidJavaObject objActivity = clsUnityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
-            {
-
-                objActivity.CallStatic("Emit", "hallo", "welt");
-            }
-        }
+        Emit(name, message.ToString());
     }
 
     public void Emit(string name, string message)
     {
         #if UNITY_ANDROID
-        if (socket == null) socket = new AndroidJavaClass("net.kibotu.sandbox.unity.android.SocketFacade");
-            socket.CallStatic("Emit", name, message);
+        if (socket == null)
+        {
+            socket = new AndroidJavaClass("net.kibotu.sandbox.unity.android.SocketFacade");
+            socket.CallStatic("setUrl", "http://172.19.253.37:3000");
+        }
+            socket.CallStatic("Emit",name, message);
         #endif
+    }
+
+    public JsonObject createMessage()
+    {
+        return new JsonObject{
+            {"name", "move-units"},
+            {"source", gameObject.name},
+            {"dest", "2"},
+            {"amount", "1"}
+        };
+    }
+
+    public JsonObject createHelloWorldMessage()
+    {
+        return new JsonObject
+            {
+                {"message", "hallo welt"},
+                {"username", "android"},
+                {"name", "message"},
+            };
     }
 }
