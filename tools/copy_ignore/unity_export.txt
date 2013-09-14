@@ -1,0 +1,6 @@
+res
+gen
+src
+AndroidManifest.xml
+project.properties
+dragnslay-android.iml
