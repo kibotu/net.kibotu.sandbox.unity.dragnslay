@@ -1,6 +1,6 @@
 SCRIPT_PATH=$( (cd -P $(dirname $0) && pwd) )
 
-RSYNC_CMD="rsync -aCx --progress --exclude-from 'copy_ignore/copy_ignore.txt'"
+RSYNC_CMD="rsync -ax --progress --exclude-from 'copy_ignore/copy_ignore.txt'"
 
 if [ $# -ge 1 ];then 
 
