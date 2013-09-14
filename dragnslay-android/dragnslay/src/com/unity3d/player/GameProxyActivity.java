@@ -10,14 +10,14 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
-public class UnityPlayerProxyActivity2 extends Activity
+public class GameProxyActivity extends Activity
 {
 	protected void onCreate (Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 
 		// If the (Native)Activity is overridden these class names must match the new activities.
-		String classNames[] = { "com.unity3d.player.UnityPlayerActivity2", "com.unity3d.player.UnityPlayerNativeActivity2" };
+		String classNames[] = { "com.unity3d.player.GameActivty", "com.unity3d.player.GameNativeActivity" };
 
 		// Convert old PlayerPrefs (pre Unity 3.4) to new PlayerPrefs
 		copyPlayerPrefs(this, classNames);
