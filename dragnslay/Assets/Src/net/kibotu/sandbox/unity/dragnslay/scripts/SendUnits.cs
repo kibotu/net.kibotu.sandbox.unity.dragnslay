@@ -1,6 +1,4 @@
-﻿using Assets.net.kibotu.sandbox.unity.dragnslay.network;
-using SimpleJson;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.net.kibotu.sandbox.unity.dragnslay.scripts
 {
@@ -13,16 +11,16 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.scripts
 
         public void OnMouseDown()
         {
-            var message = new JsonObject
+            /*var message = new JsonObject
                 {
                     {"name", "move-units"},
                     {"source", gameObject.name},
                     {"dest", "2"},
                     {"amount", "1"}
-                };
-            ClientSocket.Instance.Emit("game-event", message);
+                };*/
+            //ClientSocket.Instance.Emit("game-event", message);
 
-            Debug.Log("game-event : " + message);
+           // Debug.Log("game-event : " + message);
         }
     }
 }

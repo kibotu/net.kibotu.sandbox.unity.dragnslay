@@ -1,0 +1,1 @@
+C:\DevTools\Android\Android-sdk\platform-tools\adb shell setprop debug.checkjni 1
