@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/SocketFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/ProjectSettings/ProjectSettings.asset" afterPath="$PROJECT_DIR$/../../dragnslay/ProjectSettings/ProjectSettings.asset" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/scenes/initscene.unity" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/scenes/initscene.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/mainData" afterPath="$PROJECT_DIR$/assets/bin/Data/mainData" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/unity3d/player/GameActivity.java" afterPath="$PROJECT_DIR$/src/com/unity3d/player/GameActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/view/MainMenu.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/view/MainMenu.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/dragnslay-csharp.sln" afterPath="$PROJECT_DIR$/../../dragnslay/dragnslay-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dragnslay.iml" afterPath="$PROJECT_DIR$/dragnslay.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/dragnslay.sln" afterPath="$PROJECT_DIR$/../../dragnslay/dragnslay.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/settings.xml" afterPath="$PROJECT_DIR$/assets/bin/Data/settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="" />
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1379173264953" ignored="false" />
@@ -104,7 +81,7 @@
       <file leaf-file-name="SocketFacade.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/SocketFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="28" selection-start="255" selection-end="255" vertical-scroll-proportion="0.33392859">
+            <state line="7" column="25" selection-start="165" selection-end="165" vertical-scroll-proportion="0.2125">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -584,7 +561,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/SocketFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="28" selection-start="255" selection-end="255" vertical-scroll-proportion="0.33392859">
+        <state line="7" column="25" selection-start="165" selection-end="165" vertical-scroll-proportion="0.2125">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
