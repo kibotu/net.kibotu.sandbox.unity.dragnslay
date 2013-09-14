@@ -1,6 +1,4 @@
 using Assets.net.kibotu.sandbox.unity.dragnslay.model;
-using Assets.net.kibotu.sandbox.unity.dragnslay.network;
-using Assets.net.kibotu.sandbox.unity.dragnslay.scripts;
 using UnityEngine;
 
 namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
@@ -20,15 +18,15 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
         static void createWorld()
         {
 
-            ClientSocket.Instance.Connect("http://127.0.0.1:3000/");
+            //ClientSocket.Instance.Connect("http://127.0.0.1:3000/");
 
-            ClientSocket.Instance.On("message", (data) =>
+            /*ClientSocket.Instance.On("message", (data) =>
             {
                 if (data != null)
                 {
                     Debug.Log("received message : " + data); 
                 }
-            });
+            });*/
 
 
 

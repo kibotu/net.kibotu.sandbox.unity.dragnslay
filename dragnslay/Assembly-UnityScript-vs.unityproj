@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_1;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_1;UNITY_4_2;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -73,27 +73,6 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="SimpleJson">
- <HintPath>Assets\Plugins\Sockets\SimpleJson.dll</HintPath>
- </Reference>
- <Reference Include="SocketIO">
- <HintPath>Assets\Plugins\Sockets\SocketIO.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Common">
- <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Common.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Core">
- <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Core.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Protocol">
- <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Protocol.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Proxy">
- <HintPath>Assets\Plugins\Sockets\SuperSocket.ClientEngine.Proxy.dll</HintPath>
- </Reference>
- <Reference Include="WebSocket4Net">
- <HintPath>Assets\Plugins\Sockets\WebSocket4Net.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
