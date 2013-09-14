@@ -3,12 +3,11 @@ package com.unity3d.player;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import org.jetbrains.annotations.NotNull;
+import com.koushikdutta.async.AsyncServer;
 
 public class GameActivity extends Activity {
     private UnityPlayer mUnityPlayer;
@@ -36,6 +35,7 @@ public class GameActivity extends Activity {
 
     protected void onDestroy() {
         mUnityPlayer.quit();
+        AsyncServer.getDefault().stop();
         super.onDestroy();
     }
 

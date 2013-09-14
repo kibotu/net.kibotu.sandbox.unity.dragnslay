@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import com.koushikdutta.async.AsyncServer;
 
 public class GameNativeActivity extends NativeActivity {
     protected UnityPlayer mUnityPlayer;        // don't change the name of this variable; referenced from native code
@@ -38,6 +39,7 @@ public class GameNativeActivity extends NativeActivity {
 
     protected void onDestroy() {
         mUnityPlayer.quit();
+        AsyncServer.getDefault().stop();
         super.onDestroy();
     }
 
