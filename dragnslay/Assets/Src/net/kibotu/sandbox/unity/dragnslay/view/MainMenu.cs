@@ -1,4 +1,5 @@
-﻿using Assets.net.kibotu.sandbox.unity.dragnslay.model;
+﻿using System;
+using Assets.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 using System.Collections;
 
@@ -15,7 +16,8 @@ public class MainMenu : MonoBehaviour {
         var playButton = UIButton.create("button.png", "button.png", 0, 0);
         playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
         playButton.scale = new Vector3(0.3f, 0.3f, 0);
-        AndroidJNI.AttachCurrentThread();  
+        AndroidJNI.AttachCurrentThread();
+        AndroidJNIHelper.debug = true; 
 	}
 	
 	// Update is called once per frame
@@ -45,7 +47,7 @@ public class MainMenu : MonoBehaviour {
     {
         #if UNITY_ANDROID
         if (socket == null) socket = new AndroidJavaClass("net.kibotu.sandbox.unity.android.SocketFacade");
-            socket.Call("Emit", name, message);
+            socket.CallStatic("Emit", name, message);
         #endif
     }
 }

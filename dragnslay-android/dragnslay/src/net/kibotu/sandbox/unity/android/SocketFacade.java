@@ -9,15 +9,17 @@ public class SocketFacade {
     private static final String TAG = SocketClient.class.getSimpleName();
     private SocketClient socket;
 
+    private static SocketFacade instance = new SocketFacade();
+
     public SocketFacade() {
         socket = new SocketClient();
     }
 
-    public void Emit(@NotNull String name, @NotNull String message) {
+    public static void Emit(@NotNull String name, @NotNull String message) {
         Log.v(name, message);
-        socket.url = "http://172.16.3.13";
+        instance.socket.url = "http://172.16.3.13";
         try {
-            socket.testMessageToChat();
+            instance.socket.testMessageToChat();
         } catch (Exception e) {
             Log.v(TAG, "Exception: " + e.getMessage());
             e.printStackTrace();
