@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="" />
+    <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/unity3d/player/GameActivty.java" afterPath="$PROJECT_DIR$/src/com/unity3d/player/GameActivty.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/unity3d/player/GameNativeActivity.java" afterPath="$PROJECT_DIR$/src/com/unity3d/player/GameNativeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/unity3d/player/GameProxyActivity.java" afterPath="$PROJECT_DIR$/src/com/unity3d/player/GameProxyActivity.java" />
+    </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1379165636735" ignored="false" />
@@ -69,7 +73,7 @@
       <file leaf-file-name="GameNativeActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/unity3d/player/GameNativeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="21" selection-start="982" selection-end="982" vertical-scroll-proportion="0.6021798">
+            <state line="10" column="80" selection-start="288" selection-end="288" vertical-scroll-proportion="0.21253406">
               <folding />
             </state>
           </provider>
@@ -88,6 +92,13 @@
   <component name="GitLogSettings">
     <option name="myDateState">
       <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/unity3d/player/GameNativeActivity.java" />
+      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -382,7 +393,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67064846" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -455,9 +466,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="48" selection-start="989" selection-end="989" vertical-scroll-proportion="0.3361582">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/unity3d/player/GameNativeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="21" selection-start="982" selection-end="982" vertical-scroll-proportion="0.6021798">
+        <state line="10" column="80" selection-start="288" selection-end="288" vertical-scroll-proportion="0.21253406">
           <folding />
         </state>
       </provider>
