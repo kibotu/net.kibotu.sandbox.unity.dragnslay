@@ -43,7 +43,9 @@ public class MainMenu : MonoBehaviour {
 
     public void Emit(string name, string message)
     {
+        #if UNITY_ANDROID
         if (socket == null) socket = new AndroidJavaClass("net.kibotu.sandbox.unity.android.SocketFacade");
-        socket.CallStatic("Emit", name, message);
+            socket.CallStatic("Emit", name, message);
+        #endif
     }
 }
