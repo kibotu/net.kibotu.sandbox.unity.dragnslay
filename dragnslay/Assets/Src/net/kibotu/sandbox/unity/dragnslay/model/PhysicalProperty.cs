@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
+namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
 {
     public class PhysicalProperty {
 	

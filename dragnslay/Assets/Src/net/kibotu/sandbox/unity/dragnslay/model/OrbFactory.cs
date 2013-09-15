@@ -1,8 +1,8 @@
-﻿using Assets.net.kibotu.sandbox.unity.dragnslay.scripts;
-using Assets.net.kibotu.sandbox.unity.dragnslay.utility;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using UnityEngine;
 
-namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
+namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
 {
     class OrbFactory
     {
@@ -39,7 +39,7 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.model
         {
             TrabantPrototype plane = new TrabantPrototype(0,0,null,
                 new Life(10,10,0,0,0,0,0), 
-                new PhysicalProperty(new Vector3(7,0,0), new Vector3(0.1f,0.1f,0.1f), new Quaternion(0,0,0,0), 0,0,0,0));
+                new PhysicalProperty(new Vector3(60,0,0), new Vector3(1f,1f,1f), new Quaternion(0,0,0,0), 0,0,0,0));
 
             GameObject go = new GameObject("Papership_" + UidGenerator.GetNewUid());
             MeshFilter filter = go.AddComponent<MeshFilter>();

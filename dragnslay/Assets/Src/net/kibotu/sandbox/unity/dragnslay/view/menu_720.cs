@@ -3,7 +3,7 @@ using System.Collections;
 
 public class menu_720 : MonoBehaviour {
 	
-	private enum State
+	/*private enum State
         {
             MAIN_MENU, MAIN_MENU_CUSTOM_GAME, GAME_SCREEN_1VS1, GAME_SCREEN_SINGLE_PLAYER
         }
@@ -64,5 +64,5 @@ public class menu_720 : MonoBehaviour {
             }
 
             // LogInput()
-        }
+        }*/
 }

@@ -1,12 +1,12 @@
-﻿using Assets.net.kibotu.sandbox.unity.dragnslay.game;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.net.kibotu.sandbox.unity.dragnslay.pattern;
 using UnityEngine;
 
-namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
+namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 {
     class MenuFlow : Singleton<MonoBehaviour>
     {
-        private enum State
+       private enum State
         {
             MAIN_MENU, MAIN_MENU_CUSTOM_GAME, GAME_SCREEN_1VS1, GAME_SCREEN_SINGLE_PLAYER
         }
@@ -127,7 +127,6 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.menu
             }
             if (GUI.Button(new Rect(xOffset, btnHeight * 1 * scale + yOffset, btnTexture.width * scale, btnTexture.height * scale), btnTexture, style))
             {
-                
                 Debug.Log("show game 1v1");
                 _currentState = State.MAIN_MENU;
             }
