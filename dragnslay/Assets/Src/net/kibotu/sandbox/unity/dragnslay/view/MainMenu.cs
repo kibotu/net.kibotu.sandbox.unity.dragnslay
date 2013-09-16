@@ -28,7 +28,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.view
             if (_startTime > 7f)
             {
                 _startTime = 0;
-                SocketClient.Instance.Emit("send", SocketClient.Instance.CreateHelloWorldMessage());
+                SocketHandler.Instance.Emit("send", SocketHandler.Instance.CreateHelloWorldMessage());
             }
         }
     }

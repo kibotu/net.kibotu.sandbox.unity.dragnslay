@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import com.koushikdutta.async.AsyncServer;
+import net.kibotu.sandbox.unity.android.SocketHandler;
 
 public class GameActivity extends Activity {
     private UnityPlayer mUnityPlayer;

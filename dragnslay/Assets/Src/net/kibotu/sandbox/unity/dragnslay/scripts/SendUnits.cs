@@ -12,7 +12,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
 
         public void OnMouseDown()
         {
-            // SocketClient.Instance.Emit("send", SocketClient.Instance.createSendUnitsMessage());
+            // SocketHandler.Instance.Emit("send", SocketHandler.Instance.createSendUnitsMessage());
             
         }
     }

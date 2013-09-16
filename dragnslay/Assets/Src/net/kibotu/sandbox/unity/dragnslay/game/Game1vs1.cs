@@ -11,19 +11,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
             Orb island1 = OrbFactory.createIsland();
             island1.go.transform.position = new Vector3(50, 50, 0);
-            island1.go.transform.localScale = new Vector3(scale, scale, scale);
+            island1.go.transform.localScale = new Vector3(scale, scale, scale / 2);
 
             Orb island2 = OrbFactory.createIsland();
             island2.go.transform.Translate(50, 350  , 0);
-            island2.go.transform.localScale = new Vector3(scale, scale, scale);
+            island2.go.transform.localScale = new Vector3(scale, scale, scale / 2);
 
             Orb island3 = OrbFactory.createIsland();
             island3.go.transform.position = new Vector3(400, 50, 0);
-            island3.go.transform.localScale = new Vector3(scale, scale, scale);
+            island3.go.transform.localScale = new Vector3(scale, scale, scale / 2);
 
             Orb island4 = OrbFactory.createIsland();
             island4.go.transform.position = new Vector3(400, 350, 0);
-            island4.go.transform.localScale = new Vector3(scale, scale, scale);
+            island4.go.transform.localScale = new Vector3(scale, scale, scale / 2);
 
             //Planet [] p = new Planet[10] { n	ew Planet() };
             // add planets to stage

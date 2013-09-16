@@ -18,7 +18,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
         void Update ()
         {
             startTime += Time.deltaTime;
-            if (startTime > 3f)
+            if (startTime > 3f && GetComponentsInChildren<Transform>().Length < 2)
             {
                 startTime = 0;
                 TrabantPrototype plane = OrbFactory.createPlane();

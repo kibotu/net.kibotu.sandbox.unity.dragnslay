@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import com.koushikdutta.async.AsyncServer;
+import net.kibotu.sandbox.unity.android.SocketHandler;
 
 public class GameNativeActivity extends NativeActivity {
     protected UnityPlayer mUnityPlayer;        // don't change the name of this variable; referenced from native code
