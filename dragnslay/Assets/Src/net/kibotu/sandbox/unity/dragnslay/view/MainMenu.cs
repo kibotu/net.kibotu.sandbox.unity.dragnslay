@@ -12,7 +12,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.view
         // Use this for initialization
         void Start ()
         {
-            Debug.Log("drawing button");
+            // Debug.Log("drawing button");
             var playButton = UIButton.create("button.png", "button.png", 0, 0);
             playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
             playButton.scale = new Vector3(0.3f, 0.3f, 0);

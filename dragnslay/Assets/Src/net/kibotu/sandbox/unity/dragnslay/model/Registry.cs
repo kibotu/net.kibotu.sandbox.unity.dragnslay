@@ -9,9 +9,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
 
         private static Registry _instance;
 
+        private Registry()
+        {
+            Orbs = new Dictionary<int, Orb>();
+        }
+
         public static Registry Instance
         {
-            get { return _instance ?? (_instance = new GameObject("Registry").AddComponent<Registry>()); }
+            get { return _instance ?? ( _instance = new GameObject("Registry").AddComponent<Registry>()); }
         }
     }
 }

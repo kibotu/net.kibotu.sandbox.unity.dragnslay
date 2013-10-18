@@ -5,7 +5,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
     public class Orb {
 	
         // id
-        public string id;
+        public int id;
 
         // grafic
         public int textureId;
@@ -21,7 +21,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
         public Life life;
         public PhysicalProperty physicalProperty;
 
-        public Orb(string id, int textureId, GameObject go, TrabantPrototype type, float currentPopulation, int maxPopulation, float spawnPerSec, Life life, PhysicalProperty physicalProperty)
+        public Orb(int id, int textureId, GameObject go, TrabantPrototype type, float currentPopulation, int maxPopulation, float spawnPerSec, Life life, PhysicalProperty physicalProperty)
         {
             this.id = id;
             this.textureId = textureId;
