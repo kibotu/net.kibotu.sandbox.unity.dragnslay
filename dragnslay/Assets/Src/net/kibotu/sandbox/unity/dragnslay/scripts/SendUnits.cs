@@ -15,6 +15,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
         private static List<int> selected;
         private int id;
 
+        public static float getY(float x)
+        {
+            return - ( x * x ) + 2 * x;
+        }
+
+        public static Vector3 move(Vector3 end, Vector3 start, float dt, float maxTime)
+        {
+            // (b - a) * t + a
+            return Vector3.MoveTowards(end, start, Vector3.Distance(end, start) * dt/maxTime);
+        }
 
         public void Start()
         {
@@ -34,7 +44,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             var lineRenderer = gameObject.AddComponent<LineRenderer>();
             lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
             lineRenderer.SetColors(c1, c2);
-            lineRenderer.SetWidth(3F, 3F);
+            lineRenderer.SetWidth(10F, 10F);
+            lineRenderer.castShadows = false;
+            lineRenderer.receiveShadows = false;
             lineRenderer.SetVertexCount(lengthOfLineRenderer);
         }
 
@@ -99,7 +111,23 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
         {
             for (int i = 0; i < selected.Count - 1; ++i)
             {
-                if (debug) Debug.Log("send " + selected[i] + " to " + selected[selected.Count - 1]);
+                if (debug || true ) Debug.Log("send " + selected[i] + " to " + selected[selected.Count - 1]);
+
+                Orb source = Registry.Instance.Orbs[selected[i]];
+                Orb destination = Registry.Instance.Orbs[selected[selected.Count - 1]];
+
+
+                //TrabantPrototype plane = Registry.Instance.Planes[source.go.transform.GetChild(0).GetInstanceID()];
+                //Debug.Log("child id: " + source.go.transform.GetChild(0).GetInstanceID());
+
+                foreach (KeyValuePair<int, TrabantPrototype> pair in Registry.Instance.Planes)
+                {
+                    //Debug.Log("child " + i + " " + pair.Key);
+
+                }
+
+                    //TrabantPrototype plane = Registry.Instance.Planes[destination.go.transform.GetChild(0).GetInstanceID()];
+                    //plane.go.transform.position = move(destination.go.transform.position + plane.go.transform.position, destination.go.transform.position + plane.go.transform.position, 0.5f, 1f);
             }
 
             /*
@@ -119,15 +147,17 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
         public void Update()
         {
             var lineRenderer = GetComponent<LineRenderer>();
-            var screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
-            lineRenderer.SetPosition(0, Camera.main.ScreenToWorldPoint(screenPoint));
-            lineRenderer.SetPosition(1, transform.position);
-            if (debug) Debug.Log(Camera.main.ScreenToWorldPoint(screenPoint) + " to " + transform.position);
-
-            if (selected.Count > 1)
-                Debug.Log("selected more than one");
-            //  Drawing.DrawLine(Registry.Instance.Orbs[selected[0]].go.transform.position, Input.mousePosition, Color.magenta, 10, true);
-
+            if (selected.Count > 1 && selected.Contains(id))
+            {
+                lineRenderer.SetVertexCount(3);
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, Registry.Instance.Orbs[selected[selected.Count - 1]].go.transform.position);
+                lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
+            }
+            else
+            {
+                lineRenderer.SetVertexCount(0);
+            }
         }
     }
 }

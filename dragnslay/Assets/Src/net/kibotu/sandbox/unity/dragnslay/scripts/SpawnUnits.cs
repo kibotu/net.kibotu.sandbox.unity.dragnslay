@@ -24,6 +24,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
                 TrabantPrototype plane = OrbFactory.createPlane();
                 plane.go.transform.Translate(transform.position);
                 plane.go.transform.parent = transform;
+                Registry.Instance.Planes.Add(plane.go.GetInstanceID(),plane);
             }
         }
     }
