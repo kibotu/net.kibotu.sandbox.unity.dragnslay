@@ -15,12 +15,27 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
         private static List<int> selected;
         private int id;
 
+
         public void Start()
         {
+            initLineRender();
+
             isDragging = false;
             isOver = false;
             id = gameObject.GetInstanceID();
             if(selected == null) selected = new List<int>();
+        }
+
+        private void initLineRender()
+        {
+            Color c1 = Color.yellow;
+            Color c2 = Color.red;
+            const int lengthOfLineRenderer = 2;
+            var lineRenderer = gameObject.AddComponent<LineRenderer>();
+            lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+            lineRenderer.SetColors(c1, c2);
+            lineRenderer.SetWidth(3F, 3F);
+            lineRenderer.SetVertexCount(lengthOfLineRenderer);
         }
 
         public void OnMouseDown()
@@ -52,7 +67,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
 
         public void OnGUI()
         {
-            Drawing.DrawLine(gameObject.transform.position, Input.mousePosition, Color.black, 0.5f, true);
         }
 
         public void OnMouseExit()
@@ -104,11 +118,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
 
         public void Update()
         {
-           
-            Debug.Log(gameObject.transform.position + " to " + Input.mousePosition);
-            //if(selected.Count > 1)
-              //  Drawing.DrawLine(Registry.Instance.Orbs[selected[0]].go.transform.position, Input.mousePosition, Color.magenta, 10, true);
-            
+            var lineRenderer = GetComponent<LineRenderer>();
+            var screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+            lineRenderer.SetPosition(0, Camera.main.ScreenToWorldPoint(screenPoint));
+            lineRenderer.SetPosition(1, transform.position);
+            if (debug) Debug.Log(Camera.main.ScreenToWorldPoint(screenPoint) + " to " + transform.position);
+
+            if (selected.Count > 1)
+                Debug.Log("selected more than one");
+            //  Drawing.DrawLine(Registry.Instance.Orbs[selected[0]].go.transform.position, Input.mousePosition, Color.magenta, 10, true);
+
         }
     }
 }
