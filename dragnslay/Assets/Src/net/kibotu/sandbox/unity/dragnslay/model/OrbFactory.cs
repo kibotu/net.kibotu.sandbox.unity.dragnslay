@@ -26,10 +26,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
             orb.go = go;
             go.transform.position = orb.physicalProperty.position;
 
-            go.AddComponent<Orbitting>();
+            go.AddComponent<Rotating>();
             go.AddComponent<SendUnits>();
             go.AddComponent<SpawnUnits>();
-            go.AddComponent("SphereCollider");
+            go.AddComponent<SphereCollider>();
+
+            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            sphere.transform.localScale = new Vector3(10, 10, 10);
+            sphere.transform.parent = go.transform;
+            sphere.renderer.enabled = false;
+            sphere.layer = 2; // Raycast ignore
 
             Registry.Instance.Orbs.Add(go.GetInstanceID(), orb);
 
@@ -51,8 +57,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
             go.transform.position = plane.physicalProperty.position;
             go.transform.localRotation = plane.physicalProperty.rotation;
             go.transform.localScale = plane.physicalProperty.scalling;
-            
+
             plane.go = go;
+            go.AddComponent<SphereCollider>();
+            go.AddComponent<Rigidbody>();
+            go.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
             return plane;
         }
