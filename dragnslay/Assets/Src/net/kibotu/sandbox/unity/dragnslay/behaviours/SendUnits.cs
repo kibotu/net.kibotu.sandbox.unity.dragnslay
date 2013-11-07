@@ -14,6 +14,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
         private static bool isOver;
         private static List<int> selected;
         private int id;
+        private Color oldColor;
 
         public void Start()
         {
@@ -23,6 +24,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             isOver = false;
             id = gameObject.GetInstanceID();
             if(selected == null) selected = new List<int>();
+            oldColor = renderer.material.color;
         }
 
         private void initLineRender()
@@ -31,7 +33,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             Color c2 = Color.red;
             const int lengthOfLineRenderer = 2;
             var lineRenderer = gameObject.AddComponent<LineRenderer>();
-            lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+            // @see http://answers.unity3d.com/questions/57303/changing-replacement-shaders-at-runtime.html
+            lineRenderer.material = new Material(Resources.Load("Shaders/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
             lineRenderer.SetColors(c1, c2);
             lineRenderer.SetWidth(10F, 10F);
             lineRenderer.castShadows = false;
@@ -47,6 +50,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             if (isDragging && !selected.Contains(id))
             {
                 selected.Add(id);
+                renderer.material.color = new Color(1.5f,2.0f,1.5f,1.0f);
                 if (debug) Debug.Log("select " + id);
             }
         }
@@ -57,17 +61,20 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             if (isDragging && !selected.Contains(id))
             {
                 selected.Add(id);
+                renderer.material.color = new Color(1.5f, 2.0f, 1.5f, 1.0f);
                 if (debug) Debug.Log("select " + id);
             }
             else if(selected.Contains(id))
             {
                 selected.Remove(id);
-                if (debug) Debug.Log("deselect " + id);
+                renderer.material.color = oldColor;
+                if(debug) Debug.Log("deselect " + id);
             }
         }
 
-        public void OnGUI()
+        public void OnMouseDrag()
         {
+            isDragging = true;
         }
 
         public void OnMouseExit()
@@ -92,6 +99,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             for (int i = 0; i < selected.Count; ++i)
             {
                 if (debug) Debug.Log("deselect " + selected[i]);
+                Registry.Instance.Orbs[selected[i]].go.renderer.material.color = oldColor;
             }
             selected.Clear();
         }
@@ -124,18 +132,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
                         move.destination = destination.go.transform.FindChild("Sphere");
                     }
                 }
-              }
-
-            /*
-            if (Registry.Instance.Orbs.ContainsKey(id))
-            {
-                Orb parent = Registry.Instance.Orbs[id];
-                //Debug.Log(parent.id);
             }
-            else
-            {
-
-            }*/
 
             // SocketHandler.Instance.Emit("send", SocketHandler.Instance.createSendUnitsMessage());
         }
@@ -155,22 +152,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.scripts
             {
                 lineRenderer.SetVertexCount(0);
             }
-
-            if (Input.touchCount == 1)
-            {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-                    var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-
-                    RaycastHit hit;   
-
-                    if (collider && collider.Raycast(ray, out hit, 100.0f))
-                    {
-                        OnMouseDown();
-                    }
-                }
-            }
-
         }
     }
 }

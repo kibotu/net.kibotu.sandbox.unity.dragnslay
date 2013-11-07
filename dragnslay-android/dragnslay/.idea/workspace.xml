@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="blakeks" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/AndroidAsync" afterPath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/AndroidAsync" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" afterPath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\dragnslay\Assets\Src\net\kibotu\sandbox\unity\dragnslay\behaviours\Orbitting.cs" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/0a12eda15d852684994889d5fc1814c8" afterPath="$PROJECT_DIR$/assets/bin/Data/0a12eda15d852684994889d5fc1814c8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/4bdd7c5d8f899ac4bb8f1455d2252cbd" afterPath="$PROJECT_DIR$/assets/bin/Data/4bdd7c5d8f899ac4bb8f1455d2252cbd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/6763404d12cbe074e9658fcf7441249b" afterPath="$PROJECT_DIR$/assets/bin/Data/6763404d12cbe074e9658fcf7441249b" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/757dd5b8a3b010b47863627447fafe28" afterPath="$PROJECT_DIR$/assets/bin/Data/757dd5b8a3b010b47863627447fafe28" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/76675adc90944e3418e93ea6b553920d" afterPath="$PROJECT_DIR$/assets/bin/Data/76675adc90944e3418e93ea6b553920d" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/768a9bfd9fbed4a4a80d372a80dea1b6" afterPath="$PROJECT_DIR$/assets/bin/Data/768a9bfd9fbed4a4a80d372a80dea1b6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/81de12a0c94a3114cbe4804bc28caf49" afterPath="$PROJECT_DIR$/assets/bin/Data/81de12a0c94a3114cbe4804bc28caf49" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/834370d3617d266479bc76c3e0b8c733" afterPath="$PROJECT_DIR$/assets/bin/Data/834370d3617d266479bc76c3e0b8c733" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll.mdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll.mdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll.mdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll.mdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/../../dragnslay/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/UnityEngine.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/UnityEngine.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/dadb93f408f81f44db610dbdbad76bf1" afterPath="$PROJECT_DIR$/assets/bin/Data/dadb93f408f81f44db610dbdbad76bf1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/mainData" afterPath="$PROJECT_DIR$/assets/bin/Data/mainData" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/unity-classes.jar" afterPath="$PROJECT_DIR$/libs/unity-classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Resources/unity_builtin_extra" afterPath="$PROJECT_DIR$/assets/bin/Data/Resources/unity_builtin_extra" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unity_export.apk" afterPath="$PROJECT_DIR$/../unity_export.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/0000000000000000f000000000000000" afterPath="$PROJECT_DIR$/assets/bin/Data/0000000000000000f000000000000000" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript-firstpass-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript-firstpass.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../dragnslay/Assembly-UnityScript.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/CameraRelativeControl.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/CameraRelativeControl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/FirstPersonControl.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/FirstPersonControl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/FollowTransform.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/FollowTransform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game1vs1.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/Joystick.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/Joystick.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Background.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Background.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Detail.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Detail.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap AlphaTest.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap AlphaTest.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Only.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Only.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Reflective.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Reflective.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Particle Shaders/Mobile Multiply Culled.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Particle Shaders/Mobile Multiply Culled.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Transparent Vertex Color.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Transparent Vertex Color.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Vertex Colored.shader" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Vertex Colored.shader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/ObliqueNear.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/ObliqueNear.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/PlayerConnectionConfigFile" afterPath="$PROJECT_DIR$/assets/bin/Data/PlayerConnectionConfigFile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/PlayerRelativeControl.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/PlayerRelativeControl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/RollABall.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/RollABall.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/RotationConstraint.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/RotationConstraint.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/behaviours/SendUnits.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/behaviours/SendUnits.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/SidescrollControl.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/SidescrollControl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/SmoothFollow2D.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/SmoothFollow2D.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/ZoomCamera.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/ZoomCamera.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/dragnslay-csharp.sln" afterPath="$PROJECT_DIR$/../../dragnslay/dragnslay-csharp.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/dragnslay.sln" afterPath="$PROJECT_DIR$/../../dragnslay/dragnslay.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/tapcontrol.js" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Standard Assets (Mobile)/Scripts/tapcontrol.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1382688294936" ignored="false" />
+    <file path="/Dummy.txt" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1383824691531" ignored="false" />
     <file path="/fragment.java" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1379188997234" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1379176499072" ignored="false" />
     <file path="/GameActivity.java" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1379246590603" ignored="false" />
@@ -34,6 +90,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -70,7 +127,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -92,7 +148,7 @@
       <file leaf-file-name="GameActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/unity3d/player/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="38" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.27224198">
+            <state line="50" column="106" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.6666667">
               <folding />
             </state>
           </provider>
@@ -162,7 +218,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,6 +294,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,11 +311,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Android Application.dragnslay-android">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -294,19 +350,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -333,6 +376,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -440,8 +496,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -454,20 +510,20 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4030612" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.69453925" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12348485" sideWeight="0.5955631" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12348485" sideWeight="0.30546075" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -627,7 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/unity3d/player/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="38" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.27224198">
+        <state line="50" column="106" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.6666667">
           <folding />
         </state>
       </provider>
