@@ -1,29 +1,28 @@
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public class Game1vs1 : MonoBehaviour {
 
-        static void createWorld()
+        static void CreateWorld()
         {
-            float scale = 15;
+            const float scale = 50;
 
-            Orb island1 = OrbFactory.createIsland();
-            island1.go.transform.position = new Vector3(50, 50, 0);
-            island1.go.transform.localScale = new Vector3(scale, scale, scale / 2);
+            var island1 = GameObjectFactory.CreateIsland();
+            island1.transform.position = new Vector3(50, 50, 0);
+            island1.transform.localScale = new Vector3(scale, scale, scale);
 
-            Orb island2 = OrbFactory.createIsland();
-            island2.go.transform.Translate(50, 350  , 0);
-            island2.go.transform.localScale = new Vector3(scale, scale, scale / 2);
+            var island2 = GameObjectFactory.CreateIsland();
+            island2.transform.Translate(50, 350  , 0);
+            island2.transform.localScale = new Vector3(scale, scale, scale);
 
-            Orb island3 = OrbFactory.createIsland();
-            island3.go.transform.position = new Vector3(400, 50, 0);
-            island3.go.transform.localScale = new Vector3(scale, scale, scale / 2);
+            var island3 = GameObjectFactory.CreateIsland();
+            island3.transform.position = new Vector3(400, 50, 0);
+            island3.transform.localScale = new Vector3(scale, scale, scale);
 
-            Orb island4 = OrbFactory.createIsland();
-            island4.go.transform.position = new Vector3(400, 350, 0);
-            island4.go.transform.localScale = new Vector3(scale, scale, scale / 2);
+            var island4 = GameObjectFactory.CreateIsland();
+            island4.transform.position = new Vector3(400, 350, 0);
+            island4.transform.localScale = new Vector3(scale, scale, scale);
 
             //Planet [] p = new Planet[10] { n	ew Planet() };
             // add planets to stage
@@ -33,11 +32,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             // touch events
         }
 
-        void Start () {
-            createWorld();
+        public void Start () {
+            CreateWorld();
         }
-	
-        void Update () {
+
+        public void Update()
+        {
         }
     }
 }
