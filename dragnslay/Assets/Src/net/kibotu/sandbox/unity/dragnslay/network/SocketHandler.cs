@@ -16,8 +16,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         {
             Online, Offline
         }
-
+         #if UNITY_ANDROID && !UNITY_EDITOR
         private AndroidJavaClass _socket;
+         #endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
         private string serverIp;
