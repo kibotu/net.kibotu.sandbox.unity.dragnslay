@@ -29,8 +29,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             messageQueue = new Queue<MessageData>();
             connectionState = ConnectionState.Disconnected;
             networkState = NetworkState.Offline;
-            
-            serverIp = "http://192.168.198.50:3000";
+
+           // serverIp = "http://192.168.198.50:3000"; 
+            serverIp = "http://192.168.178.114:3000/";
             
             #if UNITY_ANDROID && !UNITY_EDITOR
             AndroidJNIHelper.debug = true;
@@ -61,7 +62,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public void Emit(string name, string message)
         {
             var msg = new MessageData {name = name, message = message};
-            Debug.Log("Enqueue " + msg);
+            Debug.Log("Enqueue " + msg.name + " " + msg.message);
             messageQueue.Enqueue(msg);
         }
 

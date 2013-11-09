@@ -49,6 +49,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             var uid = UidGenerator.GetNewUid();
             var go = new GameObject("Papership_" + uid);
             AddMeshToGameObject(go, "meshes/papership", "meshes/paperplant");
+            go.AddComponent<MetaData>().uid = uid;
             go.AddComponent<SphereCollider>();
             go.AddComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // no physic reactions 
             go.AddComponent<LifeData>();

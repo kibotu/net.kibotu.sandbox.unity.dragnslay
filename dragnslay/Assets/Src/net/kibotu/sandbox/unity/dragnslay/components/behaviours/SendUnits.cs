@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using UnityEngine;
@@ -120,6 +121,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                 var source = Registry.Instance.GameObjects[selected[i]];
                 var destination = Registry.Instance.GameObjects[selected[selected.Count - 1]];
 
+                var toMovePlanes = new List<int>();
+
                 foreach (var pair in Registry.Instance.Planes)
                 {
                     if (debug) Debug.Log("bla: " + (source.transform == Registry.Instance.Planes[pair.Key].transform.parent));
@@ -130,10 +133,10 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                         var move = plane.GetComponent<Move>();
                         move.speed = 25;
                         move.destination = destination.transform.FindChild("Sphere");
-
-                        //SocketHandler.Instance.Emit("send", SocketHandler.Instance.CreateSendUnitsMessage(destination.GetInstanceID(), selected.ToArray()));
+                        toMovePlanes.Add(plane.GetComponent<MetaData>().uid);
                     }
                 }
+                if (toMovePlanes.Count > 0) SocketHandler.Instance.Emit("send", SocketHandler.Instance.CreateSendUnitsMessage(destination.GetInstanceID(), toMovePlanes.ToArray()));
             }
         }
 
