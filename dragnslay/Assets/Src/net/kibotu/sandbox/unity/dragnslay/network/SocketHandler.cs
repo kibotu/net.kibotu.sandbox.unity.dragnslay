@@ -7,29 +7,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
     class SocketHandler : MonoBehaviour
     {
-        public enum ConnectionState
-        {
-            Connected, Disconnected
-        }
-
-        public enum NetworkState
-        {
-            Online, Offline
-        }
          #if UNITY_ANDROID && !UNITY_EDITOR
         private AndroidJavaClass _socket;
          #endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
         private string serverIp;
-        private ConnectionState connectionState;
-        private NetworkState networkState;
 
         public void Awake()
         {
             messageQueue = new Queue<MessageData>();
-            connectionState = ConnectionState.Disconnected;
-            networkState = NetworkState.Offline;
 
            // serverIp = "http://192.168.198.50:3000"; 
             serverIp = "http://192.168.178.114:3000/";
@@ -38,11 +25,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
-                _socket = new AndroidJavaClass("net.kibotu.sandbox.unity.android.network.SocketHandler");
+                _socket = new AndroidJavaClass(" net.kibotu.sandbox.chat.client.android.network");
                 Debug.Log("Trying to connect to server: " + serverIp);
                 _socket.CallStatic("connect", serverIp);
             }
-            #endif
+#endif
         }
 
         public static SocketHandler Instance
