@@ -1,48 +1,28 @@
-using Assets.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 
-namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
+namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public class Game1vs1 : MonoBehaviour {
-	
-        public Texture btnTexture;
-	
-        void OnGUI() {
-         
-        }
 
-        void Awake()
+        static void CreateWorld()
         {
-        }
+            const float scale = 50;
 
-        static void createWorld()
-        {
+            var island1 = GameObjectFactory.CreateIsland();
+            island1.transform.position = new Vector3(50, 50, 0);
+            island1.transform.localScale = new Vector3(scale, scale, scale);
 
-            //ClientSocket.Instance.Connect("http://127.0.0.1:3000/");
+            var island2 = GameObjectFactory.CreateIsland();
+            island2.transform.Translate(50, 350  , 0);
+            island2.transform.localScale = new Vector3(scale, scale, scale);
 
-            /*ClientSocket.Instance.On("message", (data) =>
-            {
-                if (data != null)
-                {
-                    Debug.Log("received message : " + data); 
-                }
-            });*/
+            var island3 = GameObjectFactory.CreateIsland();
+            island3.transform.position = new Vector3(400, 50, 0);
+            island3.transform.localScale = new Vector3(scale, scale, scale);
 
-
-
-            Orb island1 = OrbFactory.createIsland();
-            island1.go.transform.position = new Vector3(1, 1, 0);
-
-            Orb island2 = OrbFactory.createIsland();
-            island2.go.transform.Translate(1, 20, 0);
-
-
-            Orb island3 = OrbFactory.createIsland();
-            island3.go.transform.position = new Vector3(20, 1, 0);
-
-            Orb island4 = OrbFactory.createIsland();
-            island4.go.transform.position = new Vector3(20, 20, 0);
-            
+            var island4 = GameObjectFactory.CreateIsland();
+            island4.transform.position = new Vector3(400, 350, 0);
+            island4.transform.localScale = new Vector3(scale, scale, scale);
 
             //Planet [] p = new Planet[10] { n	ew Planet() };
             // add planets to stage
@@ -52,38 +32,12 @@ namespace Assets.net.kibotu.sandbox.unity.dragnslay.game
             // touch events
         }
 
-        void Start () {
-            createWorld();
-
-            /*Particle[] particles = particleEmitter.particles;
-	    int i = 0;
-	    while (i < particles.Length) {
-	        float yPosition = Mathf.Sin(Time.time) * Time.deltaTime;
-	        particles[i].position += new Vector3(0, yPosition, 0);
-	        particles[i].color = Color.red;
-	        particles[i].size = Mathf.Sin(Time.time) * 0.2F;
-	        i++;
-	    }
-	    particleEmitter.particles = particles;
-		
-	  	originalColor = renderer.sharedMaterial.color;*/
+        public void Start () {
+            CreateWorld();
         }
-	
-        void Update () {
-           
-            /*foreach (Touch touch in Input.touches) {
-			Debug.Log(touch.position);
-			if (touch.phase == TouchPhase.Began) {
-					// Construct a ray from the current touch coordinates
-				var ray = Camera.main.ScreenPointToRay (touch.position);
-				if (Physics.Raycast (ray)) {
-					// Create a particle if hit
-					Instantiate (particle, transform.position, transform.rotation);
-					Debug.Log(touch.position);
-				}
-				Debug.Log(touch.position);
-			}
-		}*/
+
+        public void Update()
+        {
         }
     }
 }

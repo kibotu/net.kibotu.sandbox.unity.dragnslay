@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/AndroidAsync" vcs="Git" />
   </component>
 </project>
 
