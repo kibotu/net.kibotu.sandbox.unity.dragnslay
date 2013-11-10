@@ -24,12 +24,10 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" afterPath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" />
-    </list>
+    <list default="true" id="2ff0977f-328e-464b-9377-c52630637c20" name="Default" comment="" />
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1384085497959" ignored="false" />
+    <file path="/Dummy.txt" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1384102090813" ignored="false" />
     <file path="/fragment.java" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1384083975932" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1383952470664" ignored="false" />
     <file path="/GameActivity.java" changelist="2ff0977f-328e-464b-9377-c52630637c20" time="1384039645746" ignored="false" />
@@ -132,22 +130,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UdpSocketClient.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpSocketClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="39" selection-start="3413" selection-end="3413" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#2959#3329#0" expanded="true" />
-                <element signature="e#3318#3319#0" expanded="true" />
-                <element signature="e#3573#4072#0" expanded="true" />
-                <element signature="e#3674#4046#0" expanded="true" />
-                <element signature="e#4027#4028#0" expanded="true" />
-                <element signature="e#4061#4062#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="JSONObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/org/json/JSONObject.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,8 +142,10 @@
       <file leaf-file-name="ChatClient.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="56" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.3761468">
+            <state line="43" column="35" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.21444954">
               <folding>
+                <element signature="e#1090#1254#0" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
                 <element signature="e#1858#2085#0" expanded="true" />
                 <element signature="e#2074#2075#0" expanded="true" />
                 <element signature="e#2145#2354#0" expanded="true" />
@@ -171,6 +155,46 @@
                 <element signature="e#2681#3130#0" expanded="true" />
                 <element signature="e#3119#3120#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="16" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UdpSocketClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpSocketClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="52" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="60" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3354#3576#0" expanded="true" />
+                <element signature="e#3553#3554#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidSocketHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AndroidSocketHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="39" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,14 +224,14 @@
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/Logger.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/LogcatLogger.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/asynctasks/Reachability.java" />
-        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AndroidSocketHandler.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpClient.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/DatagramSocketListener.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AsyncDatagramSocketClient.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/legacy/DatagramSocketListener.java" />
-        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/legacy/AsyncDatagramSocketClient.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpSocketClient.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AndroidSocketHandler.java" />
         <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java" />
       </list>
     </option>
@@ -247,7 +271,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -372,6 +395,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,11 +414,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -437,6 +461,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -463,19 +500,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -701,18 +725,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="56" selection-start="2349" selection-end="2349" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1090#1254#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1858#2085#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+            <element signature="e#2145#2354#0" expanded="true" />
+            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="e#2415#2626#0" expanded="true" />
+            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#2681#3130#0" expanded="true" />
+            <element signature="e#3119#3120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/java/net/DatagramPacket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="19" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.21444954">
-          <folding />
-        </state>
+        <state line="26" column="19" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.21444954" />
       </provider>
     </entry>
     <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="506" column="23" selection-start="18212" selection-end="18212" vertical-scroll-proportion="0.19380733">
-          <folding />
-        </state>
+        <state line="506" column="23" selection-start="18212" selection-end="18212" vertical-scroll-proportion="0.19380733" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/AndroidManifest.xml">
@@ -738,21 +776,12 @@
     </entry>
     <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/android/os/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="80" selection-start="4239" selection-end="4239" vertical-scroll-proportion="0.43233946">
-          <folding />
-        </state>
+        <state line="105" column="80" selection-start="4239" selection-end="4239" vertical-scroll-proportion="0.43233946" />
       </provider>
     </entry>
     <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/java/net/DatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="11" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -771,28 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AndroidSocketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="95" selection-start="392" selection-end="392" vertical-scroll-proportion="0.13646789">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="42" selection-start="4695" selection-end="4695" vertical-scroll-proportion="0.68233943">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1439#3610#0" expanded="true" />
-            <element signature="e#1627#1913#0" expanded="true" />
-            <element signature="e#1890#1891#0" expanded="true" />
-            <element signature="e#3069#3302#0" expanded="true" />
-            <element signature="e#3279#3280#0" expanded="true" />
-            <element signature="e#3595#3596#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/org/json/JSONObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="169" column="11" selection-start="7139" selection-end="7139" vertical-scroll-proportion="0.0">
@@ -800,24 +807,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AndroidSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="39" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="60" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3354#3576#0" expanded="true" />
+            <element signature="e#3553#3554#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="16" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpSocketClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="39" selection-start="3413" selection-end="3413" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#2959#3329#0" expanded="true" />
-            <element signature="e#3318#3319#0" expanded="true" />
-            <element signature="e#3573#4072#0" expanded="true" />
-            <element signature="e#3674#4046#0" expanded="true" />
-            <element signature="e#4027#4028#0" expanded="true" />
-            <element signature="e#4061#4062#0" expanded="true" />
-          </folding>
+        <state line="31" column="52" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="56" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.3761468">
+        <state line="43" column="35" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.21444954">
           <folding>
+            <element signature="e#1090#1254#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
             <element signature="e#1858#2085#0" expanded="true" />
             <element signature="e#2074#2075#0" expanded="true" />
             <element signature="e#2145#2354#0" expanded="true" />
