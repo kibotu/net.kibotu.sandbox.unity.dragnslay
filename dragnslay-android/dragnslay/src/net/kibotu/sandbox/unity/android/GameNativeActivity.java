@@ -10,6 +10,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import com.koushikdutta.async.AsyncServer;
 import com.unity3d.player.UnityPlayer;
+import net.kibotu.sandbox.chat.client.android.logging.LogcatLogger;
+import net.kibotu.sandbox.chat.client.android.logging.Logger;
+import net.kibotu.sandbox.chat.client.android.network.SocketClient;
+import net.kibotu.sandbox.chat.client.android.network.UdpSocketClient;
+import net.kibotu.sandbox.unity.android.network.AndroidUnitySocketHandlerProxy;
+
+import static net.kibotu.sandbox.chat.client.android.logging.Logger.Level.DEBUG;
 
 public class GameNativeActivity extends NativeActivity {
     protected UnityPlayer mUnityPlayer;        // don't change the name of this variable; referenced from native code
@@ -19,6 +26,10 @@ public class GameNativeActivity extends NativeActivity {
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+
+        Logger.init(new LogcatLogger(), GameActivity.class.getSimpleName(), DEBUG);
+        SocketClient.init(new AndroidUnitySocketHandlerProxy());
+        UdpSocketClient.init(new AndroidUnitySocketHandlerProxy());
 
         getWindow().takeSurface(null);
         setTheme(android.R.style.Theme_NoTitleBar_Fullscreen);

@@ -12,22 +12,23 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
          #endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
-        private string serverIp;
+        private string host;
+        private int port;
 
         public void Awake()
         {
             messageQueue = new Queue<MessageData>();
 
            // serverIp = "http://192.168.198.50:3000"; 
-            serverIp = "http://192.168.178.114:3000/";
-            
-            #if UNITY_ANDROID && !UNITY_EDITOR
+            host = "178.0.89.213";
+            port = 1337;
+
+#if UNITY_ANDROID && !UNITY_EDITOR
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
-                _socket = new AndroidJavaClass(" net.kibotu.sandbox.chat.client.android.network");
-                Debug.Log("Trying to connect to server: " + serverIp);
-                _socket.CallStatic("connect", serverIp);
+                _socket = new AndroidJavaClass("net.kibotu.sandbox.chat.client.android.network.SocketClient");
+                _socket.CallStatic("connect", host, port);
             }
 #endif
         }
@@ -63,7 +64,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public JsonObject CreateSendUnitsMessage(int target, int[] ships)
         {
             return new JsonObject{
-                {"name", "move-units"},
+                {"message", "move-units"},
                 {"ships", ships},
                 {"target", target}
             };
