@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using UnityEngine;
 
@@ -136,7 +137,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                         toMovePlanes.Add(plane.GetComponent<MetaData>().uid);
                     }
                 }
-                if (toMovePlanes.Count > 0) SocketHandler.Instance.Emit("send", SocketHandler.Instance.CreateSendUnitsMessage(destination.GetInstanceID(), toMovePlanes.ToArray()));
+                if (toMovePlanes.Count > 0) SocketHandler.Instance.Emit("send", PackageFactory.CreateSendUnitsMessage(destination.GetInstanceID(), toMovePlanes.ToArray()));
             }
         }
 

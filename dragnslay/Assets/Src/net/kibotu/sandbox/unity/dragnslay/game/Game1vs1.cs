@@ -1,10 +1,14 @@
+using System.Collections;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+using SimpleJson;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
-    public class Game1vs1 : MonoBehaviour {
-
-        static void CreateWorld()
+    public class Game1vs1 : Game {
+        
+        protected override void CreateWorld()
         {
             const float scale = 50;
 
@@ -28,16 +32,37 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             // add planets to stage
 
             // spawn ships
-
-            // touch events
         }
 
-        public void Start () {
-            CreateWorld();
-        }
-
-        public void Update()
+        public override void OnStringEvent(string jsonMessage)
         {
+            Debug.Log("Game1vs1 " + jsonMessage);
+
+            var search = (IDictionary)MiniJSON.jsonDecode(jsonMessage);
+            var message = search["message"];
+
+            if (message.Equals("move-units"))
+            {
+                Debug.Log("move units");
+            } 
+            else if (message.Equals("spawn-units"))
+            {
+                Debug.Log("spawn units");
+            }
+            else if (message.Equals("Welcome!"))
+            {
+                Debug.Log(search["uid"]);
+                SocketHandler.Instance.SendMessage("send", PackageFactory.CreateJoinQueueMessage((string)search["uid"]));
+            }
+            else
+            {
+                // todo more events 
+            }
+        }
+
+        public override void OnJSONEvent(string message)
+        {
+            Debug.Log("Game1vs1 json " + message);
         }
     }
 }
