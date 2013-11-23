@@ -7,10 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import com.koushikdutta.async.AsyncServer;
 import com.unity3d.player.UnityPlayer;
-import net.kibotu.sandbox.chat.client.android.network.SocketClient;
-import net.kibotu.sandbox.unity.android.network.AndroidUnitySocketHandlerProxy;
 
 public class GameActivity extends Activity {
     private UnityPlayer mUnityPlayer;
@@ -21,8 +18,6 @@ public class GameActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-        SocketClient.init(new AndroidUnitySocketHandlerProxy());
 
         mUnityPlayer = new UnityPlayer(this);
         if (mUnityPlayer.getSettings().getBoolean("hide_status_bar", true))
@@ -41,8 +36,6 @@ public class GameActivity extends Activity {
 
     protected void onDestroy() {
         mUnityPlayer.quit();
-        // important destroy async server on application stop
-        AsyncServer.getDefault().stop();
         super.onDestroy();
     }
 

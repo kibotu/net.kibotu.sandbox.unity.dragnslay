@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using SimpleJson;
 using UnityEngine;
@@ -7,29 +8,36 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
     class SocketHandler : MonoBehaviour
     {
-         #if UNITY_ANDROID && !UNITY_EDITOR
+        public event Action<String> OnConnectEvent;
+        public event Action<String> OnJSONEvent;
+        public event Action<String> OnStringEvent;
+        public event Action<String> OnConnectionFailedEvent;
+        public event Action<String> OnReconnectEvent;
+        public event Action<String> OnErrorEvent;
+        public event Action<String> OnDisconnectEvent;
+
+        #if UNITY_ANDROID && !UNITY_EDITOR
         private AndroidJavaClass _socket;
-         #endif
+        #endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
-        private string serverIp;
 
         public void Awake()
         {
             messageQueue = new Queue<MessageData>();
+        }
 
-           // serverIp = "http://192.168.198.50:3000"; 
-            serverIp = "http://192.168.178.114:3000/";
-            
+        public void Connect(string host, int port)
+        {
             #if UNITY_ANDROID && !UNITY_EDITOR
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
-                _socket = new AndroidJavaClass(" net.kibotu.sandbox.chat.client.android.network");
-                Debug.Log("Trying to connect to server: " + serverIp);
-                _socket.CallStatic("connect", serverIp);
+                _socket = new AndroidJavaClass("net.kibotu.sandbox.chat.client.android.network.SocketClient");
+                // System.Threading.Thread(_socket.CallStatic("connect", host, port));
+                _socket.CallStatic("connect", host, port);
             }
-#endif
+            #endif
         }
 
         public static SocketHandler Instance
@@ -54,60 +62,40 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             messageQueue.Enqueue(msg);
         }
 
-        /// <summary>Sending Units from all sources to target destination.</summary>
-        /// 
-        /// <param name="ships">All send ships.</param>
-        /// <param name="target">Target destination.</param>
-        /// 
-        /// <returns>Generated JsonObject.</returns>
-        public JsonObject CreateSendUnitsMessage(int target, int[] ships)
+        public void ConnectCallback(string error)
         {
-            return new JsonObject{
-                {"name", "move-units"},
-                {"ships", ships},
-                {"target", target}
-            };
-        }
-
-        public JsonObject CreateHelloWorldMessage()
-        {
-            return new JsonObject
-            {
-                {"message", "hallo welt"},
-                {"username", "android"},
-                {"name", "message"},
-            };
+            OnConnectEvent(error);
         }
 
         public void StringCallback(string message)
         {
-            Debug.Log("StringCallback " + message);
+            // remove pointless json array artefact [ ] 
+            OnStringEvent(message.Substring(1, message.Length - 2));
         }
 
         public void JSONCallback(string message)
         {
-            Debug.Log("JSONCallback " + message);
-        }
-
-        public void DisconnectCallback(string error)
-        {
-            Debug.Log("DisconnectCallback " + error);
-        }
-
-        public void ErrorCallback(string error)
-        {
-            Debug.Log("ErrorCallback " + error);
+            OnJSONEvent(message);
         }
 
         public void ReconnectCallback(string message)
         {
-            // message always null
-            Debug.Log("ReconnectCallback");
+            OnReconnectEvent(message);
+        }
+
+        public void DisconnectCallback(string error)
+        {
+            OnDisconnectEvent(error);
+        }
+
+        public void ErrorCallback(string error)
+        {
+            OnErrorEvent(error);
         }
 
         public void ConnectionFailedCallback(string message)
         {
-            Debug.Log("ConnectionFailedCallback" + message);
+            OnConnectionFailedEvent(message);
         }
 
         public void Update()

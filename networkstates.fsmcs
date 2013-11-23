@@ -1,0 +1,29 @@
+<sm:StateMachine xmlns:sm="http://www.stateforge.com/StateMachineDotNet-v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.stateforge.com/StateMachineDotNet-v1                                      http://www.stateforge.com/xsd/StateMachineDotNet-v1.xsd">
+    <!-- general settings -->
+    <settings asynchronous="false" namespace="Company.Product">
+        <object instance="myBusinessObject" class="BusinessObject"/>
+    </settings>
+    <!-- events -->
+    <events>
+        <eventSource name="internal">
+            <event id="connect" name="connect">
+                <parameter name="host" type="string"/>
+                <parameter name="port" type="int"/>
+            </event>
+        </eventSource>
+        <eventSource name="external">
+            <event id="eventToEdit"/>
+        </eventSource>
+    </events>
+    <!-- States -->
+    <state name="NetworkState">
+        <state name="Initializing">
+            <transition event="connect" nextState="Connecting">
+                <action>network.connect(ip, port)</action>
+            </transition>
+        </state>
+        <state name="Connecting"/>
+        <state name="Connected"/>
+        <state name="Disconnected"/>
+    </state>
+</sm:StateMachine>
