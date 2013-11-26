@@ -68,11 +68,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             world.AddComponent<WorldData>();
             SocketHandler.Instance.OnStringEvent += world.AddComponent<Game1vs1>().OnStringEvent;
 
-            // serverIp = "http://192.168.198.50:3000"; 
-            //host = "178.0.89.213";
-
-            SocketHandler.Instance.Connect("172.16.2.141", 1337); // wooga guest wlan ip
-            // SocketHandler.Instance.Connect("172.19.253.37", 1337); 
+            // SocketHandler.Instance.Connect("172.16.2.141", 1337);    // wooga guest wlan ip
+            // SocketHandler.Instance.Connect("192.168.2.101", 1337);       // lan home
+            SocketHandler.Instance.Connect("192.168.178.114", 1337);       // wlan ini home
         }
 
         public void OnConnected(string error)

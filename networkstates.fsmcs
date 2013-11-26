@@ -16,14 +16,24 @@
         </eventSource>
     </events>
     <!-- States -->
-    <state name="NetworkState">
+    <state name="ClientNetworkState">
         <state name="Initializing">
             <transition event="connect" nextState="Connecting">
                 <action>network.connect(ip, port)</action>
             </transition>
         </state>
-        <state name="Connecting"/>
-        <state name="Connected"/>
-        <state name="Disconnected"/>
+        <state name="Connecting">
+            <transition event="connectCallback" nextState="Connected"/>
+        </state>
+        <state name="Connected">
+            <transition event="timeout" nextState="Disconnected"/>
+            <transition event="disconnect" nextState="Disconnected"/>
+        </state>
+        <state name="Disconnected">
+            <transition event="reconnect" nextState="Reconnecting"/>
+        </state>
+        <state name="Reconnecting">
+            <transition event="reconnectedCallback" nextState="Connected"/>
+        </state>
     </state>
 </sm:StateMachine>

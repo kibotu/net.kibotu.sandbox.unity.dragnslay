@@ -143,6 +143,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Update()
         {
+
             // line rendering
             var lineRenderer = GetComponent<LineRenderer>();
             if (selected.Count > 1 && selected.Contains(id))
@@ -151,6 +152,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, Registry.Instance.GameObjects[selected[selected.Count - 1]].transform.position);
                 lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
+                
             }
             else
             {

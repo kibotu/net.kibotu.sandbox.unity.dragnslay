@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view;
-using SimpleJson;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
