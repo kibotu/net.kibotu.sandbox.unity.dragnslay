@@ -47,14 +47,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             error.color = Color.grey;
 
 
-        }
-
-        public void OnPlayButtonClicked(UIButton button)
-        {
             #if UNITY_ANDROID && !UNITY_EDITOR
                 AndroidJNI.AttachCurrentThread();
                 AndroidJNIHelper.debug = false;
             #endif
+        }
+
+        public void OnPlayButtonClicked(UIButton button)
+        {
 
             SocketHandler.Instance.OnConnectEvent += OnConnected;
             SocketHandler.Instance.OnJSONEvent += OnJSONEvent;
@@ -69,8 +69,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             SocketHandler.Instance.OnStringEvent += world.AddComponent<Game1vs1>().OnStringEvent;
 
             // SocketHandler.Instance.Connect("172.16.2.141", 1337);    // wooga guest wlan ip
-            // SocketHandler.Instance.Connect("192.168.2.101", 1337);       // lan home
-            SocketHandler.Instance.Connect("192.168.178.114", 1337);       // wlan ini home
+            SocketHandler.Instance.Connect("192.168.2.101", 1337);       // lan home
+            // SocketHandler.Instance.Connect("192.168.178.114", 1337);       // wlan ini home
         }
 
         public void OnConnected(string error)

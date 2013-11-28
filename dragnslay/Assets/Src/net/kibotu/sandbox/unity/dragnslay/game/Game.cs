@@ -40,7 +40,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 startTime -= 1f;
                 ++turn;
 
-                Debug.Log("game loop " + turn);
+                //Debug.Log("game loop " + turn);
             }
         }
 

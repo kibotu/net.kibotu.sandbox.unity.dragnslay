@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/AndroidAsync/AndroidAsync/AndroidAsync.iml" filepath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/AndroidAsync/AndroidAsync/AndroidAsync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../chat/ChatServer/ChatServer.iml" filepath="$PROJECT_DIR$/../../../../chat/ChatServer/ChatServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/androidclient.iml" filepath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/androidclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/dragnslay.iml" filepath="$PROJECT_DIR$/dragnslay.iml" />
     </modules>

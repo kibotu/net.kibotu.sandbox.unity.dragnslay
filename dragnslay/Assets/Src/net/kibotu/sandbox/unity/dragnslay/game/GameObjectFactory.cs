@@ -27,7 +27,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             var go = new GameObject("Island_" + uid);
             AddMeshToGameObject(go, "meshes/iland", "meshes/iland");
             go.AddComponent<MetaData>().uid = uid;
-            go.AddComponent<SphereCollider>();
+            go.AddComponent<SphereCollider>().radius += 0.7f;
             go.AddComponent<Rotating>();
             go.AddComponent<SpawnUnits>();
             go.AddComponent<SendUnits>();
