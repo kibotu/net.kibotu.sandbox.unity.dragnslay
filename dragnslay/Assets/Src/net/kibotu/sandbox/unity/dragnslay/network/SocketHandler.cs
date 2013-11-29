@@ -40,6 +40,18 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             #endif
         }
 
+        public void Connect(int port)
+        {
+            #if UNITY_ANDROID && !UNITY_EDITOR
+            AndroidJNIHelper.debug = true;
+            if (_socket == null)
+            {
+                _socket = new AndroidJavaClass("net.kibotu.sandbox.chat.client.android.network.SocketClient");
+                _socket.CallStatic("connect", port);
+            }
+            #endif
+        }
+
         public static SocketHandler Instance
         {
             get { return _instance ?? (_instance = new GameObject("SocketHandler").AddComponent<SocketHandler>()); }

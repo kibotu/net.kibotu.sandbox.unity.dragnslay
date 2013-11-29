@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using SimpleJson;
 using UnityEngine;
@@ -34,35 +36,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             // spawn ships
         }
 
+        const float scale = 50;
+
         public void Start()
         {
-            const float scale = 50;
-            //start player 1
-            var island1 = GameObjectFactory.CreateIsland();
-            island1.transform.position = new Vector3(-150, 200, -20);
-            island1.transform.localScale = new Vector3(scale, scale, scale);
-            //start player 2
-            var island2 = GameObjectFactory.CreateIsland();
-            island2.transform.position = new Vector3(550, 200, -20);
-            island2.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island3 = GameObjectFactory.CreateIsland();
-            island3.transform.position = new Vector3(70, 50, 0);
-            island3.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island4 = GameObjectFactory.CreateIsland();
-            island4.transform.position = new Vector3(70, 350, 0);
-            island4.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island5 = GameObjectFactory.CreateIsland();
-            island5.transform.position = new Vector3(310, 50, 0);
-            island5.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island6 = GameObjectFactory.CreateIsland();
-            island6.transform.position = new Vector3(310, 350, 0);
-            island6.transform.localScale = new Vector3(scale, scale, scale);
-
-
+            // do stuff on first start
         }
 
         public override void OnStringEvent(string jsonMessage)
@@ -75,16 +53,34 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             if (message.Equals("move-units"))
             {
                 Debug.Log("move units");
+                Debug.Log("move units " + message);
+                Debug.Log("move units " + search["target"]);
+                Debug.Log("move units " + search["ships"]);
             } 
             else if (message.Equals("spawn-units"))
             {
                 Debug.Log("spawn units");
+                
             }
             else if (message.Equals("game-data"))
             {
-                Debug.Log("game data");
+                Debug.Log("Receiving Game Data.");
 
-                Debug.Log("game data: " + search);
+                var gameData = (Hashtable) search["game-data"];
+                var players = (ArrayList) gameData["players"];
+                foreach (Hashtable player in players)
+                {
+                    Debug.Log("game data " + Convert.ToInt32(player["uid"])); // uid
+                    var islands = (ArrayList) player["islands"];
+                    foreach (Hashtable island in islands)
+                    {
+                        var go = GameObjectFactory.CreateIsland(Convert.ToInt32(island["type"])); // island type
+                        go.GetComponent<SpawnUnits>().shipSpawnType = Convert.ToInt32(island["ship-type"]); // ship type
+                        var position = (ArrayList)island["position"]; // position
+                        go.transform.position = new Vector3(Convert.ToSingle(position[0]), Convert.ToSingle(position[1]), Convert.ToSingle(position[2])); 
+                        go.transform.localScale = new Vector3(scale, scale, scale);
+                    }
+                }
             }
             else if (message.Equals("Welcome!"))
             {

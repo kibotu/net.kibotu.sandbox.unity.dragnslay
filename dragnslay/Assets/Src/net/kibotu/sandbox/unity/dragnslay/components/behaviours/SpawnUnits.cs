@@ -7,11 +7,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
     public class SpawnUnits : MonoBehaviour
     {
         public float startTime;
+        public int shipSpawnType;
 
         // Use this for initialization
         void Start ()
         {
             startTime = 0;
+            shipSpawnType = 0;
         }
 	
         // Update is called once per frame

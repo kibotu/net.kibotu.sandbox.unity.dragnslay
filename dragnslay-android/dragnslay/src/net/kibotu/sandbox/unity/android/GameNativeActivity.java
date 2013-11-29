@@ -27,9 +27,9 @@ public class GameNativeActivity extends NativeActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
 
-        Logger.init(new LogcatLogger(), GameActivity.class.getSimpleName(), DEBUG);
-        SocketClient.init(new AndroidUnitySocketHandlerProxy());
-        UdpSocketClient.init(new AndroidUnitySocketHandlerProxy());
+        Logger.init(new LogcatLogger(this), GameActivity.class.getSimpleName(), DEBUG);
+        SocketClient.init(this, new AndroidUnitySocketHandlerProxy());
+        UdpSocketClient.init(this, new AndroidUnitySocketHandlerProxy());
 
         getWindow().takeSurface(null);
         setTheme(android.R.style.Theme_NoTitleBar_Fullscreen);

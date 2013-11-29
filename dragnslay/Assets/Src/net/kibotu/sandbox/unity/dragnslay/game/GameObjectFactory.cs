@@ -21,13 +21,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             renderer.material.mainTexture = Resources.Load(textureUrl, typeof(Texture)) as Texture;
         }
 
+        public static GameObject CreateIsland(int type)
+        {
+            Debug.Log("create island by type: " + type);
+            return CreateIsland();
+        }
+
         public static GameObject CreateIsland()
         {
             var uid = UidGenerator.GetNewUid();
             var go = new GameObject("Island_" + uid);
             AddMeshToGameObject(go, "meshes/iland", "meshes/iland");
             go.AddComponent<MetaData>().uid = uid;
-            go.AddComponent<SphereCollider>().radius += 0.7f;
+            go.AddComponent<SphereCollider>().radius += 1f;
             go.AddComponent<Rotating>();
             go.AddComponent<SpawnUnits>();
             go.AddComponent<SendUnits>();
