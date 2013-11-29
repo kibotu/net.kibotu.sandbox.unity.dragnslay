@@ -1,87 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="NetworkHelper" />
+        <option name="name" value="NetworkHelper" />
+        <option name="pid" value="" />
+      </filter>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="ChatClient" />
+        <option name="name" value="ChatClient" />
+        <option name="pid" value="" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ip" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/flexCompiler.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../chat/ChatServer/sockethandler.js" />
       <change type="DELETED" beforePath="D:\programming\chat\ChatServer\console.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/0000000000000000f000000000000000" afterPath="$PROJECT_DIR$/assets/bin/Data/0000000000000000f000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/012c2221cda58ba47a6cc56a3de6b3a2" afterPath="$PROJECT_DIR$/assets/bin/Data/012c2221cda58ba47a6cc56a3de6b3a2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/0a12eda15d852684994889d5fc1814c8" afterPath="$PROJECT_DIR$/assets/bin/Data/0a12eda15d852684994889d5fc1814c8" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/1144541eda5a5a048966ddb0b78afc3c" afterPath="$PROJECT_DIR$/assets/bin/Data/1144541eda5a5a048966ddb0b78afc3c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/1646ea858d436ef498c8dc4f96b48cbf" afterPath="$PROJECT_DIR$/assets/bin/Data/1646ea858d436ef498c8dc4f96b48cbf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/1a0a959dc69766348b1d942ef90dfb38" afterPath="$PROJECT_DIR$/assets/bin/Data/1a0a959dc69766348b1d942ef90dfb38" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/4bdd7c5d8f899ac4bb8f1455d2252cbd" afterPath="$PROJECT_DIR$/assets/bin/Data/4bdd7c5d8f899ac4bb8f1455d2252cbd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/4ea590536bd55e541b22a66635a98555" afterPath="$PROJECT_DIR$/assets/bin/Data/4ea590536bd55e541b22a66635a98555" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/6763404d12cbe074e9658fcf7441249b" afterPath="$PROJECT_DIR$/assets/bin/Data/6763404d12cbe074e9658fcf7441249b" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/76675adc90944e3418e93ea6b553920d" afterPath="$PROJECT_DIR$/assets/bin/Data/76675adc90944e3418e93ea6b553920d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/768a9bfd9fbed4a4a80d372a80dea1b6" afterPath="$PROJECT_DIR$/assets/bin/Data/768a9bfd9fbed4a4a80d372a80dea1b6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/81de12a0c94a3114cbe4804bc28caf49" afterPath="$PROJECT_DIR$/assets/bin/Data/81de12a0c94a3114cbe4804bc28caf49" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/834370d3617d266479bc76c3e0b8c733" afterPath="$PROJECT_DIR$/assets/bin/Data/834370d3617d266479bc76c3e0b8c733" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-CSharp.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript-firstpass.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Assembly-UnityScript.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Boo.Lang.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Boo.Lang.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Mono.Posix.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Mono.Posix.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/Mono.Security.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/Mono.Security.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/ProjectSettings/ProjectSettings.asset" afterPath="$PROJECT_DIR$/../../dragnslay/ProjectSettings/ProjectSettings.asset" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Configuration.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Configuration.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Core.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Core.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Runtime.Serialization.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Runtime.Serialization.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Security.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Security.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Xml.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/System.Xml.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/System.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/System.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/UnityEngine.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/UnityEngine.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/a5fef980df7f1f249a231bf6ea56cca4" afterPath="$PROJECT_DIR$/assets/bin/Data/a5fef980df7f1f249a231bf6ea56cca4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/d49a19dc8cd011840b7f375954b7da74" afterPath="$PROJECT_DIR$/assets/bin/Data/d49a19dc8cd011840b7f375954b7da74" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/df355b7df20673442b9d5e6283d60b15" afterPath="$PROJECT_DIR$/assets/bin/Data/df355b7df20673442b9d5e6283d60b15" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/ef504002a64efe14d99c02728c8198e5" afterPath="$PROJECT_DIR$/assets/bin/Data/ef504002a64efe14d99c02728c8198e5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/fa3e4d2078324c24984dda2595d2c251" afterPath="$PROJECT_DIR$/assets/bin/Data/fa3e4d2078324c24984dda2595d2c251" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/scenes/initscene.unity" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/scenes/initscene.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/mainData" afterPath="$PROJECT_DIR$/assets/bin/Data/mainData" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/mscorlib.dll.mdb" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/mscorlib.dll.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Managed/mscorlib.dll" afterPath="$PROJECT_DIR$/assets/bin/Data/Managed/mscorlib.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" afterPath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/sharedassets0.assets.split0" afterPath="$PROJECT_DIR$/assets/bin/Data/sharedassets0.assets.split0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/sharedassets0.assets.split1" afterPath="$PROJECT_DIR$/assets/bin/Data/sharedassets0.assets.split1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/sharedassets0.assets.split2" afterPath="$PROJECT_DIR$/assets/bin/Data/sharedassets0.assets.split2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/unity default resources" afterPath="$PROJECT_DIR$/assets/bin/Data/unity default resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/unity-classes.jar" afterPath="$PROJECT_DIR$/libs/unity-classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/Resources/unity_builtin_extra" afterPath="$PROJECT_DIR$/assets/bin/Data/Resources/unity_builtin_extra" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/53295532cf2b99449b9e023e866606a3" afterPath="$PROJECT_DIR$/assets/bin/Data/53295532cf2b99449b9e023e866606a3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java" afterPath="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game1vs1.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/GameObjectFactory.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/GameObjectFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/menu/view/MainMenu.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/menu/view/MainMenu.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/network/PackageFactory.cs" afterPath="$PROJECT_DIR$/../../dragnslay/Assets/Src/net/kibotu/sandbox/unity/dragnslay/network/PackageFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/PlayerConnectionConfigFile" afterPath="$PROJECT_DIR$/assets/bin/Data/PlayerConnectionConfigFile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../chat/ChatServer/chatserver.js" afterPath="$PROJECT_DIR$/../../../../chat/ChatServer/chatserver.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../chat/ChatServer/views/client-events.jade" afterPath="$PROJECT_DIR$/../../../../chat/ChatServer/views/client-events.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../chat/ChatServer/public/javascripts/code.js" afterPath="$PROJECT_DIR$/../../../../chat/ChatServer/public/javascripts/code.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/dragnslay-csharp.sln" afterPath="$PROJECT_DIR$/../../dragnslay/dragnslay-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dragnslay/dragnslay.sln" afterPath="$PROJECT_DIR$/../../dragnslay/dragnslay.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../chat/ChatServer/package.json" afterPath="$PROJECT_DIR$/../../../../chat/ChatServer/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bin/Data/settings.xml" afterPath="$PROJECT_DIR$/assets/bin/Data/settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385639004492" ignored="false" />
+    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385729659536" ignored="false" />
     <file path="/fragment.js2" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385637851388" ignored="false" />
-    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385638186447" ignored="false" />
+    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385725510463" ignored="false" />
     <file path="/chatserver.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385663697364" ignored="false" />
     <file path="/package.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385643927660" ignored="false" />
     <file path="/events.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385649653561" ignored="false" />
     <file path="/code.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385657289673" ignored="false" />
+    <file path="/ChatClient.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385730243258" ignored="false" />
+    <file path="/NetworkHelper.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385729883725" ignored="false" />
+    <file path="/AsyncCallback.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385728499294" ignored="false" />
+    <file path="/AsyncTaskCallback.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385729066269" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +57,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -133,6 +93,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -142,19 +103,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chatserver.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/chatserver.js">
+      <file leaf-file-name="NetworkHelper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/NetworkHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="64" selection-start="1142" selection-end="1206" vertical-scroll-proportion="-4.8">
+            <state line="26" column="51" selection-start="872" selection-end="872" vertical-scroll-proportion="0.19526628">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="13" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/public/javascripts/code.js">
+      <file leaf-file-name="ILogger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/ILogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="8" selection-start="486" selection-end="578" vertical-scroll-proportion="0.26993865">
+            <state line="7" column="17" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogcatLogger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/LogcatLogger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="786" selection-end="977" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/Logger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="19" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,7 +158,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../chat" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat" />
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -182,6 +172,13 @@
         <option value="$PROJECT_DIR$/../../../../chat/ChatServer/serverip.php" />
         <option value="$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.6-src/core-modules-sources/lib/events.js" />
         <option value="$PROJECT_DIR$/../../../../chat/ChatServer/chatserver.js" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/JsonParser.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpSocketClient.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AsyncCallback.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AsyncTasCallback.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AsyncTaskCallback.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/NetworkHelper.java" />
+        <option value="$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java" />
         <option value="$PROJECT_DIR$/../../../../chat/ChatServer/public/javascripts/code.js" />
       </list>
     </option>
@@ -209,6 +206,7 @@
   </component>
   <component name="ProjectStructureProblems">
     <ignored-problems>
+      <problem id="invalid-module-dependency(module:ChatServer,Node.js v0.10.16 Core Modules)" />
       <problem id="main-class(flex_bc:ChatServer-nodejs&#9;web-socket-js,ChatServer-nodejs)" />
       <problem id="output-file-name(flex_bc:ChatServer-nodejs&#9;web-socket-js,ChatServer-nodejs)" />
       <problem id="output-folder(flex_bc:ChatServer-nodejs&#9;web-socket-js,ChatServer-nodejs)" />
@@ -228,16 +226,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dragnslay-android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -288,14 +277,96 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logging" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
@@ -443,7 +514,7 @@
       <method />
     </configuration>
     <configuration default="false" name="DragnSlay-android" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="ChatServer" />
+      <module name="dragnslay" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
@@ -459,7 +530,7 @@
       <method />
     </configuration>
     <configuration default="false" name="ChatClient-android" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="ChatServer" />
+      <module name="androidclient" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
@@ -472,6 +543,8 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
     <configuration default="false" name="ChatServer" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="../../../../chat/ChatServer/chatserver.js" working-dir="$PROJECT_DIR$">
@@ -520,30 +593,30 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37030718" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1560606" sideWeight="0.6207483" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3792517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22954546" sideWeight="0.6211604" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37883958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -612,73 +685,133 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/chatserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="22" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/install.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="26" selection-start="915" selection-end="915" vertical-scroll-proportion="0.76687115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.6-src/core-modules-sources/lib/string_decoder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="17" selection-start="4586" selection-end="4586" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="128" column="17" selection-start="4586" selection-end="4586" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/node_modules/jsftp/lib/jsftp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="462" column="33" selection-start="13063" selection-end="13063" vertical-scroll-proportion="0.5840708">
-          <folding />
-        </state>
+        <state line="462" column="33" selection-start="13063" selection-end="13063" vertical-scroll-proportion="0.5840708" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.6-src/core-modules-sources/lib/events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="18" selection-start="2759" selection-end="2759" vertical-scroll-proportion="-10.333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="22" selection-start="919" selection-end="919" vertical-scroll-proportion="0.05214724">
-          <folding />
-        </state>
+        <state line="71" column="18" selection-start="2759" selection-end="2759" vertical-scroll-proportion="-10.333333" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/chatserver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="64" selection-start="1142" selection-end="1206" vertical-scroll-proportion="-4.8">
+        <state line="138" column="24" selection-start="4482" selection-end="4490" vertical-scroll-proportion="0.33206108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/ILogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/LogcatLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="786" selection-end="977" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/logging/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="19" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/SocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/JsonParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="29" selection-start="1005" selection-end="1005" vertical-scroll-proportion="-0.6242236">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/UdpSocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="21" selection-start="1007" selection-end="1007" vertical-scroll-proportion="1.5279503">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="314" column="11" selection-start="13119" selection-end="13119" vertical-scroll-proportion="0.9008746">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/AsyncTaskCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="97" selection-end="97" vertical-scroll-proportion="0.14868805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/org/json/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="441" column="15" selection-start="16090" selection-end="16090" vertical-scroll-proportion="0.33236152">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../chat/ChatServer/public/javascripts/code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="486" selection-end="578" vertical-scroll-proportion="0.26993865">
+        <state line="13" column="38" selection-start="357" selection-end="357" vertical-scroll-proportion="0.15692307">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="70" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.5446154">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#991#1155#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1542#1806#0" expanded="true" />
+            <element signature="e#1795#1796#0" expanded="true" />
+            <element signature="e#2055#2282#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2342#2551#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2612#2823#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+            <element signature="e#2878#3332#0" expanded="true" />
+            <element signature="e#3321#3322#0" expanded="true" />
+            <element signature="e#3398#3692#0" expanded="true" />
+            <element signature="e#3681#3682#0" expanded="true" />
+            <element signature="e#3756#4048#0" expanded="true" />
+            <element signature="e#4037#4038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../net.kibotu.sandbox.node.chat/androidclient/src/net/kibotu/sandbox/chat/client/android/network/NetworkHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="51" selection-start="872" selection-end="872" vertical-scroll-proportion="0.19526628">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -735,12 +868,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>ChatServer</last-edited>
+          <last-edited>AndroidAsync</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
