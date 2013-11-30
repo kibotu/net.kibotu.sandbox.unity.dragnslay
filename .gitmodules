@@ -1,15 +1,3 @@
-[submodule "simple-json"]
-	path = simple-json
-	url = ../simple-json.git
-[submodule "UnitySocketIO"]
-	path = UnitySocketIO
-	url = ../UnitySocketIO.git
-[submodule "net.kibotu.sandbox.unity.resources"]
-	path = net.kibotu.sandbox.unity.resources
-	url = https://github.com/JanPaschen/net.kibotu.sandbox.unity.resources.git
 [submodule "resources"]
 	path = resources
 	url = https://github.com/JanPaschen/net.kibotu.sandbox.unity.resources.git
-[submodule "net.kibotu.sandbox.node.chat"]
-	path = net.kibotu.sandbox.node.chat
-	url = https://github.com/kibotu/net.kibotu.sandbox.node.chat.git

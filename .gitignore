@@ -1,3 +1,6 @@
+ignored/
+out/
+
 # @see http://kleber-swf.blogspot.de/2013/05/the-definitive-gitignore-for-unity3d.html
 # =============== #
 # Unity generated #
