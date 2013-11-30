@@ -3,22 +3,22 @@
   <component name="FacetManager">
     <facet type="android" name="Android">
       <configuration>
-        <option name="GEN_FOLDER_RELATIVE_PATH_APT" value="/../../networkclient/gen" />
-        <option name="GEN_FOLDER_RELATIVE_PATH_AIDL" value="/../../networkclient/gen" />
-        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/../../networkclient/AndroidManifest.xml" />
-        <option name="RES_FOLDER_RELATIVE_PATH" value="/../../networkclient/res" />
-        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../../networkclient/assets" />
-        <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../../networkclient/libs" />
+        <option name="GEN_FOLDER_RELATIVE_PATH_APT" value="/../../NetworkClient/gen" />
+        <option name="GEN_FOLDER_RELATIVE_PATH_AIDL" value="/../../NetworkClient/gen" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/../../NetworkClient/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/../../NetworkClient/res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../../NetworkClient/assets" />
+        <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../../NetworkClient/libs" />
         <option name="LIBRARY_PROJECT" value="true" />
-        <option name="UPDATE_PROPERTY_FILES" value="true" />
-        <resOverlayFolders>
-          <path>/../../networkclient/res-overlay</path>
-        </resOverlayFolders>
+        <option name="PROGUARD_CFG_PATH" value="/../../NetworkClient/proguard-project.txt" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$MODULE_DIR$/gen">
+      <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../networkclient">
       <sourceFolder url="file://$MODULE_DIR$/../../networkclient/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../networkclient/gen" isTestSource="false" />

@@ -2,6 +2,7 @@ package net.kibotu.sandbox.network;
 
 
 import android.os.Handler;
+import net.kibotu.logger.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,9 +26,25 @@ public class UdpSocketClient implements Runnable {
     private static InetAddress host;
     private static int port;
     private static boolean isConnected;
+    private static String serverUrl;
 
-    public static void init(@NotNull final SocketHandler socketHandler) {
+    public static void init(@NotNull final String serverUrl, @NotNull final SocketHandler socketHandler) {
+        UdpSocketClient.serverUrl = serverUrl;
         UdpSocketClient.socketHandler = socketHandler;
+    }
+
+    public static void connect(final int port) {
+        if (socket != null && isConnected())
+            return;
+        NetworkHelper.requestIpAddress(serverUrl, new AsyncTaskCallback<String>() {
+
+            @Override
+            public void callback(final String... params) {
+                String ip = params[0];
+                Logger.toast("Connected to " + ip + ":" + port);
+                connect(ip, port);
+            }
+        });
     }
 
     public synchronized static void connect(@NotNull final String host, final int port) {

@@ -20,9 +20,24 @@ public class SocketClient {
     private static final String TAG = SocketClient.class.getSimpleName();
     private static SocketIOClient socket;
     private static SocketHandler socketHandler;
+    private static String serverUrl;
 
-    public static void init(@NotNull final SocketHandler socketHandler) {
+    public static void init(@NotNull final String serverUrl, @NotNull final SocketHandler socketHandler) {
+        SocketClient.serverUrl = serverUrl;
         SocketClient.socketHandler = socketHandler;
+    }
+
+    public static void connect(final int port) {
+        if (socket != null && socket.isConnected())
+        NetworkHelper.requestIpAddress(serverUrl, new AsyncTaskCallback<String>() {
+
+            @Override
+            public void callback(final String... params) {
+                String ip = params[0];
+                Logger.toast("Connected to " + ip + ":" + port);
+                connect(ip, port);
+            }
+        });
     }
 
     public static void connect(@NotNull final String host, final int port) {

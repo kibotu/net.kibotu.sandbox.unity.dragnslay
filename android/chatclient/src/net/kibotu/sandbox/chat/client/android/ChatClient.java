@@ -9,8 +9,6 @@ import android.widget.TextView;
 import com.koushikdutta.async.AsyncServer;
 import net.kibotu.logger.Logger;
 import net.kibotu.logger.android.LogcatLogger;
-import net.kibotu.sandbox.network.AsyncTaskCallback;
-import net.kibotu.sandbox.network.NetworkHelper;
 import net.kibotu.sandbox.network.SocketClient;
 import net.kibotu.sandbox.network.UdpSocketClient;
 import org.json.JSONObject;
@@ -23,9 +21,6 @@ public class ChatClient extends Activity {
     public static String uid;
     private static Activity context;
     private static TextView view;
-    private String ip;
-    private int tcpPort;
-    private int udpPort;
 
     public static void appendText(final String text) {
         context.runOnUiThread(new Runnable() {
@@ -43,22 +38,14 @@ public class ChatClient extends Activity {
         context = this;
         setContentView(R.layout.main);
 
-        Logger.init(new LogcatLogger(this), TAG, DEBUG);
-        SocketClient.init(new AndroidSocketHandler());
-        UdpSocketClient.init(new AndroidSocketHandler());
-
-        tcpPort = 1337;
-        udpPort = 1338;
+        final int tcpPort = 1337;
+        final int udpPort = 1338;
+        final String serverUrl = "http://www.kibotu.net/server";
         uid = "android";
 
-        NetworkHelper.requestIpAddress("http://www.kibotu.net/server", new AsyncTaskCallback<String>() {
-
-            @Override
-            public void callback(final String... params) {
-                ip = params[0];
-                Logger.toast("Found TCP Server: " + ip + ":" + tcpPort + "\n" + "Found Udp Server: " + ip + ":" + udpPort);
-            }
-        });
+        Logger.init(new LogcatLogger(this), TAG, DEBUG);
+        SocketClient.init(serverUrl, new AndroidSocketHandler());
+        UdpSocketClient.init(serverUrl, new AndroidSocketHandler());
 
         view = (TextView) findViewById(R.id.output);
         view.setMovementMethod(new ScrollingMovementMethod());
@@ -66,8 +53,8 @@ public class ChatClient extends Activity {
         findViewById(R.id.connect).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                SocketClient.connect(ip, tcpPort);
-                UdpSocketClient.connect(ip, udpPort);
+                SocketClient.connect(tcpPort);
+                UdpSocketClient.connect(udpPort);
             }
         });
 
