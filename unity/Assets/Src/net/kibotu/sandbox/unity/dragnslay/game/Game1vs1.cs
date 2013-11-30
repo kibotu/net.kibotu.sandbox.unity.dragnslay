@@ -70,7 +70,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 var players = (ArrayList) gameData["players"];
                 foreach (Hashtable player in players)
                 {
-                    Debug.Log("game data " + Convert.ToInt32(player["uid"])); // uid
+                    Debug.Log("game data " + player["uid"]); // uid
                     var islands = (ArrayList) player["islands"];
                     foreach (Hashtable island in islands)
                     {

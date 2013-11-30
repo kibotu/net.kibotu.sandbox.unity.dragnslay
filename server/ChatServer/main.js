@@ -20,22 +20,57 @@ var fs = require('fs');
 var request = require('request');
 var Seq = require('seq');
 var ftp;
+var uid = require('./src/utils/uid');
+var Game = require('./src/game/game');
 
-var uid = (function() {
-    var next_uid = 0;
-    var start_uid = 0;
+var g1 = new Game("bla");
+console.log(g1.player);
 
-    function isValid(uid) {
-        return uid >= start_uid;
+String.prototype.replaceAll = function( token, newToken, ignoreCase ) {
+    var _token;
+    var str = this + "";
+    var i = -1;
+
+    if ( typeof token === "string" ) {
+
+        if ( ignoreCase ) {
+
+            _token = token.toLowerCase();
+
+            while( (
+                i = str.toLowerCase().indexOf(
+                    token, i >= 0 ? i + newToken.length : 0
+                ) ) !== -1
+                ) {
+                str = str.substring( 0, i ) +
+                    newToken +
+                    str.substring( i + token.length );
+            }
+
+        } else {
+            return this.split( token ).join( newToken );
+        }
+
+    }
+    return str;
+};
+
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+var processLevelTemplate = function(levelData) {
+
+    // islands and ship unique ids
+    while(levelData.contains('%uid%')) {
+        levelData = levelData.replace('%uid%', uid());
     }
 
-    return function() {
-        if (!isValid(next_uid)) {
-            throw "UID pool depleted."; // will happen at uid >= Number.MAX_VALUE (in js: 1.7976931348623157e+308)
-        }
-        return next_uid++;
-    };
-})();
+    // player unique ids
+    while(levelData.contains('%playeruid%')) {
+        levelData = levelData.replace('%playeruid%', '"' + hat() + '"');
+    }
+
+   return levelData;
+};
 
 // udp http://stackoverflow.com/questions/9545153/transfer-udp-socket-in-node-js-from-application-to-http
 
@@ -68,7 +103,7 @@ var php_json_encode = function(json) {
   return json.replace('/g', '\/');
 };
 
-fs.readFile( 'D:/programming/sandbox/unity/server/' + 'pwd', function (err, data) {
+fs.readFile( 'pwd', function (err, data) {
     if (err)
         throw err;
 
@@ -248,10 +283,11 @@ io.configure( function() {
 var loadGameData = function(game_type, callback) {
 
     if(game_type == 'game1vs1')
-        fs.readFile( 'D:/programming/sandbox/unity/resources/levels/'+ game_type + '.json', function (err, data) {
+        fs.readFile( './../resources/levels/'+ game_type + '.json', function (err, data) {
             if(err)
                 console.log(err);
-            callback(JSON.parse(decoder.write(data)));
+
+            callback(JSON.parse(processLevelTemplate(decoder.write(data))));
         });
 
     else
@@ -487,36 +523,6 @@ io.sockets.on('connection', function (socket) {
         updateRooms();
     });
 });
-
-/*
-
- socket.on("event", function(data) {
- console.log("event " + JSON.stringify(data))  // server console
- socket.emit('message', { message: JSON.stringify(data) }); // own message (for acknowledging action)
- socket.broadcast.to(socket.room).emit('message', { username : socket.uid, message: JSON.stringify(data) }); // real broadcast to other listener in room
-
- if(data['game-event'] == "create-game"){
- joinOrCreateNewGame(socket);
- updateRooms();
- }
-
- socket.broadcast.to(rooms[0]).emit('message', data);
- });
-
- socket.on("add-user", function(data) {
- var room = Object.keys(rooms)[0];
- socket.uid = data.uid;
- socket.room = room;
- users[data.uid] = socket;
- rooms[room].push(data.uid);
- socket.join(room);
- socket.emit('message', { message: 'You have connected to ' + room });
- socket.broadcast.to(room.key).emit('message', { message : data.uid + ' has connected to this room' });
- updateRooms();
- });
-
- */
-
 
 // # serving the flash policy file
 net = require("net");

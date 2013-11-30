@@ -1,6 +1,6 @@
 {
-  "name": "chatserver.js",
-  "main": "chatserver.js",
+  "name": "main.js",
+  "main": "main.js",
   "version": "0.0.2",
   "homepage": "https://github.com/kibotu/net.kibotu.sandbox.node.chat",
   "authors": [

@@ -3,9 +3,9 @@
     "version": "0.0.1",
     "preferGlobal": true,
     "description": "\"Chat\"",
-    "main": "chatserver.js",
+    "main": "main.js",
     "scripts": {
-        "start": "node chatserver.js",
+        "start": "node main.js",
         "predeploy": "echo Starting Server.",
         "postdeploy": "echo Server stopped."
     },
