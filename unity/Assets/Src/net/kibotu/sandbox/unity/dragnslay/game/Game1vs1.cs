@@ -74,6 +74,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                     var islands = (ArrayList) player["islands"];
                     foreach (Hashtable island in islands)
                     {
+                        Debug.Log("game data island id " + Convert.ToInt32(island["uid"])); // uid
                         var go = GameObjectFactory.CreateIsland(Convert.ToInt32(island["type"])); // island type
                         go.GetComponent<SpawnUnits>().shipSpawnType = Convert.ToInt32(island["ship-type"]); // ship type
                         var position = (ArrayList)island["position"]; // position
