@@ -7,21 +7,22 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.koushikdutta.async.AsyncServer;
-import net.kibotu.sandbox.chat.client.android.logging.LogcatLogger;
-import net.kibotu.sandbox.chat.client.android.logging.Logger;
-import net.kibotu.sandbox.chat.client.android.network.AndroidSocketHandler;
-import net.kibotu.sandbox.chat.client.android.network.SocketClient;
-import net.kibotu.sandbox.chat.client.android.network.UdpSocketClient;
+import net.kibotu.logger.Logger;
+import net.kibotu.logger.android.LogcatLogger;
+import net.kibotu.sandbox.network.AsyncTaskCallback;
+import net.kibotu.sandbox.network.NetworkHelper;
+import net.kibotu.sandbox.network.SocketClient;
+import net.kibotu.sandbox.network.UdpSocketClient;
 import org.json.JSONObject;
 
-import static net.kibotu.sandbox.chat.client.android.logging.Logger.Level.DEBUG;
+import static net.kibotu.logger.Logger.Level.DEBUG;
 
 public class ChatClient extends Activity {
 
     public static final String TAG = ChatClient.class.getSimpleName();
+    public static String uid;
     private static Activity context;
     private static TextView view;
-    public static String uid;
     private String ip;
     private int tcpPort;
     private int udpPort;
@@ -42,17 +43,22 @@ public class ChatClient extends Activity {
         context = this;
         setContentView(R.layout.main);
 
-        Logger.init(new LogcatLogger(), TAG, DEBUG);
+        Logger.init(new LogcatLogger(this), TAG, DEBUG);
         SocketClient.init(new AndroidSocketHandler());
         UdpSocketClient.init(new AndroidSocketHandler());
-;
-        //ip = "192.168.2.101";
-        //ip = "178.0.89.213";
-        ip = "172.16.2.141";
-        //ip = "172.19.253.37";
+
         tcpPort = 1337;
         udpPort = 1338;
         uid = "android";
+
+        NetworkHelper.requestIpAddress("http://www.kibotu.net/server", new AsyncTaskCallback<String>() {
+
+            @Override
+            public void callback(final String... params) {
+                ip = params[0];
+                Logger.toast("Found TCP Server: " + ip + ":" + tcpPort + "\n" + "Found Udp Server: " + ip + ":" + udpPort);
+            }
+        });
 
         view = (TextView) findViewById(R.id.output);
         view.setMovementMethod(new ScrollingMovementMethod());

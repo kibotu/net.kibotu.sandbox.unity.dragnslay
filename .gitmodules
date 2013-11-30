@@ -4,3 +4,6 @@
 [submodule "android/AndroidAsync"]
 	path = android/AndroidAsync
 	url = https://github.com/kibotu/AndroidAsync.git
+[submodule "android/net.kibotu.logger"]
+	path = android/net.kibotu.logger
+	url = ../net.kibotu.logger.git

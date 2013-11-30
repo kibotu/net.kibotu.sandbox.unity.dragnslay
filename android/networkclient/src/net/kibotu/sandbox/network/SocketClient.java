@@ -1,9 +1,9 @@
-package net.kibotu.sandbox.chat.client.android.network;
+package net.kibotu.sandbox.network;
 
 import android.util.Log;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.socketio.*;
-import net.kibotu.sandbox.chat.client.android.logging.Logger;
+import net.kibotu.logger.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -110,7 +110,7 @@ public class SocketClient {
 
     public static void Emit(@NotNull final String name, @NotNull final JSONArray args) {
         if (socket == null || !socket.isConnected()) return;
-        Logger.v("emit", ""+args);
+        Logger.v("emit", "" + args);
         socket.emit(name, args);
     }
 
@@ -143,16 +143,16 @@ public class SocketClient {
         return jObject;
     }
 
-    public static JSONObject getJsonObject(final String name, final String ... msg) {
+    public static JSONObject getJsonObject(final String name, final String... msg) {
 
-        if(msg.length % 2 != 0)
+        if (msg.length % 2 != 0)
             throw new IllegalArgumentException("must be key, value pairs " + msg.length);
 
         JSONObject jObject = new JSONObject();
         try {
             jObject.put("name", "message");
-            for(int i = 0; i < msg.length; i+=2)
-                jObject.put(msg[i], msg[i+1]);
+            for (int i = 0; i < msg.length; i += 2)
+                jObject.put(msg[i], msg[i + 1]);
         } catch (JSONException e) {
             e.printStackTrace();
         }

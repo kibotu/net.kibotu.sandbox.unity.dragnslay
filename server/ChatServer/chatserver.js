@@ -150,10 +150,15 @@ var getJsonObject = function(url, callback) {
     });
 };
 
+// print process.argv
+process.argv.forEach(function (val, index, array) {
+    console.log(index + ': ' + val);
+});
+
 // development
 server.configure('development', function(){
-    server.set('ip_dirty', false);
-    server.set('network_interface', 'Ethernet');  // lan 'Ethernet', wlan: 'Wi-Fi', wan: 'ip'
+    server.set('network_interface', process.argv[2] ? process.argv[2] : 'Ethernet');  // LAN: 'Ethernet', WLAN: 'Wi-Fi', WAN: 'ip'
+    server.set('ip_dirty', process.argv[3] ? process.argv[3] : false);
     server.set('tcp_port', 1337);
     server.set('udp_port', 1338);
     server.set('views', __dirname + '/views');

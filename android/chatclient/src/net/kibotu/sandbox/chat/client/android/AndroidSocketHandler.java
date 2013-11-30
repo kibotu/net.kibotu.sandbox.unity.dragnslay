@@ -1,8 +1,9 @@
-package net.kibotu.sandbox.chat.client.android.network;
+package net.kibotu.sandbox.chat.client.android;
 
 import com.koushikdutta.async.http.socketio.Acknowledge;
 import com.koushikdutta.async.http.socketio.SocketIOClient;
-import net.kibotu.sandbox.chat.client.android.ChatClient;
+import net.kibotu.sandbox.network.SocketClient;
+import net.kibotu.sandbox.network.SocketHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +14,7 @@ public class AndroidSocketHandler implements SocketHandler {
     public void EventCallback(final JSONArray argument, final Acknowledge acknowledge) {
         try {
             JSONObject json = argument.getJSONObject(0);
-            if(json.get("message").equals("Welcome!")) {
+            if (json.get("message").equals("Welcome!")) {
                 ChatClient.uid = (String) json.get("uid");
                 JSONObject getJsonObject = SocketClient.getJsonObject(ChatClient.uid, "uid", ChatClient.uid);
                 SocketClient.Emit("add-user", getJsonObject);
@@ -21,17 +22,17 @@ public class AndroidSocketHandler implements SocketHandler {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        ChatClient.appendText("A "+argument.toString());
+        ChatClient.appendText("A " + argument.toString());
     }
 
     @Override
     public void StringCallback(final String message, final Acknowledge acknowledge) {
-        ChatClient.appendText("S "+message);
+        ChatClient.appendText("S " + message);
     }
 
     @Override
     public void JSONCallback(final JSONObject jsonObject, final Acknowledge acknowledge) {
-        ChatClient.appendText("J "+jsonObject);
+        ChatClient.appendText("J " + jsonObject);
     }
 
     @Override

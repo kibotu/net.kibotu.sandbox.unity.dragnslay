@@ -1,4 +1,4 @@
-package net.kibotu.sandbox.chat.client.android.network;
+package net.kibotu.sandbox.network;
 
 
 import android.os.Handler;
@@ -80,7 +80,7 @@ public class UdpSocketClient implements Runnable {
             Emit(name, new JSONObject(args));
         } catch (JSONException e) {
             e.printStackTrace();
-            socketHandler.ErrorCallback(""+ e.getMessage());
+            socketHandler.ErrorCallback("" + e.getMessage());
         }
     }
 
@@ -93,7 +93,7 @@ public class UdpSocketClient implements Runnable {
                     socket.send(new DatagramPacket(data, data.length, host, port));
                 } catch (IOException e) {
                     e.printStackTrace();
-                    socketHandler.ErrorCallback(""+ e.getMessage());
+                    socketHandler.ErrorCallback("" + e.getMessage());
                 }
             }
         }).start();
@@ -115,7 +115,7 @@ public class UdpSocketClient implements Runnable {
                             // do timed stuff
                         } catch (Exception e) {
                             e.printStackTrace();
-                            socketHandler.ErrorCallback(""+ e.getMessage());
+                            socketHandler.ErrorCallback("" + e.getMessage());
                         }
                     }
                 });
@@ -141,13 +141,13 @@ public class UdpSocketClient implements Runnable {
                     try {
                         socketHandler.EventCallback(new JSONArray().put(new JSONObject(message)), null);
                     } catch (JSONException e) {
-                        socketHandler.ErrorCallback(""+ e.getMessage());
+                        socketHandler.ErrorCallback("" + e.getMessage());
                         e.printStackTrace();
                     }
                 }
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
-                socketHandler.ErrorCallback(""+ e.getMessage());
+                socketHandler.ErrorCallback("" + e.getMessage());
             }
         }
     }

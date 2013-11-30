@@ -1,4 +1,4 @@
-package net.kibotu.sandbox.chat.client.android.network;
+package net.kibotu.sandbox.network;
 
 import com.koushikdutta.async.http.socketio.Acknowledge;
 import com.koushikdutta.async.http.socketio.SocketIOClient;
