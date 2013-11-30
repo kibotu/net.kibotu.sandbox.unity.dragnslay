@@ -1,0 +1,92 @@
+{"frames": {
+
+"activity.png":
+{
+	"frame": {"x":250,"y":988,"w":17,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":18},
+	"sourceSize": {"w":17,"h":18}
+},
+"banner.png":
+{
+	"frame": {"x":327,"y":1,"w":608,"h":264},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":10,"w":608,"h":264},
+	"sourceSize": {"w":630,"h":300}
+},
+"button.png":
+{
+	"frame": {"x":211,"y":802,"w":329,"h":185},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":4,"w":329,"h":185},
+	"sourceSize": {"w":377,"h":189}
+},
+"chat.png":
+{
+	"frame": {"x":1,"y":1,"w":325,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":325,"h":800},
+	"sourceSize": {"w":325,"h":800}
+},
+"connected.png":
+{
+	"frame": {"x":211,"y":988,"w":20,"h":19},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":19},
+	"sourceSize": {"w":20,"h":19}
+},
+"disconnected.png":
+{
+	"frame": {"x":231,"y":988,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"error.png":
+{
+	"frame": {"x":211,"y":1009,"w":14,"h":13},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":13},
+	"sourceSize": {"w":14,"h":13}
+},
+"ok.png":
+{
+	"frame": {"x":231,"y":1007,"w":18,"h":15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":15},
+	"sourceSize": {"w":18,"h":15}
+},
+"optionpannel.png":
+{
+	"frame": {"x":1,"y":802,"w":212,"h":209},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":212,"h":209},
+	"sourceSize": {"w":240,"h":227}
+},
+"shop.png":
+{
+	"frame": {"x":541,"y":266,"w":164,"h":139},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":139},
+	"sourceSize": {"w":164,"h":139}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "ui_menu.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dbc15c3c5f67f0a953edb5723a60406a:d6630aa804e10b8e7c3f2e92c768c843:68be73ff1cfeb02608baf8ce1745258d$"
+}
+}
