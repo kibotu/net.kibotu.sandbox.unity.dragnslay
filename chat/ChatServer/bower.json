@@ -1,0 +1,24 @@
+{
+  "name": "chatserver.js",
+  "main": "chatserver.js",
+  "version": "0.0.2",
+  "homepage": "https://github.com/kibotu/net.kibotu.sandbox.node.chat",
+  "authors": [
+    "jan.rabe@wooga.net"
+  ],
+  "description": "\"Real time web chat\"",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "threejs": "latest",
+    "normalize-css": "latest",
+    "jquery": "latest"
+  }
+}

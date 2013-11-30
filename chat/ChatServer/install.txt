@@ -1,0 +1,6 @@
+// update npm if necessary 
+// npm install npm -g 
+npm install
+// install bower if not already on hand
+// npm install -g bower (first time only)
+bower install
