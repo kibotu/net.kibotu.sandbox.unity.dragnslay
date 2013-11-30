@@ -18,7 +18,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         #if UNITY_ANDROID && !UNITY_EDITOR
         private AndroidJavaClass _socket;
-        #endif
+        private string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
+#endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
 
@@ -33,7 +34,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
-                _socket = new AndroidJavaClass("net.kibotu.sandbox.chat.client.android.network.SocketClient");
+                _socket = new AndroidJavaClass(SocketHandlerClass);
                 // System.Threading.Thread(_socket.CallStatic("connect", host, port));
                 _socket.CallStatic("connect", host, port);
             }
@@ -46,7 +47,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
-                _socket = new AndroidJavaClass("net.kibotu.sandbox.chat.client.android.network.SocketClient");
+                _socket = new AndroidJavaClass(SocketHandlerClass);
                 _socket.CallStatic("connect", port);
             }
             #endif

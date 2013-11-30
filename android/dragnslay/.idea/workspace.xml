@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="" />
+    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java" afterPath="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/network/SocketHandler.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/network/SocketHandler.cs" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385832265554" ignored="false" />
     <file path="/fragment.js2" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385637851388" ignored="false" />
-    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385834742584" ignored="false" />
+    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385838657630" ignored="false" />
     <file path="/chatserver.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385823727009" ignored="false" />
     <file path="/package.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385643927660" ignored="false" />
     <file path="/events.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385649653561" ignored="false" />
@@ -16,7 +20,7 @@
     <file path="/AsyncCallback.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385728499294" ignored="false" />
     <file path="/AsyncTaskCallback.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385729066269" ignored="false" />
     <file path="/SocketHandler.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385734105821" ignored="false" />
-    <file path="/SocketClient.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385830200324" ignored="false" />
+    <file path="/SocketClient.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385838698749" ignored="false" />
     <file path="/GameNativeActivity.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385738365715" ignored="false" />
     <file path="/UdpSocketClient.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385830249243" ignored="false" />
     <file path="/Logger.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385827929823" ignored="false" />
@@ -93,7 +97,19 @@
     <favorites_list name="dragnslay-android" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="UnityPlayerNativeActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="23" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.5342857">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -117,7 +133,6 @@
         <option value="$PROJECT_DIR$/../net.kibotu.logger/android/src/net/kibotu/logger/android/LogcatLogger.java" />
         <option value="$PROJECT_DIR$/DragnSlay - Android/src/AndroidUnitySocketHandlerProxy.java" />
         <option value="$PROJECT_DIR$/DragnSlay - Android/src/net/kibotu/sandbox/chat/client/android/AndroidUnitySocketHandlerProxy.java" />
-        <option value="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java" />
         <option value="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/UdpSocketClient.java" />
         <option value="$PROJECT_DIR$/DragnSlay - Android/src/net/kibotu/sandbox/chat/client/android/DragnSlay.java" />
         <option value="$PROJECT_DIR$/../networkclient/AndroidManifest.xml" />
@@ -130,6 +145,7 @@
         <option value="$PROJECT_DIR$/../test/src/com/example/test/MyActivity.java" />
         <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/network/AndroidUnitySocketHandlerProxy.java" />
         <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java" />
+        <option value="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java" />
       </list>
     </option>
   </component>
@@ -240,6 +256,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="networkclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="networkclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -257,7 +329,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tools/unity_export_copy_script.bat" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="832" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
@@ -463,7 +535,10 @@
       <option name="CLEAR_LOGCAT" value="true" />
       <RunnerSettings RunnerId="AndroidDebugRunner" />
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
-      <method />
+      <method>
+        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_copy_script_copy assets script" />
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="false" name="DragnSlay - Server - update Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/chatserver.js" application-parameters="Wi-Fi true" working-dir="$PROJECT_DIR$/../../server">
       <RunnerSettings RunnerId="NodeJS.run" />
@@ -546,14 +621,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28498295" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35836178" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22878788" sideWeight="0.6211604" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37883958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22878788" sideWeight="0.6416382" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37883958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -663,13 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../unity_export/dragnslay/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.5473485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -684,13 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/UdpSocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="34" selection-start="1376" selection-end="1376" vertical-scroll-proportion="0.03024911">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="47" selection-start="418" selection-end="418" vertical-scroll-proportion="0.36298934">
@@ -698,41 +759,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../chatclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="45" selection-start="1716" selection-end="1716" vertical-scroll-proportion="0.6502732">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2274#2485#0" expanded="true" />
-            <element signature="e#2474#2475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Libraries/android/adt/sdk/sources/android-17/android/app/NativeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="13" selection-start="1601" selection-end="1601" vertical-scroll-proportion="1.056213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../test/src/com/example/test/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="441" selection-end="760" vertical-scroll-proportion="0.31989247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../test/src/com/example/test/AndroidUnitySocketHandlerProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="623" selection-end="623" vertical-scroll-proportion="0.31989247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../unity_export/dragnslay/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="63" selection-start="857" selection-end="857" vertical-scroll-proportion="0.302799">
           <folding />
         </state>
       </provider>
@@ -746,26 +775,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/NetworkHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="62" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.562341">
+        <state line="14" column="29" selection-start="399" selection-end="399" vertical-scroll-proportion="0.43142858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chatclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="58" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.8545994">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java">
+    <entry file="file://$PROJECT_DIR$/../unity_export/dragnslay/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="48" selection-start="937" selection-end="989" vertical-scroll-proportion="0.043256998">
+        <state line="22" column="48" selection-start="860" selection-end="860" vertical-scroll-proportion="0.68">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/NetworkHelper.java">
+    <entry file="file://$PROJECT_DIR$/../AndroidAsync/AndroidAsync/src/com/koushikdutta/async/http/socketio/SocketIOClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="29" selection-start="399" selection-end="399" vertical-scroll-proportion="0.38931298">
+        <state line="170" column="19" selection-start="5724" selection-end="5724" vertical-scroll-proportion="0.3323442">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/UdpSocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="46" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.68">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="48" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.62285715">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="23" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.5342857">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -822,11 +881,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>DragnSlay - Android</last-edited>
+          <last-edited>DragnSlay - Server</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

@@ -29,6 +29,7 @@ public class SocketClient {
 
     public static void connect(final int port) {
         if (socket != null && socket.isConnected())
+            return;
         NetworkHelper.requestIpAddress(serverUrl, new AsyncTaskCallback<String>() {
 
             @Override
