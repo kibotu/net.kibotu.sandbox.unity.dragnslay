@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using SimpleJson;
 using UnityEngine;
+using SocketIO.Client;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
@@ -39,6 +41,31 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
                 _socket.CallStatic("connect", host, port);
             }
             #endif
+
+            connectEditor();
+        }
+
+        public void connectEditor()
+        {
+
+            Debug.Log("connect to server sent:");
+
+            var io = new SocketIOClient();
+            var socket = io.Connect("http://172.19.253.37:1337/");
+
+            socket.On("message", (args, callback) =>
+            {
+                Debug.Log("Server sent:" + args);
+
+                for (int i = 0; i < args.Length; i++)
+                {
+                    Debug.Log("[" + i + "] => " + args[i]);
+                }
+
+               
+            });
+
+            socket.Emit("send", PackageFactory.CreateHelloWorldMessage());
         }
 
         public void Connect(int port)
@@ -51,6 +78,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
                 _socket.CallStatic("connect", port);
             }
             #endif
+
+            connectEditor();
         }
 
         public static SocketHandler Instance
