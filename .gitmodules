@@ -4,3 +4,6 @@
 [submodule "android/net.kibotu.logger"]
 	path = android/net.kibotu.logger
 	url = ../net.kibotu.logger.git
+[submodule "resources"]
+	path = resources
+	url = git@github.com:JanPaschen/net.kibotu.sandbox.unity.resources.git
