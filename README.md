@@ -7,9 +7,8 @@ How to setup developping:
 
 2) ./android/unity_export/ - export in unity3d as google project into this folder
 
-3) ./tools/unity_export_copy_script.bat - run copy script for unity libs, assets binaries each time you exported the binaries
 
-4) ./android/DragnSlay/DragnSlay - Android.iml - open intellij project file
+4) ./android/DragnSlay/DragnSlay - Android.iml - open intellij project file	(it will automatically run a copy assets/libs binary script  ./tools/unity_export_copy_script.bat)
 
 5) run DragnSlay - Server
 
