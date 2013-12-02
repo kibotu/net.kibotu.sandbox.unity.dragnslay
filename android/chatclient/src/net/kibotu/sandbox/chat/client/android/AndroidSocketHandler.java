@@ -17,7 +17,7 @@ public class AndroidSocketHandler implements SocketHandler {
             if (json.get("message").equals("Welcome!")) {
                 ChatClient.uid = (String) json.get("uid");
                 JSONObject getJsonObject = SocketClient.getJsonObject(ChatClient.uid, "uid", ChatClient.uid);
-                SocketClient.Emit("add-user", getJsonObject);
+                SocketClient.Emit("message", getJsonObject);
             }
         } catch (JSONException e) {
             e.printStackTrace();
