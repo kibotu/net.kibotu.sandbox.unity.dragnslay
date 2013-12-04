@@ -19,6 +19,8 @@
     "bootstrap": "latest",
     "threejs": "latest",
     "normalize-css": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+	"underscore" : "latest",
+	"normalize-css" : "latest"
   }
 }

@@ -2,6 +2,9 @@ $( document ).ready(function() {
 
     $("[rel='tooltip']").tooltip();
 
+    var sl = 12; // substring length to shorten names
+    var os_stats_update_interval = 30000;
+
 //    $.getJSON("http://www.telize.com/geoip", function(json) {
 //            //console.log(JSON.stringify(json));
 //            console.log(json)
@@ -15,6 +18,36 @@ $( document ).ready(function() {
 //            console.log(json);
 //        }
 //    );
+
+
+    String.prototype.replaceAll = function( token, newToken, ignoreCase ) {
+        var _token;
+        var str = this + "";
+        var i = -1;
+
+        if ( typeof token === "string" ) {
+
+            if ( ignoreCase ) {
+
+                _token = token.toLowerCase();
+
+                while( (
+                    i = str.toLowerCase().indexOf(
+                        token, i >= 0 ? i + newToken.length : 0
+                    ) ) !== -1
+                    ) {
+                    str = str.substring( 0, i ) +
+                        newToken +
+                        str.substring( i + token.length );
+                }
+
+            } else {
+                return this.split( token ).join( newToken );
+            }
+
+        }
+        return str;
+    };
 
     var socket;
 
@@ -76,6 +109,7 @@ $( document ).ready(function() {
                 if(data.uid) {
                     $("#name").val(data.uid);
                     socket.emit('message', { uid: data.uid });
+                    requestOsStats();
                 }
 
                 $("#content").html(html);
@@ -93,28 +127,74 @@ $( document ).ready(function() {
         socket.on('update-room', function (data) {
 
             // console.log(JSON.stringify(data));
-
             if(!data)
                 console.log("empty data: " + data);
             if(data.Queue) {
                 var html = '';
-                for(var player in data.Queue) {
-                    html += '<a href="#" class="list-group-item">' +  data.Queue[player] + '</a>';
+                for(var player in data.Queue.user) {
+                    html += '<a href="#" title="' + data.Queue.user[player] + '" class="list-group-item">' +  data.Queue.user[player].substring(0,sl) + '...</a>';
                 }
                 $("#queue").html(html);
             }
             html = '';
             for(var i = 1; i < _.size(data); ++i) {
-                html += '<a href="#" class="list-group-item">' +  Object.keys(data)[i] + '<span class="badge badge-info pull-right">' + _.size(data[Object.keys(data)[i]]) + '</span></a>';
+                // roomName = Object.keys(data)[i]
+                // amountUserInRoom = _.size(data[Object.keys(data)[i]])
+                // userNamesInRoom = data[Object.keys(data)[i]]
+
+                html += '<a href="#" title="' + Object.keys(data)[i] + '" data-content="' + data[Object.keys(data)[i]].user + '" class="list-group-item room-list">' +  Object.keys(data)[i].substring(0,sl) + '...<span class="badge badge-info pull-right">' + _.size(data[Object.keys(data)[i]].user) + '</span></a>';
             }
             $("#rooms").html(html);
         });
+
+        socket.on('os-stats', function(data) {
+            //console.log(data);
+            var cpuUsage = data.cpuUsage * 100;
+            var memoryUsage = 100 - data.freememPercentage * 100;
+            $('#cpu-usage').attr('style', "width:" +  cpuUsage + '%');
+            $('#cpu-usage').addClass(getProgressColorClass(cpuUsage));
+            $('#memory-usage').attr('style', "width:" + memoryUsage + '%');
+            $('#memory-usage').addClass(getProgressColorClass(memoryUsage));
+            $('#connected-clients').html('[' + data.clients + ' connected Clients]');
+        });
     };
 
-    $.getJSON("http://kibotu.net/server.php", function(json) {
-            connect(json);
+    var getProgressColorClass = function(percentatge) {
+        var colorClass = "progress-bar-success";
+        if(percentatge >= 33 && percentatge < 66) {
+            colorClass = "progress-bar-warning";
+        } else if(percentatge >= 66){
+            colorClass = "progress-bar-danger";
         }
-    );
+        return colorClass;
+    };
+
+    $("#rooms").click(function(event) {
+        event.preventDefault();
+        var kids = $( event.target ).children();
+        var link = kids['context'];
+        var data = $(link).attr('data-content');
+        var usernames = data.trim().split(',');
+        var output = "";
+
+        _.each(usernames, function(user) {
+            output += '<a title="' + user + '" href="#" class="list-group-item">' + user.substring(0,sl) + '...</a>';
+        });
+       //var usernames = daita.replaceAll(',', '<br />');
+        $("#user").html(output);
+    });
+
+    $.getJSON("http://kibotu.net/server.php", function(json) {
+        connect(json);
+    });
+
+    var requestOsStats = function() {
+        socket.emit('os-stats', {});
+    };
+
+    setInterval(function() {
+        requestOsStats();
+    },os_stats_update_interval);
 
     var messages = [];
 
@@ -126,7 +206,18 @@ $( document ).ready(function() {
 
     /** REQUESTS **/
 
-    $("#send").click(function() {
+    $.fn.enterKey = function (fnc) {
+        return this.each(function () {
+            $(this).keypress(function (ev) {
+                var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+                if (keycode == '13') {
+                    fnc.call(this, ev);
+                }
+            })
+        })
+    };
+
+    var sendMessage = function() {
 
         var name = $("#name").val();
 
@@ -135,9 +226,19 @@ $( document ).ready(function() {
         } else {
             var field = $("#field");
             socket.emit('send', { message:  field.val(), username: name });
-            //field.val("");
+            field.val("");
         }
+    };
+
+    $("#field").enterKey(function () {
+        sendMessage();
     });
+
+    $("#send").click(function() {
+        sendMessage();
+    });
+
+    //$("$"
 
     $("#join-game_type_1vs1").click( function() {
         socket.emit('join-game', { "game-type" : "game1vs1"});

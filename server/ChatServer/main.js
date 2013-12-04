@@ -1,7 +1,12 @@
 process.env.NODE_ENV = 'development';
 
+var nodetime = require('nodetime').profile({
+    accountKey: '95c1612507ed5224a07691cfdb47436e9467c146',
+    appName: 'Drag\'n Slay'
+});
+
 var express = require('express');
-var socketHandler = require('./sockethandler');
+var socketHandler = require('./src/sockethandler');
 var routes = require('./routes');
 var user = require('./routes/user');
 var chat = require('./routes/chat');
@@ -22,6 +27,118 @@ var Seq = require('seq');
 var ftp;
 var uid = require('./src/utils/uid');
 var Game = require('./src/game/game');
+var osutils = require('os-utils');
+
+// @see http://de.slideshare.net/bluesmoon/a-nodejs-bag-of-goodies-for-analyzing-web-traffic
+// var geo = require('geip-lite');
+// var loc = geo.lookup(ip);
+// var qs = require('querystring');
+// qs.parse('name=larry&name=moe&name=curly');
+// {name : ['larry','moe','curly']}
+// var gauss = require('gauss');
+// var set new gauss.Vector(5,1,3,2,21);
+// console.log(set.mean());
+
+var getOsInfos = function(callback) {
+
+    var osinfos = {
+        platform: osutils.platform(),
+        cpuCount: osutils.cpuCount(),
+        //sysUptime: osutils.sysUptime(),// already in monitor
+        processUptime: osutils.processUptime(),
+        // freemem: osutils.freemem(),  // already in monitor
+       // totalmem: osutils.totalmem(), // already in monitor
+        freememPercentage: osutils.freememPercentage(),
+        allLoadavg: osutils.allLoadavg()
+        //loadavg: osutils.loadavg() // already in monitor
+    };
+
+    osutils.cpuUsage(function(usage){
+        osinfos.cpuUsage = usage;
+        osutils.cpuFree(function(cpuFree){
+            osinfos.cpuFree = cpuFree;
+//            osutils.freeCommand(function(freeCommand){  // only linux
+//                osinfos.freeCommand = freeCommand;
+//                osutils.harddrive(function(harddrive){  // only linux
+//                    osinfos.harddrive = harddrive;
+                    osutils.getProcesses(function(processes){
+                        osinfos.getProcesses = processes;
+                        callback(osinfos);
+                    });
+//                });
+//            });
+        });
+    });
+};
+
+var osm = require("os-monitor");
+var osStats;
+
+var startOsMonitor = function() {
+
+    // basic usage
+    osm.start();
+
+    // more advanced usage with configs.
+    osm.start({ delay: 333 // interval in ms between monitor cycles
+        , freemem: 1000000000 // amount of memory in bytes under which event 'freemem' is triggered (can also be a percentage of total mem)
+        , uptime: 1000000 // number of seconds over which event 'uptime' is triggered
+        , critical1: 0.7 // value of 1 minute load average over which event 'loadavg1' is triggered
+        , critical5: 0.7 // value of 5 minutes load average over which event 'loadavg5' is triggered
+        , critical15: 0.7 // value of 15 minutes load average over which event 'loadavg15' is triggered
+        , silent: false // set true to mute event 'monitor'
+        , stream: false // set true to enable the monitor as a Readable Stream
+    });
+
+    // define handler that will always fire every cycle
+    osm.on('monitor', function(event) {
+        getOsInfos(function(json){
+            _.extend(event, json);
+            osStats = event;
+
+            //osStats.clients = io.sockets.clients().length;
+            //if(io.sockets.clients().length > 0) {
+                //console.log("\n");
+                 //  console.log(io.sockets.manager.server);
+//                console.log(io.sockets.manager.connected);
+//                console.log(io.sockets.manager.open);
+//                console.log(io.sockets.manager.closed);
+//                console.log(io.sockets.manager.handshaken);
+           // }
+        });
+    });
+
+    // define handler for a too high 1-minute load average
+    osm.on('loadavg1', function(event) {
+        console.log(event.type, ' Load average is exceptionally high!');
+    });
+
+    // define handler for a too low free memory
+    osm.on('freemem', function(event) {
+        console.log(event.type, 'Free memory is very low!');
+    });
+
+    // define a throttled handler, using Underscore.js's throttle function (http://underscorejs.org/#throttle)
+    osm.throttle('loadavg5', function(event) {
+
+        // whatever is done here will not happen
+        // more than once every 5 minutes(300000 ms)
+
+    }, osm.minutes(5));
+
+    // change config while monitor is running
+    osm.config({
+        freemem: 0.3 // alarm when 30% or less free memory available
+    });
+
+    // stop monitor
+    //osm.stop();
+
+    // check either monitor is running or not
+    //osm.isRunning(); // -> true / false
+};
+
+startOsMonitor();
 
 var g1 = new Game("bla");
 console.log(g1.player);
@@ -103,21 +220,24 @@ var php_json_encode = function(json) {
   return json.replace('/g', '\/');
 };
 
-fs.readFile( 'pwd', function (err, data) {
-    if (err)
-        throw err;
+var updateServerJson = function(callback) {
 
-    var pwd = JSON.parse(decoder.write(data));
+    fs.readFile( 'pwd', function (err, data) {
+        if (err)
+            throw err;
 
-    ftp = new jsftp({
-        host: pwd.host,
-        port: pwd.port,     // defaults to 21
-        user: pwd.user,     // defaults to "anonymous"
-        pass: pwd.pass      // defaults to "@anonymous"
+        var pwd = JSON.parse(decoder.write(data));
+
+        ftp = new jsftp({
+            host: pwd.host,
+            port: pwd.port,     // defaults to 21
+            user: pwd.user,     // defaults to "anonymous"
+            pass: pwd.pass      // defaults to "@anonymous"
+        });
+
+        getJsonObject("http://www.telize.com/geoip", callback);
     });
-
-    getJsonObject("http://www.telize.com/geoip", uploadIps);
-});
+};
 
 var uploadIps = function(geoJson) {
 
@@ -177,7 +297,7 @@ var getJsonObject = function(url, callback) {
         });
 
         res.on('end', function() {
-            var res = JSON.parse(body)
+            var res = JSON.parse(body);
             callback(res)
         });
     }).on('error', function(e) {
@@ -210,6 +330,7 @@ server.configure('development', function(){
     // server.use(function (req, res) { res.end('<h2>Hello, your session id is ' + req.sessionID + '</h2>');  });
     server.use(server.router);
     server.use(express.static(path.join(__dirname, 'public')));
+    server.use(express.static(__dirname + '/components'));
 });
 
 server.get('/', routes.index);
@@ -229,11 +350,16 @@ var sendUdpMessage = function(string, rinfo) {
 
 // socket io on udp
 var io = require('socket.io').listen(server.listen(server.get('tcp_port'),"0.0.0.0", function() {
-    console.log("info: tcp server listening on "+getIpAddress()[server.get('network_interface')]+":"+server.get('tcp_port'));
+
+    updateServerJson(function(geoJson) {
+        uploadIps(geoJson);
+        console.log("info: tcp server listening on "+getIpAddress()[server.get('network_interface')]+":"+server.get('tcp_port'));
+        console.log("info: udp server listening on "+getIpAddress()[server.get('network_interface')]+":"+server.get('udp_port'));
+    });
 }));
+
 var udp_socket = dgram.createSocket('udp4');
 udp_socket.bind(server.get('udp_port'), function() {
-    console.log("info: udp server listening on "+getIpAddress()[server.get('network_interface')]+":"+server.get('udp_port'));
 
     udp_socket.on('message', function(data, rinfo) {
 
@@ -257,10 +383,12 @@ udp_socket.bind(server.get('udp_port'), function() {
     });
 });
 
-//io.disable('heartbeats');
+// @see https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO
 io.configure( function() {
     io.set('close timeout', 60 * 15); // 15 min
-    io.set('log level', 3);
+    io.set('heartbeat timeout', 60 * 2);
+    io.set('heartbeat interval', 60);
+    io.set('log level', 5);
     io.set('reconnect', true);
     io.set('reconnection delay', 500);
     io.set('max reconnection attempts', 10);
@@ -294,27 +422,31 @@ var loadGameData = function(game_type, callback) {
         callback({ "error" : "game_type " + game_type + "not implemented!" });
 };
 
-var sendAll = function(socket, message) {
-    socket.emit('message', message);
-    socket.broadcast.to(socket.room).emit('message', message);
+var sendAll = function(socket, type, messageChannel, messageSocket) {
+    socket.emit(type, messageChannel ? messageChannel : messageSocket);
+    socket.broadcast.to(socket.room).emit(type, messageChannel);
 };
 
-var sendAllTextMessage = function(socket, messageSocket, messageChannel){
-    //console.log("send all message")
-    socket.emit('message', { message: messageSocket });
+var sendAllTextMessage = function(socket, messageChannel, messageSocket){
+    socket.emit('message', { message: messageSocket ? messageSocket : messageChannel });
     socket.broadcast.to(socket.room).emit('message', {message : messageChannel});
 };
 
-var sendAllInRoom = function(socket, messageSocket, messageChannel) {
-    socket.emit('message', messageSocket);
-    socket.broadcast.to(socket.room).emit('message', messageChannel);
+var sendAllInRoom = function(socket, type, messageChannel, messageSocket) {
+    socket.emit(type,messageChannel ? messageChannel : messageSocket);
+    socket.broadcast.to(socket.room).emit(type,messageChannel);
+};
+
+var sendAllInRoomTextMessage = function(socket, messageChannel, messageSocket) {
+    socket.emit('message',messageChannel ? messageChannel : messageSocket);
+    socket.broadcast.to(socket.room).emit('message',messageChannel);
 };
 
 // usernames which are currently connected to the chat
 var users = {};
 
 // rooms which are currently available in chat
-var rooms = {'Queue' : []};
+var rooms = {'Queue' : { user : [], game : { }}};
 
 // http://psitsmike.com/2011/10/node-js-and-socket-io-multiroom-chat-tutorial/
 var updateRooms = function() {
@@ -330,28 +462,28 @@ var joinRoom = function(socket, roomId) {
     if(!rooms[socket.room])
         console.log("WARNING!!!! room lost in space");
 
-    rooms[socket.room].push(socket.uid);
+    rooms[socket.room].user.push(socket.uid);
 
     socket.join(socket.room);
 
-    users[socket.uid] = socket;  // todo remove when disconnect
+    users[socket.uid] = socket;
 };
 
 var leaveRoom = function(socket) {
     sendAllTextMessage(socket, "You left " + socket.room, socket.uid + " left " + socket.room);
     if(!socket || !socket.room) return;  // todo server might have zombie rooms
-    rooms[socket.room].splice(socket.uid, 1);
+    rooms[socket.room].user.splice(socket.uid, 1);
     socket.leave(socket.room);
 
     // remove room, if empty
-    if(rooms[socket.room].length < 1 && socket.room != 'Queue')
+    if(_.isEmpty(rooms[socket.room].user) && socket.room != 'Queue')
         delete rooms[socket.room];
 };
 
-var createRoom = function() {
+var createRoom = function(game_type) {
     var roomId = hat();
     console.log("Create room " + roomId);
-    rooms[roomId] = [];
+    rooms[roomId] = { user : [], game : { game_type : game_type }};
     return roomId;
 };
 
@@ -360,8 +492,8 @@ var changeRoom = function(socket, roomId) {
     if(socket.room == roomId)
         return;
 
-    console.log(""+socket.uid + " changed from " + socket.room + " to " + roomId);
-    sendAllTextMessage(socket, ""+ socket.uid + " changed from " + socket.room + " to " + roomId);
+    console.log(socket.uid + " changed from " + socket.room + " to " + roomId);
+    sendAllTextMessage(socket, socket.uid + " changed from " + socket.room + " to " + roomId);
     leaveRoom(socket);
     joinRoom(socket,roomId);
 };
@@ -370,19 +502,38 @@ var findAvailableRoomId = function(game_type)
 {
     var availableRoom;
 
-    _.map(rooms, function(num, key){
+    _.map(rooms, function(value, key){
 
-       // todo find available games by type and mmr
-       // if(key != 'Queue' && rooms[key]['game-type'] == game_type) {
+        // todo find available games by type and mmr
+        // if(key != 'Queue' && rooms[key]['game-type'] == game_type) {
             //availableRoom = key;
-       // }
+        // }
 
-        if(key != 'Queue') {
+//        console.log("rooms:");
+//        console.log("key:",key);
+//        console.log("num:",value);
+
+        if(key != 'Queue' && !roomHasEnoughPlayer(key)) {
             availableRoom = key;
         }
     });
 
-    return availableRoom ? availableRoom : createRoom();
+    return availableRoom ? availableRoom : createRoom(game_type);
+};
+
+var roomHasEnoughPlayer = function(roomId) {
+    var room = rooms[roomId];
+    var res = true;
+
+    if(room.game.game_type == 'game1vs1') {
+        res = room.user.length == 2;
+    }
+
+    if(room.game.game_type == 'game2vs2') {
+        res = room.user.length == 4;
+    }
+
+    return res;
 };
 
 // never fired~
@@ -400,12 +551,11 @@ io.sockets.on('connection', function (socket) {
     // handshake unique id, which persists over multiple connections
     // 1) tell client its uid
     socket.tmpUid = hat();
-    socket.game = {};
     socket.emit('message', { message: 'Welcome!', uid: socket.tmpUid });
 
     // echo
     socket.on('send', function (data) {
-        sendAllInRoom(socket, data, data);
+        sendAllInRoomTextMessage(socket, data, data);
         console.log("Response:", data);
     });
 
@@ -413,6 +563,14 @@ io.sockets.on('connection', function (socket) {
     socket.on('ping', function (data) {
         socket.emit('pong', data);
         console.log("ping? => pong");
+    });
+
+    // get os stats
+    socket.on('os-stats', function(data) {
+        getOsInfos(function(osStats) {
+            osStats.clients = io.sockets.clients().length;
+            socket.emit('os-stats', osStats);
+        });
     });
 
     // message
@@ -444,18 +602,43 @@ io.sockets.on('connection', function (socket) {
     // create game
     socket.on('create-game', function(data){
         console.log("create game:", data);
-        socket.game.game_type = data['game-type'];
+
+        // 1) change room from queue to new room
         changeRoom(socket, createRoom());
 
+        // 2) room creates new game by type
+        rooms[socket.room].game = { game_type : data['game-type']};
+
+        // 3) emitting waiting for player message
+        socket.emit('message',{"message" : "waiting-for-player"});
+
+        // 4) updating rooms
         updateRooms();
     });
 
     // join game
     socket.on('join-game', function(data){
         console.log("join game:", data);
-        socket.game.game_type = data['game-type'];
-        changeRoom(socket, findAvailableRoomId(socket.game.game_type));
 
+        // 1) check if room available
+        // 1.1) change room to available by game_type
+        // 1.2) create new room by game_type
+        changeRoom(socket, findAvailableRoomId(data['game_type']));
+
+        // 2) check if enough player are in room
+        if(roomHasEnoughPlayer(socket.room)) {
+            // 2.1) if yes emitting game-ready message
+            sendAllInRoomTextMessage(socket, {message : "server-game-ready"});
+        } else {
+            // 2.2) if not emitting waiting for player message
+            socket.emit('message',{"message" : "waiting-for-player"});
+        }
+
+        socket.on('client-game-ready', function(data) {
+            // todo start game
+        });
+
+        // 3) update rooms
         updateRooms();
     });
 
@@ -473,14 +656,14 @@ io.sockets.on('connection', function (socket) {
 
         if(data['message'] == "game-data") {
 
-            if(!socket.game.game_type) {
-                sendAll(socket, {error : "Can't receive game-data yet. Join or create a game first!"});
+            if(!rooms[socket.room].game.game_type) {
+                sendAllTextMessage(socket, {error : "Can't receive game-data yet. Join or create a game first!"});
                 return;
             }
 
-            console.log("sending game data for " + socket.game.game_type) ;
-            loadGameData(socket.game.game_type, function(data){
-                sendAll(socket, { "message" : "game-data", "game-data" : data } ); // todo send only to channel
+            console.log("sending game data for " + rooms[socket.room].game.game_type);
+            loadGameData(rooms[socket.room].game.game_type, function(data){
+                sendAllTextMessage(socket, { "message" : "game-data", "game-data" : data } ); // todo send only to channel
             });
         }
     });

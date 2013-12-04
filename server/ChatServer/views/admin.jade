@@ -5,24 +5,35 @@ block content
     #message-box
 
     .page-header
-        h1  Admin Console
+        .row
+            .col-md-3
+                h1.right  Admin Console
+                h5#connected-clients.right
+            .col-md-1
+                    h5 CPU usage
+                    h5 Memory usage
+            .col-md-8
+                .progress.progress-striped
+                    #cpu-usage.progress-bar(role="progressBar",style="width:50%")
+                .progress.progress-striped
+                    #memory-usage.progress-bar(role="progressBar",style="width:50%")
 
     .row
-        .col-sm-3
+        .col-sm-2
             .panel.panel-default
                 .panel-heading
                     h3.panel-title Queue
                 .panel-body.control-element
                     include queue
 
-        .col-sm-3
+        .col-sm-2
             .panel.panel-default
                 .panel-heading
                     h3.panel-title Games
                 .panel-body.control-element
                     include listrooms
 
-        .col-sm-6.col-md-4
+        .col-sm-6
             .panel.panel-default
                 .panel-heading
                     h3.panel-title Messages

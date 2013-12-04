@@ -7,8 +7,12 @@ a {
   color: #00B7FF;
 }
 
-.match-parent {
+.match-parent-width {
     width: 100%;
+}
+
+.match-parent-height {
+    height: 100%;
 }
 
 .chat {
@@ -20,6 +24,20 @@ a {
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.left {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.right {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
 }
 
 .center {
@@ -43,11 +61,15 @@ body {
 .theme-showcase > p > .btn {
     margin: 5px 0;
 }
+  /*
+.list-group-item {
+    min-width : 150px;
+}
 
 .input-group-addon {
     min-width:100px;
     text-align:left;
-}
+}   */
 
 .event-button {
     min-width:150px;

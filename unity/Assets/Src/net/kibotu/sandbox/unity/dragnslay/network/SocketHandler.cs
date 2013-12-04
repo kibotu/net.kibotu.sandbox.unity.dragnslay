@@ -48,14 +48,17 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public void connectEditor()
         {
 
-            Debug.Log("connect to server sent:");
+            Debug.Log("connect to server");
 
             var io = new SocketIOClient();
-            var socket = io.Connect("http://172.19.253.37:1337/");
+            var socket = io.Connect("http://192.168.2.101:1337/");
+
+            socket.On("connect", (args, callback) => ConnectCallback(""));
 
             socket.On("message", (args, callback) =>
             {
                 Debug.Log("Server sent:" + args);
+                StringCallback(args.ToString());
 
                 for (int i = 0; i < args.Length; i++)
                 {
@@ -65,7 +68,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
                
             });
 
-            socket.Emit("send", PackageFactory.CreateHelloWorldMessage());
+            //socket.Emit("send", PackageFactory.CreateHelloWorldMessage());
         }
 
         public void Connect(int port)

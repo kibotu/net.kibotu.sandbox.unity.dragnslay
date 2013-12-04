@@ -28,13 +28,14 @@
     "dependencies": {
         "express": "latest",
         "jade": "latest",
-        "underscore": "latest",
         "hat": "latest",
         "socket.io": "latest",
         "net": "latest",
         "jsftp" : "latest",
         "request" : "latest",
-        "seq" : "latest"
-
+        "seq" : "latest",
+		"os-utils" : "latest",
+		"os-monitor" : "latest",
+		"nodetime" : "latest"
     }
 }

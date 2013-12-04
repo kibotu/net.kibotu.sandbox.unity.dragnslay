@@ -1,0 +1,1 @@
+git config --global url."https://github".insteadOf git://github (@see http://stackoverflow.com/a/10729634)
