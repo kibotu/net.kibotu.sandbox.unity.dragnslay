@@ -174,7 +174,7 @@ String.prototype.replaceAll = function( token, newToken, ignoreCase ) {
 
 String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
-var processLevelTemplate = function(levelData) {
+var processLevelTemplate = function(levelData, player, bots) {
 
     // islands and ship unique ids
     while(levelData.contains('%uid%')) {
@@ -182,11 +182,17 @@ var processLevelTemplate = function(levelData) {
     }
 
     // player unique ids
+    var i = 0;
     while(levelData.contains('%playeruid%')) {
-        levelData = levelData.replace('%playeruid%', '"' + hat() + '"');
+        levelData = levelData.replace('%playeruid%', '"' + player[i++] + '"');
     }
 
-   return levelData;
+    i = 0;
+    while(levelData.contains('%botuid%')) {
+        levelData = levelData.replace('%botuid%', '"' + bots[i++] + '"');
+    }
+
+    return levelData;
 };
 
 // udp http://stackoverflow.com/questions/9545153/transfer-udp-socket-in-node-js-from-application-to-http
@@ -408,14 +414,14 @@ io.configure( function() {
     });
 });
 
-var loadGameData = function(game_type, callback) {
+var loadGameData = function(game_type, player, bots, callback) {
 
     if(game_type == 'game1vs1')
         fs.readFile( './../resources/levels/'+ game_type + '.json', function (err, data) {
             if(err)
                 console.log(err);
 
-            callback(JSON.parse(processLevelTemplate(decoder.write(data))));
+            callback(JSON.parse(processLevelTemplate(decoder.write(data),player, bots)));
         });
 
     else
@@ -483,7 +489,7 @@ var leaveRoom = function(socket) {
 var createRoom = function(game_type) {
     var roomId = hat();
     console.log("Create room " + roomId);
-    rooms[roomId] = { user : [], game : { game_type : game_type }};
+    rooms[roomId] = { user : [], bots : [hat()], game : { game_type : game_type }};
     return roomId;
 };
 
@@ -656,14 +662,19 @@ io.sockets.on('connection', function (socket) {
 
         if(data['message'] == "game-data") {
 
+            // 1) check if room is 'server-game-ready' (enough player in room and game mode chosen)
             if(!rooms[socket.room].game.game_type) {
                 sendAllTextMessage(socket, {error : "Can't receive game-data yet. Join or create a game first!"});
                 return;
             }
 
-            console.log("sending game data for " + rooms[socket.room].game.game_type);
-            loadGameData(rooms[socket.room].game.game_type, function(data){
-                sendAllTextMessage(socket, { "message" : "game-data", "game-data" : data } ); // todo send only to channel
+            // 2) creating game
+            // 2.1) loading game-data by game_type
+            // 2.2) broadcast game-data to clients
+            loadGameData(rooms[socket.room].game.game_type, rooms[socket.room].user,rooms[socket.room].bots, function(data) {
+                console.log("sending game data for " + rooms[socket.room].game.game_type);
+                rooms[socket.room].game.data = data;
+                sendAllInRoomTextMessage(socket, { "message" : "game-data", "game-data" : data } );
             });
         }
     });
