@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
@@ -34,8 +35,18 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         {
             messageQueue = new Queue<MessageData>();
 
-            gameObject.AddComponent<NetworkHelper>().RequestIpAddress("http://www.kibotu.net/server",null);
+            // gameObject.AddComponent<NetworkHelper>().RequestIpAddress("http://www.kibotu.net/server",null);
+
+            Console.WriteLine("Main() invoked on thread {0}.", Thread.CurrentThread.ManagedThreadId);
+            NetworkHelper.DownloadJsonByUrl("http://www.kibotu.net/server", new AsyncCallback(OnReceiveJson));
         }
+
+        private static void OnReceiveJson(IAsyncResult result)
+        {
+            Debug.Log("onreceive"); 
+            Debug.Log(result.AsyncState);
+        }
+
 
         public void Connect(string host, int port)
         {
