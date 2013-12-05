@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using SimpleJson;
 using UnityEngine;
 using SocketIO.Client;
@@ -18,41 +20,28 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
 
-        #if UNITY_ANDROID && !UNITY_EDITOR
+        #if UNITY_EDITOR
+        private SocketIOClient socketio;
+        private SocketIOClient _socket;
+        #elif UNITY_ANDROID 
         private AndroidJavaClass _socket;
         private string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
-#endif
+        #endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
 
         public void Awake()
         {
             messageQueue = new Queue<MessageData>();
+
+            gameObject.AddComponent<NetworkHelper>().RequestIpAddress("http://www.kibotu.net/server",null);
         }
 
         public void Connect(string host, int port)
         {
-            #if UNITY_ANDROID && !UNITY_EDITOR
-            AndroidJNIHelper.debug = true;
-            if (_socket == null)
-            {
-                _socket = new AndroidJavaClass(SocketHandlerClass);
-                // System.Threading.Thread(_socket.CallStatic("connect", host, port));
-                _socket.CallStatic("connect", host, port);
-            }
-            #endif
-
-            connectEditor();
-        }
-
-        public void connectEditor()
-        {
-
-            Debug.Log("connect to server");
-
-            var io = new SocketIOClient();
-            var socket = io.Connect("http://192.168.2.101:1337/");
-
+            #if UNITY_EDITOR
+            socketio = new SocketIOClient();
+            var socket = socketio.Connect("http://192.168.178.173:1337/");
             socket.On("connect", (args, callback) => ConnectCallback(""));
 
             socket.On("message", (args, callback) =>
@@ -64,11 +53,23 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
                 {
                     Debug.Log("[" + i + "] => " + args[i]);
                 }
-
-               
             });
 
-            //socket.Emit("send", PackageFactory.CreateHelloWorldMessage());
+            #elif UNITY_ANDROID 
+            AndroidJNIHelper.debug = true;
+            if (_socket == null)
+            {
+                _socket = new AndroidJavaClass(SocketHandlerClass);
+                // System.Threading.Thread(_socket.CallStatic("connect", host, port));
+                _socket.CallStatic("connect", host, port);
+            }
+            #endif
+        }
+
+        public void connectEditor()
+        {
+            Debug.Log("connect to server");
+//socket.Emit("send", PackageFactory.CreateHelloWorldMessage());
         }
 
         public void Connect(int port)
