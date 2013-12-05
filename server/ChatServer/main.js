@@ -102,7 +102,7 @@ var getIpAddressByDnsLookup = function(callback) {
 var php_json_encode = function(json) {
   return json.replace('/g', '\/');
 };
-
+ /*
 fs.readFile( 'pwd', function (err, data) {
     if (err)
         throw err;
@@ -118,7 +118,7 @@ fs.readFile( 'pwd', function (err, data) {
 
     getJsonObject("http://www.telize.com/geoip", uploadIps);
 });
-
+    */
 var uploadIps = function(geoJson) {
 
     server.set("server-geo-infos", geoJson);
