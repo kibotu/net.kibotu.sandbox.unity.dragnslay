@@ -1,9 +1,8 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using SimpleJson;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
+namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
     class PackageFactory
     {
@@ -38,7 +37,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
                 {"message",     "move-units"},
                 {"ships",       ships},
                 {"target",      target},
-                {"packageId",   ++PackageFactory.packageId},
+                {"packageId",   ++packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -48,7 +47,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
             return new JsonObject{
                 {"message",     "spawn-units"},
                 {"spawns",      spawns},
-                {"packageId",   ++PackageFactory.packageId},
+                {"packageId",   ++packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -58,7 +57,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
             return new JsonObject{
                 {"message",     uid},
                 {"uid",         uid},
-                {"packageId",   ++PackageFactory.packageId},
+                {"packageId",   ++packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -68,7 +67,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
             return new JsonObject{
                 {"message",     name},
                 {"game-type",   gameType},
-                {"packageId",   ++PackageFactory.packageId},
+                {"packageId",   ++packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -77,9 +76,23 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
         {
             return new JsonObject{
                 {"message",     "game-data"},
-                {"packageId",   ++PackageFactory.packageId},
+                {"packageId",   ++packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
+        }
+
+        public static JsonObject CreateMessage(string name, string [] keyValuePairs)
+        {
+            var json = new JsonObject{
+                {"message",     name},
+                {"packageId",   ++packageId},
+                {"scheduleId",  Game.ScheduleId()}
+            };
+
+            for (var i = 0; i < keyValuePairs.Length; i += 2)
+                json.Add(keyValuePairs[i], keyValuePairs[i + 1]);
+
+            return json;
         }
     }
 }

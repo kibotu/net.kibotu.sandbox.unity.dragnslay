@@ -1,6 +1,7 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
@@ -57,7 +58,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
         {
 
             SocketHandler.Instance.OnConnectEvent += OnConnected;
-            SocketHandler.Instance.OnJSONEvent += OnJSONEvent;
+            //SocketHandler.Instance.OnJSONEvent += OnJSONEvent;
             SocketHandler.Instance.OnStringEvent += OnStringEvent;
             SocketHandler.Instance.OnConnectionFailedEvent += OnConnectionFailedEvent;
             SocketHandler.Instance.OnReconnectEvent += OnReconnectEvent;
@@ -66,55 +67,51 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
             var world = GameObject.Find("World");
             world.AddComponent<WorldData>();
-            SocketHandler.Instance.OnStringEvent += world.AddComponent<Game1vs1>().OnStringEvent;
+            var game = world.AddComponent<Game1vs1>();
+            SocketHandler.Instance.OnStringEvent += game.OnStringEvent;
+            SocketHandler.Instance.OnJSONEvent += game.OnJSONEvent;
 
             SocketHandler.Instance.Connect(1337);  
         }
 
         public void OnConnected(string error)
         {
-            Debug.Log("OnConnected " + error);
             connected.color = Color.white;
             disconnected.color = Color.grey;
         }
 
         public void OnStringEvent(string message)
         {
-            Debug.Log("OnStringEvent " + error);
             activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
                += () => activity.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
         }
 
-        public void OnJSONEvent(string message)
+        public void OnJSONEvent(JObject message)
         {
-            Debug.Log("OnJSONEvent " + error);
+            //Debug.Log("OnJSONEvent " + message["message"]);
             activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
                 += () => activity.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
         }
 
         public void OnConnectionFailedEvent(string error)
         {
-            Debug.Log("OnConnectionFailedEvent " + error);
             connected.color = Color.grey;
             disconnected.color = Color.white;
         }
 
         public void OnReconnectEvent(string error)
         {
-            Debug.Log("OnReconnectEvent " + error); 
             connected.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
                 += () => disconnected.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
         }
 
         public void OnErrorEvent(string message)
         {
-            Debug.Log("OnErrorEvent " + error);
             error.color = Color.white;
         }
 
         public void OnDisconnectEvent(string message)
         {
-            Debug.Log("OnDisconnectEvent " + error);
             connected.color = Color.grey;
             disconnected.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut);
         }

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
+using Newtonsoft.Json.Linq;
 using SimpleJson;
 using UnityEngine;
 using SocketIO.Client;
@@ -14,7 +13,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
     class SocketHandler : MonoBehaviour
     {
         public event Action<String> OnConnectEvent;
-        public event Action<String> OnJSONEvent;
+        public event Action<JObject> OnJSONEvent; // msgNewtonsoft.Json.Linq.JObject
         public event Action<String> OnStringEvent;
         public event Action<String> OnConnectionFailedEvent;
         public event Action<String> OnReconnectEvent;
@@ -22,8 +21,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public event Action<String> OnDisconnectEvent;
 
         #if UNITY_EDITOR
-        private SocketIOClient socketio;
-        private SocketIOClient _socket;
+        private Namespace _socket;
         #elif UNITY_ANDROID 
         private AndroidJavaClass _socket;
         private string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
@@ -34,39 +32,17 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public void Awake()
         {
             messageQueue = new Queue<MessageData>();
-
-            // gameObject.AddComponent<NetworkHelper>().RequestIpAddress("http://www.kibotu.net/server",null);
-
-            Console.WriteLine("Main() invoked on thread {0}.", Thread.CurrentThread.ManagedThreadId);
-            NetworkHelper.DownloadJsonByUrl("http://www.kibotu.net/server", new AsyncCallback(OnReceiveJson));
         }
-
-        private static void OnReceiveJson(IAsyncResult result)
-        {
-            Debug.Log("onreceive"); 
-            Debug.Log(result.AsyncState);
-        }
-
 
         public void Connect(string host, int port)
         {
             #if UNITY_EDITOR
-            socketio = new SocketIOClient();
-            var socket = socketio.Connect("http://192.168.178.173:1337/");
-            socket.On("connect", (args, callback) => ConnectCallback(""));
 
-            socket.On("message", (args, callback) =>
-            {
-                Debug.Log("Server sent:" + args);
-                StringCallback(args.ToString());
-
-                for (int i = 0; i < args.Length; i++)
-                {
-                    Debug.Log("[" + i + "] => " + args[i]);
-                }
-            });
-
+            _socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
+            SetDelegates();
+          
             #elif UNITY_ANDROID 
+
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
@@ -74,27 +50,37 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
                 // System.Threading.Thread(_socket.CallStatic("connect", host, port));
                 _socket.CallStatic("connect", host, port);
             }
-            #endif
-        }
 
-        public void connectEditor()
-        {
-            Debug.Log("connect to server");
-//socket.Emit("send", PackageFactory.CreateHelloWorldMessage());
+            #endif
         }
 
         public void Connect(int port)
         {
-            #if UNITY_ANDROID && !UNITY_EDITOR
+            #if UNITY_EDITOR
+
+            NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
+            {
+                _socket = new SocketIOClient().Connect("http://" + result[(string)result["network_interface"]] + ":" + port + "/");
+                SetDelegates();
+            });
+
+            #elif UNITY_ANDROID
+
             AndroidJNIHelper.debug = true;
             if (_socket == null)
             {
                 _socket = new AndroidJavaClass(SocketHandlerClass);
                 _socket.CallStatic("connect", port);
             }
-            #endif
 
-            connectEditor();
+            #endif
+        }
+
+        private void SetDelegates()
+        {
+            _socket.On("connect", (args, callback) => ConnectCallback("Successfully connected. " + _socket.Name));
+
+            _socket.On("message", (args, callback) => { foreach (JObject t in args) JSONCallback(t); });
         }
 
         public static SocketHandler Instance
@@ -126,11 +112,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void StringCallback(string message)
         {
-            // remove pointless json array artefact [ ] 
-            OnStringEvent(message.Substring(1, message.Length - 2));
+            // remove json array artefact [ ] // todo handle multiple messages
+            if(message[0].Equals('[')) Debug.LogError("error: received multiple messages, dropping all but first");
+            OnStringEvent(message[0].Equals('[') ? message.Substring(1, message.Length - 2) : message);
         }
 
-        public void JSONCallback(string message)
+        public void JSONCallback(JObject message)
         {
             OnJSONEvent(message);
         }
@@ -157,10 +144,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Update()
         {
-            while (messageQueue.Count > 0)
+            while (messageQueue.Count > 0) // todo merge multiple messages into one
             {
                 var msg = messageQueue.Dequeue();
-                #if UNITY_ANDROID && !UNITY_EDITOR
+                #if UNITY_EDITOR
+                _socket.Emit(msg.name, msg.message);
+                #elif UNITY_ANDROID
                 _socket.CallStatic("Emit", msg.name, msg.message);
                 #endif
             }

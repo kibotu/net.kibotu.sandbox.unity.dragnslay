@@ -529,7 +529,7 @@ var findAvailableRoomId = function(game_type)
 
 var roomHasEnoughPlayer = function(roomId) {
     var room = rooms[roomId];
-    var res = true;
+    var res = false;
 
     if(room.game.game_type == 'game1vs1') {
         res = room.user.length == 2;
@@ -561,12 +561,18 @@ io.sockets.on('connection', function (socket) {
 
     // echo
     socket.on('send', function (data) {
+
+        data = parseJson(data);
+
         sendAllInRoomTextMessage(socket, data, data);
         console.log("Response:", data);
     });
 
     // ping
     socket.on('ping', function (data) {
+
+        data = parseJson(data);
+
         socket.emit('pong', data);
         console.log("ping? => pong");
     });
@@ -581,6 +587,8 @@ io.sockets.on('connection', function (socket) {
 
     // message
     socket.on("message", function(data) {
+
+        data = parseJson(data);
 
         // 2) finish handshake
         if(data.uid) {
@@ -600,13 +608,16 @@ io.sockets.on('connection', function (socket) {
 
         // debug
         console.log("message " + JSON.stringify(data));
-        sendAllTextMessage(socket, data);
+        //sendAllTextMessage(socket, data);
 
         updateRooms();
     });
 
     // create game
     socket.on('create-game', function(data){
+
+        data = parseJson(data);
+
         console.log("create game:", data);
 
         // 1) change room from queue to new room
@@ -624,6 +635,9 @@ io.sockets.on('connection', function (socket) {
 
     // join game
     socket.on('join-game', function(data){
+
+        data = parseJson(data);
+
         console.log("join game:", data);
 
         // 1) check if room available
@@ -650,6 +664,9 @@ io.sockets.on('connection', function (socket) {
 
     // join game
     socket.on('leave-game', function(data){
+
+        data = parseJson(data);
+
         console.log("leave game:", data);
         changeRoom(socket, 'Queue');
 
@@ -657,6 +674,8 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('request', function(data){
+
+        data = parseJson(data);
 
         console.log("client request:", data['message']);
 
@@ -717,6 +736,10 @@ io.sockets.on('connection', function (socket) {
         updateRooms();
     });
 });
+
+var parseJson = function(data) {
+    return _.isString(data) ? JSON.parse(data) : data;
+};
 
 // # serving the flash policy file
 net = require("net");

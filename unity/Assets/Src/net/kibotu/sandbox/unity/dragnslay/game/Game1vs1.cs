@@ -1,16 +1,15 @@
 using System;
 using System.Collections;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
-using SimpleJson;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public class Game1vs1 : Game {
         
-        protected override void CreateWorld()
+        protected void CreateWorld()
         {
             const float scale = 50;
 
@@ -37,11 +36,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         }
 
         const float scale = 50;
-
-        public void Start()
-        {
-            // do stuff on first start
-        }
 
         public override void OnStringEvent(string jsonMessage)
         {
@@ -92,7 +86,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 SocketHandler.Instance.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
 
                 // join
-                // SocketHandler.Instance.SendMessage("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
+                // SocketHandler.Instance.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
 
                 // request game data
                 SocketHandler.Instance.Emit("request", PackageFactory.CreateRequestGameData());
@@ -104,9 +98,72 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
         }
 
-        public override void OnJSONEvent(string message)
+        public override void OnJSONEvent(JObject json)
         {
-            Debug.Log("Game1vs1 json " + message);
+            var message = (string) json["message"];
+
+            Debug.Log(message);
+            
+            if (message.Equals("move-units"))
+            {
+                Debug.Log("move units");
+                Debug.Log("move units " + message);
+                Debug.Log("move units " + json["target"]);
+                Debug.Log("move units " + json["ships"]);
+            }
+            else if (message.Equals("spawn-units"))
+            {
+                Debug.Log("spawn units");
+
+            }
+            else if (message.Equals("game-data"))
+            {
+                Debug.Log("Receiving Game Data.");
+
+                var gameData = json["game-data"];
+                var players = gameData["players"];
+
+                foreach (var player in players)
+                {
+                    Debug.Log("game data " + player["uid"]); // player uid
+                    var islands = player["islands"];
+                    foreach (var island in islands)
+                    {
+                        Debug.Log("game data island id " + island["uid"].ToObject<int>()); // island uid
+                        Debug.Log("game data ship type " + island["ship-type"].ToObject<int>()); // ship type
+
+                        JToken island1 = island;
+                        ExecuteOnMainThread.Enqueue(() =>
+                        {
+                            var go = GameObjectFactory.CreateIsland(island1["type"].ToObject<int>()); // island type Newtonsoft.Json.Linq.JValue
+                            go.GetComponent<SpawnUnits>().shipSpawnType = island1["ship-type"].ToObject<int>(); // ship type
+                            var position = island1["position"]; // position
+                            go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
+                            go.transform.localScale = new Vector3(scale, scale, scale);
+                        });
+                        
+                    }
+                }
+            }
+            else if (message.Equals("Welcome!"))
+            {
+                SocketHandler.Instance.Emit("message", PackageFactory.CreateJoinQueueMessage((string) json["uid"]));
+
+                // create
+                SocketHandler.Instance.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
+
+                // join
+                // SocketHandler.Instance.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
+            }
+            else if (message.Equals("server-game-ready"))
+            {
+                // request game data
+                SocketHandler.Instance.Emit("request", PackageFactory.CreateRequestGameData());
+            }
+            else
+            {
+                // todo more events 
+            }
         }
     }
 }
