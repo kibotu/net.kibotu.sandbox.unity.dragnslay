@@ -19,20 +19,20 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
             yield return Color.yellow;
         }
 
-        private static int playerColorNumber = 0;
+        private static int _playerColorNumber = 0;
 
         public Color GetNextPlayerColor()
         {
-            switch (playerColorNumber)
+            switch (_playerColorNumber)
             {
                 case 0:
-                    playerColorNumber++;
+                    _playerColorNumber++;
                     return Color.green;
                 case 1:
-                    playerColorNumber++;
+                    _playerColorNumber++;
                     return Color.red;
                 case 2:
-                    playerColorNumber++;
+                    _playerColorNumber++;
                     return Color.yellow;
                 default:
                     return Color.clear;

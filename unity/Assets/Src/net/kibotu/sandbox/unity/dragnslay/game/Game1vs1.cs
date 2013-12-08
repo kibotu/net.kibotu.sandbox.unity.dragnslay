@@ -76,12 +76,25 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         {
             var message = (string) json["message"];
             
-            if (message.Equals("move-units"))
+            if (message.Equals("move-unit"))
             {
-                Debug.Log("move units");
-                Debug.Log("move units " + message);
-                Debug.Log("move units " + json["target"]);
-                Debug.Log("move units " + json["ships"]);
+                var target = Registry.Instance.Islands[json["target"].ToObject<int>()];
+
+                foreach (var shipId in json["ships"])
+                {
+                    var ship_uid = shipId.ToObject<int>();
+                    ExecuteOnMainThread.Enqueue(() =>
+                    {
+                        // 1) add move component to ship
+                        var move = Registry.Instance.Ships[ship_uid].AddComponent<Move>();
+                        move.speed = 25;
+
+                        // 2) set move destination
+                        move.destination = target.transform.FindChild("Sphere");
+
+                        Debug.Log("move " + ship_uid + " to " + target.GetComponent<IslandData>().uid);
+                    });
+                }
             }
             else if (message.Equals("spawn-unit"))
             {

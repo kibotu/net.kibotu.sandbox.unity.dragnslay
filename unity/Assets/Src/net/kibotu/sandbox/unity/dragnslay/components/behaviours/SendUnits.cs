@@ -135,14 +135,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
                         // only move if you own it
                         if (plane.GetComponent<ShipData>().playerUid != Game.ClientUid) continue;
-                        
-                        plane.AddComponent<Move>();
-                        var move = plane.GetComponent<Move>();
-                        move.speed = 25;
-                        move.destination = destination.transform.FindChild("Sphere");
+
+                        if (plane.GetComponent<ShipData>().uid != pair.Key)
+                            UnityEngine.Debug.Log("WARNING! ship id != registry id on move-units");
+
+                        // add to move-unit list
+                        toMovePlanes.Add(pair.Key);
                     }
                 }
-                if (toMovePlanes.Count > 0) SocketHandler.SharedConnection.Emit("move-units", PackageFactory.CreateSendUnitsMessage(destination.GetInstanceID(), toMovePlanes.ToArray()));
+                if (toMovePlanes.Count > 0) 
+                        SocketHandler.SharedConnection.Emit("move-unit", PackageFactory.CreateMoveUnitMessage(destination.GetComponent<IslandData>().uid, toMovePlanes.ToArray()));
             }
         }
 

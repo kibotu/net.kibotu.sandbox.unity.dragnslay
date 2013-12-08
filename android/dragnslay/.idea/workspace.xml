@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../resources" afterPath="$PROJECT_DIR$/../../resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +42,7 @@
     <file path="/strings.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385840211719" ignored="false" />
     <file path="/js.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385843375446" ignored="false" />
     <file path="/game.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385844301079" ignored="false" />
-    <file path="/main.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386515791108" ignored="false" />
+    <file path="/main.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386522320475" ignored="false" />
     <file path="/chatform.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386184464842" ignored="false" />
     <file path="/style.css" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386184904189" ignored="false" />
     <file path="/chat.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386014636868" ignored="false" />
@@ -124,7 +125,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="764" column="56" selection-start="24351" selection-end="24351" vertical-scroll-proportion="0.6145833">
+            <state line="774" column="45" selection-start="24525" selection-end="24525" vertical-scroll-proportion="0.5083333">
               <folding />
             </state>
           </provider>
@@ -885,7 +886,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="764" column="56" selection-start="24351" selection-end="24351" vertical-scroll-proportion="0.6145833">
+        <state line="774" column="45" selection-start="24525" selection-end="24525" vertical-scroll-proportion="0.5083333">
           <folding />
         </state>
       </provider>

@@ -656,7 +656,7 @@ io.sockets.on('connection', function (socket) {
         }
 
         // debug
-        console.log("message " + JSON.stringify(data));
+        console.log("Default",JSON.stringify(data));
         //sendAllTextMessage(socket, data);
 
         updateRooms();
@@ -762,6 +762,14 @@ io.sockets.on('connection', function (socket) {
         });
 
         // send all spawn message
+        sendAllInRoomTextMessage(socket, data);
+    });
+
+    socket.on("move-unit", function(data) {
+
+        data = parseJson(data);
+
+        // send all move message
         sendAllInRoomTextMessage(socket, data);
     });
 

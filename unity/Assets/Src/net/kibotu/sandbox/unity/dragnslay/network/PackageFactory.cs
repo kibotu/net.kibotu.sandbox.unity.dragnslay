@@ -11,7 +11,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         {
         }
 
-        private static long packageId = 0;
+        private static long _packageId;
 
         public static JsonObject CreateHelloWorldMessage()
         {
@@ -31,12 +31,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         /// <param name="scheduleId">Target destination.</param>
         /// 
         /// <returns>Generated JsonObject.</returns>
-        public static JsonObject CreateSendUnitsMessage(int target, int[] ships)
+        public static JsonObject CreateMoveUnitMessage(int target, int[] ships)
         {
             return new JsonObject{
+                {"message",     "move-unit"},
                 {"ships",       ships},
                 {"target",      target},
-                {"packageId",   ++packageId},
+                {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -46,7 +47,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             return new JsonObject{
                 {"message",     "spawn-unit"},
                 {"spawns",      spawns},
-                {"packageId",   ++packageId},
+                {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -56,7 +57,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             return new JsonObject{
                 {"message",     uid},
                 {"uid",         uid},
-                {"packageId",   ++packageId},
+                {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -66,7 +67,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             return new JsonObject{
                 {"message",     name},
                 {"game-type",   gameType},
-                {"packageId",   ++packageId},
+                {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -75,7 +76,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         {
             return new JsonObject{
                 {"message",     "game-data"},
-                {"packageId",   ++packageId},
+                {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
@@ -84,7 +85,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         {
             var json = new JsonObject{
                 {"message",     name},
-                {"packageId",   ++packageId},
+                {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
 
