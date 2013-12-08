@@ -5,15 +5,15 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
 {
     class Registry : MonoBehaviour
     {
-        public Dictionary<int, GameObject> GameObjects;
-        public Dictionary<int, GameObject> Planes;
+        public Dictionary<int, GameObject> Islands;
+        public Dictionary<int, GameObject> Ships;
 
         private static Registry _instance;
 
         private Registry()
         {
-            GameObjects = new Dictionary<int, GameObject>();
-            Planes = new Dictionary<int, GameObject>();
+            Islands = new Dictionary<int, GameObject>();
+            Ships = new Dictionary<int, GameObject>();
         }
 
         public static Registry Instance

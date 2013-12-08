@@ -34,7 +34,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public static JsonObject CreateSendUnitsMessage(int target, int[] ships)
         {
             return new JsonObject{
-                {"message",     "move-units"},
                 {"ships",       ships},
                 {"target",      target},
                 {"packageId",   ++packageId},
@@ -42,10 +41,10 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             };
         }
 
-        public static JsonObject CreateSpawnMessage(Spawn[] spawns)
+        public static JsonObject CreateSpawnMessage(SpawnData[] spawns)
         {
             return new JsonObject{
-                {"message",     "spawn-units"},
+                {"message",     "spawn-unit"},
                 {"spawns",      spawns},
                 {"packageId",   ++packageId},
                 {"scheduleId",  Game.ScheduleId()}

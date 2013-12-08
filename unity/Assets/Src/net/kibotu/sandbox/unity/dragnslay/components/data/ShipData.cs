@@ -2,8 +2,10 @@
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
 {
-    class MetaData : MonoBehaviour
+    class ShipData : MonoBehaviour
     {
         public int uid;
+        public int shipType;
+        public string playerUid;
     }
 }

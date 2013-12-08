@@ -1,4 +1,5 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+﻿using System.Collections.Generic;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using Newtonsoft.Json.Linq;
@@ -47,7 +48,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             error.position = new Vector3(440, -10, 0);
             error.color = Color.grey;
 
-
             #if UNITY_ANDROID && !UNITY_EDITOR
                 AndroidJNI.AttachCurrentThread();
                 AndroidJNIHelper.debug = false;
@@ -56,22 +56,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
         public void OnPlayButtonClicked(UIButton button)
         {
+            SocketHandler.SharedConnection.OnConnectEvent += OnConnected;
+            SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
+            SocketHandler.SharedConnection.OnStringEvent += OnStringEvent;
+            SocketHandler.SharedConnection.OnConnectionFailedEvent += OnConnectionFailedEvent;
+            SocketHandler.SharedConnection.OnReconnectEvent += OnReconnectEvent;
+            SocketHandler.SharedConnection.OnErrorEvent += OnErrorEvent;
+            SocketHandler.SharedConnection.OnDisconnectEvent += OnDisconnectEvent;
+            
+            var game = new GameObject("Game").AddComponent<Game1vs1>();
+            SocketHandler.SharedConnection.OnStringEvent += game.OnStringEvent;
+            SocketHandler.SharedConnection.OnJSONEvent += game.OnJSONEvent;
 
-            SocketHandler.Instance.OnConnectEvent += OnConnected;
-            //SocketHandler.Instance.OnJSONEvent += OnJSONEvent;
-            SocketHandler.Instance.OnStringEvent += OnStringEvent;
-            SocketHandler.Instance.OnConnectionFailedEvent += OnConnectionFailedEvent;
-            SocketHandler.Instance.OnReconnectEvent += OnReconnectEvent;
-            SocketHandler.Instance.OnErrorEvent += OnErrorEvent;
-            SocketHandler.Instance.OnDisconnectEvent += OnDisconnectEvent;
-
-            var world = GameObject.Find("World");
-            world.AddComponent<WorldData>();
-            var game = world.AddComponent<Game1vs1>();
-            SocketHandler.Instance.OnStringEvent += game.OnStringEvent;
-            SocketHandler.Instance.OnJSONEvent += game.OnJSONEvent;
-
-            SocketHandler.Instance.Connect(1337);  
+            SocketHandler.SharedConnection.Connect(1337);  
         }
 
         public void OnConnected(string error)
@@ -82,15 +79,21 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
         public void OnStringEvent(string message)
         {
-            activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
-               += () => activity.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            Game.ExecuteOnMainThread.Enqueue(() =>
+            {
+               activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
+                  += () => activity.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            });
         }
 
         public void OnJSONEvent(JObject message)
         {
-            //Debug.Log("OnJSONEvent " + message["message"]);
-            activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
-                += () => activity.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            Debug.Log(message["message"]);
+            Game.ExecuteOnMainThread.Enqueue(() =>
+            {
+                activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
+                    += () => activity.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            });
         }
 
         public void OnConnectionFailedEvent(string error)
@@ -101,8 +104,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
         public void OnReconnectEvent(string error)
         {
-            connected.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
-                += () => disconnected.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            Game.ExecuteOnMainThread.Enqueue(() =>
+            {
+                connected.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
+                    += () => disconnected.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            });
         }
 
         public void OnErrorEvent(string message)
@@ -112,8 +118,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
         public void OnDisconnectEvent(string message)
         {
-            connected.color = Color.grey;
-            disconnected.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut);
+            Game.ExecuteOnMainThread.Enqueue(() =>
+            {
+                connected.color = Color.grey;
+                disconnected.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut);
+            });
         }
     }
 }

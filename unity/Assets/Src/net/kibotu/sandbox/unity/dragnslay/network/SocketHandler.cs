@@ -83,7 +83,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             _socket.On("message", (args, callback) => { foreach (JObject t in args) JSONCallback(t); });
         }
 
-        public static SocketHandler Instance
+        public static SocketHandler SharedConnection
         {
             get { return _instance ?? (_instance = new GameObject("SocketHandler").AddComponent<SocketHandler>()); }
         }

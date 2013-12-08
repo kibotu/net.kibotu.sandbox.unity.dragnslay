@@ -1,34 +1,15 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
     public class SpawnUnits : MonoBehaviour
     {
-        public float startTime;
-        public int shipSpawnType;
-
-        // Use this for initialization
-        void Start ()
+        public void Update ()
         {
-            startTime = 0;
-            shipSpawnType = 0;
-        }
-	
-        // Update is called once per frame
-        void Update ()
-        {
-            startTime += Time.deltaTime;
-            if (startTime > 3f && GetComponentsInChildren<Transform>().Length < 3)
-            {
-                startTime = 0;
-                var plane = GameObjectFactory.CreatePlane();
-                plane.transform.Translate(transform.position);
-                plane.transform.parent = transform;
-                Registry.Instance.Planes.Add(plane.GetInstanceID(),plane);
-                //Debug.Log("add plane: " + plane.go.GetInstanceID());
-            }
+            if (GetComponentsInChildren<Transform>().Length >= 3) return;
+                SocketHandler.SharedConnection.Emit("spawn-unit", PackageFactory.CreateSpawnMessage(new[] { new SpawnData { island_uid = gameObject.GetComponent<IslandData>().uid, uid = -1 } }));
         }
     }
 }

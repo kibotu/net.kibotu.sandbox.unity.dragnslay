@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -8,39 +10,11 @@ using UnityEngine;
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public class Game1vs1 : Game {
-        
-        protected void CreateWorld()
-        {
-            const float scale = 50;
-
-            var island1 = GameObjectFactory.CreateIsland();
-            island1.transform.position = new Vector3(50, 50, 0);
-            island1.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island2 = GameObjectFactory.CreateIsland();
-            island2.transform.Translate(50, 350  , 0);
-            island2.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island3 = GameObjectFactory.CreateIsland();
-            island3.transform.position = new Vector3(400, 50, 0);
-            island3.transform.localScale = new Vector3(scale, scale, scale);
-
-            var island4 = GameObjectFactory.CreateIsland();
-            island4.transform.position = new Vector3(400, 350, 0);
-            island4.transform.localScale = new Vector3(scale, scale, scale);
-
-            //Planet [] p = new Planet[10] { n	ew Planet() };
-            // add planets to stage
-
-            // spawn ships
-        }
 
         const float scale = 50;
 
         public override void OnStringEvent(string jsonMessage)
         {
-            Debug.Log("Game1vs1 " + jsonMessage);
-
             var search = (IDictionary)MiniJSON.jsonDecode(jsonMessage);
             var message = search["message"];
 
@@ -69,27 +43,27 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                     foreach (Hashtable island in islands)
                     {
                         Debug.Log("game data island id " + Convert.ToInt32(island["uid"])); // uid
-                        var go = GameObjectFactory.CreateIsland(Convert.ToInt32(island["type"])); // island type
-                        go.GetComponent<SpawnUnits>().shipSpawnType = Convert.ToInt32(island["ship-type"]); // ship type
+                        //var go = GameObjectFactory.CreateIsland(Convert.ToInt32(island["type"])); // island type
+                        //go.GetComponent<SpawnUnits>().shipSpawnType = Convert.ToInt32(island["ship-type"]); // ship type
                         var position = (ArrayList)island["position"]; // position
-                        go.transform.position = new Vector3(Convert.ToSingle(position[0]), Convert.ToSingle(position[1]), Convert.ToSingle(position[2])); 
-                        go.transform.localScale = new Vector3(scale, scale, scale);
+                       // go.transform.position = new Vector3(Convert.ToSingle(position[0]), Convert.ToSingle(position[1]), Convert.ToSingle(position[2])); 
+                        //go.transform.localScale = new Vector3(scale, scale, scale);
                     }
                 }
             }
             else if (message.Equals("Welcome!"))
             {
-                Debug.Log(search["uid"]);
-                SocketHandler.Instance.Emit("message", PackageFactory.CreateJoinQueueMessage((string)search["uid"]));
+                client_uid = (string) search["uid"];
+                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(client_uid));
 
                 // create
-                SocketHandler.Instance.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
+                SocketHandler.SharedConnection.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
 
                 // join
-                // SocketHandler.Instance.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
+                // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
 
                 // request game data
-                SocketHandler.Instance.Emit("request", PackageFactory.CreateRequestGameData());
+                SocketHandler.SharedConnection.Emit("request", PackageFactory.CreateRequestGameData());
             }
             else
             {
@@ -101,8 +75,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         public override void OnJSONEvent(JObject json)
         {
             var message = (string) json["message"];
-
-            Debug.Log(message);
             
             if (message.Equals("move-units"))
             {
@@ -111,54 +83,110 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 Debug.Log("move units " + json["target"]);
                 Debug.Log("move units " + json["ships"]);
             }
-            else if (message.Equals("spawn-units"))
+            else if (message.Equals("spawn-unit"))
             {
-                Debug.Log("spawn units");
+                foreach (var spawn in json["spawns"])
+                {
+                    var ship = spawn;
+                    ExecuteOnMainThread.Enqueue(() =>
+                    {
+                        var shipUid = ship["uid"].ToObject<int>();
+                        var island = Registry.Instance.Islands[ship["island_uid"].ToObject<int>()];
+                        var islandData = island.GetComponent<IslandData>();
 
+                        // 1) create ship by type
+                        var go = GameObjectFactory.CreateShip(shipUid, islandData.shipType);
+
+                        // 2) append ship at island
+                        go.transform.Translate(island.transform.position);
+                        go.transform.parent = island.transform;
+
+                        // 3) set ship data
+                        var shipData = go.AddComponent<ShipData>();
+                        shipData.shipType = islandData.shipType;
+                        shipData.uid = shipUid;
+                        shipData.playerUid = islandData.playerUid;
+
+                        // 4) colorize
+                        go.renderer.material.color = island.renderer.material.color;
+
+                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
+                    });
+                }
             }
-            else if (message.Equals("game-data"))
+            else if(message.Equals("game-data"))
             {
-                Debug.Log("Receiving Game Data.");
-
                 var gameData = json["game-data"];
                 var players = gameData["players"];
+                host_uid = gameData["host-uid"].ToString();
+                Debug.Log("Player " + host_uid + " is host.");
 
                 foreach (var player in players)
                 {
-                    Debug.Log("game data " + player["uid"]); // player uid
+                    var playerData = new PlayerData {uid = player["uid"].ToString(), color = World.GetNextPlayerColor()};
+                    World.PlayerData.Add(playerData);
+
                     var islands = player["islands"];
                     foreach (var island in islands)
                     {
-                        Debug.Log("game data island id " + island["uid"].ToObject<int>()); // island uid
-                        Debug.Log("game data ship type " + island["ship-type"].ToObject<int>()); // ship type
-
-                        JToken island1 = island;
+                        var data = island;
                         ExecuteOnMainThread.Enqueue(() =>
                         {
-                            var go = GameObjectFactory.CreateIsland(island1["type"].ToObject<int>()); // island type Newtonsoft.Json.Linq.JValue
-                            go.GetComponent<SpawnUnits>().shipSpawnType = island1["ship-type"].ToObject<int>(); // ship type
-                            var position = island1["position"]; // position
+                            var islandUid = data["uid"].ToObject<int>();
+                            var islandType = data["type"].ToObject<int>();
+
+                            // 1) create island by type
+                            var go = GameObjectFactory.CreateIsland(islandUid, islandType); 
+
+                            // 2) set island transformation
+                            var position = data["position"]; // island position
                             go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
                             go.transform.localScale = new Vector3(scale, scale, scale);
+
+                            // 3) colorize
+                            go.renderer.material.color = playerData.color;
+
+                            // 4) add meta data
+                            var islandData = go.AddComponent<IslandData>();
+
+                            // 4.1) set uid
+                            islandData.uid = islandUid;
+
+                            // 4.2) island type
+                            islandData.islandType = islandType;
+
+                            // 4.3) set ownership
+                            islandData.playerUid = playerData.uid;
+
+                            // 4.4) life data
+                            go.AddComponent<LifeData>();
+
+                            // 4.5) set spawning ship types
+                            islandData.shipType = data["ship-type"].ToObject<int>();
+
+                            // 4.6) host handles spawnings
+                            if(host_uid == client_uid)
+                                go.AddComponent<SpawnUnits>();
                         });
-                        
                     }
                 }
             }
             else if (message.Equals("Welcome!"))
             {
-                SocketHandler.Instance.Emit("message", PackageFactory.CreateJoinQueueMessage((string) json["uid"]));
+                client_uid = json["uid"].ToString();
+
+                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(client_uid));
 
                 // create
-                SocketHandler.Instance.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
+                SocketHandler.SharedConnection.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
 
                 // join
-                // SocketHandler.Instance.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
+                // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
             }
             else if (message.Equals("server-game-ready"))
             {
                 // request game data
-                SocketHandler.Instance.Emit("request", PackageFactory.CreateRequestGameData());
+                SocketHandler.SharedConnection.Emit("request", PackageFactory.CreateRequestGameData());
             }
             else
             {

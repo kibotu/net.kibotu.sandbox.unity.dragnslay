@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -11,13 +12,18 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
         public float startTime;
         public static long turn;
-        public Queue<Action> ExecuteOnMainThread;
+        public static Queue<Action> ExecuteOnMainThread;
+        public WorldData World;
+        public string client_uid;
+        public string host_uid;
 
         public void Start()
         {
             ExecuteOnMainThread = new Queue<Action>();
             startTime = 0;
             turn = 0;
+
+            World = gameObject.AddComponent<WorldData>();
         }
 
         public virtual void Update()

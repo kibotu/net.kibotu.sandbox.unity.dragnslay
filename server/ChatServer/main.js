@@ -1,4 +1,6 @@
 process.env.NODE_ENV = 'development';
+process.stdout.setEncoding('utf8');
+process.stderr.setEncoding('utf8');
 
 var nodetime = require('nodetime').profile({
     accountKey: '95c1612507ed5224a07691cfdb47436e9467c146',
@@ -6,7 +8,7 @@ var nodetime = require('nodetime').profile({
 });
 
 var express = require('express');
-var socketHandler = require('./src/sockethandler');
+var socketHandler = require('./src/network/sockethandler');
 var routes = require('./routes');
 var user = require('./routes/user');
 var chat = require('./routes/chat');
@@ -28,6 +30,46 @@ var ftp;
 var uid = require('./src/utils/uid');
 var Game = require('./src/game/game');
 var osutils = require('os-utils');
+
+var getUids = function(number) {
+    var res = new Number[number];
+    for(var i = 0; i < number; ++i) {
+        res[i] = uid();
+    }
+    return res;
+};
+
+// network traffic: @see http://stackoverflow.com/a/18907653
+var startNetstat = function() {
+
+    var netstat = require('./src/network/shelldameon')( 'c:/windows/system32/netstat', 'netstat', [ '-es' ],10000);
+
+    netstat.on( 'netstat', function( data ){
+        var lines = data.split('\n');
+        // console.log(data);
+    });
+
+    netstat.on( 'stderr', function( err ) {
+        process.stderr.write( err );
+    });
+};
+
+var startTasklist = function() {
+
+    var takslist = require('./src/network/shelldameon')( 'c:/windows/system32/tasklist', 'tasklist', ['/fi', 'IMAGENAME eq node.exe'], 30000);  // '/fi "IMAGENAME eq node.exe"'
+
+    takslist.on( 'tasklist', function( data ){
+        var nodeps = _.findWhere(data.split('\n'), "node");
+        if(nodeps) {
+            var nodemem = nodeps.split(" ");
+            console.log(nodemem[nodemem.length-2]);
+        }
+    });
+
+    takslist.on( 'stderr', function( err ) {
+        process.stderr.write( err );
+    });
+};      startTasklist();
 
 // @see http://de.slideshare.net/bluesmoon/a-nodejs-bag-of-goodies-for-analyzing-web-traffic
 // var geo = require('geip-lite');
@@ -421,7 +463,12 @@ var loadGameData = function(game_type, player, bots, callback) {
             if(err)
                 console.log(err);
 
-            callback(JSON.parse(processLevelTemplate(decoder.write(data),player, bots)));
+            var levelData = JSON.parse(processLevelTemplate(decoder.write(data),player, bots));
+
+            // add host uid
+            levelData['host-uid'] = player[0];
+
+            callback(levelData);
         });
 
     else
@@ -531,6 +578,8 @@ var roomHasEnoughPlayer = function(roomId) {
     var room = rooms[roomId];
     var res = false;
 
+    //console.log("\n" + JSON.stringify(room) + "\n");
+
     if(room.game.game_type == 'game1vs1') {
         res = room.user.length == 2;
     }
@@ -621,15 +670,13 @@ io.sockets.on('connection', function (socket) {
         console.log("create game:", data);
 
         // 1) change room from queue to new room
-        changeRoom(socket, createRoom());
+        // 1.1) room creates new game by type
+        changeRoom(socket, createRoom(data['game-type']));
 
-        // 2) room creates new game by type
-        rooms[socket.room].game = { game_type : data['game-type']};
-
-        // 3) emitting waiting for player message
+        // 2) emitting waiting for player message
         socket.emit('message',{"message" : "waiting-for-player"});
 
-        // 4) updating rooms
+        // 3) updating rooms
         updateRooms();
     });
 
@@ -643,16 +690,15 @@ io.sockets.on('connection', function (socket) {
         // 1) check if room available
         // 1.1) change room to available by game_type
         // 1.2) create new room by game_type
-        changeRoom(socket, findAvailableRoomId(data['game_type']));
+        changeRoom(socket, findAvailableRoomId(data['game-type']));
 
         // 2) check if enough player are in room
-        if(roomHasEnoughPlayer(socket.room)) {
+        if(roomHasEnoughPlayer(socket.room))
             // 2.1) if yes emitting game-ready message
             sendAllInRoomTextMessage(socket, {message : "server-game-ready"});
-        } else {
+        else
             // 2.2) if not emitting waiting for player message
             socket.emit('message',{"message" : "waiting-for-player"});
-        }
 
         socket.on('client-game-ready', function(data) {
             // todo start game
@@ -660,6 +706,10 @@ io.sockets.on('connection', function (socket) {
 
         // 3) update rooms
         updateRooms();
+    });
+
+    socket.on('client-game-ready', function(data) {
+
     });
 
     // join game
@@ -696,6 +746,23 @@ io.sockets.on('connection', function (socket) {
                 sendAllInRoomTextMessage(socket, { "message" : "game-data", "game-data" : data } );
             });
         }
+
+        if(data['message'] == "uids") {
+            socket.emit("message", {"message" : "uids", "uid" : getUids(data['amount'])});
+        }
+    });
+
+    socket.on('spawn-unit', function(data){
+
+        data = parseJson(data);
+
+        // 1) replace invalid uids with valid ones
+        _.each(data['spawns'], function(spawn) {
+            if(spawn.uid == -1) spawn.uid = uid();
+        });
+
+        // send all spawn message
+        sendAllInRoomTextMessage(socket, data);
     });
 
     // reconnects

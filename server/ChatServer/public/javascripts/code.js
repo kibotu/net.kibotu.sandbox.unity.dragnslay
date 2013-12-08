@@ -230,15 +230,9 @@ $( document ).ready(function() {
         }
     };
 
-    $("#field").enterKey(function () {
-        sendMessage();
-    });
+    $("#field").enterKey(function () { sendMessage(); });
 
-    $("#send").click(function() {
-        sendMessage();
-    });
-
-    //$("$"
+    $("#send").click(function() { sendMessage();  });
 
     $("#join-game_type_1vs1").click( function() {
         socket.emit('join-game', { "game-type" : "game1vs1"});
@@ -248,13 +242,34 @@ $( document ).ready(function() {
         socket.emit('create-game', { "game-type" : "game1vs1"});
     });
 
-    $("#leave-game").click( function() {
-        socket.emit('leave-game', {});
-    });
-
     $("#request-game-data").click( function() {
         socket.emit('request', { message: 'game-data'});
     });
+
+    $("#spawn-ship").click( function() {
+        socket.emit('spawn-ship', { message: 'spawn-ship'});
+    });
+
+    $("#start-game").click( function() {
+        socket.emit('event', { "message" : "start-game" });
+    });
+
+    $("#pause-game").click( function() {
+        socket.emit('event', { "message" : "pause-game" });
+    });
+
+    $("#resume-game").click( function() {
+        socket.emit('event', { "message" : "resume-game" });
+    });
+
+    $("#end-game").click( function() {
+        socket.emit('event', { "messaget" : "end-game" });
+    });
+
+    $("#leave-game").click( function() {
+        socket.emit('leave-game', { "message" : "leave-game"});
+    });
+
 
     $("#join-game_type_2vs2").click( function() {
         socket.emit('event', { "game-event" : "join", "game-type" : "2vs2" });
@@ -268,21 +283,6 @@ $( document ).ready(function() {
         socket.emit('event', { "game-event" : "join", "game-type" : "custom_2vs2" });
     });
 
-    $("#start-game").click( function() {
-        socket.emit('event', { "game-event" : "start-game" });
-    });
-
-    $("#pause-game").click( function() {
-        socket.emit('event', { "game-event" : "pause-game" });
-    });
-
-    $("#resume-game").click( function() {
-        socket.emit('event', { "game-event" : "resume-game" });
-    });
-
-    $("#end-game").click( function() {
-        socket.emit('event', { "game-event" : "end-game" });
-    });
 
     $("#move-units").click( function() {
         socket.emit('event', { "game-event" : "move-units", source : 1, dest : 2, amount  : 50 });

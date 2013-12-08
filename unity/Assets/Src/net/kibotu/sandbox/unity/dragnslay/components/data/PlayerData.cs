@@ -1,12 +1,14 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
 {
     public class PlayerData {
 	
-        // profile
-        public int uid;
+        public string uid;
         public int fbId;
         public string name;
-        public int color;
+        public Color color;
         public int level;
         public int xp;
         public int currancy;

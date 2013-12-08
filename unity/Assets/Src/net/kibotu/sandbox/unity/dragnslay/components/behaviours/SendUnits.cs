@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using UnityEngine;
 
@@ -11,25 +10,25 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
     public class SendUnits : MonoBehaviour
     {
         private static string LOGGING_TAG = "SendUnits";
-        private static bool debug = false;
-        private static bool isDragging;
-        private static bool isOver;
-        private static List<int> selected;
-        private int id;
-        private Color oldColor;
+        private const bool Debug = false;
+        private static bool _isDragging;
+        private static bool _isOver;
+        private static List<int> _selected;
+        private int _id;
+        private Color _oldColor;
 
         public void Start()
         {
-            initLineRender();
+            InitLineRender();
 
-            isDragging = false;
-            isOver = false;
-            id = gameObject.GetInstanceID();
-            if(selected == null) selected = new List<int>();
-            oldColor = renderer.material.color;
+            _isDragging = false;
+            _isOver = false;
+            _id = gameObject.GetComponent<IslandData>().uid;
+            if(_selected == null) _selected = new List<int>();
+            _oldColor = renderer.material.color;
         }
 
-        private void initLineRender()
+        private void InitLineRender()
         {
             Color c1 = Color.yellow;
             Color c2 = Color.red;
@@ -46,49 +45,48 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void OnMouseDown()
         {
-            isDragging = true;
-            isOver = true;
+            _isDragging = true;
+            _isOver = true;
 
-            if (isDragging && !selected.Contains(id))
-            {
-                selected.Add(id);
-                renderer.material.color = new Color(1.5f,2.0f,1.5f,1.0f);
-                if (debug) Debug.Log("select " + id);
-            }
+            if (!_isDragging || _selected.Contains(_id)) return;
+
+            _selected.Add(_id);
+            renderer.material.color = new Color(1.5f,2.0f,1.5f,1.0f);
+            if (Debug) UnityEngine.Debug.Log("select " + _id);
         }
 
         public void OnMouseEnter()
         {
-            isOver = true;
-            if (isDragging && !selected.Contains(id))
+            _isOver = true;
+            if (_isDragging && !_selected.Contains(_id))
             {
-                selected.Add(id);
+                _selected.Add(_id);
                 renderer.material.color = new Color(1.5f, 2.0f, 1.5f, 1.0f);
-                if (debug) Debug.Log("select " + id);
+                if (Debug) UnityEngine.Debug.Log("select " + _id);
             }
-            else if(selected.Contains(id))
+            else if(_selected.Contains(_id))
             {
-                selected.Remove(id);
-                renderer.material.color = oldColor;
-                if(debug) Debug.Log("deselect " + id);
+                _selected.Remove(_id);
+                renderer.material.color = _oldColor;
+                if(Debug) UnityEngine.Debug.Log("deselect " + _id);
             }
         }
 
         public void OnMouseDrag()
         {
-            isDragging = true;
+            _isDragging = true;
         }
 
         public void OnMouseExit()
         {
-            isOver = false;
+            _isOver = false;
         }
 
         public void OnMouseUp()
         {
-            isDragging = false;
+            _isDragging = false;
 
-            if (isOver && selected.Count > 1)
+            if (_isOver && _selected.Count > 1)
             {
                 Send();
             }
@@ -98,12 +96,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         private void DeselectAll()
         {
-            for (int i = 0; i < selected.Count; ++i)
+            for (int i = 0; i < _selected.Count; ++i)
             {
-                if (debug) Debug.Log("deselect " + selected[i]);
-                Registry.Instance.GameObjects[selected[i]].renderer.material.color = oldColor;
+                if (Debug) UnityEngine.Debug.Log("deselect " + _selected[i]);
+                Registry.Instance.Islands[_selected[i]].renderer.material.color = _oldColor;
             }
-            selected.Clear();
+            _selected.Clear();
         }
 
         /**
@@ -115,29 +113,31 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
          */
         private void Send()
         {
-            for (var i = 0; i < selected.Count - 1; ++i)
+            for (var i = 0; i < _selected.Count - 1; ++i)
             {
-                if (debug) Debug.Log("send " + selected[i] + " to " + selected[selected.Count - 1]);
+                if (Debug) UnityEngine.Debug.Log("send " + _selected[i] + " to " + _selected[_selected.Count - 1]);
 
-                var source = Registry.Instance.GameObjects[selected[i]];
-                var destination = Registry.Instance.GameObjects[selected[selected.Count - 1]];
+                var source = Registry.Instance.Islands[_selected[i]];
+                var destination = Registry.Instance.Islands[_selected[_selected.Count - 1]];
 
                 var toMovePlanes = new List<int>();
 
-                foreach (var pair in Registry.Instance.Planes)
+                foreach (var pair in Registry.Instance.Ships)
                 {
-                    if (debug) Debug.Log("bla: " + (source.transform == Registry.Instance.Planes[pair.Key].transform.parent));
-                    if (source.transform == Registry.Instance.Planes[pair.Key].transform.parent)
+                    if (Debug) UnityEngine.Debug.Log("bla: " + (source.transform == Registry.Instance.Ships[pair.Key].transform.parent));
+                    if (source.transform == Registry.Instance.Ships[pair.Key].transform.parent)
                     {
-                        var plane = Registry.Instance.Planes[pair.Key];
+                        var plane = Registry.Instance.Ships[pair.Key];
+
+                        // gameObject.GetComponent<IslandData>();
+                        
                         plane.AddComponent<Move>();
                         var move = plane.GetComponent<Move>();
                         move.speed = 25;
                         move.destination = destination.transform.FindChild("Sphere");
-                        toMovePlanes.Add(plane.GetComponent<MetaData>().uid);
                     }
                 }
-                if (toMovePlanes.Count > 0) SocketHandler.Instance.Emit("send", PackageFactory.CreateSendUnitsMessage(destination.GetInstanceID(), toMovePlanes.ToArray()));
+                if (toMovePlanes.Count > 0) SocketHandler.SharedConnection.Emit("move-units", PackageFactory.CreateSendUnitsMessage(destination.GetInstanceID(), toMovePlanes.ToArray()));
             }
         }
 
@@ -146,11 +146,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
             // line rendering
             var lineRenderer = GetComponent<LineRenderer>();
-            if (selected.Count >= 1 && selected.Contains(id))
+            if (_selected.Count >= 1 && _selected.Contains(_id))
             {
                 lineRenderer.SetVertexCount(3);
                 lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, Registry.Instance.GameObjects[selected[selected.Count - 1]].transform.position);
+                lineRenderer.SetPosition(1, Registry.Instance.Islands[_selected[_selected.Count - 1]].transform.position);
                 lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
                 
             }
