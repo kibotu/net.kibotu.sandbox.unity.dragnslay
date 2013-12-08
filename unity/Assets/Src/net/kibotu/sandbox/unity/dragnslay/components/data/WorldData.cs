@@ -6,7 +6,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
     public class WorldData : MonoBehaviour {
 	
         public List<PlayerData> PlayerData;
-        public string user;
         
         public void Awake()
         {

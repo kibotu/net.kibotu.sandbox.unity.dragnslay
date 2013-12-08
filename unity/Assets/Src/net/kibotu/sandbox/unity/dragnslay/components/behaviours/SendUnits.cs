@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using UnityEngine;
@@ -90,6 +91,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             {
                 Send();
             }
+            else
+            {
+            }
 
             DeselectAll();
         }
@@ -129,7 +133,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                     {
                         var plane = Registry.Instance.Ships[pair.Key];
 
-                        // gameObject.GetComponent<IslandData>();
+                        // only move if you own it
+                        if (plane.GetComponent<ShipData>().playerUid != Game.ClientUid) continue;
                         
                         plane.AddComponent<Move>();
                         var move = plane.GetComponent<Move>();
@@ -143,7 +148,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Update()
         {
-
             // line rendering
             var lineRenderer = GetComponent<LineRenderer>();
             if (_selected.Count >= 1 && _selected.Contains(_id))
@@ -152,7 +156,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, Registry.Instance.Islands[_selected[_selected.Count - 1]].transform.position);
                 lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
-                
             }
             else
             {

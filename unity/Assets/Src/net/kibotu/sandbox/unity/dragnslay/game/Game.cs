@@ -14,8 +14,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         public static long turn;
         public static Queue<Action> ExecuteOnMainThread;
         public WorldData World;
-        public string client_uid;
-        public string host_uid;
+        public static string ClientUid;
+        public static string HostUid;
 
         public void Start()
         {

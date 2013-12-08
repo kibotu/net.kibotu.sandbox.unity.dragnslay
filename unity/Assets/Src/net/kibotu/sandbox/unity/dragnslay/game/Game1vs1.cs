@@ -53,8 +53,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             }
             else if (message.Equals("Welcome!"))
             {
-                client_uid = (string) search["uid"];
-                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(client_uid));
+                ClientUid = (string) search["uid"];
+                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(ClientUid));
 
                 // create
                 SocketHandler.SharedConnection.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
@@ -118,8 +118,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             {
                 var gameData = json["game-data"];
                 var players = gameData["players"];
-                host_uid = gameData["host-uid"].ToString();
-                Debug.Log("Player " + host_uid + " is host.");
+                HostUid = gameData["host-uid"].ToString();
+                Debug.Log("Player " + HostUid + " is host.");
 
                 foreach (var player in players)
                 {
@@ -165,7 +165,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                             islandData.shipType = data["ship-type"].ToObject<int>();
 
                             // 4.6) host handles spawnings
-                            if(host_uid == client_uid)
+                            if(HostUid == ClientUid)
                                 go.AddComponent<SpawnUnits>();
                         });
                     }
@@ -173,9 +173,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             }
             else if (message.Equals("Welcome!"))
             {
-                client_uid = json["uid"].ToString();
+                ClientUid = json["uid"].ToString();
 
-                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(client_uid));
+                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(ClientUid));
 
                 // create
                 SocketHandler.SharedConnection.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));

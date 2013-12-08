@@ -1,7 +1,6 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
