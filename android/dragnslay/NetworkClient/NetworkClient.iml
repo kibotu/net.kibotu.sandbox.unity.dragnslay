@@ -27,7 +27,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="AndroidAsync" exported="" />
-    <orderEntry type="module" module-name="android" exported="" />
+    <orderEntry type="module" module-name="Logger - Android" exported="" />
   </component>
 </module>
 

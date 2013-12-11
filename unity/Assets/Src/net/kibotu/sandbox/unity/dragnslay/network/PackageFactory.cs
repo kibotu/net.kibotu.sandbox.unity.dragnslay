@@ -42,11 +42,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             };
         }
 
-        public static JObject CreateSpawnMessage(SpawnData[] spawns)
+        public static JObject CreateSpawnMessage(JObject[] spawns)
         {
             return new JObject{
                 {"message",     "spawn-unit"},
-                {"spawns",      new JObject(spawns)},
+                {"spawns",      new JArray(spawns) },
                 {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };

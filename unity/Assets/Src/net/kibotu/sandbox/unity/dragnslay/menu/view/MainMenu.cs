@@ -23,31 +23,31 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             //var map = UIButton.create(in_game_hud, "skills.png", "skills.png", 100, 100);
             //map.centerize();
 
-            var main_menu_toolkit = GameObject.Find("main_menu").GetComponent<UIToolkit>(); 
+            var mainMenuToolkit = GameObject.Find("main_menu").GetComponent<UIToolkit>();
 
-            var playButton = UIButton.create(main_menu_toolkit, "button.png", "button.png", 0, 0);
+            var playButton = UIButton.create(mainMenuToolkit, "button.png", "button.png", 0, 0);
             playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
             playButton.centerize();
             playButton.scaleFromTo(1.0f, Vector3.zero, new Vector3(0.3f, 0.3f, 0), Easing.Quintic.easeOut);
             playButton.onTouchUpInside += OnPlayButtonClicked;
 
-            disconnected = main_menu_toolkit.addSprite("disconnected.png", 0, 0);
+            disconnected = mainMenuToolkit.addSprite("disconnected.png", 0, 0);
             disconnected.position = new Vector3(360, -10, 0);
             disconnected.color = Color.white;
 
-            connected = main_menu_toolkit.addSprite("connected.png", 0, 0);
+            connected = mainMenuToolkit.addSprite("connected.png", 0, 0);
             connected.position = new Vector3(380, -10, 0);
             connected.color = Color.grey;
 
-            activity = main_menu_toolkit.addSprite("activity.png", 0, 0);
+            activity = mainMenuToolkit.addSprite("activity.png", 0, 0);
             activity.position = new Vector3(400, -10, 0);
             activity.color = Color.grey;
 
-            ok = main_menu_toolkit.addSprite("ok.png", 0, 0);
+            ok = mainMenuToolkit.addSprite("ok.png", 0, 0);
             ok.position = new Vector3(420, -10, 0);
             ok.color = Color.grey;
 
-            error = main_menu_toolkit.addSprite("error.png", 0, 0);
+            error = mainMenuToolkit.addSprite("error.png", 0, 0);
             error.scale = new Vector3(1.2f,1.2f,0);
             error.position = new Vector3(440, -10, 0);
             error.color = Color.grey;
@@ -69,7 +69,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             SocketHandler.SharedConnection.OnDisconnectEvent += OnDisconnectEvent;
             
             var game = new GameObject("Game").AddComponent<Game1vs1>();
-            SocketHandler.SharedConnection.OnStringEvent += game.OnStringEvent;
             SocketHandler.SharedConnection.OnJSONEvent += game.OnJSONEvent;
 
             SocketHandler.SharedConnection.Connect(1337);  

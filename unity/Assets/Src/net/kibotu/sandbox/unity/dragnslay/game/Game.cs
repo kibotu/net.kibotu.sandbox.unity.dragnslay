@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
-    public abstract class Game : MonoBehaviour, IStringMessageEvent, IJSONMessageEvent
+    public abstract class Game : MonoBehaviour, IJSONMessageEvent
     {
 
         public float startTime;
@@ -64,7 +64,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             return turn + 2;
         }
 
-        public abstract void OnStringEvent(string message);
         public abstract void OnJSONEvent(JObject message);
     }
 }

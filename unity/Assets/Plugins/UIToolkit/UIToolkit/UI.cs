@@ -81,7 +81,7 @@ public class UI : MonoBehaviour
 #else
 		var deviceAllowsHD = ( allowPod4GenHD && iPhone.generation == iPhoneGeneration.iPodTouch4Gen ) || iPhone.generation != iPhoneGeneration.iPodTouch4Gen;
 #endif
-		if( autoTextureSelectionForHD && deviceAllowsHD )
+		if( autoTextureSelectionForHD) // && deviceAllowsHD )
 		{
 			// are we loading up a 4x texture?
 			if( Screen.width >= maxWidthOrHeightForHD || Screen.height >= maxWidthOrHeightForHD )

@@ -1,5 +1,4 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
@@ -10,8 +9,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
         {
             var uiToolkit = GameObject.Find("UIToolkit").GetComponent<UI>();
 
-            uiToolkit.maxWidthOrHeightForHD = DisplayHelper.GetDisplayWidth();
-            uiToolkit.maxWidthOrHeightForSD = DisplayHelper.GetDisplayWidth();
+            uiToolkit.maxWidthOrHeightForHD = 800; //  DisplayMetricsAndroid.WidthPixels;
+            uiToolkit.maxWidthOrHeightForSD = 800; // DisplayMetricsAndroid.WidthPixels;
 
             ShowMainMenu();
         }

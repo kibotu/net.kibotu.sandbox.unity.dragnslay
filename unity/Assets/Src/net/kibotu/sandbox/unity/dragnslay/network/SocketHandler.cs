@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SimpleJson;
 using UnityEngine;
-#if UNITY_STANDALONE_WIN 
-//using SocketIO.Client;
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+using SocketIO.Client;
 #endif
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
@@ -19,12 +22,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
 
-        #if UNITY_STANDALONE_WIN 
+        #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
         private Namespace _socket;
         #elif UNITY_ANDROID 
         private AndroidJavaClass _socket;
         private const string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
-#endif
+        #endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
 
@@ -35,7 +38,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Connect(string host, int port)
         {
-            #if UNITY_STANDALONE_WIN 
+            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
             _socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
             SetDelegates();
@@ -55,7 +58,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Connect(int port)
         {
-            #if UNITY_STANDALONE_WIN 
+            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
@@ -77,7 +80,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         private void SetDelegates()
         {
-            #if UNITY_STANDALONE_WIN 
+            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
             _socket.On("connect", (args, callback) => ConnectCallback("Successfully connected. " + _socket.Name));
 
@@ -115,9 +118,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void StringCallback(string message)
         {
-            // remove json array artefact [ ] // todo handle multiple messages
-            if(message[0].Equals('[')) Debug.LogError("error: received multiple messages, dropping all but first");
-            OnStringEvent(message[0].Equals('[') ? message.Substring(1, message.Length - 2) : message);
+            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
         }
 
         public void JSONCallback(JObject message)
@@ -150,8 +151,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             while (messageQueue.Count > 0) // todo merge multiple messages into one
             {
                 var msg = messageQueue.Dequeue();
-                #if UNITY_STANDALONE_WIN 
-                    _socket.Emit(msg.name, msg.message);
+                #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+                _socket.Emit(msg.name, msg.message);
                 #elif UNITY_ANDROID
                     _socket.CallStatic("Emit", msg.name, msg.message);
                 #endif

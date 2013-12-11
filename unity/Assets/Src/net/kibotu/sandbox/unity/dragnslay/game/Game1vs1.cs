@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
@@ -13,67 +11,10 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
         const float scale = 50;
 
-        public override void OnStringEvent(string jsonMessage)
-        {
-            var search = (IDictionary)MiniJSON.jsonDecode(jsonMessage);
-            var message = search["message"];
-
-            if (message.Equals("move-units"))
-            {
-                Debug.Log("move units");
-                Debug.Log("move units " + message);
-                Debug.Log("move units " + search["target"]);
-                Debug.Log("move units " + search["ships"]);
-            } 
-            else if (message.Equals("spawn-units"))
-            {
-                Debug.Log("spawn units");
-                
-            }
-            else if (message.Equals("game-data"))
-            {
-                Debug.Log("Receiving Game Data.");
-
-                var gameData = (Hashtable) search["game-data"];
-                var players = (ArrayList) gameData["players"];
-                foreach (Hashtable player in players)
-                {
-                    Debug.Log("game data " + player["uid"]); // uid
-                    var islands = (ArrayList) player["islands"];
-                    foreach (Hashtable island in islands)
-                    {
-                        Debug.Log("game data island id " + Convert.ToInt32(island["uid"])); // uid
-                        //var go = GameObjectFactory.CreateIsland(Convert.ToInt32(island["type"])); // island type
-                        //go.GetComponent<SpawnUnits>().shipSpawnType = Convert.ToInt32(island["ship-type"]); // ship type
-                        var position = (ArrayList)island["position"]; // position
-                       // go.transform.position = new Vector3(Convert.ToSingle(position[0]), Convert.ToSingle(position[1]), Convert.ToSingle(position[2])); 
-                        //go.transform.localScale = new Vector3(scale, scale, scale);
-                    }
-                }
-            }
-            else if (message.Equals("Welcome!"))
-            {
-                ClientUid = (string) search["uid"];
-                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(ClientUid));
-
-                // create
-                SocketHandler.SharedConnection.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
-
-                // join
-                // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
-
-                // request game data
-                SocketHandler.SharedConnection.Emit("request", PackageFactory.CreateRequestGameData());
-            }
-            else
-            {
-                // todo more events 
-            }
-
-        }
-
         public override void OnJSONEvent(JObject json)
         {
+            Debug.Log("message : " + json);
+
             var message = (string) json["message"];
             
             if (message.Equals("move-unit"))
