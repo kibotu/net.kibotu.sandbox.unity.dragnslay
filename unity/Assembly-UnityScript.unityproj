@@ -75,7 +75,7 @@
      <None Include="Assets\resources\ui\ui_menu.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
  <Reference Include="Newtonsoft.Json">
- <HintPath>Assets\Plugins\Newtonsoft.Json.dll</HintPath>
+ <HintPath>Assets\Plugins\socket.io-csharp-client\Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="WebSocket4Net">
  <HintPath>Assets\Plugins\socket.io-csharp-client\WebSocket4Net.dll</HintPath>
