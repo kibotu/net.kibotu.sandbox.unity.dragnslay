@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using Newtonsoft.Json.Linq;
-using SimpleJson;
 using UnityEngine;
-using SocketIO.Client;
+#if UNITY_STANDALONE_WIN 
+//using SocketIO.Client;
+#endif
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
@@ -19,7 +19,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
 
-        #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+        #if UNITY_STANDALONE_WIN 
         private Namespace _socket;
         #elif UNITY_ANDROID 
         private AndroidJavaClass _socket;
@@ -35,7 +35,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Connect(string host, int port)
         {
-            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+            #if UNITY_STANDALONE_WIN 
 
             _socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
             SetDelegates();
@@ -55,7 +55,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Connect(int port)
         {
-            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+            #if UNITY_STANDALONE_WIN 
 
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
@@ -77,9 +77,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         private void SetDelegates()
         {
+            #if UNITY_STANDALONE_WIN 
+
             _socket.On("connect", (args, callback) => ConnectCallback("Successfully connected. " + _socket.Name));
 
             _socket.On("message", (args, callback) => { foreach (JObject t in args) JSONCallback(t); });
+            
+            #endif
         }
 
         public static SocketHandler SharedConnection
@@ -92,7 +96,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         /// </summary>
         /// <param name="name">MessageData name.</param>
         /// <param name="message">Json message.</param>
-        public void Emit(string name, JsonObject message)
+        public void Emit(string name, JObject message)
         {
             Emit(name, message.ToString());
         }
@@ -146,7 +150,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             while (messageQueue.Count > 0) // todo merge multiple messages into one
             {
                 var msg = messageQueue.Dequeue();
-                #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+                #if UNITY_STANDALONE_WIN 
                 _socket.Emit(msg.name, msg.message);
                 #elif UNITY_ANDROID
                 _socket.CallStatic("Emit", msg.name, msg.message);

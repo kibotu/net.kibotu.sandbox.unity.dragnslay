@@ -1,6 +1,6 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using SimpleJson;
+using Newtonsoft.Json.Linq;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
@@ -13,9 +13,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         private static long _packageId;
 
-        public static JsonObject CreateHelloWorldMessage()
+        public static JObject CreateHelloWorldMessage()
         {
-            return new JsonObject
+            return new JObject
             {
                 {"message",     "hallo welt"},
                 {"username",    "android"},
@@ -31,30 +31,30 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         /// <param name="scheduleId">Target destination.</param>
         /// 
         /// <returns>Generated JsonObject.</returns>
-        public static JsonObject CreateMoveUnitMessage(int target, int[] ships)
+        public static JObject CreateMoveUnitMessage(int target, int[] ships)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     "move-unit"},
-                {"ships",       ships},
+                {"ships",       new JArray(ships)},
                 {"target",      target},
                 {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
 
-        public static JsonObject CreateSpawnMessage(SpawnData[] spawns)
+        public static JObject CreateSpawnMessage(SpawnData[] spawns)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     "spawn-unit"},
-                {"spawns",      spawns},
+                {"spawns",      new JObject(spawns)},
                 {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
 
-        public static JsonObject CreateJoinQueueMessage(string uid)
+        public static JObject CreateJoinQueueMessage(string uid)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     uid},
                 {"uid",         uid},
                 {"packageId",   ++_packageId},
@@ -62,9 +62,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             };
         }
 
-        public static JsonObject CreateGameTypeGameMessage(string name, string gameType)
+        public static JObject CreateGameTypeGameMessage(string name, string gameType)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     name},
                 {"game-type",   gameType},
                 {"packageId",   ++_packageId},
@@ -72,18 +72,18 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             };
         }
 
-        public static JsonObject CreateRequestGameData()
+        public static JObject CreateRequestGameData()
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     "game-data"},
                 {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
 
-        public static JsonObject CreateMessage(string name, string [] keyValuePairs)
+        public static JObject CreateMessage(string name, string[] keyValuePairs)
         {
-            var json = new JsonObject{
+            var json = new JObject{
                 {"message",     name},
                 {"packageId",   ++_packageId},
                 {"scheduleId",  Game.ScheduleId()}

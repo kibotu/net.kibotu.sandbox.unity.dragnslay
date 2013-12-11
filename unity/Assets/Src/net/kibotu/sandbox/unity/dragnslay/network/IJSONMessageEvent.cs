@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using SimpleJson;
+﻿using Newtonsoft.Json.Linq;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {

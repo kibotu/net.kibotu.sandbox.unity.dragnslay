@@ -11,6 +11,7 @@
         <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../../NetworkClient/libs" />
         <option name="LIBRARY_PROJECT" value="true" />
         <option name="PROGUARD_CFG_PATH" value="/../../NetworkClient/proguard-project.txt" />
+        <option name="UPDATE_PROPERTY_FILES" value="true" />
       </configuration>
     </facet>
   </component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="unity">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../unity_export/dragnslay/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../unity_export/dragnslay/libs" recursive="false" />
+  </library>
+</component>

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -20,36 +18,36 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             // @ see http://forum.unity3d.com/threads/87917-Prime31-UIToolkit-Multi-Resolution-GUI-Solution-Ready-for-Use-and-it-s-free/page79
             // @ see http://timshaya.wordpress.com/category/uitoolkit/
 
-            var in_game_hud = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
+            //var in_game_hud = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
 
-            var map = UIButton.create(in_game_hud, "skills.png", "skills.png", 100, 100);
-            map.centerize();
+            //var map = UIButton.create(in_game_hud, "skills.png", "skills.png", 100, 100);
+            //map.centerize();
 
-            var playButton = UIButton.create("button.png", "button.png", 0, 0);
+            var main_menu_toolkit = GameObject.Find("main_menu").GetComponent<UIToolkit>(); 
+
+            var playButton = UIButton.create(main_menu_toolkit, "button.png", "button.png", 0, 0);
             playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
             playButton.centerize();
             playButton.scaleFromTo(1.0f, Vector3.zero, new Vector3(0.3f, 0.3f, 0), Easing.Quintic.easeOut);
             playButton.onTouchUpInside += OnPlayButtonClicked;
 
-            var toolkit = GameObject.Find("playButton").GetComponent<UIToolkit>();
-
-            disconnected = toolkit.addSprite("disconnected.png", 0, 0);
+            disconnected = main_menu_toolkit.addSprite("disconnected.png", 0, 0);
             disconnected.position = new Vector3(360, -10, 0);
             disconnected.color = Color.white;
 
-            connected = toolkit.addSprite("connected.png", 0, 0);
+            connected = main_menu_toolkit.addSprite("connected.png", 0, 0);
             connected.position = new Vector3(380, -10, 0);
             connected.color = Color.grey;
 
-            activity = toolkit.addSprite("activity.png", 0, 0);
+            activity = main_menu_toolkit.addSprite("activity.png", 0, 0);
             activity.position = new Vector3(400, -10, 0);
             activity.color = Color.grey;
 
-            ok = toolkit.addSprite("ok.png", 0, 0);
+            ok = main_menu_toolkit.addSprite("ok.png", 0, 0);
             ok.position = new Vector3(420, -10, 0);
             ok.color = Color.grey;
 
-            error = toolkit.addSprite("error.png", 0, 0);
+            error = main_menu_toolkit.addSprite("error.png", 0, 0);
             error.scale = new Vector3(1.2f,1.2f,0);
             error.position = new Vector3(440, -10, 0);
             error.color = Color.grey;
