@@ -78,7 +78,7 @@
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>Assets\Plugins\socket.io-csharp-client\Newtonsoft.Json.dll</HintPath>
+ <HintPath>Assets\Plugins\Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="WebSocket4Net">
  <HintPath>Assets\Plugins\socket.io-csharp-client\WebSocket4Net.dll</HintPath>
