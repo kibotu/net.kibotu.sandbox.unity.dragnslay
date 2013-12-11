@@ -9,7 +9,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public class Game1vs1 : Game {
 
-        const float scale = 50;
+        const float Scale = 50;
+
+        protected override void DoGameTurn()
+        {
+            Debug.Log("Game-Loop Turn: " + Turn);
+        }
 
         public override void OnJSONEvent(JObject json)
         {
@@ -95,7 +100,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                             // 2) set island transformation
                             var position = data["position"]; // island position
                             go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
-                            go.transform.localScale = new Vector3(scale, scale, scale);
+                            go.transform.localScale = new Vector3(Scale, Scale, Scale);
 
                             // 3) colorize
                             go.renderer.material.color = playerData.color;
@@ -124,15 +129,33 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         });
                     }
                 }
+
+                SocketHandler.Emit("client-game-ready", PackageFactory.CreateClientGameReadyMessage());
+            }
+            else if (message.Equals("start-game"))
+            {
+                StartGame();
+            }
+            else if (message.Equals("pause-game"))
+            {
+                PauseGame();
+            }
+            else if (message.Equals("resume-game"))
+            {
+                ResumeGame();
+            }
+            else if (message.Equals("stop-game"))
+            {
+                StopGame();
             }
             else if (message.Equals("Welcome!"))
             {
                 ClientUid = json["uid"].ToString();
 
-                SocketHandler.SharedConnection.Emit("message", PackageFactory.CreateJoinQueueMessage(ClientUid));
+                SocketHandler.Emit("message", PackageFactory.CreateJoinQueueMessage(ClientUid));
 
                 // create
-                SocketHandler.SharedConnection.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
+                SocketHandler.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
 
                 // join
                 // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
@@ -140,7 +163,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             else if (message.Equals("server-game-ready"))
             {
                 // request game data
-                SocketHandler.SharedConnection.Emit("request", PackageFactory.CreateRequestGameData());
+                SocketHandler.Emit("request", PackageFactory.CreateRequestGameData());
             }
             else
             {

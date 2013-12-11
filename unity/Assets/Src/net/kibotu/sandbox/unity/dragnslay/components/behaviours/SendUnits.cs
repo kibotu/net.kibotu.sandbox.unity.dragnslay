@@ -127,7 +127,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
          * (b-a) * t + a
          * t = [0...1]
          */
-        private void Send()
+        private static void Send()
         {
             for (var i = 0; i < _selected.Count - 1; ++i)
             {
@@ -156,7 +156,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                     }
                 }
                 if (toMovePlanes.Count > 0) 
-                        SocketHandler.SharedConnection.Emit("move-unit", PackageFactory.CreateMoveUnitMessage(destination.GetComponent<IslandData>().uid, toMovePlanes.ToArray()));
+                        SocketHandler.Emit("move-unit", PackageFactory.CreateMoveUnitMessage(destination.GetComponent<IslandData>().uid, toMovePlanes.ToArray()));
             }
         }
 

@@ -94,5 +94,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
             return json;
         }
+
+        public static JObject CreateClientGameReadyMessage()
+        {
+            return new JObject{
+                {"message",     "client-game-ready"},
+                {"packageId",   ++_packageId},
+                {"scheduleId",  Game.ScheduleId()}
+            };   
+        }
     }
 }

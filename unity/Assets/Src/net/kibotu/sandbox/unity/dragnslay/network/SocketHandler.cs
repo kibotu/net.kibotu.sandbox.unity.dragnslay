@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SimpleJson;
 using UnityEngine;
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 using SocketIO.Client;
@@ -36,12 +34,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             messageQueue = new Queue<MessageData>();
         }
 
-        public void Connect(string host, int port)
+        public static void Connect(string host, int port)
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-            _socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
-            SetDelegates();
+            SharedConnection._socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
+            SharedConnection.SetDelegates();
           
             #elif UNITY_ANDROID 
 
@@ -56,14 +54,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             #endif
         }
 
-        public void Connect(int port)
+        public static void Connect(int port)
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
-                _socket = new SocketIOClient().Connect("http://" + result[(string)result["network_interface"]] + ":" + port + "/");
-                SetDelegates();
+                SharedConnection._socket = new SocketIOClient().Connect("http://" + result[(string)result["network_interface"]] + ":" + port + "/");
+                SharedConnection.SetDelegates();
             });
 
             #elif UNITY_ANDROID
@@ -99,49 +97,49 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         /// </summary>
         /// <param name="name">MessageData name.</param>
         /// <param name="message">Json message.</param>
-        public void Emit(string name, JObject message)
+        public static void Emit(string name, JObject message)
         {
             Emit(name, message.ToString());
         }
 
-        public void Emit(string name, string message)
+        public static void Emit(string name, string message)
         {
             var msg = new MessageData {name = name, message = message};
             Debug.Log("Enqueue " + msg.name + " " + msg.message);
-            messageQueue.Enqueue(msg);
+            SharedConnection.messageQueue.Enqueue(msg);
         }
 
-        public void ConnectCallback(string error)
+        protected void ConnectCallback(string error)
         {
             OnConnectEvent(error);
         }
 
-        public void StringCallback(string message)
+        protected void StringCallback(string message)
         {
             foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
         }
 
-        public void JSONCallback(JObject message)
+        protected void JSONCallback(JObject message)
         {
             OnJSONEvent(message);
         }
 
-        public void ReconnectCallback(string message)
+        protected void ReconnectCallback(string message)
         {
             OnReconnectEvent(message);
         }
 
-        public void DisconnectCallback(string error)
+        protected void DisconnectCallback(string error)
         {
             OnDisconnectEvent(error);
         }
 
-        public void ErrorCallback(string error)
+        protected void ErrorCallback(string error)
         {
             OnErrorEvent(error);
         }
 
-        public void ConnectionFailedCallback(string message)
+        protected void ConnectionFailedCallback(string message)
         {
             OnConnectionFailedEvent(message);
         }

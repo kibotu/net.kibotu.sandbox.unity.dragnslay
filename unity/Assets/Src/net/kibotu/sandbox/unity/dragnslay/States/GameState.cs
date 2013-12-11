@@ -1,13 +1,7 @@
 ﻿namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
 {
-    class GameState
+    enum GameState
     {
-        public enum Type
-        {
-            Idle, Running, Pause, Resume, Stop
-        }
-
-        public Type State = Type.Idle;
-
+        Creating, Running, Pause, Stopped
     }
 }
