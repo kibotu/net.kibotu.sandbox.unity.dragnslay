@@ -35,7 +35,7 @@
         "request" : "latest",
         "seq" : "latest",
 		"os-utils" : "latest",
-		"nodetime" : "latest"
-		"os-monitor" : "latest",
+		"nodetime" : "latest",
+		"os-monitor" : "latest"
     }
 }
