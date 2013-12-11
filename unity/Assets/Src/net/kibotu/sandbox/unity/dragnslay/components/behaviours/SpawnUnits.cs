@@ -10,11 +10,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         public void Update ()
         {
             if (GetComponentsInChildren<Transform>().Length >= 3) return;
-                SocketHandler.SharedConnection.Emit("spawn-unit", PackageFactory.CreateSpawnMessage(new[] { new JObject
+                SocketHandler.SharedConnection.Emit("spawn-unit", PackageFactory.CreateSpawnMessage(
+                    new[] { new JObject
                     {
                         {"island_uid", gameObject.GetComponent<IslandData>().uid},
                         {"uid" , -1}
-                    } }));
+                    }}));
         }
     }
 }

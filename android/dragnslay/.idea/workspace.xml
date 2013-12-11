@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
-    </list>
+    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="" />
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386782318935" ignored="false" />
@@ -129,7 +127,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="746" column="85" selection-start="23834" selection-end="23834" vertical-scroll-proportion="0.71854305">
+            <state line="745" column="26" selection-start="23748" selection-end="23748" vertical-scroll-proportion="0.66225165">
               <folding />
             </state>
           </provider>
@@ -858,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="746" column="85" selection-start="23834" selection-end="23834" vertical-scroll-proportion="0.71854305">
+        <state line="745" column="26" selection-start="23748" selection-end="23748" vertical-scroll-proportion="0.66225165">
           <folding />
         </state>
       </provider>
