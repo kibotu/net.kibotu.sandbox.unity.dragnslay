@@ -743,7 +743,9 @@ io.sockets.on('connection', function (socket) {
             loadGameData(rooms[socket.room].game.game_type, rooms[socket.room].user,rooms[socket.room].bots, function(data) {
                 console.log("sending game data for " + rooms[socket.room].game.game_type);
                 rooms[socket.room].game.data = data;
-                sendAllInRoomTextMessage(socket, { "message" : "game-data", "game-data" : data } );
+
+                socket.emit('message',{ "message" : "game-data", "game-data" : data });
+                // sendAllInRoomTextMessage(socket, { "message" : "game-data", "game-data" : data } );
             });
         }
 
