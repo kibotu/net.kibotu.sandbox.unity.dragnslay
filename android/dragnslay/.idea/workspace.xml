@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/Physics2DSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/Physics2DSettings.asset" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../resources" afterPath="$PROJECT_DIR$/../../resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/menu/Menu.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/menu/Menu.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/network/SocketHandler.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/network/SocketHandler.cs" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\src\net\kibotu\sandbox\unity\android\dragnslay\UnityPlayerNativeActivity.java" afterPath="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386500781077" ignored="false" />
+    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386765079748" ignored="false" />
     <file path="/fragment.js2" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385637851388" ignored="false" />
     <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386254685288" ignored="false" />
     <file path="/chatserver.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385844162181" ignored="false" />
@@ -62,6 +72,8 @@
     <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/express/node_modules/connect/node_modules/multiparty/node_modules/readable-stream/lib/_stream_readable.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
     <file path="/netstat.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386358488577" ignored="false" />
     <file path="/shelldameon.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386358920317" ignored="false" />
+    <file path="/DisplayHelper.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386766772242" ignored="false" />
+    <file path="/UnityPlayerNativeActivity.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386766615092" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,10 +134,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="774" column="45" selection-start="24525" selection-end="24525" vertical-scroll-proportion="0.5083333">
+            <state line="93" column="56" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisplayHelper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/utility/DisplayHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="49" selection-start="199" selection-end="199" vertical-scroll-proportion="0.32484075">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnityPlayerNativeActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="23" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,8 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../../server/ChatServer/views/chat.jade" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/routes/request.js" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
@@ -168,14 +198,16 @@
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/main.js" />
+        <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java" />
+        <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/utility/DisplayHelper.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="32" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -260,6 +292,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,7 +307,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
+              <option name="myItemId" value="DragnSlay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,21 +317,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="DragnSlay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -306,7 +325,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="dragnslay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,25 +335,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
+              <option name="myItemId" value="DragnSlay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DragnSlay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
+              <option name="myItemId" value="dragnslay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="utility" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -344,21 +357,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
+              <option name="myItemId" value="DragnSlay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="dragnslay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="network" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -374,16 +390,16 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tools/unity_export_copy_script.bat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../android-gtamps/android" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="832" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
@@ -397,8 +413,8 @@
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
@@ -430,7 +446,7 @@
       <recent name="net.kibotu.sandbox.network" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.DragnSlay - Server - Ethernet">
+  <component name="RunManager" selected="Node.js.DragnSlay - Server - Wi-Fi">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -463,7 +479,17 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -494,17 +520,7 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -697,7 +713,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -718,8 +734,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2022412" sideWeight="0.57666665" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42333335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20151515" sideWeight="0.5782313" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4217687" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -795,16 +811,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="6" selection-start="985" selection-end="985" vertical-scroll-proportion="0.3968958" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/network/shelldameon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="46" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/benchmarks/runner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -879,15 +885,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/utils/uid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="25" selection-start="367" selection-end="367" vertical-scroll-proportion="0.4827586">
-          <folding />
-        </state>
+        <state line="14" column="25" selection-start="367" selection-end="367" vertical-scroll-proportion="0.4827586" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="774" column="45" selection-start="24525" selection-end="24525" vertical-scroll-proportion="0.5083333">
+        <state line="93" column="56" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="23" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/utility/DisplayHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="49" selection-start="199" selection-end="199" vertical-scroll-proportion="0.32484075">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

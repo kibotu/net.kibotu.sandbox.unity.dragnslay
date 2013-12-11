@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using Newtonsoft.Json.Linq;
@@ -20,7 +19,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
 
-        #if UNITY_EDITOR
+        #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         private Namespace _socket;
         #elif UNITY_ANDROID 
         private AndroidJavaClass _socket;
@@ -36,7 +35,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Connect(string host, int port)
         {
-            #if UNITY_EDITOR
+            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
 
             _socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
             SetDelegates();
@@ -56,7 +55,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public void Connect(int port)
         {
-            #if UNITY_EDITOR
+            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
 
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
@@ -72,7 +71,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
                 _socket = new AndroidJavaClass(SocketHandlerClass);
                 _socket.CallStatic("connect", port);
             }
-
+            
             #endif
         }
 
@@ -147,7 +146,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             while (messageQueue.Count > 0) // todo merge multiple messages into one
             {
                 var msg = messageQueue.Dequeue();
-                #if UNITY_EDITOR
+                #if UNITY_STANDALONE_WIN || UNITY_EDITOR
                 _socket.Emit(msg.name, msg.message);
                 #elif UNITY_ANDROID
                 _socket.CallStatic("Emit", msg.name, msg.message);

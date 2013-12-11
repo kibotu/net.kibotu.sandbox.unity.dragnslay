@@ -19,6 +19,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
         {
             // @ see http://forum.unity3d.com/threads/87917-Prime31-UIToolkit-Multi-Resolution-GUI-Solution-Ready-for-Use-and-it-s-free/page79
             // @ see http://timshaya.wordpress.com/category/uitoolkit/
+
+            var in_game_hud = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
+
+            var map = UIButton.create(in_game_hud, "skills.png", "skills.png", 100, 100);
+            map.centerize();
+
             var playButton = UIButton.create("button.png", "button.png", 0, 0);
             playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
             playButton.centerize();

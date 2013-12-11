@@ -18,12 +18,15 @@ import net.kibotu.sandbox.unity.android.dragnslay.network.AndroidUnitySocketHand
 public class UnityPlayerNativeActivity extends NativeActivity {
     protected UnityPlayer mUnityPlayer;        // don't change the name of this variable; referenced from native code
 
+    public static UnityPlayerNativeActivity context;
+
     // UnityPlayer.init() should be called before attaching the view to a layout - it will load the native code.
     // UnityPlayer.quit() should be the last thing called - it will unload the native code.
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
 
+        context = this;
         final String serverUrl = "http://www.kibotu.net/server";
 
         Logger.init(new LogcatLogger(this), UnityPlayerNativeActivity.class.getSimpleName(), Logger.Level.DEBUG);

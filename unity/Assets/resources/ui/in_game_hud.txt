@@ -1,0 +1,52 @@
+{"frames": {
+
+"corner.png":
+{
+	"frame": {"x":2,"y":157,"w":42,"h":206},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":42,"h":206},
+	"sourceSize": {"w":42,"h":208}
+},
+"map.png":
+{
+	"frame": {"x":2,"y":260,"w":158,"h":141},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":158,"h":141},
+	"sourceSize": {"w":158,"h":141}
+},
+"menu.png":
+{
+	"frame": {"x":2,"y":420,"w":116,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":51},
+	"sourceSize": {"w":116,"h":51}
+},
+"resources.png":
+{
+	"frame": {"x":2,"y":201,"w":201,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":201,"h":57},
+	"sourceSize": {"w":201,"h":57}
+},
+"skills.png":
+{
+	"frame": {"x":2,"y":2,"w":238,"h":153},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":238,"h":153},
+	"sourceSize": {"w":238,"h":153}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "in_game_hud.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:c9d41f45c96466cd58daadc63644452a:e3a2c398452a1db2de808fde6f85ea77:b98bb52f4001c7dc3c736825db289984$"
+}
+}
