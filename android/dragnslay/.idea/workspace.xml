@@ -5,386 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs1.xml" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\New Material.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\SimpleJson.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\SocketIO.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\SuperSocket.ClientEngine.Common.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\SuperSocket.ClientEngine.Core.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\SuperSocket.ClientEngine.Protocol.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\SuperSocket.ClientEngine.Proxy.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Plugins\WebSocket4Net.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Resources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile).meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups\CameraRelativeSetup.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups\FirstPersonSetup.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups\FirstPersonTilt.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups\PlayerRelativeSetup.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups\SidescrollSetup.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Control Setups\TapControlSetup.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Materials\grid.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Materials\gridFor2D.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Materials\skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\2D Side Scroller.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Camera Relative Controls.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Dual Joysticks.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Dual TouchPads.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\First Person Controls.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\First Person Tilt Controls.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Player Relative Controls.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Roll A Ball.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Single Joystick.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Single TouchPad.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\Skybox.fbx.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Prefabs\TapToMove Controls.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\Joystick.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\ObliqueNear.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\PlayerRelativeControl.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\RollABall.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\RotationConstraint.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\SidescrollControl.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\SmoothFollow2D.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\ZoomCamera.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Scripts\tapcontrol.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy).meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Particle Shaders.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Textures\JoystickThumb.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Textures\ThumbAreaLeft.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Textures\ThumbAreaRight.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Textures\grid.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets (Mobile)\Textures\skyBox.tga.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\3rd Person Controller.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\First Person Controller.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter\Constructor.FBX.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter\Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter\Materials\constructor_done.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter\Textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter\Textures\constructor_diffuse.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\PrototypeCharacter\Textures\constructor_normals.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Cookies.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Cookies\Flashlight.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Cookies\Flashlight_Irregular.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Cookies\Hard.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Cookies\Soft.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Cookies\square.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\50mm Zoom.flare.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Small Flare.flare.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sources\Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sources\Materials\flare mat.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sources\Textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sources\Textures\50mmflare.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sources\Textures\starflare.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Light Flares\Sun.flare.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Dust.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Dust\Dust Storm.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Fire.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Fire\Fire1.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Fire\Flame.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles\Small explosion.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles\Sparks.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles\TimedObjectDestructor.js.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles\explosion.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles\large flames.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Legacy Particles\small flames.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Misc.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Misc\Fireworks.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Misc\Light Snow.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Misc\Soap Bubbles.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Misc\Sparks.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Smoke.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Smoke\Detailed Smoke.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Smoke\Fluffy Smoke Large.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Smoke\Fluffy Smoke.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Smoke\Smoke Trail.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Animations.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Animations\Light explosion.anim.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Animations\Stop Emitting ,5 sec.anim.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Animations\Stop Emitting 1 sec.anim.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Animations\Stop Emitting 2 sec.anim.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Dust Material 1.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Fairy Dust.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Fire Add.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Fire Smoke.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\FlameA.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\FlameB.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\FlameC.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\FlameD.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\FlameE.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Poof1.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Smoke Trail.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Smoke.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Smoke1.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Smoke2.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Smoke3.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Smoke4.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Snowflake.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\SoapBubble.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Spark.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Sparkles1.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Sparkles2.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Water Splash1.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Materials\Water Splash2.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Shaders.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\ColorFlare.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\DustPoof.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\Fireball.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\Snowflake.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\Star02.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\SteamBlur.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\fairydust.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\fire3.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\fire4.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\flameA.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\flameB.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\flameC.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\flameD.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\flameE.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\flametemplate.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\foam.tga.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\smoke.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\smoke2.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\smoke3.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\smoke4.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\smokepuff1.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\smoketest2.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\soapbubble.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sources\Textures\spark.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sparkles.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Sparkles\Sparkle Rising.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Water.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Water\Water Fountain.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Water\Water Surface Splash.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Particles\Water\WaterFall.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Physic Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Physic Materials\Bouncy.physicmaterial.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Physic Materials\Ice.physicmaterial.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Physic Materials\Metal.physicmaterial.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Physic Materials\Rubber.physicmaterial.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Physic Materials\Wood.physicmaterial.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\DawnDusk Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Eerie Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\MoonShine Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Overcast1 Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Overcast2 Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\StarryNight Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Sunny1 Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Sunny2 Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Sunny3 Skybox.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk\DawnDusk_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk\DawnDusk_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk\DawnDusk_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk\DawnDusk_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk\DawnDusk_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\DawnDusk\DawnDusk_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie\Eerie_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie\Eerie_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie\Eerie_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie\Eerie_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie\Eerie_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Eerie\Eerie_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine\MoonShine_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine\MoonShine_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine\MoonShine_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine\MoonShine_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine\MoonShine_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\MoonShine\MoonShine_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1\Overcast1_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1\Overcast1_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1\Overcast1_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1\Overcast1_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1\Overcast1_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast1\Overcast1_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2\Overcast2_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2\Overcast2_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2\Overcast2_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2\Overcast2_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2\Overcast2_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Overcast2\Overcast2_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight\StarryNight_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight\StarryNight_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight\StarryNight_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight\StarryNight_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight\StarryNight_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\StarryNight\StarryNight_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1\Sunny1_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1\Sunny1_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1\Sunny1_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1\Sunny1_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1\Sunny1_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny1\Sunny1_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2\Sunny2_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2\Sunny2_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2\Sunny2_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2\Sunny2_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2\Sunny2_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny2\Sunny2_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3\Sunny3_back.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3\Sunny3_down.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3\Sunny3_front.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3\Sunny3_left.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3\Sunny3_right.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\Textures\Sunny3\Sunny3_up.tif.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Skyboxes\_skybox info.txt.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Materials\BigTree_bark.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Materials\BigTree_branches.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Materials\BigTree_leaves.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\BigTree_bark_diffuse.jpg.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\BigTree_bark_normal.jpg.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\BigTree_branches.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\BigTree_leaves.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\Palm Bark Diffuse.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\Palm Bark Normal.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\Palm Branch.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\Palm Leaf Diffuse.tga.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\PalmBulb.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\PalmBulb_NRM.tga.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\Pine Bark Diffuse.tga.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\Pine Bark Normal.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\ScotsPineTrunk.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\ScotsPinebranches1.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\ScotsPinebranches2.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\ScotsPinebranches3.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\ScotsPinebranches4.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\ScotsPinebranches5.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\SycamoreBark.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\SycamoreBark_NRM.tga.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\SycamoreLeaves1.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\SycamoreLeaves2.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Sources\Textures\SycamoreLeaves3.psd.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Trees.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Trees\BigTree.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Trees\BigTree_textures.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Trees\BigTree_textures\diffuse.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Trees\BigTree_textures\normal_specular.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\Standard Assets\Tree Creator\Trees\BigTree_textures\translucency_gloss.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\game.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\game\Game1vs1.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\menu.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\menu\MenuFlow.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\Life.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\Orb.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\OrbFactory.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\PhysicalProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\Player.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\Registry.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\TrabantPrototype.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\model\World.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\network.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\network\ClientSocket.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\pattern.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\pattern\Singleton.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\scripts.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\scripts\Orbitting.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\scripts\ParticleScript.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\scripts\SendUnits.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\view.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\net\kibotu\sandbox\unity\dragnslay\view\menu_720.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\btn_1.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\menu.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\menu\background.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\menu\background\menu_bg.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\menu\coloredBanner.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\menu\ui.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\menu\ui\ui_menu_friendlist_bg.jpg.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes\Materials.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes\Materials\No Name.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes\Materials\islandblend.mat" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes\Materials\islandblend.mat.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes\island.dae.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\resources\meshes\island.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\scenes.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\Assets\scenes\initscene.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\dragnslay\ProjectSettings\Physics2DSettings.asset" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync" afterPath="$PROJECT_DIR$/../AndroidAsync" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" afterPath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/BuildConfig.java" afterPath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/BuildConfig.java" afterPath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/BuildConfig.java" />
+      <change type="DELETED" beforePath="E:\BA\dragnslay\android\dragnslay\.idea\libraries\libs1.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\BA\dragnslay\android\dragnslay\.idea\libraries\unity.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\BA\dragnslay\android\dragnslay\.idea\libraries\unity_classes.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/scenes/initscene.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/scenes/initscene.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DragnSlay - Android.iml" afterPath="$PROJECT_DIR$/DragnSlay - Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/Manifest.java" afterPath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/Manifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/Manifest.java" afterPath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/Manifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkClient/NetworkClient.iml" afterPath="$PROJECT_DIR$/NetworkClient/NetworkClient.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml" afterPath="$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/R.java" afterPath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/R.java" afterPath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/project.properties" afterPath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386251138578" ignored="false" />
+    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386667887028" ignored="false" />
     <file path="/fragment.js2" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385637851388" ignored="false" />
-    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386246948383" ignored="false" />
+    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386254949352" ignored="false" />
     <file path="/chatserver.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385844162181" ignored="false" />
     <file path="/package.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385643927660" ignored="false" />
     <file path="/events.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385649653561" ignored="false" />
@@ -415,6 +48,7 @@
     <file path="/strings.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385840211719" ignored="false" />
     <file path="/js.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385843375446" ignored="false" />
     <file path="/game.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385844301079" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/net/kibotu/sandbox/unity/android/dragnslay/BuildConfig.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386254645866" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,6 +63,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -465,7 +100,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -475,19 +109,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="6" selection-start="3237" selection-end="3237" vertical-scroll-proportion="0.23030303">
+            <state line="124" column="44" selection-start="3320" selection-end="3320" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/game/game.js">
+      <file leaf-file-name="ConsoleLogger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="16" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+            <state line="12" column="31" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="57" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -502,20 +145,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/bower.json">
+      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/game/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="6" column="16" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/package.json">
+      <file leaf-file-name="LogcatLogger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/src/net/kibotu/logger/android/LogcatLogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="57" selection-start="542" selection-end="542" vertical-scroll-proportion="-5.1538463">
+            <state line="7" column="32" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnityPlayerNativeActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="27" selection-start="1684" selection-end="1684" vertical-scroll-proportion="1.0774648">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -649,7 +312,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -658,32 +320,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dragnslay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dragnslay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -697,16 +336,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/nodejs/node.exe" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
@@ -722,8 +361,8 @@
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
@@ -753,7 +392,7 @@
       <recent name="D:\programming\chat\ChatServer\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.DragnSlay - Server - Wi-Fi">
+  <component name="RunManager" selected="Android Application.Unnamed">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -780,9 +419,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -794,6 +430,9 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -848,26 +487,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - update Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi true" working-dir="$PROJECT_DIR$/../../server">
-      <RunnerSettings RunnerId="NodeJS.run" />
-      <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DragnSlay - Server - Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi" working-dir="$PROJECT_DIR$/../../server">
-      <RunnerSettings RunnerId="NodeJS.run" />
-      <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DragnSlay - Server - update Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet true" working-dir="$PROJECT_DIR$/../../server">
-      <RunnerSettings RunnerId="NodeJS.run" />
-      <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DragnSlay - Server - Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet" working-dir="$PROJECT_DIR$/../../server">
-      <RunnerSettings RunnerId="NodeJS.run" />
-      <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method />
-    </configuration>
     <configuration default="false" name="NetworkTest - Android" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="NetworkTest - Android" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -904,17 +523,55 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method>
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_copy_script_copy assets script" />
-        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_unity_export_copy_script" />
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Wi-Fi" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Wi-Fi" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Ethernet" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Ethernet" />
-      <item index="4" class="java.lang.String" itemvalue="Android Application.NetworkTest - Android" />
-      <item index="5" class="java.lang.String" itemvalue="Android Application.DragnSlay - Android" />
+    <configuration default="false" name="Unnamed" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="DragnSlay - Android" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DragnSlay - Server - update Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi true" working-dir="$PROJECT_DIR$/../../server">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DragnSlay - Server - Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi" working-dir="$PROJECT_DIR$/../../server">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DragnSlay - Server - update Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet true" working-dir="$PROJECT_DIR$/../../server">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DragnSlay - Server - Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet" working-dir="$PROJECT_DIR$/../../server">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.NetworkTest - Android" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.DragnSlay - Android" />
+      <item index="2" class="java.lang.String" itemvalue="Android Application.Unnamed" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Wi-Fi" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Wi-Fi" />
+      <item index="5" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Ethernet" />
+      <item index="6" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Ethernet" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -952,26 +609,46 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48293516" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67114097" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27684563" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27684563" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22878788" sideWeight="0.6212121" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22878788" sideWeight="0.6212121" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37878788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1052,16 +729,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../chatclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="58" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.8545994" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AndroidAsync/AndroidAsync/src/com/koushikdutta/async/http/socketio/SocketIOClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="19" selection-start="5724" selection-end="5724" vertical-scroll-proportion="0.3323442" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/UdpSocketClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="46" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.68" />
@@ -1070,11 +737,6 @@
     <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="48" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.62285715" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="52" selection-start="1593" selection-end="1593" vertical-scroll-proportion="-1.6714286" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/network/AndroidUnitySocketHandlerProxy.java">
@@ -1132,15 +794,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="57" selection-start="542" selection-end="542" vertical-scroll-proportion="-5.1538463">
+        <state line="22" column="57" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="6" selection-start="3237" selection-end="3237" vertical-scroll-proportion="0.23030303">
+        <state line="124" column="44" selection-start="3320" selection-end="3320" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/src/net/kibotu/logger/android/LogcatLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="27" selection-start="1684" selection-end="1684" vertical-scroll-proportion="1.0774648">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1173,7 +858,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Node.js v0.10.6 Core Modules</last-edited>
+          <last-edited>Node.js v0.10.22 Core Modules</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1197,12 +882,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>ChatServer</last-edited>
+          <last-edited>desktop</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1210,7 +894,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>libs</last-edited>
+          <last-edited>unity-classes</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
