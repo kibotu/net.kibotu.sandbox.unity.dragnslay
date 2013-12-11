@@ -3,12 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" filepath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../server/ChatServer/ChatServer.iml" filepath="$PROJECT_DIR$/../../server/ChatServer/ChatServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/DragnSlay - Android.iml" filepath="$PROJECT_DIR$/DragnSlay - Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../server/ChatServer/DragnSlay - Server.iml" filepath="$PROJECT_DIR$/../../server/ChatServer/DragnSlay - Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/../net.kibotu.logger/android/Logger - Android.iml" filepath="$PROJECT_DIR$/../net.kibotu.logger/android/Logger - Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/Logger - Desktop.iml" filepath="$PROJECT_DIR$/../net.kibotu.logger/desktop/Logger - Desktop.iml" />
       <module fileurl="file://$PROJECT_DIR$/NetworkClient/NetworkClient.iml" filepath="$PROJECT_DIR$/NetworkClient/NetworkClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml" filepath="$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../net.kibotu.logger/android/android.iml" filepath="$PROJECT_DIR$/../net.kibotu.logger/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/desktop.iml" filepath="$PROJECT_DIR$/../net.kibotu.logger/desktop/desktop.iml" />
     </modules>
   </component>
 </project>
