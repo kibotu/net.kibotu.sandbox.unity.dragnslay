@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="game data" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\BA\dragnslay\android\dragnslay\.idea\libraries\libs1.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\android\dragnslay\.idea\libraries\unity.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\android\dragnslay\.idea\libraries\unity_classes.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/scenes/initscene.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/scenes/initscene.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DragnSlay - Android.iml" afterPath="$PROJECT_DIR$/DragnSlay - Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\SimpleJson.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\SimpleJson\SimpleJson.dll" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\SimpleJson\SimpleJson.dll.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync" afterPath="$PROJECT_DIR$/../AndroidAsync" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/Physics2DSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/Physics2DSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../resources" afterPath="$PROJECT_DIR$/../../resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\NetworkClient\NetworkClient.iml" afterPath="$PROJECT_DIR$/NetworkClient/NetworkClient.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386667887028" ignored="false" />
+    <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386765079748" ignored="false" />
     <file path="/fragment.js2" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385637851388" ignored="false" />
-    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386254949352" ignored="false" />
+    <file path="/fragment.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386254685288" ignored="false" />
     <file path="/chatserver.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385844162181" ignored="false" />
     <file path="/package.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385643927660" ignored="false" />
     <file path="/events.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385649653561" ignored="false" />
-    <file path="/code.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385765373125" ignored="false" />
+    <file path="/code.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386363410901" ignored="false" />
     <file path="/ChatClient.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385832688667" ignored="false" />
     <file path="/NetworkHelper.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385833326645" ignored="false" />
     <file path="/AsyncCallback.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385728499294" ignored="false" />
@@ -32,12 +36,14 @@
     <file path="/UdpSocketClient.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385830249243" ignored="false" />
     <file path="/Logger.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385827929823" ignored="false" />
     <file path="/LogcatLogger.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385828218767" ignored="false" />
-    <file path="/client-events.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385762221987" ignored="false" />
+    <file path="/client-events.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386363287636" ignored="false" />
     <file path="$PROJECT_DIR$/../networkclient/res/layout/main.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385825945979" ignored="false" />
     <file path="/ILogger.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385827967698" ignored="false" />
     <file path="/LogcatLoggerTest.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385828193999" ignored="false" />
     <file path="/DragnSlay.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385831438083" ignored="false" />
     <file path="/AndroidUnitySocketHandlerProxy.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385829728430" ignored="false" />
+    <file path="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/Manifest.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385830673997" ignored="false" />
+    <file path="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/R.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385830673997" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385831461333" ignored="false" />
     <file path="$PROJECT_DIR$/DragnSlay - Android/res/values/strings.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385832380579" ignored="false" />
     <file path="$PROJECT_DIR$/../test/res/layout/main.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385833501058" ignored="false" />
@@ -48,7 +54,37 @@
     <file path="/strings.xml" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385840211719" ignored="false" />
     <file path="/js.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385843375446" ignored="false" />
     <file path="/game.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1385844301079" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/net/kibotu/sandbox/unity/android/dragnslay/BuildConfig.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386254645866" ignored="false" />
+    <file path="/main.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386522320475" ignored="false" />
+    <file path="/chatform.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386184464842" ignored="false" />
+    <file path="/style.css" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386184904189" ignored="false" />
+    <file path="/chat.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386014636868" ignored="false" />
+    <file path="/request.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386016838657" ignored="false" />
+    <file path="/global-js-includes.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386181024936" ignored="false" />
+    <file path="/global-header-includes.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386079011113" ignored="false" />
+    <file path="/admin.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386172762857" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/request/node_modules/http-signature/node_modules/asn1/tst/ber/reader.test.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/node_modules/redis/lib/queue.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/node_modules/redis/index.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/request/node_modules/hawk/node_modules/sntp/lib/index.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/request/package.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/request/node_modules/hawk/node_modules/sntp/test/index.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/express/node_modules/connect/node_modules/multiparty/index.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/tmp/app.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/express/node_modules/connect/node_modules/multiparty/node_modules/readable-stream/test/simple/test-stream2-readable-from-list.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/node_modules/express/node_modules/connect/node_modules/multiparty/node_modules/readable-stream/lib/_stream_readable.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386351727628" ignored="false" />
+    <file path="/netstat.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386358488577" ignored="false" />
+    <file path="/shelldameon.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386358920317" ignored="false" />
+    <file path="/DisplayHelper.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386766772242" ignored="false" />
+    <file path="/UnityPlayerNativeActivity.java" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386766615092" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../networkclient/project.properties" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/bower.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/package.json" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386776460031" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +99,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -100,6 +135,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -109,76 +145,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="44" selection-start="3320" selection-end="3320" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="24" column="56" selection-start="800" selection-end="800" vertical-scroll-proportion="0.7521127">
+              <folding>
+                <marker date="1386776408502" expanded="true" signature="1666:1967" placeholder="{...}" />
+                <marker date="1386776408502" expanded="true" signature="2786:2887" placeholder="{...}" />
+                <marker date="1386776408502" expanded="true" signature="2948:3158" placeholder="{...}" />
+                <marker date="1386776408502" expanded="true" signature="7684:8446" placeholder="{...}" />
+                <marker date="1386776408502" expanded="true" signature="9308:9654" placeholder="{...}" />
+                <marker date="1386776408502" expanded="true" signature="11982:12231" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsoleLogger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
+      <file leaf-file-name="AndroidUnitySocketHandlerProxy.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/network/AndroidUnitySocketHandlerProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+            <state line="12" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="57" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllTests.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="25" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/game/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="16" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogcatLogger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/src/net/kibotu/logger/android/LogcatLogger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="32" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnityPlayerNativeActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UnityPlayerNativeActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="27" selection-start="1684" selection-end="1684" vertical-scroll-proportion="1.0774648">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="24" column="23" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -204,30 +200,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/DragnSlay - Android/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/../chatclient/src/net/kibotu/sandbox/chat/client/android/ChatClient.java" />
-        <option value="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/NetworkHelper.java" />
-        <option value="$PROJECT_DIR$/../test/src/com/example/test/AndroidUnitySocketHandlerProxy.java" />
-        <option value="$PROJECT_DIR$/../test/src/com/example/test/MyActivity.java" />
-        <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/network/AndroidUnitySocketHandlerProxy.java" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/node_modules/netstat/bin/command/socketio.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/node_modules/netstat/bin/command/ajax.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/node_modules/netstat/lib/netstat.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/src/network/netstat.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/src/network/cmd.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/src/network/shelldameon.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
         <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java" />
-        <option value="$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/utils/uid.js" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/utils/ips.js" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/chatserver.js" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/src/main.js" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/src/game/game/js.java" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/src/game/game.js" />
+        <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/utility/DisplayHelper.java" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/main.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="y" value="32" />
     <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -312,17 +308,67 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dragnslay" />
+              <option name="myItemId" value="DragnSlay" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -336,7 +382,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
@@ -347,7 +393,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/nodejs/node.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../android-gtamps/android" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="832" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
@@ -377,22 +423,30 @@
       <recent name="net.kibotu.sandbox.chat.client.android" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programming\sandbox\unity\server\ChatServer\src\network" />
       <recent name="D:\programming\sandbox\unity\android\DragnSlay\DragnSlay - Android" />
       <recent name="D:\programming\sandbox\unity\android\DragnSlay\DragnSlay - Android\src" />
       <recent name="D:\programming\sandbox\unity\android\networkclient\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programming\sandbox\unity\server\ChatServer\src\network" />
+      <recent name="D:\programming\sandbox\unity\server\ChatServer\components\normalize-css" />
+      <recent name="D:\programming\sandbox\unity\server\ChatServer\src" />
+      <recent name="D:\programming\sandbox\unity\server\ChatServer" />
+      <recent name="D:\programming\chat\ChatServer" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="net.kibotu.sandbox.chat.client.android" />
       <recent name="net.kibotu.sandbox.network" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\programming\sandbox\unity\server\ChatServer" />
-      <recent name="D:\programming\sandbox\unity\server\ChatServer\src" />
-      <recent name="D:\programming\chat\ChatServer" />
-      <recent name="D:\programming\chat\ChatServer\src" />
-    </key>
   </component>
-  <component name="RunManager" selected="Android Application.Unnamed">
+  <component name="RunManager" selected="Android Application.DragnSlay - Android">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -430,6 +484,34 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
@@ -526,24 +608,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Unnamed" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="DragnSlay - Android" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <RunnerSettings RunnerId="AndroidDebugRunner" />
-      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="DragnSlay - Server - update Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi true" working-dir="$PROJECT_DIR$/../../server">
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
@@ -560,18 +624,31 @@
       <method />
     </configuration>
     <configuration default="false" name="DragnSlay - Server - Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet" working-dir="$PROJECT_DIR$/../../server">
+      <RunnerSettings RunnerId="NodeJS.debug" />
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DragnSlay - Server - update WAN" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="ip true" working-dir="$PROJECT_DIR$/../../server">
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <list size="7">
+    <configuration default="false" name="DragnSlay - Server - WAN" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="ip" working-dir="$PROJECT_DIR$/../../server">
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Android Application.NetworkTest - Android" />
       <item index="1" class="java.lang.String" itemvalue="Android Application.DragnSlay - Android" />
-      <item index="2" class="java.lang.String" itemvalue="Android Application.Unnamed" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Wi-Fi" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Wi-Fi" />
-      <item index="5" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Ethernet" />
-      <item index="6" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Ethernet" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Wi-Fi" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Wi-Fi" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update Ethernet" />
+      <item index="5" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - Ethernet" />
+      <item index="6" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - update WAN" />
+      <item index="7" class="java.lang.String" itemvalue="Node.js.DragnSlay - Server - WAN" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -609,7 +686,7 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
+  <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -630,36 +707,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="32" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67114097" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27684563" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48293516" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27684563" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2764505" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22878788" sideWeight="0.6212121" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37878788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20151515" sideWeight="0.67235494" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4215017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -729,102 +805,102 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/UdpSocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="46" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.68" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../networkclient/src/net/kibotu/sandbox/network/SocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="48" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.62285715" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/network/AndroidUnitySocketHandlerProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="60" selection-start="970" selection-end="970" vertical-scroll-proportion="0.92285717" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/routes/chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="30" selection-end="42" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/install.txt">
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/lib/static.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/lib/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/lib/socket.io.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/queue.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/server-events.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="32" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" />
+        <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.69572955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/lib/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6939502" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/listrooms.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="179" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.035416666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="57" selection-start="8912" selection-end="8912" vertical-scroll-proportion="0.035416666">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/utils/uid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="16" vertical-scroll-proportion="0.0" />
+        <state line="14" column="25" selection-start="367" selection-end="367" vertical-scroll-proportion="0.4827586" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/game/game.js">
+    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="16" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+        <state line="24" column="23" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
+    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/network/AndroidUnitySocketHandlerProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="57" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0">
+        <state line="12" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="44" selection-start="3320" selection-end="3320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/src/net/kibotu/logger/android/LogcatLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="32" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="27" selection-start="1684" selection-end="1684" vertical-scroll-proportion="1.0774648">
+        <state line="24" column="56" selection-start="800" selection-end="800" vertical-scroll-proportion="0.7521127">
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1386776408502" expanded="true" signature="1666:1967" placeholder="{...}" />
+            <marker date="1386776408502" expanded="true" signature="2786:2887" placeholder="{...}" />
+            <marker date="1386776408502" expanded="true" signature="2948:3158" placeholder="{...}" />
+            <marker date="1386776408502" expanded="true" signature="7684:8446" placeholder="{...}" />
+            <marker date="1386776408502" expanded="true" signature="9308:9654" placeholder="{...}" />
+            <marker date="1386776408502" expanded="true" signature="11982:12231" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -858,7 +934,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Node.js v0.10.22 Core Modules</last-edited>
+          <last-edited>Node.js v0.10.6 Core Modules</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -870,7 +946,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android 4.2 Platform</last-edited>
+          <last-edited>Android 4.2.2 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -882,7 +958,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>desktop</last-edited>
+          <last-edited>AndroidAsync</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
