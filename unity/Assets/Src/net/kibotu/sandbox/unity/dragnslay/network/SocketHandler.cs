@@ -23,8 +23,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         private Namespace _socket;
         #elif UNITY_ANDROID 
         private AndroidJavaClass _socket;
-        private string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
-        #endif
+        private const string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
+#endif
         private static SocketHandler _instance;
         private Queue<MessageData> messageQueue;
 
@@ -151,9 +151,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
             {
                 var msg = messageQueue.Dequeue();
                 #if UNITY_STANDALONE_WIN 
-                _socket.Emit(msg.name, msg.message);
+                    _socket.Emit(msg.name, msg.message);
                 #elif UNITY_ANDROID
-                _socket.CallStatic("Emit", msg.name, msg.message);
+                    _socket.CallStatic("Emit", msg.name, msg.message);
                 #endif
             }
         }
