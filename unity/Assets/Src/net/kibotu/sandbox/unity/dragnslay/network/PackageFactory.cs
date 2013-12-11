@@ -1,9 +1,8 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
-using SimpleJson;
+using Newtonsoft.Json.Linq;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
+namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 {
     class PackageFactory
     {
@@ -14,9 +13,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
 
         private static long packageId = 0;
 
-        public static JsonObject CreateHelloWorldMessage()
+        public static JObject CreateHelloWorldMessage()
         {
-            return new JsonObject
+            return new JObject
             {
                 {"message",     "hallo welt"},
                 {"username",    "android"},
@@ -32,30 +31,30 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
         /// <param name="scheduleId">Target destination.</param>
         /// 
         /// <returns>Generated JsonObject.</returns>
-        public static JsonObject CreateSendUnitsMessage(int target, int[] ships)
+        public static JObject CreateSendUnitsMessage(int target, int[] ships)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     "move-units"},
-                {"ships",       ships},
+                {"ships",       new JArray(ships)},
                 {"target",      target},
                 {"packageId",   ++PackageFactory.packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
 
-        public static JsonObject CreateSpawnMessage(Spawn[] spawns)
+        public static JObject CreateSpawnMessage(Spawn[] spawns)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     "spawn-units"},
-                {"spawns",      spawns},
+                {"spawns",      new JObject(spawns)},
                 {"packageId",   ++PackageFactory.packageId},
                 {"scheduleId",  Game.ScheduleId()}
             };
         }
 
-        public static JsonObject CreateJoinQueueMessage(string uid)
+        public static JObject CreateJoinQueueMessage(string uid)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     uid},
                 {"uid",         uid},
                 {"packageId",   ++PackageFactory.packageId},
@@ -63,9 +62,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
             };
         }
 
-        public static JsonObject CreateGameTypeGameMessage(string name, string gameType)
+        public static JObject CreateGameTypeGameMessage(string name, string gameType)
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     name},
                 {"game-type",   gameType},
                 {"packageId",   ++PackageFactory.packageId},
@@ -73,9 +72,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
             };
         }
 
-        public static JsonObject CreateRequestGameData()
+        public static JObject CreateRequestGameData()
         {
-            return new JsonObject{
+            return new JObject{
                 {"message",     "game-data"},
                 {"packageId",   ++PackageFactory.packageId},
                 {"scheduleId",  Game.ScheduleId()}

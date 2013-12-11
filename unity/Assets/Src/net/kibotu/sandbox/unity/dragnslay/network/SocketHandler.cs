@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using SimpleJson;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
@@ -63,7 +63,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         /// </summary>
         /// <param name="name">MessageData name.</param>
         /// <param name="message">Json message.</param>
-        public void Emit(string name, JsonObject message)
+        public void Emit(string name, JObject message)
         {
             Emit(name, message.ToString());
         }
