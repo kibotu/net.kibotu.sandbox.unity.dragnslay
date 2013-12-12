@@ -73,6 +73,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
             SocketHandler.Connect(1337);
 
+            // hide connect button
             button.hidden = true;
         }
 

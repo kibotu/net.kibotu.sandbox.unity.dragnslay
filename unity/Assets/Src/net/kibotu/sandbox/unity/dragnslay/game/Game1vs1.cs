@@ -19,7 +19,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
         public override void OnJSONEvent(JObject json)
         {
-            Debug.Log("message : " + json);
+            //Debug.Log("message : " + json);
 
             var message = json["message"].ToString();
             
@@ -51,15 +51,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                     ExecuteOnMainThread.Enqueue(() =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
-                        GameObject island = null;
-                        try
-                        {
-                            island = Registry.Instance.Islands[ship["island_uid"].ToObject<int>()];
-                        }
-                        catch (KeyNotFoundException e)
-                        {
-                            Debug.Log("failed: " + ship);
-                        }
+                        var island = Registry.Instance.Islands[ship["island_uid"].ToObject<int>()];
                         var islandData = island.GetComponent<IslandData>();
 
                         // 1) create ship by type
@@ -102,8 +94,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         {
                             var islandUid = island["uid"].ToObject<int>();
                             var islandType = island["type"].ToObject<int>();
-
-                            Debug.Log("islandUid: " + islandUid + " player " + player["uid"]);
 
                             // 1) create island by type
                             var go = GameObjectFactory.CreateIsland(islandUid, islandType); 

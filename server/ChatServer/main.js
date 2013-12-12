@@ -478,7 +478,7 @@ io.configure( function() {
 });
 
 // { roomId : game_data }
-var loadedGames = {};
+var cachedGames = {};
 
 var loadGameData = function(roomId, callback) {
 
@@ -492,7 +492,10 @@ var loadGameData = function(roomId, callback) {
                 console.log(err);
 
             // if exists, use cache
-            if(loadedGames[roomId]) callback(loadedGames[roomId]);
+            if(cachedGames[roomId]) {
+                callback(cachedGames[roomId]);
+                return;
+            }
 
             var levelData = JSON.parse(processLevelTemplate(decoder.write(data),player, bots));
 
@@ -510,7 +513,7 @@ var loadGameData = function(roomId, callback) {
             });
 
             // add to cache
-            loadedGames[roomId] = levelData;
+            cachedGames[roomId] = levelData;
 
             callback(levelData);
         });
@@ -743,8 +746,6 @@ io.sockets.on('connection', function (socket) {
 
         data = parseJson(data);
 
-        console.log("join game:", data);
-
         // 1) check if room available
         // 1.1) change room to available by game_type
         // 1.2) create new room by game_type
@@ -824,8 +825,6 @@ io.sockets.on('connection', function (socket) {
     socket.on('spawn-unit', function(data){
 
         data = parseJson(data);
-
-        console.log("spawning ships", data);
 
         // 1) replace invalid uids with valid ones
         _.each(data['spawns'], function(spawn) {
