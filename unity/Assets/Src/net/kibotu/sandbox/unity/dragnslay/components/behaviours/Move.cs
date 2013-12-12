@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
+using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
@@ -19,6 +20,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Update()
         {
+            if (!Game.IsRunning()) return;
+
             startTime += Time.deltaTime;
             //Debug.Log("move from: " + gameObject.transform.position + " to " + destination.position);
 

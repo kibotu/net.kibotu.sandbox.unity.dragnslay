@@ -1,22 +1,26 @@
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
     public class Rotating : MonoBehaviour
     {
-        public float rotateVelocity;
-        private Transform pivot;
+        public float RotateVelocity;
+        private Transform _pivot;
 
-        void Awake()
+        public void Awake()
         {
-            rotateVelocity = 1f;
-            pivot = transform;
+            RotateVelocity = 1f;
+            _pivot = transform;
         }
 
-        void Start () {
+        public void Start () {
         }
 	
-        void Update () {
+        public void Update ()
+        {
+            if (!Game.IsRunning()) return;
+
             transform.Rotate(new Vector3(0,1,1) * Time.deltaTime * 100, Space.World);
             //transform.RotateAround(pivot.position, Vector3.right, rotateVelocity * Time.deltaTime);
         }

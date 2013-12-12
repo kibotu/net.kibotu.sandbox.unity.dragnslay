@@ -23,7 +23,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
         private Namespace _socket;
         #elif UNITY_ANDROID 
-        private AndroidJavaClass _socket;
+        private static AndroidJavaClass _socket;
         private const string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
         #endif
         private static SocketHandler _instance;

@@ -2,10 +2,30 @@ process.env.NODE_ENV = 'development';
 process.stdout.setEncoding('utf8');
 process.stderr.setEncoding('utf8');
 
+// nice to know: http://codetunnel.com/blog/post/9-javascript-tips-you-may-not-know#null-undefined-and-delete
 var nodetime = require('nodetime').profile({
     accountKey: '95c1612507ed5224a07691cfdb47436e9467c146',
     appName: 'Drag\'n Slay'
 });
+
+// http://stackoverflow.com/a/1590262
+var MainQueue = { queue : [] };
+
+var Enqueue = function(callback) {
+    if(!callback || typeof(callback) !== "function") {
+        console.trace("Failed to enqueue a non-function! (" + (callback ? typeof(callback) : "null") + " " + traceback()[0].name + " at line /main.js:" + traceback()[1].line + ")");
+        return;
+    }
+    MainQueue.queue.push(callback);
+};
+
+setInterval(function() {
+
+    while(MainQueue.queue.length > 0) {
+        MainQueue.queue.shift()();
+    }
+
+},16);
 
 var express = require('express');
 var socketHandler = require('./src/network/sockethandler');
@@ -30,6 +50,7 @@ var ftp;
 var uid = require('./src/utils/uid');
 var Game = require('./src/game/game');
 var osutils = require('os-utils');
+var traceback = require('traceback');
 
 var getUids = function(number) {
     var res = new Number[number];
@@ -456,17 +477,40 @@ io.configure( function() {
     });
 });
 
-var loadGameData = function(game_type, player, bots, callback) {
+// { roomId : game_data }
+var loadedGames = {};
+
+var loadGameData = function(roomId, callback) {
+
+    var game_type = rooms[roomId].game.game_type;
+    var player = rooms[roomId].user;
+    var bots = rooms[roomId].bots;
 
     if(game_type == 'game1vs1')
         fs.readFile( './../resources/levels/'+ game_type + '.json', function (err, data) {
             if(err)
                 console.log(err);
 
+            // if exists, use cache
+            if(loadedGames[roomId]) callback(loadedGames[roomId]);
+
             var levelData = JSON.parse(processLevelTemplate(decoder.write(data),player, bots));
 
             // add host uid
             levelData['host-uid'] = player[0];
+
+            // bots are always ready
+            var players = levelData.players;
+            _.each(players, function(player) {
+                _.each(bots, function(bot){
+                    if(player.uid == bot) {
+                        player['client-ready'] = true;
+                    }
+                });
+            });
+
+            // add to cache
+            loadedGames[roomId] = levelData;
 
             callback(levelData);
         });
@@ -591,6 +635,20 @@ var roomHasEnoughPlayer = function(roomId) {
     return res;
 };
 
+var allPlayersAreReady = function(socket) {
+
+    // is everyone ready?
+    _.each(rooms[socket.room].game.data.players, function(player){
+        // one player not ready?
+        if(!player['client-ready']) {
+            sendAllInRoomTextMessage(socket,{ "message" : "waiting-for-player", "player" : [player.uid] });
+            return false;
+        }
+    });
+
+    return true;
+};
+
 // never fired~
 io.sockets.on('connect', function (socket){
     var address = socket.handshake.address;
@@ -674,7 +732,7 @@ io.sockets.on('connection', function (socket) {
         changeRoom(socket, createRoom(data['game-type']));
 
         // 2) emitting waiting for player message
-        socket.emit('message',{"message" : "waiting-for-player"});
+        socket.emit('message',{"message" : "waiting-for-player", player : [] });
 
         // 3) updating rooms
         updateRooms();
@@ -700,16 +758,25 @@ io.sockets.on('connection', function (socket) {
             // 2.2) if not emitting waiting for player message
             socket.emit('message',{"message" : "waiting-for-player"});
 
-        socket.on('client-game-ready', function(data) {
-            // todo start game
-        });
-
         // 3) update rooms
         updateRooms();
     });
 
     socket.on('client-game-ready', function(data) {
 
+        console.log("Receiving client-game-ready");
+
+        // current player is ready
+        _.each(rooms[socket.room].game.data.players, function(player) {
+            if(player.uid == socket.uid)
+                player['client-ready'] = true;
+        });
+
+        // start game, when all clients are ready
+        if(allPlayersAreReady(socket) && !rooms[socket.room].game['running']) {
+            rooms[socket.room].game['running'] = true;
+            sendAllInRoomTextMessage(socket, { "message" : "start-game"});
+        }
     });
 
     // join game
@@ -740,7 +807,7 @@ io.sockets.on('connection', function (socket) {
             // 2) creating game
             // 2.1) loading game-data by game_type
             // 2.2) broadcast game-data to clients
-            loadGameData(rooms[socket.room].game.game_type, rooms[socket.room].user,rooms[socket.room].bots, function(data) {
+            loadGameData(socket.room, function(data) {
                 console.log("sending game data for " + rooms[socket.room].game.game_type);
                 rooms[socket.room].game.data = data;
 
@@ -757,6 +824,8 @@ io.sockets.on('connection', function (socket) {
     socket.on('spawn-unit', function(data){
 
         data = parseJson(data);
+
+        console.log("spawning ships", data);
 
         // 1) replace invalid uids with valid ones
         _.each(data['spawns'], function(spawn) {

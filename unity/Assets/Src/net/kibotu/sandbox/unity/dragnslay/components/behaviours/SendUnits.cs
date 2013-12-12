@@ -129,6 +129,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
          */
         private static void Send()
         {
+            if (!Game.IsRunning()) return;
+
             for (var i = 0; i < _selected.Count - 1; ++i)
             {
                 if (debug) UnityEngine.Debug.Log("send " + _selected[i] + " to " + _selected[_selected.Count - 1]);

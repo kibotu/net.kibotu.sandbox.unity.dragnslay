@@ -1,4 +1,5 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
     {
         public void Update ()
         {
+            if (!Game.IsRunning()) return;
+
             if (GetComponentsInChildren<Transform>().Length >= 3) return;
                 SocketHandler.Emit("spawn-unit", PackageFactory.CreateSpawnMessage(
                     new[] { new JObject

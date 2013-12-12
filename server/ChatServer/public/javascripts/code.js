@@ -114,6 +114,15 @@ $( document ).ready(function() {
 
                 $("#content").html(html);
                 $("#content").animate({ scrollTop: $("#content")[0].scrollHeight}, 200);
+
+                if(data.message == 'server-game-ready') {
+                    sendRequestGameData();
+                }
+
+                if(data.message == 'game-data') {
+                    socket.emit('client-game-ready', {});
+                }
+
             } else if(data.error) {
                 createAlert(data.error, 'alert-danger');
             } else if ( _.isEmpty(data)) {
@@ -243,8 +252,12 @@ $( document ).ready(function() {
     });
 
     $("#request-game-data").click( function() {
-        socket.emit('request', { message: 'game-data'});
+        sendRequestGameData();
     });
+
+    var sendRequestGameData = function() {
+        socket.emit('request', { message: 'game-data'});
+    };
 
     $("#spawn-ship").click( function() {
         socket.emit('spawn-ship', { message: 'spawn-ship'});

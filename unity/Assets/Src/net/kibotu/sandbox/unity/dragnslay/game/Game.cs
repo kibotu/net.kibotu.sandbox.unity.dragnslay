@@ -19,7 +19,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         public static string ClientUid;
         public static string HostUid;
 
-        private GameState _gameState;
+        private static GameState _gameState;
 
         public void Start()
         {
@@ -52,6 +52,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         public void StopGame()
         {
             _gameState = GameState.Stopped;
+        }
+        
+        public static bool IsRunning()
+        {
+            return _gameState == GameState.Running;
         }
 
         /**

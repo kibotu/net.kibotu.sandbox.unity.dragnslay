@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
@@ -20,7 +21,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
         {
             Debug.Log("message : " + json);
 
-            var message = (string) json["message"];
+            var message = json["message"].ToString();
             
             if (message.Equals("move-unit"))
             {
@@ -50,7 +51,15 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                     ExecuteOnMainThread.Enqueue(() =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
-                        var island = Registry.Instance.Islands[ship["island_uid"].ToObject<int>()];
+                        GameObject island = null;
+                        try
+                        {
+                            island = Registry.Instance.Islands[ship["island_uid"].ToObject<int>()];
+                        }
+                        catch (KeyNotFoundException e)
+                        {
+                            Debug.Log("failed: " + ship);
+                        }
                         var islandData = island.GetComponent<IslandData>();
 
                         // 1) create ship by type
@@ -86,19 +95,21 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                     World.PlayerData.Add(playerData);
 
                     var islands = player["islands"];
-                    foreach (var island in islands)
+                    foreach (var data in islands)
                     {
-                        var data = island;
+                        var island = data;
                         ExecuteOnMainThread.Enqueue(() =>
                         {
-                            var islandUid = data["uid"].ToObject<int>();
-                            var islandType = data["type"].ToObject<int>();
+                            var islandUid = island["uid"].ToObject<int>();
+                            var islandType = island["type"].ToObject<int>();
+
+                            Debug.Log("islandUid: " + islandUid + " player " + player["uid"]);
 
                             // 1) create island by type
                             var go = GameObjectFactory.CreateIsland(islandUid, islandType); 
 
                             // 2) set island transformation
-                            var position = data["position"]; // island position
+                            var position = island["position"]; // island position
                             go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
                             go.transform.localScale = new Vector3(Scale, Scale, Scale);
 
@@ -130,7 +141,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                     }
                 }
 
-                SocketHandler.Emit("client-game-ready", PackageFactory.CreateClientGameReadyMessage());
+                // when done, send client-game-ready command
+                ExecuteOnMainThread.Enqueue(() => SocketHandler.Emit("client-game-ready", PackageFactory.CreateClientGameReadyMessage()));
             }
             else if (message.Equals("start-game"))
             {
@@ -165,9 +177,17 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 // request game data
                 SocketHandler.Emit("request", PackageFactory.CreateRequestGameData());
             }
+            else if (message.Equals("waiting-for-player"))
+            {
+                foreach (var uid in json["player"])
+                {
+                    Debug.Log("Waiting for player: " + uid);
+                }
+            }
             else
             {
                 // todo more events 
+                Debug.Log("Unhandled Message: " + json);
             }
         }
     }

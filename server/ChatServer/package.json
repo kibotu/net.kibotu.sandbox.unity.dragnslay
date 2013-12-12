@@ -36,6 +36,7 @@
         "seq" : "latest",
 		"os-utils" : "latest",
 		"nodetime" : "latest",
-		"os-monitor" : "latest"
+		"os-monitor" : "latest",
+		"traceback" : "latest"
     }
 }

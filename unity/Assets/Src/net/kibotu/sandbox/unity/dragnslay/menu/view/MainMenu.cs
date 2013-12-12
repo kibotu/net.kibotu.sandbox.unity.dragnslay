@@ -71,7 +71,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             var game = new GameObject("Game").AddComponent<Game1vs1>();
             SocketHandler.SharedConnection.OnJSONEvent += game.OnJSONEvent;
 
-            SocketHandler.Connect(1337);  
+            SocketHandler.Connect(1337);
+
+            button.hidden = true;
         }
 
         public void OnConnected(string error)
