@@ -52,13 +52,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
         public static GameObject CreateShip(int uid)
         {
-            var go = new GameObject("Papership_" + uid);
-            AddMeshToGameObject(go, "meshes/papership", "meshes/paperplant");
+            // var go = new GameObject("Papership_" + uid);
+            //AddMeshToGameObject(go, "meshes/papership", "meshes/paperplant");
+            var go = Prefabs.Instance.GetNewPapership();
+
             go.AddComponent<SphereCollider>();
             go.AddComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // no physic reactions 
-            go.AddComponent<LifeData>();
-            
-            go.transform.position = new Vector3(60, 0, 0);
+
+            go.transform.position = new Vector3(70, 0, 0);
 
             // add island to registry
             Registry.Instance.Ships.Add(uid, go);

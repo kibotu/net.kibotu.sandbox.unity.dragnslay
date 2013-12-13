@@ -10,7 +10,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public abstract class Game : MonoBehaviour, IJSONMessageEvent
     {
-
         public float StartTime;
         public float TurnFrequency;
         public static long Turn;

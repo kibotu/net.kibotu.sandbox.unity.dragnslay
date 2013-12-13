@@ -68,7 +68,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         shipData.playerUid = islandData.playerUid;
 
                         // 4) colorize
-                        go.renderer.material.color = island.renderer.material.color;
+                        go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
+
+                        // 5) life data
+                        var lifeData = go.AddComponent<LifeData>();
+                        lifeData.CurrentHp = lifeData.MaxHp = 10;
+
+                        // 6) host fires attacks
+                        var attack = go.AddComponent<Assault>();
+                        attack.AttackDamage = 2;
+                        attack.AttackSpeed = 1000;
 
                         Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
                     });
@@ -122,11 +131,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                             go.AddComponent<LifeData>();
 
                             // 4.5) set spawning ship types
-                            islandData.shipType = data["ship-type"].ToObject<int>();
+                            islandData.shipType = island["ship-type"].ToObject<int>();
 
                             // 4.6) host handles spawnings
                             if(HostUid == ClientUid)
                                 go.AddComponent<SpawnUnits>();
+
+                            // 4.7) set prototype ship
+
                         });
                     }
                 }

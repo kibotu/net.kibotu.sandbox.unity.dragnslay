@@ -16,9 +16,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
             Ships = new Dictionary<int, GameObject>();
         }
 
-        public static Registry Instance
-        {
-            get { return _instance ?? ( _instance = new GameObject("Registry").AddComponent<Registry>()); }
-        }
+        public static Registry Instance { get { return _instance ?? ( _instance = new GameObject("Registry").AddComponent<Registry>()); }}
     }
 }
