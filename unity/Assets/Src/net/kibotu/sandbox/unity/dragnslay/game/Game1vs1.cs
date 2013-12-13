@@ -67,7 +67,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         shipData.uid = shipUid;
                         shipData.playerUid = islandData.playerUid;
 
-                        // 4) colorize
+                        // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
                         go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
 
                         // 5) life data
@@ -75,9 +75,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         lifeData.CurrentHp = lifeData.MaxHp = 10;
 
                         // 6) host fires attacks
-                        var attack = go.AddComponent<Assault>();
-                        attack.AttackDamage = 2;
-                        attack.AttackSpeed = 1000;
+                        if (IsHost())
+                        {
+                            var attack = go.AddComponent<Assault>();
+                            attack.AttackDamage = 2;
+                            attack.AttackSpeed = 1000;
+                            go.AddComponent<Defence>();
+                        }
 
                         Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
                     });
@@ -134,7 +138,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                             islandData.shipType = island["ship-type"].ToObject<int>();
 
                             // 4.6) host handles spawnings
-                            if(HostUid == ClientUid)
+                            if(IsHost())
                                 go.AddComponent<SpawnUnits>();
 
                             // 4.7) set prototype ship

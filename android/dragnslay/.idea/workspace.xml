@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/Game1vs1.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/GameObjectFactory.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/game/GameObjectFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/components/data/LifeData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Src/net/kibotu/sandbox/unity/dragnslay/components/data/LifeData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="" />
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1386941766698" ignored="false" />

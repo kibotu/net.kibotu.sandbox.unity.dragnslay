@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
@@ -12,16 +11,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         private float _startTime;
         public float AttackSpeed;
         public int AttackDamage;
-        private LifeData _lifeData;
         private ShipData _shipData;
         public GameObject Target;
 
         public void Start()
         {
-            AttackSpeed = 1000;
+            AttackSpeed = 1.5f;
             AttackDamage = 3;
             _startTime = 0;
-            _lifeData = GetComponent<LifeData>();
             _shipData = GetComponent<ShipData>();
         }
 
@@ -36,17 +33,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             var enemyShips = GetEnemyShips();
 
             // 1) if is enemy island and has no there are no enemy ships => convert
-            if (IsOnEnemyIsland())
+            if (IsOnEnemyIsland() && enemyShips.Count == 0)
             {
-                Debug.Log("converting");
+                Debug.Log(_shipData.uid + " invades " + transform.parent.gameObject.GetComponent<IslandData>().uid);
+                transform.parent.gameObject.GetComponent<IslandData>().playerUid = _shipData.playerUid;
+                transform.parent.gameObject.renderer.material.color = GetComponentInChildren<Renderer>().material.color;
             }
 
             // 2) attack every enemy ship
             if (enemyShips.Count > 0)
             {
                 var enemyShip = (GameObject)enemyShips[Random.Range(0, enemyShips.Count)]; // Important! actual range 0 to list size - 1
-                
-                //enemyShip.GetComponent<Defence>().Defence(AttackDamage);
+                enemyShip.GetComponent<Defence>().Defend(AttackDamage);
+                Debug.Log(_shipData.uid + " attacks " + enemyShip.GetComponent<ShipData>().uid);
             }
         }
 

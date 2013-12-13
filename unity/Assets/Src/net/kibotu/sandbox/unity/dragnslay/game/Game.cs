@@ -173,6 +173,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             return Turn + 2;
         }
 
+        public bool IsHost()
+        {
+            return HostUid == ClientUid;
+        }
+
         public abstract void OnJSONEvent(JObject message);
     }
 }
