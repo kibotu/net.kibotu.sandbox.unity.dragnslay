@@ -20,6 +20,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
 
+        public string ip = "undefined";
+
         #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
         private Namespace _socket;
         #elif UNITY_ANDROID 
@@ -36,9 +38,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
         public static void Connect(string host, int port)
         {
+            SocketHandler._instance.ip = "http://" + "127.0.0.1" + ":" + port + "/";
+
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-            SharedConnection._socket = new SocketIOClient().Connect("http://" + host + ":" + port + "/");
+            SharedConnection._socket = new SocketIOClient().Connect(SocketHandler._instance.ip);
             SharedConnection.SetDelegates();
           
             #elif UNITY_ANDROID 
@@ -60,7 +64,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
-                SharedConnection._socket = new SocketIOClient().Connect("http://" + result[(string)result["network_interface"]] + ":" + port + "/");
+                SocketHandler._instance.ip = "http://" + "127.0.0.1" + ":" + port + "/";
+                SharedConnection._socket = new SocketIOClient().Connect(SocketHandler._instance.ip);
                 SharedConnection.SetDelegates();
             });
 

@@ -17,7 +17,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         private static bool _isOver;
         private static List<int> _selected;
         private int _id;
-        private Color _oldColor;
 
         public void Start()
         {
@@ -27,7 +26,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             _isOver = false;
             _id = gameObject.GetComponent<IslandData>().uid;
             if(_selected == null) _selected = new List<int>();
-            _oldColor = renderer.material.color;
         }
 
         private void InitLineRender()
@@ -117,7 +115,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         private void RestoreColor()
         {
-            renderer.material.color = _oldColor;
+            renderer.material.color -= new Color(1f, 1f, 1f);
         }
 
         /**
