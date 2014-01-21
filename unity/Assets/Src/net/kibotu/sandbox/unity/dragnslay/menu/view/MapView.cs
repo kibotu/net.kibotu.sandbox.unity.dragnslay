@@ -6,11 +6,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
     {
         public void Start()
         {
-            var in_game_hud = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
+            var atlas = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
 
-            var map = UIButton.create(in_game_hud, "map.png", "map.png", 0,0);
-            map.positionFromTopRight(0, 0);
-            map.scale = new Vector3(0.52083f, 0.520833f, 0);
+            var sprite = UIButton.create(atlas, "map.png", "map.png", 0, 0);
+            sprite.positionFromTopRight(0, 0);
+            sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
         }
     }
 }

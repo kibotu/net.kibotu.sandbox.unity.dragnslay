@@ -6,6 +6,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 {
     class Menu : MonoBehaviour
     {
+        private GameObject _miniMap;
+        private GameObject _miniMapCamera;
+
         public void Start()
         {
             var uiToolkit = GameObject.Find("UIToolkit").GetComponent<UI>();
@@ -14,6 +17,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
             //uiToolkit.maxWidthOrHeightForSD = 800; // DisplayMetricsAndroid.WidthPixels;
 
             ShowMainMenu();
+
+            _miniMap = GameObject.Find("MiniMap");
+            _miniMap.SetActive(false); 
+            _miniMapCamera = GameObject.Find("MiniMapCanera");
+            _miniMapCamera.SetActive(false);
         }
 
         public void ShowMainMenu()
@@ -31,6 +39,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
             gameObject.AddComponent<MenuButtonView>();
             gameObject.AddComponent<ResourcesView>();
             gameObject.AddComponent<CornerView>();
+
+            _miniMap.SetActive(true);
+            _miniMapCamera.SetActive(true);
         }
 
         public void ShowShop()
