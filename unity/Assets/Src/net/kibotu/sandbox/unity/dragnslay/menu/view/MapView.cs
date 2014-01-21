@@ -10,7 +10,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
             var map = UIButton.create(in_game_hud, "map.png", "map.png", 0,0);
             map.positionFromTopRight(0, 0);
-            map.scale = new Vector3(0.6f, 0.6f, 0.6f);
+            map.scale = new Vector3(0.52083f, 0.520833f, 0);
         }
     }
 }

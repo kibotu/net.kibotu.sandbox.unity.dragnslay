@@ -9,8 +9,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             var in_game_hud = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
 
             var skills = UIButton.create(in_game_hud, "skills.png", "skills.png",0,0);
-            skills.positionFromBottomRight(0,0);
-            skills.scale = new Vector3(0.6f,0.6f,0.6f);
+            skills.positionFromBottomRight(0, 0);
+            skills.scale = new Vector3(0.52083f, 0.520833f, 0);
         }
     }
 }

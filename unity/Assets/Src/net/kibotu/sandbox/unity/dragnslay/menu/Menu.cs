@@ -28,6 +28,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
             gameObject.AddComponent<BoostsView>();
             gameObject.AddComponent<NetworkView>();
             gameObject.AddComponent<MapView>();
+            gameObject.AddComponent<MenuButtonView>();
+            gameObject.AddComponent<ResourcesView>();
+            gameObject.AddComponent<CornerView>();
+        }
+
+        public void ShowShop()
+        {
+            Destroy(gameObject.GetComponent<MainMenu>());
+
+            gameObject.AddComponent<ShopView>();
         }
     }
 }

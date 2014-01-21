@@ -100,7 +100,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
         public void OnShopClicked(UIButton button)
         {
-
+            GameObject.Find("Menu").GetComponent<Menu>().ShowShop();
         }
 
         public void OnDestroy()

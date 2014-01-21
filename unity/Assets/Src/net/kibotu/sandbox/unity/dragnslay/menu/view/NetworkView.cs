@@ -25,30 +25,26 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 
             var mainMenuToolkit = GameObject.Find("main_menu").GetComponent<UIToolkit>();
 
+            var padding = 0.00f;
+
             disconnected = mainMenuToolkit.addSprite("disconnected.png", 0, 0);
-            disconnected.positionFromCenter(0, 0);
-            disconnected.positionFromTop(0.01f, -0.06f);
+            disconnected.positionFromTopLeft(padding, 0.2f);
             disconnected.color = Color.white;
 
             connected = mainMenuToolkit.addSprite("connected.png", 0, 0);
-            connected.positionFromCenter(0, 0);
-            connected.positionFromTop(0.02f, -0.03f);
+            connected.positionFromTopLeft(padding, 0.23f);
             connected.color = Color.grey;
 
             activity = mainMenuToolkit.addSprite("activity.png", 0, 0);
-            activity.positionFromCenter(0, 0);
-            activity.positionFromTop(0.02f, 0);
+            activity.positionFromTopLeft(padding, 0.26f);
             activity.color = Color.grey;
 
             ok = mainMenuToolkit.addSprite("ok.png", 0, 0);
-            ok.positionFromCenter(0, 0);
-            ok.positionFromTop(0.02f, 0.03f);
+            ok.positionFromTopLeft(padding, 0.29f);
             ok.color = Color.grey;
 
             error = mainMenuToolkit.addSprite("error.png", 0, 0);
-            error.positionFromCenter(0, 0);
-            error.positionFromTop(0.02f, 0.06f);
-            error.scale = new Vector3(1.2f,1.2f,0);
+            error.positionFromTopLeft(padding, 0.32f);
             error.color = Color.grey;
 
             #if UNITY_ANDROID && !UNITY_EDITOR
