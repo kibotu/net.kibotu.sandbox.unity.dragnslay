@@ -17,7 +17,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 
         public void ShowMainMenu()
         {
-            gameObject.AddComponent<MainMenu>();
+            gameObject.AddComponent<GameMenu>();
+        }
+
+        public void ShowGameHUD()
+        {
+            gameObject.AddComponent<GameHUD>();
         }
     }
 }
