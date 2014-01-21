@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="" />
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="06ca9d69-5c63-4990-8f80-a7723ae0a2be" time="1390252623999" ignored="false" />
@@ -142,7 +140,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="793" column="39" selection-start="25072" selection-end="25072" vertical-scroll-proportion="0.73712736">
+            <state line="789" column="45" selection-start="25000" selection-end="25000" vertical-scroll-proportion="0.55284554">
               <folding />
             </state>
           </provider>
@@ -668,7 +666,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20064034" sideWeight="0.4493392" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5506608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5506608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -816,7 +814,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="793" column="39" selection-start="25072" selection-end="25072" vertical-scroll-proportion="0.73712736">
+        <state line="789" column="45" selection-start="25000" selection-end="25000" vertical-scroll-proportion="0.55284554">
           <folding />
         </state>
       </provider>

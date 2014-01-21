@@ -42,7 +42,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
 
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-            SharedConnection._socket = new SocketIOClient().Connect(SocketHandler._instance.Ip);
+            SharedConnection._socket = new SocketIOClient().Connect(_instance.Ip);
             SharedConnection.SetDelegates();
           
             #elif UNITY_ANDROID 
