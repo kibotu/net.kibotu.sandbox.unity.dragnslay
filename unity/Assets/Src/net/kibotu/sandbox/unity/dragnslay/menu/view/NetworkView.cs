@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 {
-    public class GameMenu : MonoBehaviour, IStringMessageEvent, IJSONMessageEvent
+    public class NetworkView : MonoBehaviour, IStringMessageEvent, IJSONMessageEvent
     {
         private UISprite disconnected;
         private UISprite connected;
@@ -24,12 +24,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             //map.centerize();
 
             var mainMenuToolkit = GameObject.Find("main_menu").GetComponent<UIToolkit>();
-
-            var playButton = UIButton.create(mainMenuToolkit, "button.png", "button.png", 0, 0);
-            playButton.highlightedTouchOffsets = new UIEdgeOffsets(30);
-            playButton.centerize();
-            playButton.scaleFromTo(1.0f, Vector3.zero, new Vector3(0.3f, 0.3f, 0), Easing.Quintic.easeOut);
-            playButton.onTouchUpInside += OnPlayButtonClicked;
 
             disconnected = mainMenuToolkit.addSprite("disconnected.png", 0, 0);
             disconnected.position = new Vector3(360, -10, 0);
@@ -56,10 +50,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
                 AndroidJNI.AttachCurrentThread();
                 AndroidJNIHelper.debug = false;
             #endif
-        }
 
-        public void OnPlayButtonClicked(UIButton button)
-        {
             SocketHandler.SharedConnection.OnConnectEvent += OnConnected;
             SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
             SocketHandler.SharedConnection.OnStringEvent += OnStringEvent;
@@ -67,15 +58,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             SocketHandler.SharedConnection.OnReconnectEvent += OnReconnectEvent;
             SocketHandler.SharedConnection.OnErrorEvent += OnErrorEvent;
             SocketHandler.SharedConnection.OnDisconnectEvent += OnDisconnectEvent;
-            
-            var game = new GameObject("Game").AddComponent<Game1vs1>();
-            SocketHandler.SharedConnection.OnJSONEvent += game.OnJSONEvent;
-
-            SocketHandler.Connect(1337);
-            GameObject.Find("Menu").GetComponent<Menu>().ShowGameHUD();
-
-            // hide connect button
-            button.hidden = true;
         }
 
         public void OnConnected(string error)

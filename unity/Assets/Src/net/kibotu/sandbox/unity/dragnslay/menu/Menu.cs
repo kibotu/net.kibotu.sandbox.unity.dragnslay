@@ -1,5 +1,6 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view;
 using UnityEngine;
+using NetworkView = Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view.NetworkView;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 {
@@ -17,12 +18,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 
         public void ShowMainMenu()
         {
-            gameObject.AddComponent<GameMenu>();
+            gameObject.AddComponent<MainMenu>();
         }
 
         public void ShowGameHUD()
         {
-            gameObject.AddComponent<GameHUD>();
+            gameObject.AddComponent<BoostsView>();
+            gameObject.AddComponent<NetworkView>();
         }
     }
 }
