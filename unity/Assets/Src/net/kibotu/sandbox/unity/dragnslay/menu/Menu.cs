@@ -23,6 +23,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 
         public void ShowGameHud()
         {
+            Destroy(gameObject.GetComponent<MainMenu>());
+                
             gameObject.AddComponent<BoostsView>();
             gameObject.AddComponent<NetworkView>();
             gameObject.AddComponent<MapView>();

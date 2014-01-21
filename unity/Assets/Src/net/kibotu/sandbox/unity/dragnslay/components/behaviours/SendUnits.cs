@@ -108,16 +108,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             _selected.Clear();
         }
 
-        private Color colorHighlight = new Color(0.5f, 0.5f, 0.5f);
+        private readonly Color _colorHighlight = new Color(0.5f, 0.5f, 0.5f);
 
         private void DyeSelected()
         {
-            renderer.material.color += colorHighlight;
+            renderer.material.color += _colorHighlight;
         }
 
         private void RestoreColor()
         {
-            renderer.material.color -= colorHighlight;
+            renderer.material.color -= _colorHighlight;
         }
 
         /**
