@@ -10,8 +10,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
         {
             var uiToolkit = GameObject.Find("UIToolkit").GetComponent<UI>();
 
-            uiToolkit.maxWidthOrHeightForHD = 800; //  DisplayMetricsAndroid.WidthPixels;
-            uiToolkit.maxWidthOrHeightForSD = 800; // DisplayMetricsAndroid.WidthPixels;
+            //uiToolkit.maxWidthOrHeightForHD = 800; //  DisplayMetricsAndroid.WidthPixels;
+            //uiToolkit.maxWidthOrHeightForSD = 800; // DisplayMetricsAndroid.WidthPixels;
 
             ShowMainMenu();
         }
@@ -21,10 +21,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
             gameObject.AddComponent<MainMenu>();
         }
 
-        public void ShowGameHUD()
+        public void ShowGameHud()
         {
             gameObject.AddComponent<BoostsView>();
             gameObject.AddComponent<NetworkView>();
+            gameObject.AddComponent<MapView>();
         }
     }
 }
