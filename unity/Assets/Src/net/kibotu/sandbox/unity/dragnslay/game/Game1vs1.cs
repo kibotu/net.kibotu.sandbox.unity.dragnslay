@@ -1,3 +1,4 @@
+using System.Linq;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
@@ -9,7 +10,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 {
     public class Game1vs1 : Game {
 
-        const float Scale = 50;
+        const float Scale = 20;
 
         protected override void DoGameTurn()
         {
@@ -26,20 +27,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             {
                 var target = Registry.Instance.Islands[json["target"].ToObject<int>()];
 
-                foreach (var shipId in json["ships"])
+                foreach (var ship_uid in json["ships"].Select(shipId => shipId.ToObject<int>()))
                 {
-                    var ship_uid = shipId.ToObject<int>();
                     ExecuteOnMainThread.Enqueue(() =>
-                    {
-                        // 1) add move component to ship
-                        var move = Registry.Instance.Ships[ship_uid].AddComponent<Move>();
-                        move.speed = 25;
+                        {
+                            // 1) add move component to ship
+                            var move = Registry.Instance.Ships[ship_uid].AddComponent<Move>();
+                            move.speed = 25;
 
-                        // 2) set move destination
-                        move.destination = target.transform.FindChild("Sphere");
+                            // 2) set move destination
+                            move.destination = target.transform.FindChild("Sphere");
 
-                        Debug.Log("move " + ship_uid + " to " + target.GetComponent<IslandData>().uid);
-                    });
+                            Debug.Log("move " + ship_uid + " to " + target.GetComponent<IslandData>().uid);
+                        });
                 }
             }
             else if (message.Equals("spawn-unit"))
@@ -67,7 +67,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         shipData.playerUid = islandData.playerUid;
 
                         // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
-                        go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
+                        go.renderer.material.color = island.renderer.material.color;
 
                         // 5) life data
                         var lifeData = go.AddComponent<LifeData>();

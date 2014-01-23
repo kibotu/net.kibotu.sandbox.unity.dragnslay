@@ -20,7 +20,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 
             _miniMap = GameObject.Find("MiniMap");
             _miniMap.SetActive(false); 
-            _miniMapCamera = GameObject.Find("MiniMapCanera");
+            _miniMapCamera = GameObject.Find("MiniMapCamera");
             _miniMapCamera.SetActive(false);
         }
 
@@ -47,8 +47,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
         public void ShowShop()
         {
             Destroy(gameObject.GetComponent<MainMenu>());
-
             gameObject.AddComponent<ShopView>();
+        }
+
+        public void ShowProfile()
+        {
+            Destroy(gameObject.GetComponent<MainMenu>());
+            gameObject.AddComponent<ProfileView>();
+        }
+
+        public void ShowUpgrades()
+        {
+            Destroy(gameObject.GetComponent<ProfileView>());
+            gameObject.AddComponent<UpgradesView>();
         }
     }
 }

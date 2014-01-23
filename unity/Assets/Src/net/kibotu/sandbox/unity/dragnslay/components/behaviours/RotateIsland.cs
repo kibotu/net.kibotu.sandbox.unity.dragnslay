@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
-    public class Rotating : MonoBehaviour
+    public class RotateIsland : MonoBehaviour
     {
         public float xRot;
         public float yRot;
@@ -26,6 +26,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Start () 
         {
+            transform.localRotation = Quaternion.Euler(270,0,0);
         }
 	
         public void Update ()

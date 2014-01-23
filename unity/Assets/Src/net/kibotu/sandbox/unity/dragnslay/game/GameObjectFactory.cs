@@ -1,5 +1,4 @@
 ﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 
@@ -32,10 +31,12 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
 
         private static GameObject CreateIsland(int uid)
         {
-            var go = new GameObject("Island_" + uid);
-            AddMeshToGameObject(go, "meshes/iland", "meshes/iland");
+            //var go = new GameObject("Island_" + uid);
+            //AddMeshToGameObject(go, "meshes/iland", "meshes/iland");
+            var go = Prefabs.Instance.GetNewIsland();
+            go.name = "Island_" + uid;
             go.AddComponent<SphereCollider>().radius += 1f;
-            go.AddComponent<Rotating>();
+            go.AddComponent<RotateIsland>();
             go.AddComponent<SendUnits>();
 
             var sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -57,9 +58,10 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
             var go = Prefabs.Instance.GetNewPapership();
 
             go.AddComponent<SphereCollider>();
+            go.AddComponent<RotatePlane>();
             go.AddComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // no physic reactions 
 
-            go.transform.position = new Vector3(70, 0, 0);
+            //go.transform.position = new Vector3(70, 0, 0);
 
             // add island to registry
             Registry.Instance.Ships.Add(uid, go);

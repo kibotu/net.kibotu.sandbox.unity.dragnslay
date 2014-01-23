@@ -6,7 +6,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
     {
         public void Start()
         {
-            var atlas = GameObject.Find("in_game_hud").GetComponent<UIToolkit>();
+            var atlas = GameObject.Find("game_atlas").GetComponent<UIToolkit>();
 
             var sprite = UIButton.create(atlas, "map.png", "map.png", 0, 0);
             sprite.positionFromTopRight(0, 0);

@@ -23,27 +23,27 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             //var map = UIButton.create(in_game_hud, "skills.png", "skills.png", 100, 100);
             //map.centerize();
 
-            var mainMenuToolkit = GameObject.Find("main_menu").GetComponent<UIToolkit>();
+            var atlas = GameObject.Find("main_menu_atlas").GetComponent<UIToolkit>();
 
             var padding = 0.00f;
 
-            disconnected = mainMenuToolkit.addSprite("disconnected.png", 0, 0);
+            disconnected = atlas.addSprite("disconnected.png", 0, 0);
             disconnected.positionFromTopLeft(padding, 0.2f);
             disconnected.color = Color.white;
 
-            connected = mainMenuToolkit.addSprite("connected.png", 0, 0);
+            connected = atlas.addSprite("connected.png", 0, 0);
             connected.positionFromTopLeft(padding, 0.23f);
             connected.color = Color.grey;
 
-            activity = mainMenuToolkit.addSprite("activity.png", 0, 0);
+            activity = atlas.addSprite("activity.png", 0, 0);
             activity.positionFromTopLeft(padding, 0.26f);
             activity.color = Color.grey;
 
-            ok = mainMenuToolkit.addSprite("ok.png", 0, 0);
+            ok = atlas.addSprite("ok.png", 0, 0);
             ok.positionFromTopLeft(padding, 0.29f);
             ok.color = Color.grey;
 
-            error = mainMenuToolkit.addSprite("error.png", 0, 0);
+            error = atlas.addSprite("error.png", 0, 0);
             error.positionFromTopLeft(padding, 0.32f);
             error.color = Color.grey;
 

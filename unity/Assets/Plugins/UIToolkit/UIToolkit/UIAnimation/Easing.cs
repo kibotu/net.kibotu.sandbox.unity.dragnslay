@@ -1,8 +1,7 @@
 using UnityEngine;
-using System;
 
 
-public static class Easing
+public static partial class Easing
 {
 	public static class Linear
 	{
