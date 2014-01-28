@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\resources\ui\Materials.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../unity/Assets/resources/ui/profile.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../unity/Assets/resources/ui/profile.txt.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\resources\ui\profile.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\resources\ui\profile.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync" afterPath="$PROJECT_DIR$/../AndroidAsync" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/resources/prefabs/Explosion.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/resources/prefabs/Explosion.prefab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/resources/prefabs/Explosion.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/resources/prefabs/Explosion.prefab.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -690,7 +697,7 @@
       <created>1385636321950</created>
       <updated>1385636321950</updated>
       <workItem from="1390917138062" duration="352000" />
-      <workItem from="1390917542645" duration="19722000" />
+      <workItem from="1390917542645" duration="21645000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -700,7 +707,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20074000" />
+    <option name="totallyTimeSpent" value="21997000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">

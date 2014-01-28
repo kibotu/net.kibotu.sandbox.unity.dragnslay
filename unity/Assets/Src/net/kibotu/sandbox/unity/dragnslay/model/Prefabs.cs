@@ -15,19 +15,25 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
 
         public static Prefabs Instance { get; private set; }
 
+
+        public static GameObject CreateGameObject<T>(T type) where T : Object
+        {
+            return (GameObject) Instantiate(type, new Vector3(0, 0, 0), Quaternion.identity); 
+        }
+
         public GameObject GetNewPapership()
         {
-            return (GameObject) Instantiate(Papership, new Vector3(0, 0, 0), Quaternion.identity);
+            return CreateGameObject(Papership);
         }
 
         public GameObject GetNewIsland()
         {
-            return (GameObject)Instantiate(Island, new Vector3(0, 0, 0), Quaternion.identity);
+            return CreateGameObject(Island);
         }
 
         public GameObject GetNewExplosion()
         {
-            return (GameObject)Instantiate(Explosion, new Vector3(0, 0, 0), Quaternion.identity);
+            return CreateGameObject(Explosion);
         }
     }
 }

@@ -124,7 +124,7 @@ public class UIObject : System.Object, IPositionable
 				localScale.y /= parentScale.y;
 				localScale.z /= parentScale.z;
 			}
-			clientTransform.localScale = localScale;
+            if (clientTransform != null) clientTransform.localScale = localScale;
 			
 			// If auto refresh is on, don't call onTransformChanged
 			// as it will be called later when position is updated
