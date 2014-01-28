@@ -1,4 +1,5 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
@@ -10,6 +11,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
         private bool isBlinking;
         private float blinkTime;
         private Color oldColor;
+
+        private bool isExploding = false;
 
         public void Start()
         {
@@ -23,10 +26,16 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
             _lifeData.CurrentHp -= damage;
             BlinkOnce();
             if (_lifeData.CurrentHp > 0) return;
+
+            if (isExploding) return;
+
             Destroy(gameObject);
+            Prefabs.Instance.GetNewExplosion().transform.position = transform.position;
+            
             Registry.Instance.Ships.Remove(GetComponent<ShipData>().uid);
 
             Debug.Log(GetComponent<ShipData>().uid + " has been destroyed!");
+            isExploding = true;
         }
 
         public void Update()
@@ -46,7 +55,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
             {
                 GetComponentInChildren<Renderer>().material.color = oldColor;
             }*/
-
         }
 
         private void BlinkOnce()

@@ -3,7 +3,6 @@ using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
@@ -12,7 +11,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
     public class SendUnits : MonoBehaviour
     {
         private static string LOGGING_TAG = "SendUnits";
-        private const bool debug = false;
         private static bool _isDragging;
         private static bool _isOver;
         private static List<int> _selected;
@@ -52,7 +50,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
             _selected.Add(_id);
             DyeSelected();
-            if (debug) UnityEngine.Debug.Log("select " + _id);
+            // UnityEngine.Debug.Log("select " + _id);
         }
 
         public void OnMouseEnter()
@@ -62,13 +60,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             {
                 _selected.Add(_id);
                 DyeSelected();
-                if (debug) UnityEngine.Debug.Log("select " + _id);
+                // UnityEngine.Debug.Log("select " + _id);
             }
             else if(_selected.Contains(_id))
             {
                 _selected.Remove(_id);
                 RestoreColor();
-                if(debug) UnityEngine.Debug.Log("deselect " + _id);
+                // UnityEngine.Debug.Log("deselect " + _id);
             }
         }
 
@@ -102,7 +100,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         {
             foreach (var t in _selected)
             {
-                if (debug) UnityEngine.Debug.Log("deselect " + t);
+                // UnityEngine.Debug.Log("deselect " + t);
                 Registry.Instance.Islands[t].GetComponent<SendUnits>().RestoreColor();
             }
             _selected.Clear();
@@ -133,7 +131,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
             for (var i = 0; i < _selected.Count - 1; ++i)
             {
-                if (debug) UnityEngine.Debug.Log("send " + _selected[i] + " to " + _selected[_selected.Count - 1]);
+                //Debug.Log("send " + _selected[i] + " to " + _selected[_selected.Count - 1]);
 
                 var source = Registry.Instance.Islands[_selected[i]];
                 var destination = Registry.Instance.Islands[_selected[_selected.Count - 1]];
@@ -142,7 +140,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
                 foreach (var pair in Registry.Instance.Ships)
                 {
-                    if (debug) UnityEngine.Debug.Log("bla: " + (source.transform == Registry.Instance.Ships[pair.Key].transform.parent));
+                    // UnityEngine.Debug.Log("bla: " + (source.transform == Registry.Instance.Ships[pair.Key].transform.parent));
                     if (source.transform == Registry.Instance.Ships[pair.Key].transform.parent)
                     {
                         var plane = Registry.Instance.Ships[pair.Key];

@@ -6,7 +6,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 {
     class Menu : MonoBehaviour
     {
-        private GameObject _miniMap;
         private GameObject _miniMapCamera;
 
         public void Start()
@@ -18,8 +17,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
 
             ShowMainMenu();
 
-            _miniMap = GameObject.Find("MiniMap");
-            _miniMap.SetActive(false); 
             _miniMapCamera = GameObject.Find("MiniMapCamera");
             _miniMapCamera.SetActive(false);
         }
@@ -40,7 +37,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
             gameObject.AddComponent<ResourcesView>();
             gameObject.AddComponent<CornerView>();
 
-            _miniMap.SetActive(true);
             _miniMapCamera.SetActive(true);
         }
 

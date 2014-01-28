@@ -6,6 +6,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
     {
         public GameObject Papership;
         public GameObject Island;
+        public GameObject Explosion;
 
         public void Start()
         {
@@ -22,6 +23,11 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
         public GameObject GetNewIsland()
         {
             return (GameObject)Instantiate(Island, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+
+        public GameObject GetNewExplosion()
+        {
+            return (GameObject)Instantiate(Explosion, new Vector3(0, 0, 0), Quaternion.identity);
         }
     }
 }
