@@ -10,7 +10,6 @@
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../../NetworkClient/assets" />
         <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../../NetworkClient/libs" />
         <option name="LIBRARY_PROJECT" value="true" />
-        <option name="PROGUARD_CFG_PATH" value="/../../NetworkClient/proguard-project.txt" />
         <option name="UPDATE_PROPERTY_FILES" value="true" />
       </configuration>
     </facet>
@@ -22,7 +21,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../networkclient">
       <sourceFolder url="file://$MODULE_DIR$/../../networkclient/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../networkclient/gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../networkclient/gen" isTestSource="false" generated="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
