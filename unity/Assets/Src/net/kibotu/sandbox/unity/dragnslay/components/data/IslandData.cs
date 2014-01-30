@@ -8,6 +8,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
         public int shipType;
         public int islandType;
         public string playerUid;
+        public int maxSpawn;
 
         public float ShipBuildTime()
         {

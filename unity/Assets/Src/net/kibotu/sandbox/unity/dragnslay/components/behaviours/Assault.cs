@@ -16,8 +16,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Start()
         {
-            AttackSpeed = 3f;
-            AttackDamage = 3;
+            AttackSpeed = 2f;
+            AttackDamage = 1;
             _startTime = 0;
             _shipData = GetComponent<ShipData>();
         }
@@ -51,8 +51,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             behaviour.Attacker = gameObject.transform.position;
             behaviour.AttackDamage = AttackDamage;
             behaviour.Defender = enemyShip;
-            behaviour.Distance = 2f;
-            behaviour.Speed = 20f;
+            behaviour.Distance = 4f;
+            behaviour.Velocity = -55f;
+            behaviour.Acceleration = 17f;
         }
 
         private bool IsOnEnemyIsland()
@@ -72,7 +73,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             for (var i = 0; i < transform.parent.childCount; ++i)
             {
                 var ship = transform.parent.GetChild(i).gameObject;
-                if(ship.name.Equals("Sphere")) continue;
+                if(!ship.name.Contains("Papership")) continue;
                 if(ship.GetComponent<ShipData>().playerUid != _shipData.playerUid)
                     enemyShips.Add(ship);
             }

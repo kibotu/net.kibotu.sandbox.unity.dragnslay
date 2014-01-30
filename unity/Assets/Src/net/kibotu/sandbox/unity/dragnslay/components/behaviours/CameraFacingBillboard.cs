@@ -11,12 +11,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Start()
         {
-            //if (mCamera == null) mCamera = Camera.main;
+            if (mCamera == null) mCamera = Camera.main;
         }
 
         public void Update()
         {
-            transform.LookAt(transform.position + mCamera.transform.rotation * Vector3.back, mCamera.transform.rotation * Vector3.up);
+           // var lookDirection = (camera.transform.position - transform.position).normalized;
+           // transform.rotation = Quaternion.LookRotation(lookDirection, camera.transform.up);
+            //transform.LookAt(transform.position + mCamera.transform.rotation * Vector3.back, mCamera.transform.rotation * mCamera.transform.up);
         }
     }
 }

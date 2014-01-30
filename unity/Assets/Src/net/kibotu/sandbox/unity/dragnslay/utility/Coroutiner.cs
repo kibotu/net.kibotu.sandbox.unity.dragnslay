@@ -33,6 +33,9 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
             action.Invoke();
         }
 
+        /**
+         * e.g.: ExecuteOnMainThread.Enqueue(() => Coroutiner.StartDelayedAction(() => SocketHandler.Emit("client-game-ready",PackageFactory.CreateClientGameReadyMessage()), 2f));
+         */
         public static Coroutine StartDelayedAction(Action action, float delay)
         {
             return StartCoroutine(DelayAction(action, delay));

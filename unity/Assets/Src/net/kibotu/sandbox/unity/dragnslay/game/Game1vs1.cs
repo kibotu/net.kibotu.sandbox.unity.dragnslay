@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Linq;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -108,6 +106,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                         {
                             var islandUid = island["uid"].ToObject<int>();
                             var islandType = island["type"].ToObject<int>();
+                            var islandMaxSpawn = island["max-spawn"].ToObject<int>();
 
                             // 1) create island by type
                             var go = GameObjectFactory.CreateIsland(islandUid, islandType); 
@@ -132,6 +131,8 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                             // 4.3) set ownership
                             islandData.playerUid = playerData.uid;
 
+                            islandData.maxSpawn = islandMaxSpawn;
+
                             // 4.4) life data
                             go.AddComponent<LifeData>();
 
@@ -149,7 +150,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 }
 
                 // when done, send client-game-ready command
-                ExecuteOnMainThread.Enqueue(() => Coroutiner.StartDelayedAction(() => SocketHandler.Emit("client-game-ready",PackageFactory.CreateClientGameReadyMessage()), 10f));
+                ExecuteOnMainThread.Enqueue(() => SocketHandler.Emit("client-game-ready", PackageFactory.CreateClientGameReadyMessage()));
             }
             else if (message.Equals("start-game"))
             {

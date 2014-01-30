@@ -18,7 +18,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
 
         private static GameObject CreateGameObject<T>(T type) where T : Object
         {
-            return (GameObject) Instantiate(type, new Vector3(0, 0, 0), Quaternion.identity); 
+            return (GameObject) Instantiate(type); //, new Vector3(0, 0, 0), Quaternion.identity); 
         }
 
         public GameObject GetNewPapership()
