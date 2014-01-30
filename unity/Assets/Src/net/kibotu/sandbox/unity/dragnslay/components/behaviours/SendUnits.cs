@@ -10,7 +10,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
     // @ see http://answers.unity3d.com/questions/34795/how-to-perform-a-mouse-click-on-game-object.html
     public class SendUnits : MonoBehaviour
     {
-        private static string LOGGING_TAG = "SendUnits";
         private static bool _isDragging;
         private static bool _isOver;
         private static List<int> _selected;

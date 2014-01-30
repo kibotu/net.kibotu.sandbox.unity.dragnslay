@@ -16,7 +16,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 
         public void Start()
         {
-            AttackSpeed = 1.5f;
+            AttackSpeed = 3f;
             AttackDamage = 3;
             _startTime = 0;
             _shipData = GetComponent<ShipData>();
@@ -41,12 +41,18 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             }
 
             // 2) attack every enemy ship
-            if (enemyShips.Count > 0)
-            {
-                var enemyShip = (GameObject)enemyShips[Random.Range(0, enemyShips.Count)]; // Important! actual range 0 to list size - 1
-                enemyShip.GetComponent<Defence>().Defend(AttackDamage);
-                Debug.Log(_shipData.uid + " attacks " + enemyShip.GetComponent<ShipData>().uid);
-            }
+            if (enemyShips.Count <= 0) return;
+
+            var enemyShip = (GameObject)enemyShips[Random.Range(0, enemyShips.Count)]; // Important! actual range 0 to list size - 1
+            Debug.Log(_shipData.uid + " attacks " + enemyShip.GetComponent<ShipData>().uid);
+
+            var rocket = Prefabs.Instance.GetNewRocket();
+            var behaviour = rocket.AddComponent<Rocket>();
+            behaviour.Attacker = gameObject.transform.position;
+            behaviour.AttackDamage = AttackDamage;
+            behaviour.Defender = enemyShip;
+            behaviour.Distance = 2f;
+            behaviour.Speed = 20f;
         }
 
         private bool IsOnEnemyIsland()

@@ -76,14 +76,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             if (!isEnabled) //means it is currently disabled. code will enable the flycam. you can NOT use 'enabled' as boolean's name.
             {
                 transform.position = defaultCam.transform.position; //moves the flycam to the defaultcam's position
-                defaultCam.camera.active = false;
-                this.camera.active = true;
+                defaultCam.camera.enabled = false;
+                camera.enabled = true;
                 isEnabled = true;
             }
             else if (isEnabled) //if it is not disabled, it must be enabled. the function will disable the freefly camera this time.
             {
-                this.camera.active = false;
-                defaultCam.camera.active = true;
+                camera.enabled = false;
+                defaultCam.camera.enabled = true;
                 isEnabled = false;
             }
         }
