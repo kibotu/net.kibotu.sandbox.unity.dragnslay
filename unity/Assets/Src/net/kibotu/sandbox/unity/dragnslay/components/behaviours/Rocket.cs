@@ -38,7 +38,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
             }
             transform.position = Vector3.MoveTowards(transform.position, Defender.transform.position, Time.deltaTime * Velocity);
             transform.up = -Direction(transform.position, Defender.transform.position); // rotate round vec3(0,-1,0);
-            transform.GetChild(0).up = -camera.transform.forward; // inside rocket billboard to vec3(0,0,-1) 
+            transform.GetChild(0).up = -Camera.main.transform.forward; // inside rocket billboard to vec3(0,0,-1) 
         }
 
         public static Vector3 Direction(Vector3 source, Vector3 target)

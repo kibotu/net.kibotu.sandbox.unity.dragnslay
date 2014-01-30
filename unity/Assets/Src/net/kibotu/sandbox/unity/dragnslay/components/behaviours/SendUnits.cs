@@ -163,7 +163,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         {
             // line rendering
             var lineRenderer = GetComponent<LineRenderer>();
-            if (_selected.Count >= 1 && _selected.Contains(_id))
+            if (_selected.Count > 0 && _selected.Contains(_id))
             {
                 lineRenderer.SetVertexCount(3);
                 lineRenderer.SetPosition(0, transform.position);
