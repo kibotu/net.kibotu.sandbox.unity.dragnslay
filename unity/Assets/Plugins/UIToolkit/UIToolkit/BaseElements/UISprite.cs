@@ -156,7 +156,7 @@ public class UISprite : UIObject, IPositionable
 	
 	public override Vector3 position
 	{
-		get { return clientTransform.position; }
+		get { return clientTransform != null ? clientTransform.position : Vector3.zero; }
 		set
 		{
 			base.position = value;

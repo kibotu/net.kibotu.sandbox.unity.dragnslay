@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using Debug = System.Diagnostics.Debug;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
 {
@@ -24,6 +25,17 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
             //Create GameObject with MonoBehaviour to handle task.
             var handlerGo = new GameObject("Coroutine");
             return handlerGo.AddComponent<CoroutinerInstance>().ProcessWork(iterationResult);
+        }
+
+        private static IEnumerator DelayAction(Action action, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            action.Invoke();
+        }
+
+        public static Coroutine StartDelayedAction(Action action, float delay)
+        {
+            return StartCoroutine(DelayAction(action, delay));
         }
     }
 

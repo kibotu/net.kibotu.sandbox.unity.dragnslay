@@ -178,7 +178,7 @@ var startOsMonitor = function() {
 
     // define handler for a too low free memory
     osm.on('freemem', function(event) {
-        console.log(event.type, 'Free memory is very low!');
+       // console.log(event.type, 'Free memory is very low!');
     });
 
     // define a throttled handler, using Underscore.js's throttle function (http://underscorejs.org/#throttle)
@@ -640,16 +640,19 @@ var roomHasEnoughPlayer = function(roomId) {
 
 var allPlayersAreReady = function(socket) {
 
+    var ready = true;
+
     // is everyone ready?
     _.each(rooms[socket.room].game.data.players, function(player){
+
         // one player not ready?
         if(!player['client-ready']) {
             sendAllInRoomTextMessage(socket,{ "message" : "waiting-for-player", "player" : [player.uid] });
-            return false;
+            ready = false;
         }
     });
 
-    return true;
+    return ready;
 };
 
 // never fired~

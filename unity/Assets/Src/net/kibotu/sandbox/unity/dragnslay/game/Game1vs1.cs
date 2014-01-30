@@ -1,8 +1,10 @@
+using System.Collections;
 using System.Linq;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
 using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -147,7 +149,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
                 }
 
                 // when done, send client-game-ready command
-                ExecuteOnMainThread.Enqueue(() => SocketHandler.Emit("client-game-ready", PackageFactory.CreateClientGameReadyMessage()));
+                ExecuteOnMainThread.Enqueue(() => Coroutiner.StartDelayedAction(() => SocketHandler.Emit("client-game-ready",PackageFactory.CreateClientGameReadyMessage()), 10f));
             }
             else if (message.Equals("start-game"))
             {

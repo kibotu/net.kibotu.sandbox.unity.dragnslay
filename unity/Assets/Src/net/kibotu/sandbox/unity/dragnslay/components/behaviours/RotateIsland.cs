@@ -17,18 +17,19 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         {
             xRot = Random.Range(0.8f, 1.6f);
             yRot = Random.Range(1.4f, 2f);
-            zRot = Random.Range(2.5f, 3f);
+            zRot = Random.Range(1.9f, 2f);
             speed = Random.Range(1.2f, 1.8f);
             xSign = Mathf.Sign(Random.Range(-1, 1));
             ySign = Mathf.Sign(Random.Range(-1, 1));
             zSign = Mathf.Sign(Random.Range(-1, 1));
         }
 
-        public void Start () 
+        public void Start ()
         {
-            transform.localRotation = Quaternion.Euler(270,0,0);
+            if (transform.childCount > 0)
+                transform.localRotation = Quaternion.Euler(270, 0, 0);
         }
-	
+
         public void Update ()
         {
             if (!Game.IsRunning()) return;
