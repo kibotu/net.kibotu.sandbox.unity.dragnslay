@@ -4,6 +4,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
 {
     public class BoostsView : MonoBehaviour
     {
+
         public void Start()
         {
             var atlas = GameObject.Find("game_atlas").GetComponent<UIToolkit>();
