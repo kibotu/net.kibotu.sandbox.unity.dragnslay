@@ -16,13 +16,13 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
             sprite.positionFromBottom(0.2f);
             sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
 
-            sprite = UIButton.create(atlas, "left.png", "left.png", 0, 0);
-            sprite.positionFromLeft(0.27f);
-            sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
+          //  sprite = UIButton.create(atlas, "left.png", "left.png", 0, 0);
+          //  sprite.positionFromLeft(0.27f);
+          //  sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
 
-            sprite = UIButton.create(atlas, "right.png", "right.png", 0, 0);
-            sprite.positionFromRight(0.27f);
-            sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
+          //  sprite = UIButton.create(atlas, "right.png", "right.png", 0, 0);
+         //   sprite.positionFromRight(0.27f);
+          //  sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
 
             sprite = UIButton.create(atlas, "Skins.png", "Skins.png", 0, 0);
             sprite.positionFromCenter(-0.2f,-0.21f);
