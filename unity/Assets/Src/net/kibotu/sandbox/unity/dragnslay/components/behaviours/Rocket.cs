@@ -28,7 +28,6 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
                 _startTime = 0;
             }
 
-
             if (Defender == null) Destroy(gameObject);
             if (!(Vector3.Distance(transform.position, Defender.transform.position) > Distance))
             {
