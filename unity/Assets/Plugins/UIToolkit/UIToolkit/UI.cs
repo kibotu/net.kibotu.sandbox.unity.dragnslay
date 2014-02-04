@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-
-
 public class UI : MonoBehaviour
 {
 	// All access should go through instance and you are trusted not to set it :)
