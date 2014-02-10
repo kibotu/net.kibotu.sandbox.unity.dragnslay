@@ -1,5 +1,4 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
