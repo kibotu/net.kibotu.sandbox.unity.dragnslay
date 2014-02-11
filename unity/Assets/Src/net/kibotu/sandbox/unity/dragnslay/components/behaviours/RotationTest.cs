@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,26 +13,29 @@ public class RotationTest : MonoBehaviour
     public Quaternion rotation;
     private float time;
 
-    private void Start()
-    {
+    private void Start() {
+
         time = 0;
-        yoffset = 5;
+        yoffset = Random.Range(5f,9f);
         center = transform.parent;
-        radius = 5;
+        radius = Random.Range(5f,10f);
         rotation = Quaternion.identity;
-        circulationTerm = 5;
-        heightvariance = new Vector2(-2,2);
-        heightchangetime = 2;
+        circulationTerm = Random.Range(4f,10f);
+        heightvariance = new Vector2(-2f,2f);
+        heightchangetime = 10f;
     }
 
-    private float randomHeight;
-    private float heighttime;
     public Vector2 heightvariance;
     public float heightchangetime;
+    private float randomHeight;
+    private float heighttime;
     private float lastyoffset;
+    private float height;
 
     private void Update()
     {
+        
+
         time += Time.deltaTime;
         heighttime += Time.deltaTime;
         if (heighttime > heightchangetime)
@@ -41,17 +45,16 @@ public class RotationTest : MonoBehaviour
             randomHeight = Random.Range(heightvariance.x, heightvariance.y) + yoffset;
         }
 
-        float height = Mathf.Lerp(lastyoffset, randomHeight, heighttime / heightchangetime);
-       
+        height = Mathf.Lerp(lastyoffset, randomHeight, heighttime / heightchangetime);
 
         transform.position = RotateAroundCenterY(transform.position, time, radius, center.position, circulationTerm, height);
 
         // beware this is the most complicated way i could come up with to rotate the plan along the tangent of the circle
-        Vector3 targetDir = RotateAroundCenterY(transform.position, (time + circulationTerm / 360 * 15), radius, center.position, circulationTerm, height) - transform.position;
+        Vector3 targetDir = RotateAroundCenterY(transform.position, (time + circulationTerm / 360), radius, center.position, circulationTerm, height) - transform.position;
         float step = 1000*Time.deltaTime;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
         Debug.DrawRay(transform.position, newDir, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDir)*Quaternion.Euler(90f, 0, 0) * Quaternion.Euler(0,0,-90);
+        transform.rotation = Quaternion.LookRotation(newDir)*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90);
     }
 
 
