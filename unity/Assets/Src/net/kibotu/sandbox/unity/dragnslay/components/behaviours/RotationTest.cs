@@ -22,7 +22,8 @@ public class RotationTest : MonoBehaviour
         rotation = Quaternion.identity;
         circulationTerm = Random.Range(4f,10f);
         heightvariance = new Vector2(-2f,2f);
-        heightchangetime = 10f;
+        heightchangetime = 4f;
+        strafeAngle = 25f;
     }
 
     public Vector2 heightvariance;
@@ -31,6 +32,7 @@ public class RotationTest : MonoBehaviour
     private float heighttime;
     private float lastyoffset;
     private float height;
+    public float strafeAngle;
 
     private void Update()
     {
@@ -54,10 +56,8 @@ public class RotationTest : MonoBehaviour
         float step = 1000*Time.deltaTime;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
         Debug.DrawRay(transform.position, newDir, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDir)*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90);
+        transform.rotation = Quaternion.LookRotation(newDir)*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90) * Quaternion.Euler(strafeAngle,0,0);
     }
-
-
 
     public static Vector3 RotateAroundCenterY(Vector3 position, float time, float radius, Vector3 center, float circulationTerm, float yoffset)
     {
