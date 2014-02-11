@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
-using Component = System.ComponentModel.Component;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
 {
-    class GameObjectHelper
+    public static class GameObjectHelper
     {
+
+        public static Vector3 Direction(this Vector3 source, Vector3 target) 
+        {
+            return (target - source).normalized;
+        }
 
         /*public static Component GetComponentInChild(GameObject parent, string name, Component type)
         {

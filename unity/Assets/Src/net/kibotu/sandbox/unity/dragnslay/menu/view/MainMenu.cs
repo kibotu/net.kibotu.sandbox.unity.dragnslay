@@ -18,7 +18,7 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
         public void Start () 
         {
             var atlas = GameObject.Find("main_menu_atlas").GetComponent<UIToolkit>();
-            
+
             const float padding = 0.12f;
             const float bannerHeight = 0.1f;
 

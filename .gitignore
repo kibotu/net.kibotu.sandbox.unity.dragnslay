@@ -6,6 +6,7 @@ UnityGenerated/
 Library/
 Temp/
 Obj/
+out/
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #

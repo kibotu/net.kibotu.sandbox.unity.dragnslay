@@ -1,5 +1,4 @@
 ﻿using System;
-
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,17 +12,15 @@ public class RotationTest : MonoBehaviour
     public Quaternion rotation;
     private float time;
 
-    private void Start() {
-
-        time = 0;
-        yoffset = Random.Range(5f,9f);
+    public void Start() {
+        yoffset = Random.Range(3f,6f);
         center = transform.parent;
-        radius = Random.Range(5f,10f);
+        if(Math.Abs(radius) < 0.001f) radius = Random.Range(5f,10f);
         rotation = Quaternion.identity;
         circulationTerm = Random.Range(4f,10f);
         heightvariance = new Vector2(-2f,2f);
         heightchangetime = 4f;
-        strafeAngle = 25f;
+        strafeAngle = 17f;
     }
 
     public Vector2 heightvariance;
@@ -31,13 +28,11 @@ public class RotationTest : MonoBehaviour
     private float randomHeight;
     private float heighttime;
     private float lastyoffset;
-    private float height;
+    public float height;
     public float strafeAngle;
 
     private void Update()
     {
-        
-
         time += Time.deltaTime;
         heighttime += Time.deltaTime;
         if (heighttime > heightchangetime)
@@ -56,7 +51,7 @@ public class RotationTest : MonoBehaviour
         float step = 1000*Time.deltaTime;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
         Debug.DrawRay(transform.position, newDir, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDir)*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90) * Quaternion.Euler(strafeAngle,0,0);
+        transform.rotation = Quaternion.LookRotation(newDir) * Quaternion.Euler(0, 0, -strafeAngle);//*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90) *;
     }
 
     public static Vector3 RotateAroundCenterY(Vector3 position, float time, float radius, Vector3 center, float circulationTerm, float yoffset)

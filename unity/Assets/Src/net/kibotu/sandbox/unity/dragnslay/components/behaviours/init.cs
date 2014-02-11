@@ -1,6 +1,4 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 
 public class init : MonoBehaviour
 {
@@ -9,12 +7,13 @@ public class init : MonoBehaviour
 
     void OnGUI()
     {
-        if (GUILayout.Button("Start Bounce"))
+        if (GUILayout.Button("Move already, biatch!"))
         {
-
-
-
-
+            var papership = source.transform.FindChild("Papership");
+            var rotation = papership.GetComponent<RotationTest>();
+            var move = papership.gameObject.AddComponent<MoveToTarget>();
+            move.target = target;
+            Destroy(rotation);
         }
     }
 }

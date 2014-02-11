@@ -1,6 +1,4 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 
 // http://itween.pixelplacement.com/documentation.php
 public class PlaneMovement : MonoBehaviour
