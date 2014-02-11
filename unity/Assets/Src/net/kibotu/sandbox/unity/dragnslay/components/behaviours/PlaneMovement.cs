@@ -9,6 +9,7 @@ public class PlaneMovement : MonoBehaviour
     public Vector3 up;
     public Vector3 forward;
     public string pathName;
+    public float time;
 
 	void Start ()
 	{
@@ -26,7 +27,7 @@ public class PlaneMovement : MonoBehaviour
 	    iTween.MoveTo(gameObject,
 	        iTween.Hash(
             "path", iTweenPath.GetPath(pathName), 
-            "time", 35, 
+            "time", time, 
             "orientToPath", true, 
             "lookTime", 0.1f, 
             "lookahead", 0.1f));/*
