@@ -2,7 +2,7 @@
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
-    public class RotationTest : MonoBehaviour
+    public class Orbiting: MonoBehaviour
     {
         public float radius;
         public float yoffset;

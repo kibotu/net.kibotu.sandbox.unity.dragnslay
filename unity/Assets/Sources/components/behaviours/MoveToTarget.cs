@@ -10,7 +10,7 @@ public class MoveToTarget : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
-    private RotationTest rotationTest;
+    private Orbiting orbiting;
     private Vector3 finalDestination;
 
     public void Start()
@@ -18,10 +18,10 @@ public class MoveToTarget : MonoBehaviour
         startTime = Time.time;
         journeyLength = Vector3.Distance(transform.position, target.transform.position);
 
-        rotationTest = gameObject.AddComponent<RotationTest>();
-        rotationTest.center = target.transform;
-        finalDestination = rotationTest.GetFinalDestination();
-        rotationTest.enabled = false;
+        orbiting = gameObject.AddComponent<Orbiting>();
+        orbiting.center = target.transform;
+        finalDestination = orbiting.GetFinalDestination();
+        orbiting.enabled = false;
     }
 
     public void Update()
@@ -37,7 +37,7 @@ public class MoveToTarget : MonoBehaviour
         if (Vector3.Distance(transform.position, finalDestination) < 0.01f)
         {
             transform.parent = target.transform;
-            rotationTest.enabled = true;
+            orbiting.enabled = true;
             Destroy(this);
         }
     }
