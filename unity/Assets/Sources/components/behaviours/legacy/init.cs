@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
+using UnityEngine;
 
 public class init : MonoBehaviour
 {
     public GameObject source;
     public GameObject target;
 
-    void OnGUI()
+    public void OnGUI()
     {
-        if (GUILayout.Button("Move already, biatch!"))
+        if (GUILayout.Button( "Move already, biatch!"))
         {
             var papership = source.transform.FindChild("Papership");
             var rotation = papership.GetComponent<Orbiting>();
