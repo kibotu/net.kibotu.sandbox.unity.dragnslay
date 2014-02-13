@@ -10,11 +10,23 @@ public class init : MonoBehaviour
     {
         if (GUILayout.Button( "Move already, biatch!"))
         {
-            var papership = source.transform.FindChild("Papership");
-            var rotation = papership.GetComponent<Orbiting>();
-            var move = papership.gameObject.AddComponent<MoveToTarget>();
-            move.target = target;
-            Destroy(rotation);
+
+            for (int i = 0; i < source.transform.childCount; ++i)
+            {
+                var papership = source.transform.GetChild(i);
+                Debug.Log(papership.name);
+                if (papership.name == "Papership")
+                {
+                    var rotation = papership.GetComponent<Orbiting>();
+                    var move = papership.gameObject.AddComponent<MoveToTarget>();
+                    move.target = target;
+                    Destroy(rotation);
+
+                    var tmp = source;
+                    source = target;
+                    target = tmp;
+                }
+            }
         }
     }
 }

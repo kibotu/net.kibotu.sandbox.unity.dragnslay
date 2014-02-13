@@ -15,6 +15,7 @@ public class MoveToTarget : MonoBehaviour
 
     public void Start()
     {
+        transform.parent = target.transform;
         startTime = Time.time;
         journeyLength = Vector3.Distance(transform.position, target.transform.position);
 
@@ -36,7 +37,6 @@ public class MoveToTarget : MonoBehaviour
 
         if (Vector3.Distance(transform.position, finalDestination) < 0.01f)
         {
-            transform.parent = target.transform;
             orbiting.enabled = true;
             Destroy(this);
         }
