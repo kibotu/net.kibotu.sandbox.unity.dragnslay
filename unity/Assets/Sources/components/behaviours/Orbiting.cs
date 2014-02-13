@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
 {
     public class Orbiting: MonoBehaviour
     {
+        private const float Epsilon = 0.001f;
+
         public float radius;
         public float yoffset;
         public Transform center;
@@ -20,14 +24,14 @@ namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
         public float strafeAngle;
 
         public void Awake() {
-            yoffset = Random.Range(1f,3f);
-            center = transform.parent;
-            radius = Random.Range(5f,10f);
-            rotation = Quaternion.identity;
-            circulationTerm = Random.Range(4f,10f);
-            heightvariance = new Vector2(-2f,2f);
-            heightchangetime = 4f;
-            strafeAngle = 10f;
+            if (Math.Abs(yoffset) < Epsilon) yoffset = Random.Range(-2f, 2f);
+            if(center == null) center = transform.parent;
+            if (Math.Abs(radius) < Epsilon) radius = Random.Range(5f, 10f);
+            if(rotation ==null) rotation = Quaternion.identity;
+            if (Math.Abs(circulationTerm) < Epsilon) circulationTerm = Random.Range(4f, 10f);
+            if(heightvariance == null) heightvariance = new Vector2(-2f, 2f);
+            if (Math.Abs(heightchangetime) < Epsilon) heightchangetime = 4f;
+            if (Math.Abs(strafeAngle) < Epsilon) strafeAngle = 10f;
         }
 
         public void Update()
