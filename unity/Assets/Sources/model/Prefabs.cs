@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.model
+namespace Assets.Sources.model
 {
     public class Prefabs : MonoBehaviour
     {

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
+namespace Assets.Sources.components.data
 {
     public class PlayerData {
 	

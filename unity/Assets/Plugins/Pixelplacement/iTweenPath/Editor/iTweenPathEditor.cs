@@ -20,8 +20,9 @@
 // THE SOFTWARE.
 
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
-using System.Collections;
 
 [CustomEditor(typeof(iTweenPath))]
 public class iTweenPathEditor : Editor
@@ -121,3 +122,10 @@ public class iTweenPathEditor : Editor
 		}
 	}
 }
+
+#else
+
+public class iTweenPathEditor {
+}
+
+#endif

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours
 {
     public class Orbiting: MonoBehaviour
     {

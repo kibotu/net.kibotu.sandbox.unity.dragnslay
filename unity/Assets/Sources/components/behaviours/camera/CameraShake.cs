@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.camera
 {
     public class CameraShake : MonoBehaviour
     {

@@ -1,8 +1,9 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
+﻿using Assets.Sources.components.behaviours;
+using Assets.Sources.components.behaviours.legacy;
+using Assets.Sources.model;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
+namespace Assets.Sources.game
 {
     class GameObjectFactory
     {

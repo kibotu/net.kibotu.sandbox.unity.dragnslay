@@ -1,9 +1,9 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+﻿using Assets.Sources.game;
+using Assets.Sources.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
+namespace Assets.Sources.menu.view
 {
     public class NetworkView : MonoBehaviour, IStringMessageEvent, IJSONMessageEvent
     {

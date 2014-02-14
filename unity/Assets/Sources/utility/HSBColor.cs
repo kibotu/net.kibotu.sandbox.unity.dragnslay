@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
+namespace Assets.Sources.utility
 {
     [System.Serializable]
     public struct HSBColor

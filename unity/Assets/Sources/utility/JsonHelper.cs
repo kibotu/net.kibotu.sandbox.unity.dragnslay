@@ -2,7 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
+namespace Assets.Sources.utility
 {
     class JsonHelper
     {

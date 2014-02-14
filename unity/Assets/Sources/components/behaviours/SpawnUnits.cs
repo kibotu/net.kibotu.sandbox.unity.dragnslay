@@ -1,10 +1,10 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+﻿using Assets.Sources.components.data;
+using Assets.Sources.game;
+using Assets.Sources.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours
 {
     public class SpawnUnits : MonoBehaviour
     {

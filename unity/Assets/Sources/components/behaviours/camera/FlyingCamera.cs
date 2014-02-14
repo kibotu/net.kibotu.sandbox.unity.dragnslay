@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.camera
 {
     /**
      * http://forum.unity3d.com/threads/167604-Simplle-Free-Fly-Camera-script

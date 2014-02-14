@@ -1,8 +1,11 @@
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
+using System;
+using Assets.Sources.game;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.legacy
 {
+    [Obsolete("Not used anymore", false)]
     public class RotateIsland : MonoBehaviour
     {
         public float xRot;

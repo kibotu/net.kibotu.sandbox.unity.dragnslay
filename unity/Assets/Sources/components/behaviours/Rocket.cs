@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Assets.Sources.components.behaviours.combat;
+using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours
 {
     class Rocket : MonoBehaviour
     {

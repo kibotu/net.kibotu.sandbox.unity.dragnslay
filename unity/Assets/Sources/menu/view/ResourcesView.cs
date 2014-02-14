@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view
+namespace Assets.Sources.menu.view
 {
     public class ResourcesView : MonoBehaviour
     {

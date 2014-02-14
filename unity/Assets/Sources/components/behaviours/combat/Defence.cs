@@ -1,10 +1,10 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
+﻿using Assets.Sources.components.data;
+using Assets.Sources.model;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.combat
 {
-    class Defence : MonoBehaviour
+    public class Defence : MonoBehaviour
     {
         private LifeData _lifeData;
         private float _startTime;

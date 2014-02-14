@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility;
+using Assets.Sources.components.data;
+using Assets.Sources.utility;
 using Newtonsoft.Json.Linq;
+using SocketIO.Client;
 using UnityEngine;
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-using SocketIO.Client;
+
 #endif
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.network
+namespace Assets.Sources.network
 {
     class SocketHandler : MonoBehaviour
     {

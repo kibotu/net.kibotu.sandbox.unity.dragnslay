@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Diagnostics;
+using Random = UnityEngine.Random;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
+namespace Assets.Sources.utility
 {
     public static class GameObjectHelper
     {

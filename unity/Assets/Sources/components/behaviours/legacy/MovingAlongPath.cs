@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.legacy
 {
+    [Obsolete("Not used anymore", false)]
     class MovingAlongPath : MonoBehaviour
     {
         public float t;

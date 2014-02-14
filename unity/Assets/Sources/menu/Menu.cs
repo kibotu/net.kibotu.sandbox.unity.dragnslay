@@ -1,8 +1,8 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view;
+﻿using Assets.Sources.menu.view;
 using UnityEngine;
-using NetworkView = Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu.view.NetworkView;
+using NetworkView = Assets.Sources.menu.view.NetworkView;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.menu
+namespace Assets.Sources.menu
 {
     class Menu : MonoBehaviour
     {

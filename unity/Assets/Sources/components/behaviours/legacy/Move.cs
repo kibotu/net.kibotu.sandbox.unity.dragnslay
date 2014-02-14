@@ -1,10 +1,12 @@
-﻿using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
+﻿using System;
+using Assets.Sources.game;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.legacy
 {
-    class Move : MonoBehaviour
-    {
+    [Obsolete("Not used anymore", false)]
+    class Move : MonoBehaviour {
+
         public float startTime;
         public float duration;
         public float speed;

@@ -1,4 +1,4 @@
-﻿namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.States
+﻿namespace Assets.Sources.states
 {
     enum GameState
     {

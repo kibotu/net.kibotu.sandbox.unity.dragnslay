@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
+namespace Assets.Sources.utility
 {
-    class UidPool
+   public static class UidPool
     {
-        // static
-        private UidPool()
-        {
-        }
-
         private static readonly Queue<int> Uids = new Queue<int>();
 
         public static int GetNewUid()

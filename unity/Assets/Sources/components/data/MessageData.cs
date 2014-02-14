@@ -1,4 +1,4 @@
-﻿namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data
+﻿namespace Assets.Sources.components.data
 {
     class MessageData
     {

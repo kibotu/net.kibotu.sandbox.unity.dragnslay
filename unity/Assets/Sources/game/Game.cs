@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.States;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+using Assets.Sources.components.data;
+using Assets.Sources.network;
+using Assets.Sources.states;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
+namespace Assets.Sources.game
 {
     public abstract class Game : MonoBehaviour, IJSONMessageEvent
     {

@@ -1,12 +1,12 @@
 ﻿using System.Collections;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
+using Assets.Sources.components.data;
+using Assets.Sources.game;
+using Assets.Sources.model;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.combat
 {
-    class Assault : MonoBehaviour
+    public class Assault : MonoBehaviour
     {
         private float _startTime;
         public float AttackSpeed;

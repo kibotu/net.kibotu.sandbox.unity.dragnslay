@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.game;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+using Assets.Sources.components.data;
+using Assets.Sources.game;
+using Assets.Sources.model;
+using Assets.Sources.network;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours
 {
     // @ see http://answers.unity3d.com/questions/34795/how-to-perform-a-mouse-click-on-game-object.html
     public class SendUnits : MonoBehaviour

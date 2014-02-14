@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /**
  * http://wiki.unity3d.com/index.php?title=CameraFacingBillboard
  */
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours
+namespace Assets.Sources.components.behaviours.legacy
 {
+    [Obsolete("Not used anymore", false)]
     public class CameraFacingBillboard : MonoBehaviour
     {
         public Camera mCamera = Camera.main;

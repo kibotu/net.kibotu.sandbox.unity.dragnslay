@@ -1,12 +1,13 @@
-using System.Linq;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.behaviours;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.components.data;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.model;
-using Assets.Src.net.kibotu.sandbox.unity.dragnslay.network;
+using Assets.Sources.components.behaviours;
+using Assets.Sources.components.behaviours.combat;
+using Assets.Sources.components.behaviours.legacy;
+using Assets.Sources.components.data;
+using Assets.Sources.model;
+using Assets.Sources.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.game
+namespace Assets.Sources.game
 {
     public class Game1vs1 : Game {
 

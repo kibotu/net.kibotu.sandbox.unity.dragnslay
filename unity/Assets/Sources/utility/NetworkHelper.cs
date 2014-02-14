@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 // @see asynchronity http://www.dannygoodayle.com/2013/06/11/asynchronous-synchronous-unity-beginners/
 // @see coroutines http://unitygems.com/coroutines/
 // @see http://blog.sebaslab.com/run-serial-parallel-asynchronous-tasks-unity3d-c/
 // @see taskqueue https://github.com/dkozar/eDriven/blob/master/eDriven.Core/Tasks/TaskQueue.cs
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.utility
+namespace Assets.Sources.utility
 {
     public class NetworkHelper
     {
