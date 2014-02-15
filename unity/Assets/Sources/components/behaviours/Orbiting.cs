@@ -30,7 +30,7 @@ namespace Assets.Sources.components.behaviours
             if(rotation ==null) rotation = Quaternion.identity;
             if (Math.Abs(circulationTerm) < Epsilon) circulationTerm = Random.Range(4f, 10f);
             if(heightvariance == null) heightvariance = new Vector2(-2f, 2f);
-            if (Math.Abs(heightchangetime) < Epsilon) heightchangetime = 4f;
+            if (Math.Abs(heightchangetime) < Epsilon) heightchangetime = circulationTerm; // 4f;
             if (Math.Abs(strafeAngle) < Epsilon) strafeAngle = 10f;
         }
 
@@ -66,7 +66,7 @@ namespace Assets.Sources.components.behaviours
             Vector3 targetDir = RotateAroundCenterY(transform.position, (time + circulationTerm / 360), radius, center.position, circulationTerm, height) - transform.position;
             float step = 1000 * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-            Debug.DrawRay(transform.position, newDir, Color.red);
+            //Debug.DrawRay(transform.position, newDir, Color.red);
             return Quaternion.LookRotation(newDir) * Quaternion.Euler(0, 0, -strafeAngle);//*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90) *;
         }
 

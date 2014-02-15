@@ -5,19 +5,20 @@ namespace Assets.Sources.components.behaviours.camera
     public class LookAt : MonoBehaviour
     {
         // look at 
-        public GameObject target;
-        public Camera camera;
+        public GameObject Target;
+        public Camera Camera;
 
-        void Start() {
-            if (camera == null)
-                camera = Camera.main;
+        public void Start()
+        {
+            if (Camera == null)
+                Camera = Camera.main;
 
-            if (target == null)
-                target = gameObject;
+            if (Target == null)
+                Target = gameObject;
         }
 	
-        void Update () {
-            camera.transform.LookAt(target.transform);
+        public void Update () {
+            Camera.transform.LookAt(Target.transform);
         }
     }
 }

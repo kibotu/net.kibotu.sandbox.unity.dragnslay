@@ -30,7 +30,8 @@ namespace Assets.Sources.components.behaviours
                     "time", time, 
                     "orientToPath", true, 
                     "lookTime", 0.1f, 
-                    "lookahead", 0.1f));/*
+                    "lookahead", 0.1f)); 
+            /*
         transform.forward = Vector3.left;
         transform.up = Vector3.up;
         up = transform.up;

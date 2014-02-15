@@ -1,0 +1,9 @@
+v1.21 ()
+-- updated to PUN v1.21
+-- added vector2, rect, color and quaternion variable synch ability
+-- added an advanced room creation to set custom propreties and make them listed in the lobby
+-- new action to Destroy gameobjects and players
+-- new action to iterate through each rooms properties
+-- new action to get the last cause of disconnection
+-- fixed bool synch
+-- fixed custom player property action

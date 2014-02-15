@@ -13,7 +13,7 @@ namespace Assets.Sources.game
         public float StartTime;
         public float TurnFrequency;
         public static long Turn;
-        public static Queue<Action> ExecuteOnMainThread;
+        public readonly  static Queue<Action> ExecuteOnMainThread = new Queue<Action>();
         public WorldData World;
         public static string ClientUid;
         public static string HostUid;
@@ -25,7 +25,7 @@ namespace Assets.Sources.game
             // 1) creating game
             _gameState = GameState.Creating;
 
-            ExecuteOnMainThread = new Queue<Action>();
+            
             World = gameObject.AddComponent<WorldData>();
             StartTime = 0;
             Turn = 0;

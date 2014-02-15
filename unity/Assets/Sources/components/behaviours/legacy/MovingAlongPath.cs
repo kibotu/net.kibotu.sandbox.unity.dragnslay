@@ -22,7 +22,7 @@ namespace Assets.Sources.components.behaviours.legacy
             if (TPath == null)
                 TPath = path.GetComponentsInChildren<Transform>();
 
-            transform.position = path != null ? Spline.MoveOnPath(TPath, transform.position, ref t, speed) : Spline.MoveOnPath(VPath, transform.position, ref t, speed);
+           // transform.position = path != null ? Spline.MoveOnPath(TPath, transform.position, ref t, speed) : Spline.MoveOnPath(VPath, transform.position, ref t, speed);
         }
     }
 }
