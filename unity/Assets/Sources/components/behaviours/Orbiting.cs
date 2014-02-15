@@ -30,11 +30,11 @@ namespace Assets.Sources.components.behaviours
             if(rotation ==null) rotation = Quaternion.identity;
             if (Math.Abs(circulationTerm) < Epsilon) circulationTerm = Random.Range(4f, 10f);
             if(heightvariance == null) heightvariance = new Vector2(-2f, 2f);
-            if (Math.Abs(heightchangetime) < Epsilon) heightchangetime = circulationTerm; // 4f;
+            if (Math.Abs(heightchangetime) < Epsilon) heightchangetime = circulationTerm / 2f; // 4f;
             if (Math.Abs(strafeAngle) < Epsilon) strafeAngle = 10f;
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
             time += Time.deltaTime;
             heighttime += Time.deltaTime;

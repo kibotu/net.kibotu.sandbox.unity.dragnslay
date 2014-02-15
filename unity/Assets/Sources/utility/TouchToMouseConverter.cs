@@ -25,7 +25,7 @@ namespace Assets.Sources.utility
 
     #endregion
     
-    [AddComponentMenu("Common/Components/Touch To Mouse Converter")]
+    [AddComponentMenu("Input/Touch To Mouse Converter")]
     public class TouchToMouseConverter : MonoBehaviour
     {
         /**

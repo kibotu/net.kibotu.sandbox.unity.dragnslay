@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // http://forum.unity3d.com/threads/31757-Unity3d-Editor-camera
-namespace Assets.Src.net.kibotu.sandbox.unity.dragnslay.editor
+namespace Assets.Sources.editor
 {
     public static class SceneCameraMenuItem
     {
