@@ -168,17 +168,17 @@
  <Reference Include="Newtonsoft.Json">
  <HintPath>Assets\Plugins\socket.io-csharp-client\Newtonsoft.Json.dll</HintPath>
  </Reference>
- <Reference Include="SocketIO.Client">
- <HintPath>Assets\Plugins\socket.io-csharp-client\SocketIO.Client.dll</HintPath>
- </Reference>
- <Reference Include="WebSocket4Net">
- <HintPath>Assets\Plugins\socket.io-csharp-client\WebSocket4Net.dll</HintPath>
- </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="PlayMaker">
  <HintPath>Assets\PlayMaker\PlayMaker.dll</HintPath>
+ </Reference>
+ <Reference Include="SocketIO.Client">
+ <HintPath>Assets\Plugins\socket.io-csharp-client\SocketIO.Client.dll</HintPath>
+ </Reference>
+ <Reference Include="WebSocket4Net">
+ <HintPath>Assets\Plugins\socket.io-csharp-client\WebSocket4Net.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

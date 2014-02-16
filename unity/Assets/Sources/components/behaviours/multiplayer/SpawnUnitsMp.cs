@@ -1,17 +1,19 @@
-﻿using Assets.Sources.components.data;
+﻿using System;
+using Assets.Sources.components.data;
 using Assets.Sources.game;
 using Assets.Sources.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Assets.Sources.components.behaviours
+namespace Assets.Sources.components.behaviours.multiplayer
 {
-    public class SpawnUnits : MonoBehaviour
+    public class SpawnUnitsMp : MonoBehaviour
     {
         public int MaxSpawn;
         private float _startTime;
         private IslandData _islandData;
         private int _initChildren;
+        public Action SpawnUnity;
 
         public float StartTime
         {

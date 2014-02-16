@@ -175,6 +175,48 @@
  <Reference Include="Newtonsoft.Json">
  <HintPath>Assets\Plugins\socket.io-csharp-client\Newtonsoft.Json.dll</HintPath>
  </Reference>
+ <Reference Include="Photon3Unity3D">
+ <HintPath>Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMaker">
+ <HintPath>Assets\PlayMaker\PlayMaker.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor">
+ <HintPath>Assets\PlayMaker\Editor\PlayMakerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditorResources">
+ <HintPath>Assets\PlayMaker\Editor\PlayMakerEditorResources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.de.resources">
+ <HintPath>Assets\PlayMaker\Editor\de\PlayMakerEditor.de.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.es-ES.resources">
+ <HintPath>Assets\PlayMaker\Editor\es-ES\PlayMakerEditor.es-ES.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.fr.resources">
+ <HintPath>Assets\PlayMaker\Editor\fr\PlayMakerEditor.fr.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.it.resources">
+ <HintPath>Assets\PlayMaker\Editor\it\PlayMakerEditor.it.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.ja.resources">
+ <HintPath>Assets\PlayMaker\Editor\ja\PlayMakerEditor.ja.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.nl.resources">
+ <HintPath>Assets\PlayMaker\Editor\nl\PlayMakerEditor.nl.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.pt-BR.resources">
+ <HintPath>Assets\PlayMaker\Editor\pt-BR\PlayMakerEditor.pt-BR.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.sv-SE.resources">
+ <HintPath>Assets\PlayMaker\Editor\sv-SE\PlayMakerEditor.sv-SE.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.zh-CN.resources">
+ <HintPath>Assets\PlayMaker\Editor\zh-CN\PlayMakerEditor.zh-CN.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.zh-TW.resources">
+ <HintPath>Assets\PlayMaker\Editor\zh-TW\PlayMakerEditor.zh-TW.resources.dll</HintPath>
+ </Reference>
  <Reference Include="SocketIO.Client">
  <HintPath>Assets\Plugins\socket.io-csharp-client\SocketIO.Client.dll</HintPath>
  </Reference>
@@ -199,54 +241,14 @@
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="PlayMakerEditorResources">
- <HintPath>Assets\PlayMaker\Editor\PlayMakerEditorResources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor">
- <HintPath>Assets\PlayMaker\Editor\PlayMakerEditor.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.zh-TW.resources">
- <HintPath>Assets\PlayMaker\Editor\zh-TW\PlayMakerEditor.zh-TW.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.zh-CN.resources">
- <HintPath>Assets\PlayMaker\Editor\zh-CN\PlayMakerEditor.zh-CN.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.es-ES.resources">
- <HintPath>Assets\PlayMaker\Editor\es-ES\PlayMakerEditor.es-ES.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.it.resources">
- <HintPath>Assets\PlayMaker\Editor\it\PlayMakerEditor.it.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.pt-BR.resources">
- <HintPath>Assets\PlayMaker\Editor\pt-BR\PlayMakerEditor.pt-BR.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.de.resources">
- <HintPath>Assets\PlayMaker\Editor\de\PlayMakerEditor.de.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.sv-SE.resources">
- <HintPath>Assets\PlayMaker\Editor\sv-SE\PlayMakerEditor.sv-SE.resources.dll</HintPath>
- </Reference>
- <Reference Include="Photon3Unity3D">
- <HintPath>Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.nl.resources">
- <HintPath>Assets\PlayMaker\Editor\nl\PlayMakerEditor.nl.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.ja.resources">
- <HintPath>Assets\PlayMaker\Editor\ja\PlayMakerEditor.ja.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMakerEditor.fr.resources">
- <HintPath>Assets\PlayMaker\Editor\fr\PlayMakerEditor.fr.resources.dll</HintPath>
- </Reference>
- <Reference Include="PlayMaker">
- <HintPath>Assets\PlayMaker\PlayMaker.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
       <Project>{518622B2-9050-A153-E465-3E4BD155181A}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
       <Project>{C3DA89E1-70C6-7D6C-993E-C8F831D35880}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass-vs.csproj">
+      <Project>{5C37612B-AF80-25DB-739D-B40D9EBFE347}</Project>      <Name>Assembly-CSharp-Editor-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

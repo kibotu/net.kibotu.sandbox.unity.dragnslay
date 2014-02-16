@@ -1,6 +1,6 @@
-using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.combat;
 using Assets.Sources.components.behaviours.legacy;
+using Assets.Sources.components.behaviours.multiplayer;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Assets.Sources.game
 {
-    public class Game1vs1 : Game {
+    public class Game1vs1 : GameMp {
 
         const float Scale = 20;
 
@@ -23,7 +23,8 @@ namespace Assets.Sources.game
             //Debug.Log("message : " + json);
 
             var message = json["message"].ToString();
-            
+
+            #region move-unit
             if (message.Equals("move-unit"))
             {
                 var target = Registry.Instance.Islands[json["target"].ToObject<int>()];
@@ -44,6 +45,10 @@ namespace Assets.Sources.game
                     });
                 }
             }
+            #endregion
+
+            #region spawn-units
+
             else if (message.Equals("spawn-unit"))
             {
                 foreach (var spawn in json["spawns"])
@@ -88,6 +93,9 @@ namespace Assets.Sources.game
                     });
                 }
             }
+            #endregion
+
+            #region game-data
             else if(message.Equals("game-data"))
             {
                 var gameData = json["game-data"];
@@ -143,7 +151,7 @@ namespace Assets.Sources.game
 
                             // 4.6) host handles spawnings
                             if(IsHost())
-                                go.AddComponent<SpawnUnits>();
+                                go.AddComponent<SpawnUnitsMp>();
 
                             // 4.7) set prototype ship
 
@@ -154,6 +162,8 @@ namespace Assets.Sources.game
                 // when done, send client-game-ready command
                 ExecuteOnMainThread.Enqueue(() => SocketHandler.Emit("client-game-ready", PackageFactory.CreateClientGameReadyMessage()));
             }
+            #endregion
+
             else if (message.Equals("start-game"))
             {
                 StartGame();
@@ -170,6 +180,8 @@ namespace Assets.Sources.game
             {
                 StopGame();
             }
+
+            #region authentification
             else if (message.Equals("Welcome!"))
             {
                 ClientUid = json["uid"].ToString();
@@ -182,6 +194,8 @@ namespace Assets.Sources.game
                 // join
                 // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
             }
+            #endregion
+
             else if (message.Equals("server-game-ready"))
             {
                 // request game data

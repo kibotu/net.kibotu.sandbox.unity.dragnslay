@@ -8,6 +8,38 @@ namespace Assets.Sources.utility
     // inspired by http://stackoverflow.com/a/4778347
     public static class JavaEnumTest
     {
+        public enum Day
+        {
+            [DayAttr("Montag")]
+            Monday,
+            [DayAttr("Dienstag")]
+            Thuesday,
+            [DayAttr("Mittwoch")]
+            Wednesday,
+            [DayAttr("Donnerstag")]
+            Thursday,
+            [DayAttr("Freitag")]
+            Friday,
+            [DayAttr("Samstag")]
+            Saturday,
+            [DayAttr("Sonntag")]
+            Sunday,
+        }
+
+        public static void TestEnum()
+        {
+            var d = ValueOf<Day>("Wednesday");
+            Debug.Log(d + " is the " + (d.Ordinal() + 1) + "/" + Length<Day>() + " Day of the week.");
+            Debug.Log(d.OpenCookie());
+
+            Debug.Log(d.GetAttr().OpenCookie());
+
+            // enum implements interface
+            // IOpenCookie opener = d.GetAttr<Day, DayAttr>();
+            IOpenCookie opener = d.GetAttr();
+            Debug.Log(opener.OpenCookie());
+        }
+
         public static int Ordinal<T>(this T _this) where T : struct
         {
             return (typeof (T).IsEnum) ? Convert.ToInt32(_this) : -1;
@@ -46,24 +78,6 @@ namespace Assets.Sources.utility
             return typeof(T).GetField(Enum.GetName(typeof(T), _this));
         }
 
-        public enum Day
-        {
-            [DayAttr("Montag")]
-            Monday,
-            [DayAttr("Dienstag")]
-            Thuesday,
-            [DayAttr("Mittwoch")]
-            Wednesday,
-            [DayAttr("Donnerstag")]
-            Thursday,
-            [DayAttr("Freitag")]
-            Friday,
-            [DayAttr("Samstag")]
-            Saturday,
-            [DayAttr("Sonntag")]
-            Sunday,
-        }
-
         public interface IOpenCookie
         {
             string OpenCookie();
@@ -83,20 +97,6 @@ namespace Assets.Sources.utility
         public static string OpenCookie(this Day _this)
         {
             return _this.GetAttr<Day, DayAttr>().OpenCookie();
-        }
-
-        public static void TestEnum()
-        {
-            var d = ValueOf<Day>("Wednesday");
-            Debug.Log(d + " is the " + (d.Ordinal() + 1) + "/" + Length<Day>() + " Day of the week.");
-            Debug.Log(d.OpenCookie());
-
-            Debug.Log(d.GetAttr().OpenCookie());
-
-            // enum implements interface
-            // IOpenCookie opener = d.GetAttr<Day, DayAttr>();
-            IOpenCookie opener = d.GetAttr();
-            Debug.Log(opener.OpenCookie());
         }
     }
 }

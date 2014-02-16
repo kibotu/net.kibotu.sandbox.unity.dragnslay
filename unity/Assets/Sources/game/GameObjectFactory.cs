@@ -1,10 +1,12 @@
-﻿using Assets.Sources.components.behaviours;
+﻿using System;
+using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.legacy;
 using Assets.Sources.model;
 using UnityEngine;
 
 namespace Assets.Sources.game
 {
+    [Obsolete("Not used anymore", false)]
     class GameObjectFactory
     {
         // static factory class

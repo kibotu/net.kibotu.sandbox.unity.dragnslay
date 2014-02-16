@@ -14,7 +14,7 @@ namespace Assets.Sources.network
     class SocketHandler : MonoBehaviour
     {
         public event Action<String> OnConnectEvent;
-        public event Action<JObject> OnJSONEvent; // msgNewtonsoft.Json.Linq.JObject
+        public event Action<JObject> OnJSONEvent;
         public event Action<String> OnStringEvent;
         public event Action<String> OnConnectionFailedEvent;
         public event Action<String> OnReconnectEvent;
