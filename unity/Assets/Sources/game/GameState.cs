@@ -1,6 +1,6 @@
 ﻿namespace Assets.Sources.states
 {
-    enum GameState
+    public enum GameState
     {
         Creating, Running, Pause, Stopped
     }

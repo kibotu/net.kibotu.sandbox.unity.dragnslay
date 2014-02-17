@@ -3,7 +3,7 @@
 namespace Assets.Sources.utility
 {
    public static class UidPool
-    {
+   {
         private static readonly Queue<int> Uids = new Queue<int>();
 
         public static int GetNewUid()

@@ -1,19 +1,23 @@
-﻿using System;
-using Assets.Sources.components.behaviours.combat;
+﻿using Assets.Sources.components.behaviours.combat;
 using Assets.Sources.components.data;
 using Assets.Sources.game;
 using Assets.Sources.model;
+using Assets.Sources.network;
 using Assets.Sources.utility;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Assets.Sources.components.behaviours.singleplayer
+namespace Assets.Sources.components.behaviours
 {
-    public class SpawnUnitsSp : MonoBehaviour
+    public class SpawnUnits : MonoBehaviour
     {
-        public int MaxSpawn;
+        public int MaxSpawn
+        {
+            get { return _islandData.maxSpawn; }
+        }
         private float _startTime;
         private IslandData _islandData;
-        private int _initChildren;
+        private int _initAmountChildren;
 
         public float StartTime
         {
@@ -24,11 +28,10 @@ namespace Assets.Sources.components.behaviours.singleplayer
         {
             _startTime = 0;
             _islandData = GetComponent<IslandData>();
-            MaxSpawn = _islandData.maxSpawn;
-            _initChildren = transform.childCount;
+            _initAmountChildren = transform.childCount;
         }
 
-        public void Update ()
+        public void FixedUpdate ()
         {
             if (!Game.IsRunning()) return;
 
@@ -36,16 +39,28 @@ namespace Assets.Sources.components.behaviours.singleplayer
             if (_startTime < _islandData.ShipBuildTime()) return;
             _startTime -= _islandData.ShipBuildTime();
 
-            // 1st child - sphere collider for ship interception
-            if (transform.childCount >= _initChildren + MaxSpawn) return;
-            
-            SpawnUnit();
+            // ship can already have other stuff
+            if (transform.childCount >= _initAmountChildren + MaxSpawn) return;
+
+            if (Game.IsSinglePlayer())
+            {
+                SpawnUnit();
+            }
+            else
+            {
+                SocketHandler.Emit("spawn-unit", PackageFactory.CreateSpawnMessage(
+                    new[] { new JObject
+                    {
+                        {"island_uid", gameObject.GetComponent<IslandData>().uid},
+                        {"uid" , -1}
+                    }}));
+            }
         }
 
         public void SpawnUnit()
         {
-            var shipUid = UidPool.GetNewUid();
-            var island = Registry.Instance.Islands[gameObject.GetComponent<IslandData>().uid];
+            var shipUid = UidGenerator.GetNewUid();
+            var island = Registry.Islands[gameObject.GetComponent<IslandData>().uid];
             var islandData = island.GetComponent<IslandData>();
 
             // 1) create ship by type
@@ -62,7 +77,7 @@ namespace Assets.Sources.components.behaviours.singleplayer
             shipData.playerUid = islandData.playerUid;
 
             // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
-            go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
+            //go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
 
             // 5) life data
             var lifeData = go.AddComponent<LifeData>();
@@ -75,7 +90,6 @@ namespace Assets.Sources.components.behaviours.singleplayer
             go.AddComponent<Defence>();
 
             Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
-
         }
     }
 }

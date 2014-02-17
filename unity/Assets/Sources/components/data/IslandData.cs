@@ -1,9 +1,23 @@
-﻿using UnityEngine;
+﻿using Assets.Sources.game;
+using Assets.Sources.model;
+using Assets.Sources.utility;
+using UnityEngine;
 
 namespace Assets.Sources.components.data
 {
-    class IslandData : MonoBehaviour
+    public class IslandData : MonoBehaviour
     {
+        public void Awake() {
+
+            if(Game.IsSinglePlayer())
+            {
+                uid = UidGenerator.GetNewUid();
+                Registry.Islands.Add(uid, gameObject);
+
+                maxSpawn = 1;
+            }
+        }
+
         public int uid;
         public int shipType;
         public int islandType;

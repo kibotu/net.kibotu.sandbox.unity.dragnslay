@@ -11,6 +11,10 @@ namespace Assets.Sources.game
         public float StartTime;
         public readonly  static Queue<Action> ExecuteOnMainThread = new Queue<Action>();
         public WorldData World;
+        public static string ClientUid = "Client";
+
+        public enum Mode { SinglePlayer, Game1vs1, Game2vs2 }
+        public static Mode GameMode = Mode.SinglePlayer;
 
         protected static GameState _gameState;
 
@@ -49,6 +53,11 @@ namespace Assets.Sources.game
         public static bool IsRunning()
         {
             return _gameState == GameState.Running;
+        }
+
+        public static bool IsSinglePlayer()
+        {
+            return GameMode == Mode.SinglePlayer;
         }
     }
 }

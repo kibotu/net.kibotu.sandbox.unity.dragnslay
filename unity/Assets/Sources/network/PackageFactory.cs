@@ -37,7 +37,7 @@ namespace Assets.Sources.network
                 {"ships",       new JArray(ships)},
                 {"target",      target},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };
         }
 
@@ -47,7 +47,7 @@ namespace Assets.Sources.network
                 {"message",     "spawn-unit"},
                 {"spawns",      new JArray(spawns) },
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };
         }
 
@@ -57,7 +57,7 @@ namespace Assets.Sources.network
                 {"message",     uid},
                 {"uid",         uid},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };
         }
 
@@ -67,7 +67,7 @@ namespace Assets.Sources.network
                 {"message",     name},
                 {"game-type",   gameType},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };
         }
 
@@ -76,7 +76,7 @@ namespace Assets.Sources.network
             return new JObject{
                 {"message",     "game-data"},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };
         }
 
@@ -85,7 +85,7 @@ namespace Assets.Sources.network
             var json = new JObject{
                 {"message",     name},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };
 
             for (var i = 0; i < keyValuePairs.Length; i += 2)
@@ -99,7 +99,7 @@ namespace Assets.Sources.network
             return new JObject{
                 {"message",     "client-game-ready"},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  Game.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()}
             };   
         }
     }

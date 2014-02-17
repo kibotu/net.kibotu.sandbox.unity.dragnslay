@@ -23,7 +23,7 @@ namespace Assets.Sources.components.behaviours.combat
             Destroy(gameObject);
             Prefabs.Instance.GetNewExplosion().transform.position = transform.position;
             
-            Registry.Instance.Ships.Remove(GetComponent<ShipData>().uid);
+            Registry.Ships.Remove(GetComponent<ShipData>().uid);
 
             Debug.Log(GetComponent<ShipData>().uid + " has been destroyed!");
             _isExploding = true;

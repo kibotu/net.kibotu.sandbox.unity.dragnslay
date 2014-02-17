@@ -1,11 +1,15 @@
 ﻿namespace Assets.Sources.game
 {
-    class GameSp : Game
-    {
-        public virtual void Update()
+    public class GameSp : Game {
+
+        public void Start()
+        {
+            StartGame();
+        }
+
+        public override void Update ()
         {
             base.Update();
-
         }
     }
 }

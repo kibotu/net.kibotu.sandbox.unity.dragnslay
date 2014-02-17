@@ -7,7 +7,6 @@ namespace Assets.Sources.game
 {
     public abstract class GameMp : Game
     {
-        public static string ClientUid;
         public static string HostUid;
         public float TurnFrequency;
         public static long Turn;
@@ -24,8 +23,9 @@ namespace Assets.Sources.game
 
         /**
          * @see http://www.gamasutra.com/features/20010322/terrano_02.jpg
+         * and regarding http://docs.unity3d.com/Documentation/Manual/ExecutionOrder.html
          */
-        public virtual void Update()
+        public override void Update()
         {
             base.Update();
 

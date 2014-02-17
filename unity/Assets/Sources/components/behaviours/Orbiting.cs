@@ -6,7 +6,7 @@ namespace Assets.Sources.components.behaviours
 {
     public class Orbiting: MonoBehaviour
     {
-        private const float Epsilon = 0.001f;
+        public const float Epsilon = 0.001f;
 
         public float radius;
         public float yoffset;
@@ -23,7 +23,7 @@ namespace Assets.Sources.components.behaviours
         public float height;
         public float strafeAngle;
 
-        public void Awake() {
+        public void Start() {
             if (Math.Abs(yoffset) < Epsilon) yoffset = Random.Range(-2f, 2f);
             if(center == null) center = transform.parent;
             if (Math.Abs(radius) < Epsilon) radius = Random.Range(5f, 10f);

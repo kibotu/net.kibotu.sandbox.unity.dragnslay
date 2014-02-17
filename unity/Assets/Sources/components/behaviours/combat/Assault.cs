@@ -64,7 +64,7 @@ namespace Assets.Sources.components.behaviours.combat
         public void AttackTarget(int targetUid)
         {
             _startTime = 0;
-            Target = Registry.Instance.Ships[targetUid];
+            Target = Registry.Ships[targetUid];
         }
 
         public ArrayList GetEnemyShips()

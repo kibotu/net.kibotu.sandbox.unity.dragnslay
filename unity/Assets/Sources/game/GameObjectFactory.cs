@@ -1,12 +1,10 @@
-﻿using System;
-using Assets.Sources.components.behaviours;
+﻿using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.legacy;
 using Assets.Sources.model;
 using UnityEngine;
 
 namespace Assets.Sources.game
 {
-    [Obsolete("Not used anymore", false)]
     class GameObjectFactory
     {
         // static factory class
@@ -39,7 +37,6 @@ namespace Assets.Sources.game
             var go = Prefabs.Instance.GetNewIsland();
             go.name = "Island_" + uid;
             go.AddComponent<SphereCollider>().radius += 1f;
-            go.AddComponent<RotateIsland>();
             go.AddComponent<SendUnits>();
 
             var sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -49,7 +46,7 @@ namespace Assets.Sources.game
             sphere.layer = 2; // Raycast ignore
 
             // add island to registry
-            Registry.Instance.Islands.Add(uid, go);
+            Registry.Islands.Add(uid, go);
 
             return go;
         }
@@ -61,13 +58,12 @@ namespace Assets.Sources.game
             var go = Prefabs.Instance.GetNewPapership();
 
             go.AddComponent<SphereCollider>();
-            go.AddComponent<RotatePlane>();
             go.AddComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // no physic reactions 
 
             //go.transform.position = new Vector3(70, 0, 0);
 
             // add island to registry
-            Registry.Instance.Ships.Add(uid, go);
+            Registry.Ships.Add(uid, go);
 
             return go;
         }

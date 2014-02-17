@@ -1,6 +1,6 @@
+using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.combat;
 using Assets.Sources.components.behaviours.legacy;
-using Assets.Sources.components.behaviours.multiplayer;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
@@ -12,6 +12,11 @@ namespace Assets.Sources.game
     public class Game1vs1 : GameMp {
 
         const float Scale = 20;
+
+        public Game1vs1()
+        {
+            GameMode = Mode.Game1vs1;
+        }
 
         protected override void DoGameTurn()
         {
@@ -27,7 +32,7 @@ namespace Assets.Sources.game
             #region move-unit
             if (message.Equals("move-unit"))
             {
-                var target = Registry.Instance.Islands[json["target"].ToObject<int>()];
+                var target = Registry.Islands[json["target"].ToObject<int>()];
 
                 foreach (var shipId in json["ships"])
                 {
@@ -35,7 +40,7 @@ namespace Assets.Sources.game
                     ExecuteOnMainThread.Enqueue(() =>
                     {
                         // 1) add move component to ship
-                        var move = Registry.Instance.Ships[ship_uid].AddComponent<Move>();
+                        var move = Registry.Ships[ship_uid].AddComponent<Move>();
                         move.speed = 25;
 
                         // 2) set move destination
@@ -57,7 +62,7 @@ namespace Assets.Sources.game
                     ExecuteOnMainThread.Enqueue(() =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
-                        var island = Registry.Instance.Islands[ship["island_uid"].ToObject<int>()];
+                        var island = Registry.Islands[ship["island_uid"].ToObject<int>()];
                         var islandData = island.GetComponent<IslandData>();
 
                         // 1) create ship by type
@@ -151,7 +156,7 @@ namespace Assets.Sources.game
 
                             // 4.6) host handles spawnings
                             if(IsHost())
-                                go.AddComponent<SpawnUnitsMp>();
+                                go.AddComponent<SpawnUnits>();
 
                             // 4.7) set prototype ship
 

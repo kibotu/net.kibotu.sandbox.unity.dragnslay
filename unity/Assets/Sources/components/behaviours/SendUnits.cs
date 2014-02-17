@@ -100,7 +100,7 @@ namespace Assets.Sources.components.behaviours
             foreach (var t in _selected)
             {
                 // UnityEngine.Debug.Log("deselect " + t);
-                Registry.Instance.Islands[t].GetComponent<SendUnits>().RestoreColor();
+                Registry.Islands[t].GetComponent<SendUnits>().RestoreColor();
             }
             _selected.Clear();
         }
@@ -132,23 +132,23 @@ namespace Assets.Sources.components.behaviours
             {
                 //Debug.Log("send " + _selected[i] + " to " + _selected[_selected.Count - 1]);
 
-                var source = Registry.Instance.Islands[_selected[i]];
-                var destination = Registry.Instance.Islands[_selected[_selected.Count - 1]];
+                var source = Registry.Islands[_selected[i]];
+                var destination = Registry.Islands[_selected[_selected.Count - 1]];
 
                 var toMovePlanes = new List<int>();
 
-                foreach (var pair in Registry.Instance.Ships)
+                foreach (var pair in Registry.Ships)
                 {
                     // UnityEngine.Debug.Log("bla: " + (source.transform == Registry.Instance.Ships[pair.Key].transform.parent));
-                    if (source.transform == Registry.Instance.Ships[pair.Key].transform.parent)
+                    if (source.transform == Registry.Ships[pair.Key].transform.parent)
                     {
-                        var plane = Registry.Instance.Ships[pair.Key];
+                        var plane = Registry.Ships[pair.Key];
 
                         // only move if you own it
                         if (plane.GetComponent<ShipData>().playerUid != Game.ClientUid) continue;
 
                         if (plane.GetComponent<ShipData>().uid != pair.Key)
-                            UnityEngine.Debug.Log("WARNING! ship id != registry id on move-units");
+                            Debug.Log("WARNING! ship id != registry id on move-units");
 
                         // add to move-unit list
                         toMovePlanes.Add(pair.Key);
@@ -167,7 +167,7 @@ namespace Assets.Sources.components.behaviours
             {
                 lineRenderer.SetVertexCount(3);
                 lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, Registry.Instance.Islands[_selected[_selected.Count - 1]].transform.position);
+                lineRenderer.SetPosition(1, Registry.Islands[_selected[_selected.Count - 1]].transform.position);
                 lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
             }
             else
