@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../net.kibotu.logger/desktop/libs/system-rules-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../net.kibotu.logger/desktop/libs/system-rules-1.3.0-sources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

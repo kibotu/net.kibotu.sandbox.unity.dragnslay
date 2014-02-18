@@ -20,6 +20,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="NetworkClient" />
     <orderEntry type="library" name="unity-classes" level="project" />
+    <orderEntry type="module" module-name="android" exported="" />
   </component>
 </module>
 
