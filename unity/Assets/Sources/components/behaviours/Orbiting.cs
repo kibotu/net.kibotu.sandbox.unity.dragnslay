@@ -79,7 +79,7 @@ namespace Assets.Sources.components.behaviours
             _twistTime += Time.deltaTime;
             if (_twistTime <= TwistDuration)
             {
-                StrafeAngle = StrafeAngle = Mathf.Lerp(10, 370, Easing.Sinusoidal.easeInOut(_twistTime / TwistDuration));
+                StrafeAngle = Mathf.Lerp(10, 370, Easing.Sinusoidal.easeInOut(_twistTime / TwistDuration));
             }
             else
             {

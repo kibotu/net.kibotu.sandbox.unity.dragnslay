@@ -5,8 +5,8 @@ namespace Assets.Sources.components.behaviours
     public class MoveToTarget : MonoBehaviour
     {
         public GameObject target;
-        public float velocity = 7f;
-        public float rotationVelocity = 50f;
+        public float Velocity = 7f;
+        public float RotationVelocity = 50f;
 
         private Orbiting orbiting;
         private Vector3 finalDestination;
@@ -27,10 +27,10 @@ namespace Assets.Sources.components.behaviours
 
         public void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, finalDestination, Time.deltaTime * velocity);
+            transform.position = Vector3.MoveTowards(transform.position, finalDestination, Time.deltaTime * Velocity);
 
             var targetDir = transform.position.Direction(finalDestination);
-            var step = rotationVelocity * Time.deltaTime;
+            var step = RotationVelocity * Time.deltaTime;
             var newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             //Debug.DrawRay(transform.position, newDir, Color.red);
             transform.rotation = Quaternion.LookRotation(newDir);
@@ -42,6 +42,19 @@ namespace Assets.Sources.components.behaviours
                 fsm.SendEvent("Arrive");
                 Destroy(this);
             }
+        }
+
+        public void Reset()
+        {
+            if (GetComponents<MoveToTarget>().Length > 1)
+            {
+                Invoke("DestroyThis", 0);
+            }
+        }
+
+        public void DestroyThis()
+        {
+            DestroyImmediate(this);
         }
     }
 }

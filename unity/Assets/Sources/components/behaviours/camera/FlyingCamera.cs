@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Sources.components.behaviours.camera
 {
@@ -7,84 +8,84 @@ namespace Assets.Sources.components.behaviours.camera
      */
     class FlyingCamera : MonoBehaviour
     {
-        public float flySpeed = 0.5f;
-        public GameObject defaultCam;
-        public GameObject playerObject;
-        public bool isEnabled;
-        public bool shift;
-        public bool ctrl;
-        public float accelerationAmount = 3f;
-        public float accelerationRatio = 1f;
-        public float slowDownRatio = 0.5f;
+        public float FlySpeed = 0.5f;
+        public GameObject DefaultCam;
+        public GameObject PlayerObject;
+        public bool IsEnabled;
+        public bool Shift;
+        public bool Ctrl;
+        public float AccelerationAmount = 3f;
+        public float AccelerationRatio = 1f;
+        public float SlowDownRatio = 0.5f;
 
         public void Start()
         {
-            if (defaultCam == null)
-                defaultCam = Camera.main.gameObject;
+            if (DefaultCam == null)
+                DefaultCam = Camera.main.gameObject;
 
-            if (!defaultCam.GetComponent<MouseLook>())
-                defaultCam.AddComponent<MouseLook>();
+            if (!DefaultCam.GetComponent<MouseLook>())
+                DefaultCam.AddComponent<MouseLook>();
         }
 
         public void Update()
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
             {
-                shift = true;
-                flySpeed *= accelerationRatio;
+                Shift = true;
+                FlySpeed *= AccelerationRatio;
             }
        
             if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
             {
-                shift = false;
-                flySpeed /= accelerationRatio;
+                Shift = false;
+                FlySpeed /= AccelerationRatio;
             }
             if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
             {
-                ctrl = true;
-                flySpeed *= slowDownRatio;
+                Ctrl = true;
+                FlySpeed *= SlowDownRatio;
             }
             if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))
             {
-                ctrl = false;
-                flySpeed /= slowDownRatio;
+                Ctrl = false;
+                FlySpeed /= SlowDownRatio;
             }
-            if (Input.GetAxis("Vertical") != 0)
+            if (Math.Abs(Input.GetAxis("Vertical")) > 0.0001f)
             {
-                transform.Translate(-defaultCam.transform.forward * flySpeed * Input.GetAxis("Vertical"));
+                transform.Translate(-DefaultCam.transform.forward * FlySpeed * Input.GetAxis("Vertical"));
             }
-            if (Input.GetAxis("Horizontal") != 0)
+            if (Math.Abs(Input.GetAxis("Horizontal")) > 0.0001f)
             {
-                transform.Translate(-defaultCam.transform.right * flySpeed * Input.GetAxis("Horizontal"));
+                transform.Translate(-DefaultCam.transform.right * FlySpeed * Input.GetAxis("Horizontal"));
             }
             if (Input.GetKey(KeyCode.E))
             {
-                transform.Translate(defaultCam.transform.up * flySpeed*0.5f);
+                transform.Translate(DefaultCam.transform.up * FlySpeed*0.5f);
             }
             else if (Input.GetKey(KeyCode.Q))
             {
-                transform.Translate(-defaultCam.transform.up * flySpeed*0.5f);
+                transform.Translate(-DefaultCam.transform.up * FlySpeed*0.5f);
             }
             if (Input.GetKeyDown(KeyCode.F12))
                 switchCamera();
             if (Input.GetKeyDown(KeyCode.M))
-                playerObject.transform.position = transform.position; //Moves the player to the flycam's position. Make sure not to just move the player's camera.
+                PlayerObject.transform.position = transform.position; //Moves the player to the flycam's position. Make sure not to just move the player's camera.
         }
     
         public void switchCamera()
         {
-            if (!isEnabled) //means it is currently disabled. code will enable the flycam. you can NOT use 'enabled' as boolean's name.
+            if (!IsEnabled) //means it is currently disabled. code will enable the flycam. you can NOT use 'enabled' as boolean's name.
             {
-                transform.position = defaultCam.transform.position; //moves the flycam to the defaultcam's position
-                defaultCam.camera.enabled = false;
+                transform.position = DefaultCam.transform.position; //moves the flycam to the defaultcam's position
+                DefaultCam.camera.enabled = false;
                 camera.enabled = true;
-                isEnabled = true;
+                IsEnabled = true;
             }
-            else if (isEnabled) //if it is not disabled, it must be enabled. the function will disable the freefly camera this time.
+            else if (IsEnabled) //if it is not disabled, it must be enabled. the function will disable the freefly camera this time.
             {
                 camera.enabled = false;
-                defaultCam.camera.enabled = true;
-                isEnabled = false;
+                DefaultCam.camera.enabled = true;
+                IsEnabled = false;
             }
         }
     }

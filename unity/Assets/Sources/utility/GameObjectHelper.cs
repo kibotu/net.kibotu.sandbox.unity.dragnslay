@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,6 +17,11 @@ namespace Assets.Sources.utility
 			return 0f;
 		}
 
+        public static bool IsEmpty<T>(this List<T> list)
+        {
+            return list.Count == 0;
+        }
+
         // @see http://answers.unity3d.com/questions/217351/animations-ignore-timescale.html
         public static IEnumerator Play(this Animation animation, string clipName, bool useTimeScale, Action onComplete)
         {
@@ -24,13 +30,13 @@ namespace Assets.Sources.utility
             if (!useTimeScale)
             {
                 UnityEngine.Debug.Log("Started this animation! ( " + clipName + " ) ");
-                AnimationState _currState = animation[clipName];
-                bool isPlaying = true;
-                float _startTime = 0F;
-                float _progressTime = 0F;
-                float _timeAtLastFrame = 0F;
-                float _timeAtCurrentFrame = 0F;
-                float deltaTime = 0F;
+                var _currState = animation[clipName];
+                var isPlaying = true;
+                //var _startTime = 0F;
+                var _progressTime = 0F;
+                var _timeAtLastFrame = 0F;
+                var _timeAtCurrentFrame = 0F;
+                var deltaTime = 0F;
 
 
                 animation.Play(clipName);
@@ -69,7 +75,7 @@ namespace Assets.Sources.utility
                 yield return null;
                 if (onComplete != null)
                 {
-                    UnityEngine.Debug.Log("Start onComplete");
+                    Debug.Log("Start onComplete");
                     onComplete();
                 }
             }

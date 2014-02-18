@@ -14,7 +14,7 @@ namespace Assets.Sources.components.data
                 uid = UidGenerator.GetNewUid();
                 Registry.Islands.Add(uid, gameObject);
 
-                maxSpawn = 1;
+                maxSpawn = 5;
             }
         }
 
