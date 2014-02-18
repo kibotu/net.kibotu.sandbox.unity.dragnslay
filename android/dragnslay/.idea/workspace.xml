@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\multiplayer.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\multiplayer\SpawnUnitsMp.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\multiplayer\SpawnUnitsMp.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\singleplayer.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\singleplayer\SpawnUnitsSp.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\singleplayer\SpawnUnitsSp.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\game\GameMode.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\states.meta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Prefabs/IslandFSM.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/IslandFSM.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/playmakermove.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/playmakermove.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../resources" afterPath="$PROJECT_DIR$/../../resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameMP.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameMP.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameSP.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameSP.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameState.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameState.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SendUnits.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SendUnits.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +72,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="37" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.40328467" vertical-offset="408" max-vertical-offset="15521">
+            <state line="37" column="46" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.24021739" vertical-offset="408" max-vertical-offset="15521">
               <folding />
             </state>
           </provider>
@@ -234,6 +217,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -310,7 +294,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,7 +308,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="D:/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../android-painter" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="832" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="828" />
@@ -733,6 +716,7 @@
       <workItem from="1392120349055" duration="905000" />
       <workItem from="1392227976864" duration="2416000" />
       <workItem from="1392565560180" duration="101000" />
+      <workItem from="1392646597399" duration="78000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -742,7 +726,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77889000" />
+    <option name="totallyTimeSpent" value="77967000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -828,6 +812,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="37" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="15521">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="74" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="37" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="15521">
@@ -1071,7 +1069,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="37" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.40328467" vertical-offset="408" max-vertical-offset="15521">
+        <state line="37" column="46" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.24021739" vertical-offset="408" max-vertical-offset="15521">
           <folding />
         </state>
       </provider>

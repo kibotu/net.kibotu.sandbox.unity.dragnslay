@@ -11,6 +11,8 @@ namespace Assets.Sources.components.behaviours
         private Orbiting orbiting;
         private Vector3 finalDestination;
 
+        private PlayMakerFSM fsm;
+
         public void Start()
         {
             // transform.parent = target.transform; instantly sending back possible however if called too fast, nullpointer, also problematique with attacking while flying
@@ -18,6 +20,9 @@ namespace Assets.Sources.components.behaviours
             orbiting.center = target.transform;
             finalDestination = orbiting.GetFinalDestination();
             orbiting.enabled = false;
+
+            fsm = GetComponent<PlayMakerFSM>();
+            fsm.SendEvent("Move");
         }
 
         public void Update()
@@ -34,6 +39,7 @@ namespace Assets.Sources.components.behaviours
             {
                 transform.parent = target.transform;
                 orbiting.enabled = true;
+                fsm.SendEvent("Arrive");
                 Destroy(this);
             }
         }

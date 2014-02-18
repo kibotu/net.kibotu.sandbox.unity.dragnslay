@@ -36,6 +36,7 @@ namespace Assets.Sources.components.behaviours
 
         public void FixedUpdate()
         {
+            if (center == null) return;
             time += Time.deltaTime;
             heighttime += Time.deltaTime;
 

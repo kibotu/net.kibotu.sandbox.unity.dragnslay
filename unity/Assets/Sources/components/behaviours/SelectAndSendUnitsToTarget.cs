@@ -38,7 +38,7 @@ namespace Assets.Sources.components.behaviours
             for (var i = 0; i < transform.childCount; ++i)
             {
                 var papership = transform.GetChild(i);
-                if (papership.name == "Papership(Clone)")
+                if (papership.name.StartsWith("Papership"))
                 {
                     StartCoroutine(MovePlane(papership, target));
                 }
@@ -52,9 +52,6 @@ namespace Assets.Sources.components.behaviours
         {
             Debug.Log("sending plane");
             if (plane == null) throw new ArgumentNullException("plane");
-
-            //var rotation = plane.GetComponent<Orbiting>();
-            //Destroy(rotation);
             var move = plane.gameObject.AddComponent<MoveToTarget>();
             move.target = target;
             yield return 0;
