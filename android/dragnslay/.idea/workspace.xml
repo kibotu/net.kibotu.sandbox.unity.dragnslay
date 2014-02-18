@@ -2,219 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\AccountService.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\AccountService.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json.dll.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonConverter.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonConverter.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonEditor.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonEditor.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewHandler.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewHandler.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewPrefabApply.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewPrefabApply.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\ServerSettingsInspector.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\ServerSettingsInspector.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\help.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Editor\PhotonNetwork\help.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PhotonCloud-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PhotonCloud-icon.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PhotonNetwork-Documentation.pdf" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PhotonNetwork-Documentation.pdf.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonGUILayoutToolBarWithPlayers.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonGUILayoutToolBarWithPlayers.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonGUILayoutToolBarWithRooms.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonGUILayoutToolBarWithRooms.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkConnectManually.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkConnectManually.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkConnectUsingSettings.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkConnectUsingSettings.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkCreateRoom.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkCreateRoom.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkCreateRoomAdvanced.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkCreateRoomAdvanced.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDeleteRoomCustomProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDeleteRoomCustomProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDestroy.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDestroy.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDestroyPlayer.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDestroyPlayer.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDisconnect.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkDisconnect.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetConnectionState.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetConnectionState.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetIsConnected.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetIsConnected.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetLastDisconnectCause.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetLastDisconnectCause.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetLastMessagePlayerProperties.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetLastMessagePlayerProperties.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetNextPlayerProperties.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetNextPlayerProperties.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetNextRoomProperties.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetNextRoomProperties.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetPlayersCount.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetPlayersCount.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetPlayersInRoomsCount.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetPlayersInRoomsCount.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetPlayersOnMasterCount.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetPlayersOnMasterCount.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetRoomProperties.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetRoomProperties.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetRoomsCount.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkGetRoomsCount.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkInstantiate.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkInstantiate.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkJoinRandomRoom.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkJoinRandomRoom.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkJoinRoom.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkJoinRoom.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkLeaveRoom.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkLeaveRoom.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetAutoJoinLobby.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetAutoJoinLobby.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetIsMessageQueueRunning.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetIsMessageQueueRunning.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetPlayerCustomProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetPlayerCustomProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetPlayerName.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetPlayerName.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetRoomCustomProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonNetworkSetRoomCustomProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewDeleteOwnerCustomProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewDeleteOwnerCustomProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewGetID.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewGetID.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewGetIsMine.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewGetIsMine.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewGetOwnerProperties.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewGetOwnerProperties.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewRpcBroadcastFsmEvent.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewRpcBroadcastFsmEvent.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewRpcBroadcastFsmEventToPlayer.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Actions\PhotonViewRpcBroadcastFsmEventToPlayer.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonEditorUtility.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonEditorUtility.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonGameObjectProxyEditor.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonGameObjectProxyEditor.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonWizard.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonWizard.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\ReleaseNotes.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\ReleaseNotes.txt.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Resources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Resources\PlayMaker Photon Proxy.prefab" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Resources\PlayMaker Photon Proxy.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonGameObjectProxy.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonGameObjectProxy.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonProxy.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonProxy.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonSynchProxy.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonSynchProxy.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonView.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\PlayMaker\Scripts\PlayMakerPhotonView.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extension.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extension\PhotonView.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extension\PhotonView.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\FriendInfo.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\FriendInfo.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\LoadbalancingPeer.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\LoadbalancingPeer.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\NetworkingPeer.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\NetworkingPeer.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonClasses.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonClasses.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonHandler.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonHandler.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonNetSimSettingsGui.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonNetSimSettingsGui.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonNetwork.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonNetwork.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonPlayer.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonPlayer.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonStatsGui.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonStatsGui.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PingCloudRegions.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\PingCloudRegions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Room.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\Room.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\RoomInfo.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\RoomInfo.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\RpcIndexComponent.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\RpcIndexComponent.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\ServerSettings.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\ServerSettings.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Plugins\PhotonNetwork\library.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Resources.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Resources\PhotonServerSettings.asset" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\Resources\PhotonServerSettings.asset.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\InputToEvent.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\InputToEvent.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\ManualPhotonViewAllocator.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\ManualPhotonViewAllocator.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnAwakeUsePhotonView.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnAwakeUsePhotonView.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnClickDestroy.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnClickDestroy.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnClickInstantiate.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnClickInstantiate.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnClickLoadSomething.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\OnClickLoadSomething.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\PointedAtGameObjectInfo.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\PointedAtGameObjectInfo.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\ServerTime.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\ServerTime.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\TestBase.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\TestBase.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\TestDontDestroyOnLoad.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\TestDontDestroyOnLoad.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\changelog.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\changelog.txt.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\Photon Unity Networking\readme.txt.meta" afterPath="" />
-      <change type="DELETED" beforePath="E:\BA\dragnslay\unity\Assets\resources\Fonts.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync" afterPath="$PROJECT_DIR$/../AndroidAsync" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../resources" afterPath="$PROJECT_DIR$/../../resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" afterPath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/BuildConfig.java" afterPath="$PROJECT_DIR$/../chatclient/gen/net/kibotu/sandbox/chat/client/android/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/BuildConfig.java" afterPath="$PROJECT_DIR$/../networkclient/gen/net/kibotu/sandbox/network/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DragnSlay - Android.iml" afterPath="$PROJECT_DIR$/DragnSlay - Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkClient/NetworkClient.iml" afterPath="$PROJECT_DIR$/NetworkClient/NetworkClient.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml" afterPath="$PROJECT_DIR$/../chatclient/NetworkTest - Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -300,7 +89,9 @@
         <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -859,7 +650,7 @@
       <workItem from="1392227976864" duration="2416000" />
       <workItem from="1392565560180" duration="101000" />
       <workItem from="1392646597399" duration="78000" />
-      <workItem from="1392725866027" duration="317000" />
+      <workItem from="1392725866027" duration="910000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -869,7 +660,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78284000" />
+    <option name="totallyTimeSpent" value="78877000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1231,7 +1022,9 @@
     <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -184,11 +184,11 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
- <Reference Include="Newtonsoft.Json">
- <HintPath>Assets\Plugins\socket.io-csharp-client\Newtonsoft.Json.dll</HintPath>
- </Reference>
  <Reference Include="PlayMaker">
  <HintPath>Assets\PlayMaker\PlayMaker.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>Assets\Plugins\socket.io-csharp-client\Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="SocketIO.Client">
  <HintPath>Assets\Plugins\socket.io-csharp-client\SocketIO.Client.dll</HintPath>
