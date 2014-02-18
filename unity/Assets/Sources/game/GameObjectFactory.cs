@@ -57,9 +57,6 @@ namespace Assets.Sources.game
             //AddMeshToGameObject(go, "meshes/papership", "meshes/paperplant");
             var go = Prefabs.Instance.GetNewPapership();
 
-            go.AddComponent<SphereCollider>();
-            go.AddComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // no physic reactions 
-
             //go.transform.position = new Vector3(70, 0, 0);
 
             // add island to registry

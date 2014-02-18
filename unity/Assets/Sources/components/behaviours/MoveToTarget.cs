@@ -17,7 +17,7 @@ namespace Assets.Sources.components.behaviours
         {
             // transform.parent = target.transform; instantly sending back possible however if called too fast, nullpointer, also problematique with attacking while flying
             orbiting = gameObject.GetComponent<Orbiting>();
-            orbiting.center = target.transform;
+            orbiting.Center = target.transform;
             finalDestination = orbiting.GetFinalDestination();
             orbiting.enabled = false;
 
