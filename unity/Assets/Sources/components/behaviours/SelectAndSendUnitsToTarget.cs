@@ -3,8 +3,6 @@ using System.Linq;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.utility;
-using HutongGames.PlayMaker;
-using HutongGames.PlayMaker.Actions;
 using UnityEngine;
 
 namespace Assets.Sources.components.behaviours
@@ -15,7 +13,6 @@ namespace Assets.Sources.components.behaviours
         private int _uid = -1;
         private Color _oldColor;
         private readonly Color _colorHighlight = new Color(0.5f, 0.5f, 0.5f);
-        private PlayMakerFSM _fsm;
 
         public int Uid
         {
@@ -26,7 +23,6 @@ namespace Assets.Sources.components.behaviours
         {
             InitLineRender();
             _oldColor = renderer.material.color;
-            _fsm = GetComponent<PlayMakerFSM>();
         }
 
         private void DyeSelected()
@@ -85,7 +81,7 @@ namespace Assets.Sources.components.behaviours
             // @see http://answers.unity3d.com/questions/57303/changing-replacement-shaders-at-runtime.html
             lineRenderer.material = new Material(Resources.Load("Shader/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
             lineRenderer.SetColors(c1, c2);
-            lineRenderer.SetWidth(1f, 1F);
+            lineRenderer.SetWidth(0.3f, 0.3f);
             lineRenderer.castShadows = false;
             lineRenderer.receiveShadows = false;
             lineRenderer.SetVertexCount(lengthOfLineRenderer);
@@ -95,11 +91,11 @@ namespace Assets.Sources.components.behaviours
         {
             // line rendering
             var lineRenderer = GetComponent<LineRenderer>();
-            if (Selected.Count > 0 && Selected.Contains(Uid))
+            if (!Selected.IsEmpty() && Selected.Contains(Uid))
             {
                 lineRenderer.SetVertexCount(3);
                 lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, Registry.Islands[Selected[Selected.Count - 1]].transform.position);
+                lineRenderer.SetPosition(1, Registry.Islands[Selected.Last()].transform.position);
                 lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
             }
             else
