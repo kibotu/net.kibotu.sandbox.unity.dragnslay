@@ -23,6 +23,30 @@ public static partial class Easing
 		}
 	}
 
+    public static class Cubic
+    {
+        public static float easeIn(float t)
+        {
+            return Mathf.Pow(t, 3.0f);
+        }
+            
+
+        public static float easeOut(float t)
+        {
+            return (Mathf.Pow(t - 1, 3) - 1) * -1;
+        }
+
+
+        public static float easeInOut(float t)
+        {
+            if (t <= 0.5f)
+                return Quartic.easeIn(t * 2) / 2;
+            else
+                return (Quartic.easeOut((t - 0.5f) * 2.0f) / 2) + 0.5f;
+        }
+    }
+
+
 
 	public static class Quartic
 	{

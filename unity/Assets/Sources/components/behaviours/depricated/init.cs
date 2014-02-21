@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Sources.components.behaviours.legacy
+namespace Assets.Sources.components.behaviours.depricated
 {
     [Obsolete("Not used anymore", false)]
     public class init : MonoBehaviour
@@ -37,7 +37,7 @@ namespace Assets.Sources.components.behaviours.legacy
             var rotation = plane.GetComponent<Orbiting>();
             Destroy(rotation);
             var move = plane.gameObject.AddComponent<MoveToTarget>();
-            move.target = target;
+            move.Target = target;
             yield return 0;
         }
     }

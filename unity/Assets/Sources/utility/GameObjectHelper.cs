@@ -22,14 +22,27 @@ namespace Assets.Sources.utility
             return list.Count == 0;
         }
 
+        public static T Add<T>(this T[] array, T addItem)
+        {
+            int i;
+            for(i = 0; i < array.Length; ++i)
+                if (Equals(null, array[i]))
+                    break;
+
+            Debug.Log(i);
+            array[i] = addItem;
+
+            return addItem;
+        }
+
         // @see http://answers.unity3d.com/questions/217351/animations-ignore-timescale.html
         public static IEnumerator Play(this Animation animation, string clipName, bool useTimeScale, Action onComplete)
         {
-            UnityEngine.Debug.Log("Overwritten Play animation, useTimeScale? " + useTimeScale);
+            Debug.Log("Overwritten Play animation, useTimeScale? " + useTimeScale);
             //We Don't want to use timeScale, so we have to animate by frame..
             if (!useTimeScale)
             {
-                UnityEngine.Debug.Log("Started this animation! ( " + clipName + " ) ");
+                Debug.Log("Started this animation! ( " + clipName + " ) ");
                 var _currState = animation[clipName];
                 var isPlaying = true;
                 //var _startTime = 0F;

@@ -11,23 +11,19 @@ namespace Assets.Sources.components.behaviours
 {
     public class SpawnUnits : MonoBehaviour
     {
-        public int MaxSpawn
-        {
-            get { return _islandData.maxSpawn; }
-        }
         private float _startTime;
-        private IslandData _islandData;
+        public IslandData Island;
         private int _initAmountChildren;
 
         public float StartTime
         {
-            get { return _islandData.ShipBuildTime() - _startTime; }
+            get { return Island.ShipBuildTime() - _startTime; }
         }
 
         public void Start()
         {
             _startTime = 0;
-            _islandData = GetComponent<IslandData>();
+            Island = GetComponent<IslandData>();
             _initAmountChildren = transform.childCount;
         }
 
@@ -36,11 +32,11 @@ namespace Assets.Sources.components.behaviours
             if (!Game.IsRunning()) return;
 
             _startTime += Time.deltaTime;
-            if (_startTime < _islandData.ShipBuildTime()) return;
-            _startTime -= _islandData.ShipBuildTime();
+            if (_startTime < Island.ShipBuildTime()) return;
+            _startTime -= Island.ShipBuildTime();
 
             // ship can already have other stuff
-            if (transform.childCount >= _initAmountChildren + MaxSpawn) return;
+            if (transform.childCount >= _initAmountChildren + Island.maxSpawn) return;
 
             if (Game.IsSinglePlayer())
             {
@@ -77,19 +73,17 @@ namespace Assets.Sources.components.behaviours
             shipData.playerUid = islandData.playerUid;
 
             // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
-            //go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
+            go.GetComponentInChildren<Renderer>().material.color = Island.PlayerData.color - new Color(0.5f,0.5f,0.5f);
 
             // 5) life data
             var lifeData = go.AddComponent<LifeData>();
             lifeData.CurrentHp = lifeData.MaxHp = 10;
 
             // 6) host fires attacks
-            var attack = go.AddComponent<Assault>();
-            attack.AttackDamage = 2;
-            attack.AttackSpeed = 1000;
+            go.AddComponent<Assault>();
             go.AddComponent<Defence>();
 
-            Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
+            // Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
         }
     }
 }

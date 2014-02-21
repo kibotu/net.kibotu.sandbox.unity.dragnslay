@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Assets.Sources.components.data;
 using Assets.Sources.game;
 using Assets.Sources.model;
 using Assets.Sources.network;
 using UnityEngine;
 
-namespace Assets.Sources.components.behaviours
+namespace Assets.Sources.components.behaviours.depricated
 {
     // @ see http://answers.unity3d.com/questions/34795/how-to-perform-a-mouse-click-on-game-object.html
+    [Obsolete("Not used anymore", false)]
     public class SendUnits : MonoBehaviour
     {
         private static bool _isDragging;

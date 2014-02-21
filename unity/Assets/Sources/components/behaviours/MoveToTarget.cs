@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
+using Assets.Sources.utility;
 
 namespace Assets.Sources.components.behaviours
 {
     public class MoveToTarget : MonoBehaviour
     {
-        public GameObject target;
+        public GameObject Target;
         public float Velocity = 7f;
         public float RotationVelocity = 50f;
 
-        private Orbiting orbiting;
-        private Vector3 finalDestination;
+        private Orbiting _orbiting;
+        private Vector3 _finalDestination;
 
         private PlayMakerFSM fsm;
 
         public void Start()
         {
             // transform.parent = target.transform; instantly sending back possible however if called too fast, nullpointer, also problematique with attacking while flying
-            orbiting = gameObject.GetComponent<Orbiting>();
-            orbiting.Center = target.transform;
-            finalDestination = orbiting.GetFinalDestination();
-            orbiting.enabled = false;
+            _orbiting = gameObject.GetComponent<Orbiting>();
+            _orbiting.Center = Target.transform;
+            _finalDestination = _orbiting.GetFinalDestination();
+            _orbiting.enabled = false;
 
             fsm = GetComponent<PlayMakerFSM>();
             fsm.SendEvent("Move");
@@ -27,18 +28,18 @@ namespace Assets.Sources.components.behaviours
 
         public void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, finalDestination, Time.deltaTime * Velocity);
+            transform.position = Vector3.MoveTowards(transform.position, _finalDestination, Time.deltaTime * Velocity);
 
-            var targetDir = transform.position.Direction(finalDestination);
+            var targetDir = transform.position.Direction(_finalDestination);
             var step = RotationVelocity * Time.deltaTime;
             var newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             //Debug.DrawRay(transform.position, newDir, Color.red);
             transform.rotation = Quaternion.LookRotation(newDir);
 
-            if (Vector3.Distance(transform.position, finalDestination) < 0.01f)
+            if (Vector3.Distance(transform.position, _finalDestination) < 0.01f)
             {
-                transform.parent = target.transform;
-                orbiting.enabled = true;
+                transform.parent = Target.transform;
+                _orbiting.enabled = true;
                 fsm.SendEvent("Arrive");
                 Destroy(this);
             }

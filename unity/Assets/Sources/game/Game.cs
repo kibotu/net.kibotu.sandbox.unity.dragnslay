@@ -10,13 +10,18 @@ namespace Assets.Sources.game
     {
         public float StartTime;
         public readonly  static Queue<Action> ExecuteOnMainThread = new Queue<Action>();
-        public WorldData World;
         public static string ClientUid = "Client";
+        public WorldData World;
 
         public enum Mode { SinglePlayer, Game1vs1, Game2vs2 }
         public static Mode GameMode = Mode.SinglePlayer;
 
         protected static GameState _gameState;
+
+        public void Awake()
+        {
+            World = GetComponent<WorldData>();
+        }
 
         public virtual void Update()
         {

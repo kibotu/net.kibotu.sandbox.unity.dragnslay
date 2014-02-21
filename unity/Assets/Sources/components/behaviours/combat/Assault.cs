@@ -9,56 +9,51 @@ namespace Assets.Sources.components.behaviours.combat
     public class Assault : MonoBehaviour
     {
         private float _startTime;
-        public float AttackSpeed;
-        public int AttackDamage;
-        private ShipData _shipData;
+        public ShipData ShipData;
         public GameObject Target;
 
         public void Start()
         {
-            AttackSpeed = 2f;
-            AttackDamage = 1;
+            // _startTime = ShipData.AttackSpeed; // shoot without waiting at arrival
             _startTime = 0;
-            _shipData = GetComponent<ShipData>();
+            ShipData = GetComponent<ShipData>();
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
             if (!Game.IsRunning()) return;
 
             _startTime += Time.deltaTime;
-            if (_startTime < AttackSpeed) return;
-            _startTime -= AttackSpeed;
+            if (_startTime < ShipData.AttackSpeed) return;
+            _startTime -= ShipData.AttackSpeed;
 
             var enemyShips = GetEnemyShips();
 
             // 1) if is enemy island and has no there are no enemy ships => convert
             if (IsOnEnemyIsland() && enemyShips.Count == 0)
             {
-                Debug.Log(_shipData.uid + " invades " + transform.parent.gameObject.GetComponent<IslandData>().uid);
-                transform.parent.gameObject.GetComponent<IslandData>().playerUid = _shipData.playerUid;
-                transform.parent.gameObject.renderer.material.color = GetComponentInChildren<Renderer>().material.color;
+                Debug.Log(ShipData.uid + " invades " + transform.parent.gameObject.GetComponent<IslandData>().uid);
+                transform.parent.gameObject.GetComponent<IslandData>().playerUid = ShipData.playerUid;
+               // transform.parent.gameObject.renderer.material.color = GetComponentInChildren<Renderer>().material.color;
             }
 
             // 2) attack every enemy ship
             if (enemyShips.Count <= 0) return;
 
             var enemyShip = (GameObject)enemyShips[Random.Range(0, enemyShips.Count)]; // Important! actual range 0 to list size - 1
-            Debug.Log(_shipData.uid + " attacks " + enemyShip.GetComponent<ShipData>().uid);
+            Debug.Log(ShipData.playerUid +"[" + ShipData.uid + "] attacks " + enemyShip.GetComponent<ShipData>().playerUid + "[" + enemyShip.GetComponent<ShipData>().uid + "]");
 
             var rocket = Prefabs.Instance.GetNewRocket();
-            var behaviour = rocket.AddComponent<Rocket>();
+            var behaviour = rocket.GetComponent<RocketMove>();
             behaviour.Attacker = gameObject.transform.position;
-            behaviour.AttackDamage = AttackDamage;
+            behaviour.AttackDamage = ShipData.AttackDamage;
             behaviour.Defender = enemyShip;
-            behaviour.Distance = 4f;
-            behaviour.Velocity = -55f;
-            behaviour.Acceleration = 17f;
+            behaviour.Velocity = 0.6f;
         }
 
         private bool IsOnEnemyIsland()
         {
-            return transform.parent.gameObject.GetComponent<IslandData>().playerUid != _shipData.playerUid;
+            return transform.parent.gameObject.GetComponent<IslandData>().playerUid != ShipData.playerUid;
         }
 
         public void AttackTarget(int targetUid)
@@ -74,7 +69,7 @@ namespace Assets.Sources.components.behaviours.combat
             {
                 var ship = transform.parent.GetChild(i).gameObject;
                 if(!ship.name.Contains("Papership")) continue;
-                if(ship.GetComponent<ShipData>().playerUid != _shipData.playerUid)
+                if (ship.GetComponent<ShipData>().playerUid != ShipData.playerUid)
                     enemyShips.Add(ship);
             }
             return enemyShips;

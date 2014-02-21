@@ -3,7 +3,7 @@ using Assets.Sources.game;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Assets.Sources.components.behaviours.legacy
+namespace Assets.Sources.components.behaviours.depricated
 {
     [Obsolete("Not used anymore", false)]
     public class RotateIsland : MonoBehaviour

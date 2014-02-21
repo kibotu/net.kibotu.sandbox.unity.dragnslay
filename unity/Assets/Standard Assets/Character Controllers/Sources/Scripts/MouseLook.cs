@@ -6,10 +6,10 @@ using System.Collections;
 
 /// To make an FPS style character:
 /// - Create a capsule.
+/// - Add a rigid body to the capsule
 /// - Add the MouseLook script to the capsule.
 ///   -> Set the mouse look to use LookX. (You want to only turn character but not tilt it)
-/// - Add FPSInputController script to the capsule
-///   -> A CharacterMotor and a CharacterController component will be automatically added.
+/// - Add FPSWalker script to the capsule
 
 /// - Create a camera. Make the camera a child of the capsule. Reset it's transform.
 /// - Add a MouseLook script to the camera.
@@ -28,29 +28,42 @@ public class MouseLook : MonoBehaviour {
 	public float minimumY = -60F;
 	public float maximumY = 60F;
 
+	float rotationX = 0F;
 	float rotationY = 0F;
+	
+	Quaternion originalRotation;
 
 	void Update ()
 	{
 		if (axes == RotationAxes.MouseXAndY)
 		{
-			float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
-			
+			// Read the mouse input axis
+			rotationX += Input.GetAxis("Mouse X") * sensitivityX;
 			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+
+			rotationX = ClampAngle (rotationX, minimumX, maximumX);
+			rotationY = ClampAngle (rotationY, minimumY, maximumY);
 			
-			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+			Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
+			Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, Vector3.left);
+			
+			transform.localRotation = originalRotation * xQuaternion * yQuaternion;
 		}
 		else if (axes == RotationAxes.MouseX)
 		{
-			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+			rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+			rotationX = ClampAngle (rotationX, minimumX, maximumX);
+
+			Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
+			transform.localRotation = originalRotation * xQuaternion;
 		}
 		else
 		{
 			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
-			
-			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+			rotationY = ClampAngle (rotationY, minimumY, maximumY);
+
+			Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, Vector3.left);
+			transform.localRotation = originalRotation * yQuaternion;
 		}
 	}
 	
@@ -59,5 +72,15 @@ public class MouseLook : MonoBehaviour {
 		// Make the rigid body not change rotation
 		if (rigidbody)
 			rigidbody.freezeRotation = true;
+		originalRotation = transform.localRotation;
+	}
+	
+	public static float ClampAngle (float angle, float min, float max)
+	{
+		if (angle < -360F)
+			angle += 360F;
+		if (angle > 360F)
+			angle -= 360F;
+		return Mathf.Clamp (angle, min, max);
 	}
 }

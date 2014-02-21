@@ -1,6 +1,6 @@
 using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.combat;
-using Assets.Sources.components.behaviours.legacy;
+using Assets.Sources.components.behaviours.depricated;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
@@ -88,9 +88,9 @@ namespace Assets.Sources.game
                         // 6) host fires attacks
                         if (IsHost())
                         {
-                            var attack = go.AddComponent<Assault>();
-                            attack.AttackDamage = 2;
-                            attack.AttackSpeed = 1000;
+                            go.AddComponent<Assault>();
+                            shipData.AttackDamage = 2;
+                            shipData.AttackSpeed = 1000;
                             go.AddComponent<Defence>();
                         }
 
@@ -104,16 +104,17 @@ namespace Assets.Sources.game
             else if(message.Equals("game-data"))
             {
                 var gameData = json["game-data"];
-                var players = gameData["players"];
+                var playerDatas = gameData["players"];
                 HostUid = gameData["host-uid"].ToString();
                 Debug.Log("Player " + HostUid + " is host.");
 
-                foreach (var player in players)
+                foreach (var playerDataRaw in playerDatas)
                 {
-                    var playerData = new PlayerData {uid = player["uid"].ToString(), color = World.GetNextPlayerColor()};
-                    World.PlayerData.Add(playerData);
+                    var playerData = new PlayerData { uid = playerDataRaw["uid"].ToString(), color = World.GetNextPlayerColor() };
+                    var player = GameObjectFactory.CreatePlayer(playerData.uid);
+                    World.Player.Add(player);
 
-                    var islands = player["islands"];
+                    var islands = playerDataRaw["islands"];
                     foreach (var data in islands)
                     {
                         var island = data;

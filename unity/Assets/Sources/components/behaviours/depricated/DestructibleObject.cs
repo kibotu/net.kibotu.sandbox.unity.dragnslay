@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Sources.components.behaviours
+namespace Assets.Sources.components.behaviours.depricated
 {
     /*
     // DestructibleObject.cs

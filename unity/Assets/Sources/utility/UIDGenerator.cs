@@ -2,16 +2,11 @@
 
 namespace Assets.Sources.utility
 {
-    public class UidGenerator
+    public static class UidGenerator
     {
-        // static
-        private UidGenerator()
-        {
-        }
-        
-        public static readonly int StartUid = 0;
+        public static readonly int StartUid = 1000;
         public static readonly int InvalidUid = StartUid - 1;
-        private static int _nextUid = 0;
+        private static int _nextUid = StartUid;
 
         public static int GetNewUid()
         {

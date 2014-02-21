@@ -1,17 +1,13 @@
 ﻿using Assets.Sources.components.behaviours;
-using Assets.Sources.components.behaviours.legacy;
+using Assets.Sources.components.behaviours.depricated;
+using Assets.Sources.components.data;
 using Assets.Sources.model;
 using UnityEngine;
 
 namespace Assets.Sources.game
 {
-    class GameObjectFactory
+    public static class GameObjectFactory
     {
-        // static factory class
-        private GameObjectFactory()
-        {
-        }
-
         public static void AddMeshToGameObject(GameObject go, string meshUrl, string textureUrl)
         {
             var filter = go.AddComponent<MeshFilter>();
@@ -28,6 +24,26 @@ namespace Assets.Sources.game
         public static GameObject CreateShip(int uid, int type)
         {
             return CreateShip(uid);
+        }
+
+        public static GameObject CreatePlayer(string uid)
+        {
+            var go = Prefabs.Instance.GetNewPlayer();
+            go.GetComponent<PlayerData>().uid = uid;
+
+            Registry.Player.Add(uid, go);
+
+            return go;
+        }
+
+        public static GameObject CreateAi(string uid)
+        {
+            var go = Prefabs.Instance.GetNewAi();
+            go.GetComponent<PlayerData>().uid = uid;
+
+            Registry.Player.Add(uid, go);
+
+            return go;
         }
 
         private static GameObject CreateIsland(int uid)

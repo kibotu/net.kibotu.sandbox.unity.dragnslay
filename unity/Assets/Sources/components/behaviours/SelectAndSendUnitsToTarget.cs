@@ -13,6 +13,8 @@ namespace Assets.Sources.components.behaviours
         private int _uid = -1;
         private Color _oldColor;
         private readonly Color _colorHighlight = new Color(0.5f, 0.5f, 0.5f);
+        public IslandData IslandData;
+        private LineRenderer _lineRenderer;
 
         public int Uid
         {
@@ -22,7 +24,7 @@ namespace Assets.Sources.components.behaviours
         public void Start()
         {
             InitLineRender();
-            _oldColor = renderer.material.color;
+            IslandData = GetComponent<IslandData>();
         }
 
         private void DyeSelected()
@@ -32,7 +34,7 @@ namespace Assets.Sources.components.behaviours
 
         private void RestoreColor()
         {
-            renderer.material.color = _oldColor;
+            renderer.material.color = IslandData.PlayerData.color;
         }
 
         public void Select()
@@ -65,7 +67,7 @@ namespace Assets.Sources.components.behaviours
                     if (papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
                     {
                         var move = papership.gameObject.AddComponent<MoveToTarget>();
-                        move.target = target;
+                        move.Target = target;
                         Deselect();
                     }
                 }
@@ -74,33 +76,31 @@ namespace Assets.Sources.components.behaviours
 
         private void InitLineRender()
         {
-            var c1 = Color.yellow;
+            var c1 = Color.green;
             var c2 = Color.red;
             const int lengthOfLineRenderer = 2;
-            var lineRenderer = gameObject.AddComponent<LineRenderer>();
+            _lineRenderer = gameObject.AddComponent<LineRenderer>();
             // @see http://answers.unity3d.com/questions/57303/changing-replacement-shaders-at-runtime.html
-            lineRenderer.material = new Material(Resources.Load("Shader/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
-            lineRenderer.SetColors(c1, c2);
-            lineRenderer.SetWidth(0.3f, 0.3f);
-            lineRenderer.castShadows = false;
-            lineRenderer.receiveShadows = false;
-            lineRenderer.SetVertexCount(lengthOfLineRenderer);
+            _lineRenderer.material = new Material(Resources.Load("Shader/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
+            _lineRenderer.SetColors(c1, c2);
+            _lineRenderer.SetWidth(0.4f, 0.4f);
+            _lineRenderer.castShadows = false;
+            _lineRenderer.receiveShadows = false;
+            _lineRenderer.SetVertexCount(lengthOfLineRenderer);
         }
 
         public void Update()
         {
-            // line rendering
-            var lineRenderer = GetComponent<LineRenderer>();
             if (!Selected.IsEmpty() && Selected.Contains(Uid))
             {
-                lineRenderer.SetVertexCount(3);
-                lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, Registry.Islands[Selected.Last()].transform.position);
-                lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
+                _lineRenderer.SetVertexCount(3);
+                _lineRenderer.SetPosition(0, transform.position);
+                _lineRenderer.SetPosition(1, Registry.Islands[Selected.Last()].transform.position);
+                _lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
             }
             else
             {
-                lineRenderer.SetVertexCount(0);
+                _lineRenderer.SetVertexCount(0);
             }
         }
     }

@@ -6,19 +6,19 @@ namespace Assets.Sources.components.behaviours.combat
 {
     public class Defence : MonoBehaviour
     {
-        private LifeData _lifeData;
+        public LifeData LifeData;
         private float _startTime;
-        private bool _isExploding = false;
+        private bool _isExploding;
 
         public void Start()
         {
-            _lifeData = GetComponent<LifeData>();
+            LifeData = GetComponent<LifeData>();
         }
 
-        public void Defend(int damage)
+        public void Defend(float damage)
         {
-            _lifeData.CurrentHp -= damage;
-            if (_lifeData.CurrentHp > 0 || _isExploding) return;
+            LifeData.CurrentHp -= damage;
+            if (LifeData.CurrentHp > 0 || _isExploding) return;
 
             Destroy(gameObject);
             Prefabs.Instance.GetNewExplosion().transform.position = transform.position;

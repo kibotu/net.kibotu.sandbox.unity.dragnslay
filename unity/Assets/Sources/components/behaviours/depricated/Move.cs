@@ -2,7 +2,7 @@
 using Assets.Sources.game;
 using UnityEngine;
 
-namespace Assets.Sources.components.behaviours.legacy
+namespace Assets.Sources.components.behaviours.depricated
 {
     [Obsolete("Not used anymore", false)]
     class Move : MonoBehaviour {

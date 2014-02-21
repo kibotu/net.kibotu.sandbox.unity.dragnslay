@@ -15,7 +15,6 @@ namespace Assets.Sources.game
         {
             // 1) creating game
             _gameState = GameState.Creating;
-            World = gameObject.AddComponent<WorldData>();
             StartTime = 0;
             Turn = 0;
             TurnFrequency = 1000;

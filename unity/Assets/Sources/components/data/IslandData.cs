@@ -7,7 +7,7 @@ namespace Assets.Sources.components.data
 {
     public class IslandData : MonoBehaviour
     {
-        public void Awake() {
+        public void Start() {
 
             if(Game.IsSinglePlayer())
             {
@@ -16,6 +16,9 @@ namespace Assets.Sources.components.data
 
                 maxSpawn = 5;
             }
+
+            PlayerData = Registry.Player[playerUid].GetComponent<PlayerData>();
+            renderer.material.color = PlayerData.color;
         }
 
         public int uid;
@@ -23,6 +26,8 @@ namespace Assets.Sources.components.data
         public int islandType;
         public string playerUid;
         public int maxSpawn;
+
+        public PlayerData PlayerData;
 
         public float ShipBuildTime()
         {
