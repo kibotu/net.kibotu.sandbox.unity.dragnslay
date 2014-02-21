@@ -39,11 +39,12 @@ namespace Assets.Sources.components.behaviours
             if (Math.Abs(CirculationTerm) < Epsilon) CirculationTerm = Random.Range(4f, 12f);
             if(Heightvariance == Vector2.zero) Heightvariance = new Vector2(-2f, 2f);
             if (Math.Abs(Heightchangetime) < Epsilon) Heightchangetime = CirculationTerm / 2f; 
-            if (Math.Abs(StrafeAngle) < Epsilon) StrafeAngle = 10f;
+            if (Math.Abs(StrafeAngle) < Epsilon) StrafeAngle = 15f;
             if(ChanceOfRandomTwist == Vector2.zero) ChanceOfRandomTwist = new Vector2(5f, 10f);
             if (Math.Abs(TwistDuration) < Epsilon) TwistDuration = 1.125f;
             _twistTime = TwistDuration;
             _randomTwistChance = Random.Range(ChanceOfRandomTwist.x, ChanceOfRandomTwist.y);
+            _heighttime = Heightchangetime;
         }
 
         public void FixedUpdate()

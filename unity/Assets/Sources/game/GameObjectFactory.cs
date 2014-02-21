@@ -53,7 +53,6 @@ namespace Assets.Sources.game
             var go = Prefabs.Instance.GetNewIsland();
             go.name = "Island_" + uid;
             go.AddComponent<SphereCollider>().radius += 1f;
-            go.AddComponent<SendUnits>();
 
             var sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             sphere.transform.localScale = new Vector3(4,4,4);
