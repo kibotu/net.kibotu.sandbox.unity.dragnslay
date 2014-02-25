@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Assets.Sources.components.behaviours.depricated
 {
@@ -25,7 +27,7 @@ namespace Assets.Sources.components.behaviours.depricated
     //DestructibleObject - provides functionality to destroy whatever GameObject the script is attached to
     //the attached object must have a MeshFilter in its children, and its shrapnel objects must have a renderer in the root.
     //by Eli
-
+     [Obsolete("Not used anymore", false)]
     public class DestructibleObject : MonoBehaviour
     {
         public GameObject shrapnelPrefab;

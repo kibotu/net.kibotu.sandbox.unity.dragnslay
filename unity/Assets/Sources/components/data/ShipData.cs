@@ -1,7 +1,9 @@
-﻿using Assets.Sources.game;
+﻿using System;
+using Assets.Sources.game;
 using Assets.Sources.model;
 using Assets.Sources.utility;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Sources.components.data
 {
@@ -9,6 +11,7 @@ namespace Assets.Sources.components.data
     {
         public int uid;
         public int shipType;
+        [Obsolete("Not used anymore use PlayerData instead", false)]
         public string playerUid;
         public float AttackSpeed;
         public float AttackDamage;

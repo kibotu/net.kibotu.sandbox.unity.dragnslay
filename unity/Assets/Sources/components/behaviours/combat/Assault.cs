@@ -33,8 +33,7 @@ namespace Assets.Sources.components.behaviours.combat
             if (IsOnEnemyIsland() && enemyShips.Count == 0)
             {
                 Debug.Log(ShipData.uid + " invades " + transform.parent.gameObject.GetComponent<IslandData>().uid);
-                transform.parent.gameObject.GetComponent<IslandData>().playerUid = ShipData.playerUid;
-               // transform.parent.gameObject.renderer.material.color = GetComponentInChildren<Renderer>().material.color;
+                transform.parent.gameObject.GetComponent<IslandData>().Convert(ShipData.PlayerData);
             }
 
             // 2) attack every enemy ship
@@ -53,7 +52,8 @@ namespace Assets.Sources.components.behaviours.combat
 
         private bool IsOnEnemyIsland()
         {
-            return transform.parent.gameObject.GetComponent<IslandData>().playerUid != ShipData.playerUid;
+            //Debug.Log(transform.parent.gameObject.GetComponent<IslandData>().PlayerData.uid + " " + ShipData.PlayerData.uid);
+            return transform.parent.gameObject.GetComponent<IslandData>().PlayerData.uid != ShipData.PlayerData.uid;
         }
 
         public void AttackTarget(int targetUid)

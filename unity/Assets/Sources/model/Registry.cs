@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Sources.components.data;
 using UnityEngine;
 
 namespace Assets.Sources.model

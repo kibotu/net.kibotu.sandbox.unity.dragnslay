@@ -70,7 +70,7 @@ namespace Assets.Sources.components.behaviours
             var shipData = go.AddComponent<ShipData>();
             shipData.shipType = islandData.shipType;
             shipData.uid = shipUid;
-            shipData.playerUid = islandData.playerUid;
+            shipData.PlayerData = islandData.PlayerData;
 
             // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
             go.GetComponentInChildren<Renderer>().material.color = Island.PlayerData.color - new Color(0.5f,0.5f,0.5f);

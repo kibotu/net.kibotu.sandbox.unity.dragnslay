@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class AiAgent : MonoBehaviour {
+namespace Assets.Sources.components.behaviours.ai
+{
+    public class AiAgent : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+        public void Start () {
 	
-	}
+        }
 	
-	// Update is called once per frame
-	void Update () {
+        public void Update () {
 	
-	}
+        }
+    }
 }

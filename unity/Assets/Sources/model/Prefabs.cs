@@ -13,6 +13,7 @@ namespace Assets.Sources.model
         public GameObject Player;
         public GameObject Ai;
         public GameObject SmallExplosion;
+        public GameObject Shockwave;
 
         public void Awake()
         {
@@ -62,6 +63,11 @@ namespace Assets.Sources.model
         public GameObject GetNewAi()
         {
             return CreateGameObject(Ai);
+        }
+
+        public GameObject GetNewShockwave()
+        {
+            return CreateGameObject(Shockwave);
         }
     }
 }

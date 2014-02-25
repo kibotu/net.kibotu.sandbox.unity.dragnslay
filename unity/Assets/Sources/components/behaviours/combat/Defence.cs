@@ -21,7 +21,9 @@ namespace Assets.Sources.components.behaviours.combat
             if (LifeData.CurrentHp > 0 || _isExploding) return;
 
             Destroy(gameObject);
-            Prefabs.Instance.GetNewExplosion().transform.position = transform.position;
+            var explosion = Prefabs.Instance.GetNewExplosion();
+            explosion.transform.position = transform.position;
+            explosion.GetComponent<DetonatorShockwave>().color = GetComponent<ShipData>().PlayerData.color;
             
             Registry.Ships.Remove(GetComponent<ShipData>().uid);
 
