@@ -20,7 +20,7 @@ namespace Assets.Sources.components.data
                 player.GetComponent<PlayerData>().color = new Color(0f/255,155f/255,0) + new Color(0.4f,0.4f,0.4f);
                 Player.Add(player);
 
-                player = GameObjectFactory.CreateAi("neutral");
+                player = GameObjectFactory.CreatePlayer("neutral");
                 player.GetComponent<PlayerData>().name = player.name = "AiNeutral";
                 player.transform.parent = transform;
                 player.GetComponent<PlayerData>().color = new Color(155f/255, 140f/255, 60f/255) + new Color(0.4f,0.4f,0.4f);
