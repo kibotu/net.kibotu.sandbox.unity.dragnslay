@@ -14,11 +14,11 @@ namespace Assets.Sources.components.data
             {
                 uid = UidGenerator.GetNewUid();
                 Registry.Islands.Add(uid, gameObject);
-
-                maxSpawn = 5;
             }
 
             PlayerData = Registry.Player[playerUid].GetComponent<PlayerData>();
+
+			Dye ();
         }
 
         public int uid;

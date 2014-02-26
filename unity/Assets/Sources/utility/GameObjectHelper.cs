@@ -22,6 +22,11 @@ namespace Assets.Sources.utility
             return list.Count == 0;
         }
 
+		public static T GetRandom<T>(this List<T> list) 
+		{
+			return list[Random.Range(0,list.Count)];
+		}
+
         public static T Add<T>(this T[] array, T addItem)
         {
             int i;

@@ -27,8 +27,13 @@ namespace Assets.Sources.components.data
                 uid = UidGenerator.GetNewUid();
             }
 
-            PlayerData = Registry.Player[playerUid].GetComponent<PlayerData>();
-            GetComponentInChildren<Renderer>().material.color = PlayerData.color;
+            if (PlayerData == null) {
+				PlayerData = Registry.Player [playerUid].GetComponent<PlayerData> ();
+			} else {
+				playerUid = PlayerData.name;
+			}
+
+           	GetComponentInChildren<Renderer>().material.color = PlayerData.color;
         }
     }
 }
