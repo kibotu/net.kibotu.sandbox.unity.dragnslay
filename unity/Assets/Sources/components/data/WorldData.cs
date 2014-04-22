@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Assets.Sources.game;
+using Assets.Sources.menu;
+using Assets.Sources.model;
 using UnityEngine;
 
 namespace Assets.Sources.components.data
@@ -10,27 +12,32 @@ namespace Assets.Sources.components.data
         
         public void Awake()
         {
+            Registry.Init();
+
             Player = new List<GameObject>();
+
 
             if (Game.IsSinglePlayer())
             {
                 var player = GameObjectFactory.CreatePlayer("player");
-                player.GetComponent<PlayerData>().name = player.name = "player";
+                player.GetComponent<PlayerData>().playerName = "player";
                 player.transform.parent = transform;
-                player.GetComponent<PlayerData>().color = new Color(0f/255,155f/255,0) + new Color(0.4f,0.4f,0.4f);
+                player.GetComponent<PlayerData>().color = new Color(0f / 255, 0, 155f / 255) + new Color(0.4f, 0.4f, 0.4f);
                 Player.Add(player);
 
                 player = GameObjectFactory.CreatePlayer("neutral");
-				player.GetComponent<PlayerData>().name = player.name = "neutral";
+                player.GetComponent<PlayerData>().playerName = "neutral";
                 player.transform.parent = transform;
                 player.GetComponent<PlayerData>().color = new Color(155f/255, 140f/255, 60f/255) + new Color(0.4f,0.4f,0.4f);
                 Player.Add(player);
 
                 player = GameObjectFactory.CreateAi("offensive");
-				player.GetComponent<PlayerData>().name = player.name = "offensive";
+                player.GetComponent<PlayerData>().playerName = "offensive";
                 player.transform.parent = transform;
                 player.GetComponent<PlayerData>().color = new Color(155f/255, 0f/255, 0f/255) + new Color(0.6f,0.6f,0.6f);
                 Player.Add(player);
+
+                GameObject.Find("Menu").GetComponent<Menu>().ShowGameHud();
             }
         }
 

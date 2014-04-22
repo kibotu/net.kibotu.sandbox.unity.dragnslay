@@ -20,8 +20,8 @@ namespace Assets.Sources.components.data
 
         public void Start()
         {
-            AttackSpeed = Random.Range(1f,2f);
-            AttackDamage = Random.Range(1.7f,2.5f);
+            AttackSpeed = 1f; Random.Range(1f,2f);
+            AttackDamage = 2f; // Random.Range(1.7f,2.5f);
             if (Game.IsSinglePlayer())
             {
                 uid = UidGenerator.GetNewUid();

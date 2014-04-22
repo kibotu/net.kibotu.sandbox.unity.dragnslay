@@ -64,7 +64,7 @@ namespace Assets.Sources.components.behaviours
                 var papership = transform.GetChild(i);
                 if (papership.name.StartsWith("Papership"))
                 {
-                    if (papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
+                    if (papership.GetComponent<ShipData>().PlayerData.playerName == "player" && papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
                     {
                         var move = papership.gameObject.AddComponent<MoveToTarget>();
                         move.Target = target;

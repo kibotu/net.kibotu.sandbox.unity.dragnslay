@@ -15,6 +15,7 @@ namespace Assets.Sources.menu.view
 
         public void Start ()
         {
+
             // @ see http://forum.unity3d.com/threads/87917-Prime31-UIToolkit-Multi-Resolution-GUI-Solution-Ready-for-Use-and-it-s-free/page79
             // @ see http://timshaya.wordpress.com/category/uitoolkit/
 
@@ -23,7 +24,7 @@ namespace Assets.Sources.menu.view
             //var map = UIButton.create(in_game_hud, "skills.png", "skills.png", 100, 100);
             //map.centerize();
 
-            var atlas = GameObject.Find("main_menu_atlas").GetComponent<UIToolkit>();
+            var atlas = GameObject.Find("network_atlas").GetComponent<UIToolkit>();
 
             var padding = 0.00f;
 

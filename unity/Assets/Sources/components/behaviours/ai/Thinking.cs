@@ -9,20 +9,21 @@ namespace Assets.Sources.components.behaviours.ai
     public class Thinking : MonoBehaviour {
 
 		private PlayMakerFSM fsm;
+        private PlayerData playerData;
 
 		public void Start() 
 		{
-			fsm = GetComponent<PlayMakerFSM> ();
+            fsm = GetComponent<PlayMakerFSM>();
+            playerData = GetComponent<PlayerData>();
 		}
 
         public void Think()
         {
-            var playerData = GetComponent<PlayerData>();
 
 			// lists of islands by player
 			// start of by only looking for non owned islands, later we could prioritize weaker targets
-			List<IslandData> ownedIslands = new List<IslandData> ();
-			List<IslandData> enemyIslands = new List<IslandData> ();
+			var ownedIslands = new List<IslandData> ();
+			var enemyIslands = new List<IslandData> ();
 			foreach (var island in Registry.Islands.Values)
 			{
 				var islandData = island.GetComponent<IslandData>();
@@ -34,6 +35,18 @@ namespace Assets.Sources.components.behaviours.ai
 			}
 
 			Debug.Log (enemyIslands.Count + " enemies vs owned " + ownedIslands.Count);
+
+            // win
+            if (enemyIslands.Count == 0)
+            {
+                Application.LoadLevel((int) Registry.Levels.IntroWithMainMenu);
+            }
+
+            // lose
+            if (ownedIslands.Count == 0)
+            {
+                Application.LoadLevel((int)Registry.Levels.IntroWithMainMenu);
+            }
 
             // no enemies or owning no islands do nothing
 			if (enemyIslands.IsEmpty () || ownedIslands.IsEmpty ()) 
@@ -64,7 +77,7 @@ namespace Assets.Sources.components.behaviours.ai
                 var papership = source.transform.GetChild(i);
                 if (papership.name.StartsWith("Papership"))
                 {
-                    if (papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
+                    if (papership.GetComponent<ShipData>().PlayerData.playerName == playerData.playerName && papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
                     {
                         var move = papership.gameObject.AddComponent<MoveToTarget>();
                         move.Target = target;

@@ -12,6 +12,7 @@ namespace Assets.Sources.game
         public readonly  static Queue<Action> ExecuteOnMainThread = new Queue<Action>();
         public static string ClientUid = "Client";
         public WorldData World;
+        public float timescale = 1f;
 
         public enum Mode { SinglePlayer, Game1vs1, Game2vs2 }
         public static Mode GameMode = Mode.SinglePlayer;
@@ -25,6 +26,8 @@ namespace Assets.Sources.game
 
         public virtual void Update()
         {
+            Time.timeScale = timescale;
+
             // dispatch stuff on main thread
             while (ExecuteOnMainThread.Count > 0)
             {

@@ -29,7 +29,7 @@ namespace Assets.Sources.game
         public static GameObject CreatePlayer(string uid)
         {
             var go = Prefabs.Instance.GetNewPlayer();
-            go.GetComponent<PlayerData>().uid = uid;
+            go.GetComponent<PlayerData>().uid = go.name = uid;
 
             Registry.Player.Add(uid, go);
 

@@ -10,10 +10,10 @@ namespace Assets.Sources.menu
 
         public void Start()
         {
-            ShowMainMenu();
-
-            _miniMapCamera = GameObject.Find("MiniMapCamera");
-            _miniMapCamera.SetActive(false);
+//            ShowMainMenu();
+//
+//            _miniMapCamera = GameObject.Find("MiniMapCamera");
+//            _miniMapCamera.SetActive(false);
         }
 
         public void ShowMainMenu()
@@ -32,7 +32,7 @@ namespace Assets.Sources.menu
             gameObject.AddComponent<ResourcesView>();
             gameObject.AddComponent<CornerView>();
 
-            _miniMapCamera.SetActive(true);
+//            _miniMapCamera.SetActive(true);
         }
 
         public void ShowShop()
