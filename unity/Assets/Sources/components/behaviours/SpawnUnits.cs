@@ -60,7 +60,7 @@ namespace Assets.Sources.components.behaviours
             var islandData = island.GetComponent<IslandData>();
 
             // 1) create ship by type
-            var go = GameObjectFactory.CreateShip(shipUid, islandData.shipType);
+            var go = GameObjectFactory.CreateShip(shipUid, islandData.shipType, islandData.PlayerData.playerType);
 
             // 2) append ship at island
             go.transform.Translate(island.transform.position);

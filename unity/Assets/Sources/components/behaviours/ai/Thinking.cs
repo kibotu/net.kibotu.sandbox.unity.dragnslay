@@ -76,9 +76,9 @@ namespace Assets.Sources.components.behaviours.ai
             for (var i = 0; i < source.transform.childCount; ++i)
             {
                 var papership = source.transform.GetChild(i);
-                if (papership.name.StartsWith("Papership"))
+                if (papership.name.StartsWith("Papership") || papership.name.StartsWith("Steelship"))
                 {
-                    if (papership.GetComponent<ShipData>().PlayerData.playerName == playerData.playerName && papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
+                    if (papership.GetComponent<ShipData>().PlayerData.playerType == playerData.playerType && papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
                     {
                         var move = papership.gameObject.AddComponent<MoveToTarget>();
                         move.Target = target;

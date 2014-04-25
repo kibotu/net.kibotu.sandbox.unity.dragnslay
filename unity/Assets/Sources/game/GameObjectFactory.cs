@@ -1,6 +1,4 @@
-﻿using Assets.Sources.components.behaviours;
-using Assets.Sources.components.behaviours.depricated;
-using Assets.Sources.components.data;
+﻿using Assets.Sources.components.data;
 using Assets.Sources.model;
 using UnityEngine;
 
@@ -21,15 +19,31 @@ namespace Assets.Sources.game
             return CreateIsland(uid);
         }
 
-        public static GameObject CreateShip(int uid, int type)
+        public static GameObject CreateShip(int uid, int type, PlayerData.PlayerType playerType)
         {
-            return CreateShip(uid);
+            GameObject go;
+            switch (playerType)
+            {
+                case PlayerData.PlayerType.Offensive: 
+                    go = Prefabs.Instance.GetNewSteelShip();
+                    break;
+                case PlayerData.PlayerType.Player:
+                    go = Prefabs.Instance.GetNewPapership();
+                    break;
+                default:
+                    go = Prefabs.Instance.GetNewPapership();
+                    break;
+            }
+            Registry.Ships.Add(uid, go);
+            return go;
         }
 
         public static GameObject CreatePlayer(string uid)
         {
             var go = Prefabs.Instance.GetNewPlayer();
-            go.GetComponent<PlayerData>().uid = go.name = uid;
+            var playerData = go.GetComponent<PlayerData>();
+            playerData.uid = go.name = uid;
+            playerData.playerType = PlayerData.PlayerType.Player;
 
             Registry.Player.Add(uid, go);
 
@@ -39,7 +53,9 @@ namespace Assets.Sources.game
         public static GameObject CreateAi(string uid)
         {
             var go = Prefabs.Instance.GetNewAi();
-            go.GetComponent<PlayerData>().uid = uid;
+            var playerData = go.GetComponent<PlayerData>();
+            playerData.uid = go.name = uid;
+            playerData.playerType = PlayerData.PlayerType.Offensive;
 
             Registry.Player.Add(uid, go);
 
@@ -62,20 +78,6 @@ namespace Assets.Sources.game
 
             // add island to registry
             Registry.Islands.Add(uid, go);
-
-            return go;
-        }
-
-        public static GameObject CreateShip(int uid)
-        {
-            // var go = new GameObject("Papership_" + uid);
-            //AddMeshToGameObject(go, "meshes/papership", "meshes/paperplant");
-            var go = Prefabs.Instance.GetNewPapership();
-
-            //go.transform.position = new Vector3(70, 0, 0);
-
-            // add island to registry
-            Registry.Ships.Add(uid, go);
 
             return go;
         }

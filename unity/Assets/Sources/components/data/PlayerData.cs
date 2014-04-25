@@ -18,7 +18,7 @@ namespace Assets.Sources.components.data
         public int games_lost;
         public int games_left;
         public int[] friendlist;
-        public string playerName;
+        public PlayerType playerType;
 
         public void Start()
         {
@@ -26,6 +26,11 @@ namespace Assets.Sources.components.data
             {
                 uid = UidGenerator.GetNewUid().ToString();
             }
+        }
+
+        public enum PlayerType
+        {
+            Player, Offensive, Neutral
         }
     }
 }

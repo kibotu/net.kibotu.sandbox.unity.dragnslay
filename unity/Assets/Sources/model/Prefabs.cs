@@ -7,6 +7,7 @@ namespace Assets.Sources.model
     public class Prefabs : MonoBehaviour
     {
         public GameObject Papership;
+        public GameObject Steelship;
         public GameObject Island;
         public GameObject Explosion;
         public GameObject Rocket;
@@ -68,6 +69,11 @@ namespace Assets.Sources.model
         public GameObject GetNewShockwave()
         {
             return CreateGameObject(Shockwave);
+        }
+
+        public GameObject GetNewSteelShip()
+        {
+            return CreateGameObject(Steelship);
         }
     }
 }
