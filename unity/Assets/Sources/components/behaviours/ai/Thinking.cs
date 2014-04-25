@@ -1,4 +1,5 @@
 ﻿using Assets.Sources.components.data;
+using Assets.Sources.menu;
 using Assets.Sources.model;
 using UnityEngine;
 using System.Collections.Generic;
@@ -36,16 +37,16 @@ namespace Assets.Sources.components.behaviours.ai
 
 			Debug.Log (enemyIslands.Count + " enemies vs owned " + ownedIslands.Count);
 
-            // win
+            // ai wins
             if (enemyIslands.Count == 0)
             {
-                Application.LoadLevel((int) Registry.Levels.IntroWithMainMenu);
+                GameObject.Find("Menu").GetComponent<Menu>().ShowLoseScreen();
             }
 
-            // lose
+            // player wins
             if (ownedIslands.Count == 0)
             {
-                Application.LoadLevel((int)Registry.Levels.IntroWithMainMenu);
+                GameObject.Find("Menu").GetComponent<Menu>().ShowWinScreen();
             }
 
             // no enemies or owning no islands do nothing

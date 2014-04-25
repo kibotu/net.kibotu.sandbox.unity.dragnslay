@@ -7,7 +7,7 @@ namespace Assets.Sources.menu.view
 
         public void Start()
         {
-            var atlas = GameObject.Find("game_atlas").GetComponent<UIToolkit>();
+            var atlas = GameObject.Find("in_game_hud_atlas").GetComponent<UIToolkit>();
 
             var skills = UIButton.create(atlas, "skills.png", "skills.png", 0, 0);
             skills.positionFromBottomRight(0, 0);

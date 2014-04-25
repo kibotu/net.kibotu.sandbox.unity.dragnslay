@@ -1,0 +1,52 @@
+{"frames": {
+
+"lose_screen_confirm.png":
+{
+	"frame": {"x":4,"y":756,"w":382,"h":158},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":382,"h":158},
+	"sourceSize": {"w":386,"h":160}
+},
+"lose_screen_header.png":
+{
+	"frame": {"x":4,"y":4,"w":1002,"h":370},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":1002,"h":370},
+	"sourceSize": {"w":1001,"h":377}
+},
+"rocket.png":
+{
+	"frame": {"x":4,"y":920,"w":34,"h":68},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":0,"w":34,"h":68},
+	"sourceSize": {"w":68,"h":68}
+},
+"win_screen_confirm.png":
+{
+	"frame": {"x":392,"y":756,"w":374,"h":150},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":4,"w":374,"h":150},
+	"sourceSize": {"w":381,"h":154}
+},
+"win_screen_header.png":
+{
+	"frame": {"x":4,"y":380,"w":994,"h":370},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":994,"h":370},
+	"sourceSize": {"w":993,"h":370}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "in_game_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":1010,"h":1010},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b59c8990c266076e8c24ce888bbf8789:110267f7426764948c2c918b6d2a25b2:361d1b24086a2e3f02aeb85f89b6b9fd$"
+}
+}

@@ -6,7 +6,7 @@ namespace Assets.Sources.menu.view
     {
         public void Start()
         {
-            var atlas = GameObject.Find("game_atlas").GetComponent<UIToolkit>();
+            var atlas = GameObject.Find("in_game_hud_atlas").GetComponent<UIToolkit>();
 
             var sprite = UIButton.create(atlas, "corner.png", "corner.png", 0, 0);
             sprite.positionFromBottomLeft(0, 0);

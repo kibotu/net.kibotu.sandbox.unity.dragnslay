@@ -52,5 +52,15 @@ namespace Assets.Sources.menu
             Destroy(gameObject.GetComponent<ProfileView>());
             gameObject.AddComponent<UpgradesView>();
         }
+
+        public void ShowWinScreen()
+        {
+            gameObject.AddComponent<WinScreenView>();
+        }
+
+        public void ShowLoseScreen()
+        {
+            gameObject.AddComponent<LoseScreenView>();
+        }
     }
 }
