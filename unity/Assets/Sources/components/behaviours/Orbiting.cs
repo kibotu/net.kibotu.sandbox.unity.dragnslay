@@ -100,7 +100,7 @@ namespace Assets.Sources.components.behaviours
             var targetDir = RotateAroundCenterY(transform.position, (_time + CirculationTerm / 360), Radius, Center.position, CirculationTerm, Height) - transform.position;
             var step = 1000 * Time.deltaTime;
             var newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-            //Debug.DrawRay(transform.position, newDir, Color.red);
+            // Debug.DrawRay(transform.position, newDir, Color.red);
             return Quaternion.LookRotation(newDir) * Quaternion.Euler(0, 0, -StrafeAngle);//*Quaternion.Euler(-90f, 0, 0) * Quaternion.Euler(0,0,90) *;
         }
 

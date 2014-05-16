@@ -35,7 +35,7 @@ namespace Assets.Sources.components.behaviours.ai
 					ownedIslands.Add(islandData);
 			}
 
-			Debug.Log (enemyIslands.Count + " enemies vs owned " + ownedIslands.Count);
+//			Debug.Log (enemyIslands.Count + " enemies vs owned " + ownedIslands.Count);
 
             // ai wins
             if (enemyIslands.Count == 0)

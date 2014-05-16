@@ -19,5 +19,16 @@ namespace Assets.Sources.utility
         {
             return startVelocity + acceleration * Time.time;
         }
+
+        /// <summary>
+        ///  @return the angle in degrees of this vector (point) relative to the x-axis. Angles are towards the positive y-axis (typically
+        /// counter-clockwise) and between 0 and 360. 
+        /// </summary>
+        public static float Angle(this Vector2 v)
+        {
+            var angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+            if (angle < 0) angle += 360;
+            return angle;
+        }
     }
 }

@@ -27,8 +27,8 @@ namespace Assets.Sources.components.behaviours.combat
             
             Registry.Ships.Remove(GetComponent<ShipData>().uid);
 
-            Debug.Log(GetComponent<ShipData>().uid + " has been destroyed!");
-            _isExploding = true;
+//            Debug.Log(GetComponent<ShipData>().uid + " has been destroyed!");
+//            _isExploding = true;
         }
     }
 }

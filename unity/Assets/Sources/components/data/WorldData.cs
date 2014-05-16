@@ -37,7 +37,7 @@ namespace Assets.Sources.components.data
                 player.GetComponent<PlayerData>().color = new Color(155f/255, 0f/255, 0f/255) + new Color(0.6f,0.6f,0.6f);
                 Player.Add(player);
 
-                GameObject.Find("Menu").GetComponent<Menu>().ShowGameHud();
+                // GameObject.Find("Menu").GetComponent<Menu>().ShowGameHud();
             }
         }
 

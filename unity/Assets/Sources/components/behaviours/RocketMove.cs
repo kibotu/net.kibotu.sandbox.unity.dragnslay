@@ -40,11 +40,7 @@ namespace Assets.Sources.components.behaviours
 
             // rotate along forward axe of camera towards target
             var dir = transform.position.Direction(Defender.transform.position);
-            //Debug.DrawRay(transform.position, dir,Color.magenta); // target direction
-            //Debug.DrawRay(transform.position, transform.up, Color.black); // up vector
-            //Debug.DrawRay(transform.position, -transform.forward, Color.cyan); // back vector
-            //Debug.DrawRay(transform.position, transform.position + Camera.main.transform.rotation * Vector3.forward, Color.blue); // direction towards camera
-            //Debug.DrawRay(transform.position, Camera.main.transform.rotation * Vector3.up, Color.red); // camera up direction
+         
 
             // allign to camera (billboard)
             // transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);

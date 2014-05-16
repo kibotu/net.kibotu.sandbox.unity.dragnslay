@@ -73,7 +73,7 @@ namespace Assets.Sources.components.behaviours
             shipData.PlayerData = islandData.PlayerData;
 
             // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
-            go.GetComponentInChildren<Renderer>().material.color = Island.PlayerData.color - new Color(0.5f,0.5f,0.5f);
+            //go.GetComponentInChildren<Renderer>().material.color = Island.PlayerData.color - new Color(0.5f,0.5f,0.5f);
 
             // 5) life data
             var lifeData = go.AddComponent<LifeData>();

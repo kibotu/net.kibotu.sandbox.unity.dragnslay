@@ -32,7 +32,7 @@ namespace Assets.Sources.components.behaviours.combat
             // 1) if is enemy island and has no there are no enemy ships => convert
             if (IsOnEnemyIsland() && enemyShips.Count == 0)
             {
-                Debug.Log(ShipData.uid + " invades " + transform.parent.gameObject.GetComponent<IslandData>().uid);
+//                Debug.Log(ShipData.uid + " invades " + transform.parent.gameObject.GetComponent<IslandData>().uid);
                 transform.parent.gameObject.GetComponent<IslandData>().Convert(ShipData.PlayerData);
             }
 
@@ -40,7 +40,7 @@ namespace Assets.Sources.components.behaviours.combat
             if (enemyShips.Count <= 0) return;
 
             var enemyShip = (GameObject)enemyShips[Random.Range(0, enemyShips.Count)]; // Important! actual range 0 to list size - 1
-            Debug.Log(ShipData.playerUid +"[" + ShipData.uid + "] attacks " + enemyShip.GetComponent<ShipData>().playerUid + "[" + enemyShip.GetComponent<ShipData>().uid + "]");
+//            Debug.Log(ShipData.playerUid +"[" + ShipData.uid + "] attacks " + enemyShip.GetComponent<ShipData>().playerUid + "[" + enemyShip.GetComponent<ShipData>().uid + "]");
 
             var rocket = Prefabs.Instance.GetNewRocket();
             var behaviour = rocket.GetComponent<RocketMove>();

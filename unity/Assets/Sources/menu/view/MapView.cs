@@ -11,6 +11,9 @@ namespace Assets.Sources.menu.view
             var sprite = UIButton.create(atlas, "map.png", "map.png", 0, 0);
             sprite.positionFromTopRight(0, 0);
             sprite.scale = new Vector3(0.52083f, 0.520833f, 0);
+
+
+            GameObject.Find("MiniMapCamera").camera.enabled = true;
         }
     }
 }
