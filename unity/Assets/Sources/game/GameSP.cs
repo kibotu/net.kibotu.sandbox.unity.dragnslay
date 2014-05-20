@@ -1,6 +1,6 @@
 ﻿namespace Assets.Sources.game
 {
-    public class GameSp : Game {
+    public class GameSP : Game {
 
         public void Start()
         {
