@@ -147,7 +147,7 @@ namespace Assets.Sources.components.behaviours.depricated
                         var plane = Registry.Ships[pair.Key];
 
                         // only move if you own it
-                        if (plane.GetComponent<ShipData>().playerUid != Game.ClientUid) continue;
+                        if (plane.GetComponent<ShipData>().PlayerData.uid != Game.ClientUid) continue;
 
                         if (plane.GetComponent<ShipData>().uid != pair.Key)
                             Debug.Log("WARNING! ship id != registry id on move-units");

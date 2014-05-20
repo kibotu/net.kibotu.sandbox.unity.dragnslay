@@ -35,6 +35,7 @@ namespace Assets.Sources.menu
             MultiplayerButton = UIButton.create(textureAtlas, "button.png", "button.png", 0, 0);
             MultiplayerButton.positionFromTop(topMargin, -0.1f);
             MultiplayerButton.scale = scale;
+            MultiplayerButton.onTouchUp += button => Application.LoadLevel(Registry.Levels.MultiplayerLevel);
 
             ProfileButton = UIButton.create(textureAtlas, "button.png", "button.png", 0, 0);
             ProfileButton.positionFromTop(topMargin, 0.1f);

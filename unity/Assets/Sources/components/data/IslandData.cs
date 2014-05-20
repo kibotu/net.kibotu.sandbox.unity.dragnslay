@@ -10,13 +10,14 @@ namespace Assets.Sources.components.data
     {
         public void Start() {
 
-            if(Game.IsSinglePlayer())
+            // debug singleplayer
+            if (uid == 0)
             {
                 uid = UidGenerator.GetNewUid();
                 Registry.Islands.Add(uid, gameObject);
             }
 
-            PlayerData = Registry.Player[playerUid].GetComponent<PlayerData>();
+            PlayerData = Registry.Player[PlayerData.uid].GetComponent<PlayerData>();
 
 			Dye ();
         }
@@ -25,12 +26,8 @@ namespace Assets.Sources.components.data
         public int shipType;
         public int islandType;
 
-        [Obsolete("Not used anymore use PlayerData instead", false)]
-        public string playerUid;
-
         public void Convert(PlayerData PlayerData)
         {
-            playerUid = PlayerData.uid;
             this.PlayerData = PlayerData;
             Dye();
             var shockwave = Prefabs.Instance.GetNewShockwave();

@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.combat;
 using Assets.Sources.components.behaviours.depricated;
@@ -6,6 +8,7 @@ using Assets.Sources.model;
 using Assets.Sources.network;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Sources.game
 {
@@ -16,6 +19,27 @@ namespace Assets.Sources.game
         public Game1vs1()
         {
             GameMode = Mode.Game1vs1;
+        }
+
+        public void Start()
+        {
+            base.Start();
+
+            SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
+            SocketHandler.Connect(1337);
+        }
+
+        public void stack()
+        {
+
+            StackTrace stackTrace = new StackTrace();           // get call stack
+            StackFrame[] stackFrames = stackTrace.GetFrames();  // get method calls (frames)
+
+            // write call stack method names
+            foreach (StackFrame stackFrame in stackFrames)
+            {
+                Debug.Log(stackFrame.GetMethod().Name);   // write method name
+            }
         }
 
         protected override void DoGameTurn()
@@ -76,10 +100,10 @@ namespace Assets.Sources.game
                         var shipData = go.AddComponent<ShipData>();
                         shipData.shipType = islandData.shipType;
                         shipData.uid = shipUid;
-                        shipData.playerUid = islandData.playerUid;
+                        shipData.PlayerData = islandData.PlayerData;
 
                         // 4) colorize @see http://answers.unity3d.com/questions/483419/changing-color-of-children-of-instantiated-prefab.html
-                        go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
+                        //go.GetComponentInChildren<Renderer>().material.color = island.renderer.material.color;
 
                         // 5) life data
                         var lifeData = go.AddComponent<LifeData>();
@@ -94,7 +118,7 @@ namespace Assets.Sources.game
                             go.AddComponent<Defence>();
                         }
 
-                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
+                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType + "] for player [" + shipData.PlayerData.uid + "]");
                     });
                 }
             }
@@ -110,59 +134,59 @@ namespace Assets.Sources.game
 
                 foreach (var playerDataRaw in playerDatas)
                 {
-                    var playerData = new PlayerData { uid = playerDataRaw["uid"].ToString(), color = World.GetNextPlayerColor() };
-                    var player = GameObjectFactory.CreatePlayer(playerData.uid);
-                    World.Player.Add(player);
-
-                    var islands = playerDataRaw["islands"];
-                    foreach (var data in islands)
-                    {
-                        var island = data;
-                        ExecuteOnMainThread.Enqueue(() =>
+                    var raw = playerDataRaw;
+                    ExecuteOnMainThread.Enqueue(() =>
                         {
-                            var islandUid = island["uid"].ToObject<int>();
-                            var islandType = island["type"].ToObject<int>();
-                            var islandMaxSpawn = island["max-spawn"].ToObject<int>();
+                            var player = GameObjectFactory.CreatePlayer(raw["uid"].ToString());
 
-                            // 1) create island by type
-                            var go = GameObjectFactory.CreateIsland(islandUid, islandType); 
+                            var islands = raw["islands"];
+                            foreach (var data in islands)
+                            {
+                                var island = data;
+                                var islandUid = island["uid"].ToObject<int>();
+                                var islandType = island["type"].ToObject<int>();
+                                var islandMaxSpawn = island["max-spawn"].ToObject<int>();
 
-                            // 2) set island transformation
-                            var position = island["position"]; // island position
-                            go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
-                            go.transform.localScale = new Vector3(Scale, Scale, Scale);
+                                // 1) create island by type
+                                var go = GameObjectFactory.CreateIsland(islandUid, islandType); 
 
-                            // 3) colorize
-                            go.renderer.material.color = playerData.color;
+                                // 2) set island transformation
+                                var position = island["position"]; // island position
+                                go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
+                                go.transform.localScale = new Vector3(Scale, Scale, Scale);
 
-                            // 4) add meta data
-                            var islandData = go.AddComponent<IslandData>();
+                                // 3) colorize
+                                go.renderer.material.color = World.GetNextPlayerColor();
 
-                            // 4.1) set uid
-                            islandData.uid = islandUid;
+                                // 4) add meta data
+                                var islandData = go.GetComponent<IslandData>();
 
-                            // 4.2) island type
-                            islandData.islandType = islandType;
+                                // 4.1) set uid
+                                islandData.uid = islandUid;
 
-                            // 4.3) set ownership
-                            islandData.playerUid = playerData.uid;
+                                // 4.2) island type
+                                islandData.islandType = islandType;
 
-                            islandData.maxSpawn = islandMaxSpawn;
+                                // 4.3) set ownership
+                                islandData.PlayerData = player.GetComponent<PlayerData>();
+                                Debug.Log(islandData.gameObject.name + " belongs to " + islandData.PlayerData.uid);
 
-                            // 4.4) life data
-                            go.AddComponent<LifeData>();
+                                islandData.maxSpawn = islandMaxSpawn;
 
-                            // 4.5) set spawning ship types
-                            islandData.shipType = island["ship-type"].ToObject<int>();
+                                // 4.4) life data
+                                go.AddComponent<LifeData>();
 
-                            // 4.6) host handles spawnings
-                            if(IsHost())
-                                go.AddComponent<SpawnUnits>();
+                                // 4.5) set spawning ship types
+                                islandData.shipType = island["ship-type"].ToObject<int>();
 
-                            // 4.7) set prototype ship
 
+                                // 4.6) host handles spawnings
+                                if(IsHost())
+                                    go.AddComponent<SpawnUnits>();
+
+                                // 4.7) set prototype ship
+                                }
                         });
-                    }
                 }
 
                 // when done, send client-game-ready command

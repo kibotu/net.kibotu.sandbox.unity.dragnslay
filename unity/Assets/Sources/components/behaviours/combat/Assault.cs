@@ -69,7 +69,7 @@ namespace Assets.Sources.components.behaviours.combat
             {
                 var ship = transform.parent.GetChild(i).gameObject;
                 if(!ship.name.Contains("Papership")) continue;
-                if (ship.GetComponent<ShipData>().playerUid != ShipData.playerUid)
+                if (ship.GetComponent<ShipData>().PlayerData.uid != ShipData.PlayerData.uid)
                     enemyShips.Add(ship);
             }
             return enemyShips;

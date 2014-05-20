@@ -1,5 +1,3 @@
-using Assets.Sources.game;
-using Assets.Sources.utility;
 using UnityEngine;
 
 namespace Assets.Sources.components.data
@@ -22,10 +20,7 @@ namespace Assets.Sources.components.data
 
         public void Start()
         {
-            if (Game.IsSinglePlayer())
-            {
-                uid = UidGenerator.GetNewUid().ToString();
-            }
+          
         }
 
         public enum PlayerType

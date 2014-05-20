@@ -1,9 +1,11 @@
-﻿using Assets.Sources.game;
+﻿using System;
+using Assets.Sources.game;
 using Assets.Sources.network;
 using UnityEngine;
 
 namespace Assets.Sources.menu.view
 {
+    [Obsolete("Not used anymore", false)]
     public class MainMenu : MonoBehaviour
     {
         private UIButton banner;
@@ -17,6 +19,8 @@ namespace Assets.Sources.menu.view
         
         public void Start () 
         {
+            Debug.Log("Show main menu.");
+
             var atlas = GameObject.Find("main_menu_atlas").GetComponent<UIToolkit>();
 
             const float padding = 0.12f;

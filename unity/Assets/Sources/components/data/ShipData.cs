@@ -11,8 +11,6 @@ namespace Assets.Sources.components.data
     {
         public int uid;
         public int shipType;
-        [Obsolete("Not used anymore use PlayerData instead", false)]
-        public string playerUid;
         public float AttackSpeed;
         public float AttackDamage;
 
@@ -27,11 +25,7 @@ namespace Assets.Sources.components.data
                 uid = UidGenerator.GetNewUid();
             }
 
-            if (PlayerData == null) {
-				PlayerData = Registry.Player [playerUid].GetComponent<PlayerData> ();
-			} else {
-				playerUid = PlayerData.name;
-			}
+			PlayerData = Registry.Player [PlayerData.uid].GetComponent<PlayerData> ();
 
            	GetComponentInChildren<Renderer>().material.color = PlayerData.color;
         }

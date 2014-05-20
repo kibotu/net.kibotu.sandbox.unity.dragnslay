@@ -9,6 +9,7 @@ namespace Assets.Sources.model
         {
             public const string MainMenuAndIntro = "MainMenuAndIntro";
             public const string TrainingsLevel = "TrainingsLevel";
+            public const string MultiplayerLevel = "MultiplayerLevel";
         }
 
         public static readonly Dictionary<string, GameObject> Player = new Dictionary<string, GameObject>();
