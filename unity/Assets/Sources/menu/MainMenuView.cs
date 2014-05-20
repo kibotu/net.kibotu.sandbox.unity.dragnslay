@@ -30,7 +30,7 @@ namespace Assets.Sources.menu
             TrainingButton = UIButton.create(textureAtlas, "button.png", "button.png", 0, 0);
             TrainingButton.positionFromTop(topMargin, -0.3f);
             TrainingButton.scale = scale;
-            TrainingButton.onTouchUp += button => Application.LoadLevel((int) Registry.Levels.Training);
+            TrainingButton.onTouchUp += button => Application.LoadLevel(Registry.Levels.TrainingsLevel);
 
             MultiplayerButton = UIButton.create(textureAtlas, "button.png", "button.png", 0, 0);
             MultiplayerButton.positionFromTop(topMargin, -0.1f);

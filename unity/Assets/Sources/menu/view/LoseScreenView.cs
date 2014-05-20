@@ -15,7 +15,7 @@ namespace Assets.Sources.menu.view
             var confirm = UIButton.create(atlas, "lose_screen_confirm.png", "lose_screen_confirm.png", 0, 0);
             confirm.positionFromCenter(0.2f, 0);
             confirm.scale = new Vector3(0.52083f, 0.520833f, 0);
-            confirm.onTouchUpInside += button => Application.LoadLevel((int)Registry.Levels.IntroWithMainMenu);
+            confirm.onTouchUpInside += button => Application.LoadLevel(Registry.Levels.MainMenuAndIntro);
         }
     }
 }

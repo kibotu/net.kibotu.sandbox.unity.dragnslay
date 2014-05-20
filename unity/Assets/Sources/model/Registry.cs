@@ -5,9 +5,10 @@ namespace Assets.Sources.model
 {
     public class Registry : MonoBehaviour
     {
-        public enum Levels
+        public static class Levels
         {
-            IntroWithMainMenu, Training
+            public const string MainMenuAndIntro = "MainMenuAndIntro";
+            public const string TrainingsLevel = "TrainingsLevel";
         }
 
         public static readonly Dictionary<string, GameObject> Player = new Dictionary<string, GameObject>();
