@@ -2,35 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/TrainingsLevel.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/TrainingsLevel.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger" afterPath="$PROJECT_DIR$/../net.kibotu.logger" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/combat/Assault.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/combat/Assault.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/IslandData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/IslandData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/MainMenuView.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/MainMenuView.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/Menu.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/Menu.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/PlayerData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/PlayerData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/model/Registry.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/model/Registry.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/depricated/SendUnits.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/depricated/SendUnits.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/ShipData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/ShipData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/WorldData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/WorldData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Resources/Sounds/sky.mp3.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Resources/Sounds/sky.mp3.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/view/NetworkView.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/view/NetworkView.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/SocketHandler.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/SocketHandler.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" afterPath="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\IslandFSM.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/IslandFSM.prefab" />
-      <change type="MOVED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\IslandFSM.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/IslandFSM.prefab.meta" />
-      <change type="MOVED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\menu\view\MainMenu.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/depricated/MainMenu.cs" />
-      <change type="MOVED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\menu\view\MainMenu.cs.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/depricated/MainMenu.cs.meta" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,10 +76,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="754" column="86" selection-start="23824" selection-end="23824" vertical-scroll-proportion="0.5291971" vertical-offset="12528" max-vertical-offset="15521">
+            <state line="675" column="31" selection-start="21753" selection-end="21753" vertical-scroll-proportion="0.0" vertical-offset="11165" max-vertical-offset="15776">
               <folding />
             </state>
           </provider>
@@ -139,10 +121,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="code.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="17" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
+            <state line="108" column="70" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.46532845" vertical-offset="1581" max-vertical-offset="5967">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server-events.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/server-events.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/layout.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header-includes.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/admin.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="32" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1241">
               <folding />
             </state>
           </provider>
@@ -169,7 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/node_modules/netstat/bin/command/socketio.js" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/node_modules/netstat/bin/command/ajax.js" />
@@ -183,9 +203,10 @@
         <option value="$PROJECT_DIR$/src/net/kibotu/sandbox/unity/android/dragnslay/UnityPlayerNativeActivity.java" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/Logger.java" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/layout.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/main.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
       </list>
     </option>
   </component>
@@ -278,16 +299,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dragnslay-android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,6 +314,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ChatServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,6 +379,48 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DragnSlay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChatServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -422,7 +489,7 @@
       <recent name="D:\programming\chat\ChatServer" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.DragnSlay - Server - Ethernet">
+  <component name="RunManager" selected="Node.js.DragnSlay - Server - WAN">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -675,6 +742,8 @@
       <workItem from="1400597562206" duration="64000" />
       <workItem from="1400597663243" duration="3182000" />
       <workItem from="1400604587520" duration="5067000" />
+      <workItem from="1400614056337" duration="7083000" />
+      <workItem from="1400655698861" duration="703000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -684,7 +753,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90358000" />
+    <option name="totallyTimeSpent" value="98144000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -708,7 +777,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -730,8 +799,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19947916" sideWeight="0.5694444" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38790408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19947916" sideWeight="0.5694444" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38790408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -770,20 +839,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="46" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15521">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/tests/net/kibotu/logger/android/LogcatLoggerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="391">
@@ -992,11 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/server-events.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.69572955" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/socket.io/lib/util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6939502" vertical-offset="0" max-vertical-offset="0" />
@@ -1052,25 +1102,6 @@
         <state line="27" column="41" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.60883796" vertical-offset="2" max-vertical-offset="935" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="17" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/tests/net/kibotu/logger/android/LogcatLoggerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
@@ -1092,9 +1123,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/server-events.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/tests/net/kibotu/logger/android/LogcatLoggerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="754" column="86" selection-start="23824" selection-end="23824" vertical-scroll-proportion="0.5291971" vertical-offset="12528" max-vertical-offset="15521">
+        <state line="675" column="31" selection-start="21753" selection-end="21753" vertical-scroll-proportion="0.0" vertical-offset="11165" max-vertical-offset="15776">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/admin.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="32" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="70" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.46532845" vertical-offset="1581" max-vertical-offset="5967">
           <folding />
         </state>
       </provider>

@@ -667,6 +667,12 @@ io.sockets.on('connection', function (socket) {
     var address = socket.handshake.address;
     console.log("New connection from " + address.address + ":" + address.port);
 
+    setInterval(function() {
+        socket.startTime = Date.now();
+        socket.emit('message', { message: 'ping'});
+        console.log("starttime: " + socket.startTime);
+    }, 2000);
+
     // handshake unique id, which persists over multiple connections
     // 1) tell client its uid
     socket.tmpUid = hat();
@@ -681,12 +687,21 @@ io.sockets.on('connection', function (socket) {
         console.log("Response:", data);
     });
 
+    // pong
+    socket.on('pong', function (data) {
+        data = parseJson(data);
+        var latency = Date.now() -  socket.startTime;
+        socket.emit('message', { message: 'latency', latency: latency});
+        console.log(latency);
+    });
+
     // ping
     socket.on('ping', function (data) {
 
         data = parseJson(data);
 
-        socket.emit('pong', data);
+        //socket.emit('pong', data);
+        socket.emit('message', { message: 'pong'});
         console.log("ping? => pong");
     });
 

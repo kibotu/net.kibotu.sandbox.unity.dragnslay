@@ -100,6 +100,17 @@ $( document ).ready(function() {
             console.log("Response:", data);
 
             if(data.message) {
+
+                if(data.message == 'ping') {
+                    socket.emit('pong');
+                    return;
+                }
+
+                if(data.message == 'latency') {
+                    $("#latency").html("[" + data.latency + " ms]");
+                    return;
+                }
+
                 messages.push(data);
                 var html = '';
                 for(var i=0; i < messages.length; ++i) {

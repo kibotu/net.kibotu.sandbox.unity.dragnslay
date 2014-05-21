@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Sources.components.data;
 using Assets.Sources.utility;
 using Newtonsoft.Json.Linq;
+using SimpleJson;
 using SocketIO.Client;
 using UnityEngine;
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
@@ -36,6 +37,13 @@ namespace Assets.Sources.network
         {
             messageQueue = new Queue<MessageData>();
         }
+
+        public static SocketHandler SharedConnection
+        {
+            get { return _instance ?? (_instance = new GameObject("SocketHandler").AddComponent<SocketHandler>()); }
+        }
+
+        #region connect
 
         public static void Connect(string host, int port)
         {
@@ -82,21 +90,9 @@ namespace Assets.Sources.network
             #endif
         }
 
-        private void SetDelegates()
-        {
-            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+        #endregion
 
-            _socket.On("connect", (args, callback) => ConnectCallback("Successfully connected. " + _socket.Name));
-
-            _socket.On("message", (args, callback) => { foreach (JObject t in args) JSONCallback(t); });
-            
-            #endif
-        }
-
-        public static SocketHandler SharedConnection
-        {
-            get { return _instance ?? (_instance = new GameObject("SocketHandler").AddComponent<SocketHandler>()); }
-        }
+        #region emit
 
         /// <summary>
         /// Emitting a message to the server.
@@ -113,6 +109,47 @@ namespace Assets.Sources.network
             var msg = new MessageData {name = name, message = message};
             Debug.Log("Enqueue " + msg.name + " " + msg.message);
             SharedConnection.messageQueue.Enqueue(msg);
+        }
+
+        public static void EmitNow(string name, JObject message)
+        {
+            SharedConnection.EmitNow(name, message.ToString());
+        }
+
+        public void EmitNow(string name, string message)
+        {
+            SharedConnection.EmitNow(new MessageData { name = name, message = message });
+        }
+
+        protected void EmitNow(MessageData msg)
+        {
+            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+               _socket.Emit(msg.name, msg.message);
+            #elif UNITY_ANDROID
+                _socket.CallStatic("Emit", msg.name, msg.message);
+            #endif
+        }
+
+        public void Update()
+        {
+            while (messageQueue.Count > 0) // todo merge multiple messages into one
+            {
+                EmitNow(messageQueue.Dequeue());
+            }
+        }
+
+        #endregion
+
+        #region delegates
+
+        private void SetDelegates()
+        {
+            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+
+            _socket.On("connect", (args, callback) => ConnectCallback("Successfully connected. " + _socket.Name));
+            _socket.On("message", (args, callback) => { foreach (JObject t in args) JSONCallback(t); });
+
+            #endif
         }
 
         protected void ConnectCallback(string error)
@@ -150,17 +187,6 @@ namespace Assets.Sources.network
             OnConnectionFailedEvent(message);
         }
 
-        public void Update()
-        {
-            while (messageQueue.Count > 0) // todo merge multiple messages into one
-            {
-                var msg = messageQueue.Dequeue();
-                #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-                _socket.Emit(msg.name, msg.message);
-                #elif UNITY_ANDROID
-                    _socket.CallStatic("Emit", msg.name, msg.message);
-                #endif
-            }
-        }
+        #endregion
     }
 }

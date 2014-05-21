@@ -102,5 +102,30 @@ namespace Assets.Sources.network
                 {"scheduleId",  GameMp.ScheduleId()}
             };   
         }
+
+        public static JObject CreatePing()
+        {
+            return new JObject{
+                {"message",     "ping"},
+                {"packageId",   ++_packageId}
+            };  
+        }
+
+        public static JObject CreatePong()
+        {
+            return new JObject{
+                {"message",     "pong"},
+                {"packageId",   ++_packageId}
+            };
+        }
+
+        public static JObject CreateSchedulePing()
+        {
+            return new JObject{
+                {"message",     "schedule-ping"},
+                {"packageId",   ++_packageId},
+                {"scheduleId",  GameMp.ScheduleId()}
+            };
+        }
     }
 }
