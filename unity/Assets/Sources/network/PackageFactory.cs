@@ -133,5 +133,14 @@ namespace Assets.Sources.network
                 {"packageId",   ++_packageId}
             };
         }
+
+        public static JObject CreateReceivedMessage(int packageId, int scheduledId)
+        {
+            return new JObject{
+                {"message",     "acknowledged"},
+                {"packageId",   packageId},
+                {"scheduleId",  scheduledId}
+            };
+        }
     }
 }

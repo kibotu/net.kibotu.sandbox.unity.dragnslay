@@ -176,6 +176,8 @@ $( document ).ready(function() {
             if(useConnectionAlert) createAlert('Reconnecting...', 'alert-info');
         });
 
+        var isInGame = false;
+
         /** RESPONSES **/
         socket.on('message', function (data) {
 
@@ -203,12 +205,18 @@ $( document ).ready(function() {
                     return;
                 }
 
+                if(data.message == 'spawn-unit') {
+                    socket.emit('acknowledged', { message : 'acknowledged', packageId : data.packageId, scheduleId : data.scheduleId });
+                    return;
+                }
+
                 messages.push(data);
                 var html = '';
                 for(var i=0; i < messages.length; ++i) {
                     html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
                     html += JSON.stringify(messages[i].message) + '<br />';
                 }
+
                 if(data.uid) {
                     $("#name").val(data.uid);
                     socket.emit('message', { uid: data.uid });

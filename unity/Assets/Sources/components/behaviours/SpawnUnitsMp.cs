@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
+using Assets.Sources.game;
 using Assets.Sources.network;
 using Newtonsoft.Json.Linq;
+using UnityEngine;
 
 namespace Assets.Sources.components.behaviours
 {
@@ -34,6 +36,9 @@ namespace Assets.Sources.components.behaviours
 
         public override void ResetSpawnTimer()
         {
+            if (!GameMp.IsHost())
+                return;
+
             base.ResetSpawnTimer();
             _fsm.SendEvent("Spawned");
         }

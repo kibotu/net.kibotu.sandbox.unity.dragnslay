@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using Assets.Sources.components.behaviours;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
@@ -12,15 +14,14 @@ namespace Assets.Sources.game
 {
     public abstract class GameMp : Game
     {
-        public int CurrentTurn;
+        public int Turn;
         public float TurnFrequency;
         public int ScheduledTotal;
         public int ScheduledToDo;
         public int ScheduledDone;
-        public int Turn;
         public bool LoggingEnabled = false;
 
-        public readonly static Dictionary<long, Queue<Action>> ExecuteOnMainThreadScheduled = new Dictionary<long, Queue<Action>>();
+        public readonly static Dictionary<long, List<Package>> ExecuteOnMainThreadScheduled = new Dictionary<long, List<Package>>();
 
         public virtual void Start()
         {
@@ -39,7 +40,6 @@ namespace Assets.Sources.game
             base.Update();
 
             // stats for inspector
-            CurrentTurn = (int) Turn;
             ScheduledToDo = ExecuteOnMainThreadScheduled.Count;
 
             // 3) is running?
@@ -153,37 +153,71 @@ namespace Assets.Sources.game
         /// Schedules an action to a specific turn. Adds action to a queue, if there are multiple events at the same turn scheduled.
         /// </summary>
         /// <param name="turn">Turn number.</param>
+        /// <param name="packageId">Package Id.</param>
         /// <param name="action">Action to be executed.</param>
-        public void ScheduleAt(long turn, Action action)
+        /// <param name="isVerified">True if acknowledged.</param>
+        public void ScheduleAt(long turn, int packageId, Action action, bool isVerified = false)
         {
-            ++ScheduledTotal;
+            if(action != null)
+                ++ScheduledTotal;
 
             // see if already an action is scheduld at turn, if so add to queue, if not, create new queue
-            Queue<Action> queue;
+            List<Package> queue;
+            var p = new Package {PackageId = packageId, Action = action, Verified = isVerified};
             ExecuteOnMainThreadScheduled.TryGetValue(turn, out queue);
             if (queue == null)
             {
-                queue = new Queue<Action>();
-                queue.Enqueue(action);
-                ExecuteOnMainThreadScheduled.Add(turn, queue);
+                ExecuteOnMainThreadScheduled.Add(turn, new List<Package> { p });
             }
             else
             {
-                queue.Enqueue(action);
+                Package package = null;
+
+                foreach (var t in queue.Where(t => t.PackageId == packageId))
+                    package = t;
+
+                if (package == null)
+                {
+                    queue.Add(p);
+                }
+                else
+                {
+                    if (package.Action == null)
+                        package.Action = action;
+
+                    if (isVerified)
+                        package.Verified = true;
+                }
             }
+        }
+
+        protected void Verify(int packageId, int scheduledId)
+        {
+            ScheduleAt(scheduledId, packageId, null, true);
+        }
+
+        public void Acknowledge(JObject json)
+        {
+            SocketHandler.EmitNow("acknowledged", PackageFactory.CreateReceivedMessage(json["packageId"].ToObject<int>(), json["scheduleId"].ToObject<int>()));
         }
 
         protected virtual void DoGameTurn()
         {
             // execute all scheduled tasks for this turn
-            Queue<Action> actions;
-            ExecuteOnMainThreadScheduled.TryGetValue(Turn, out actions);
-            if (actions != null)
+            List<Package> queue;
+            ExecuteOnMainThreadScheduled.TryGetValue(Turn, out queue);
+            if (queue != null)
             {
                 // dequeue
-                while (actions.Count > 0)
+                while (queue.Count > 0)
                 {
-                    actions.Dequeue().Invoke();
+                    var package = queue[0];
+                    if (package.Verified)
+                        package.Action.Invoke();
+                    else
+                        Debug.LogError("Scheduled Package " + package.PackageId + " at Turn " + Turn + " not verified. ");
+
+                    queue.Remove(package);
                     if (LoggingEnabled) Debug.Log("Execute scheduled action at turn: " + Turn);
                     ++ScheduledDone;
                 }
@@ -203,9 +237,9 @@ namespace Assets.Sources.game
             return ((GameMp)Shared).Turn + 2;
         }
 
-        public bool IsHost()
+        public static bool IsHost()
         {
-            return HostUid == ClientUid;
+            return Shared.HostUid == Shared.ClientUid;
         }
 
         public abstract void OnJSONEvent(JObject message);

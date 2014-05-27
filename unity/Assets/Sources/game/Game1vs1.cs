@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Runtime.InteropServices;
 using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.combat;
 using Assets.Sources.components.data;
@@ -34,12 +36,17 @@ namespace Assets.Sources.game
 
         public override void OnJSONEvent(JObject json)
         {
-            Debug.Log("message : " + json);
+//            Debug.Log("message : " + json);
 
             var message = json["message"].ToString();
 
+            if (message.Equals("acknowledged"))
+            {
+                Verify(json["packageId"].ToObject<int>(), json["scheduleId"].ToObject<int>());
+            }
+
             #region move-unit
-            if (message.Equals("move-unit"))
+            else if (message.Equals("move-unit"))
             {
                 var target = Registry.Islands[json["target"].ToObject<int>()];
 
@@ -58,6 +65,8 @@ namespace Assets.Sources.game
                         Debug.Log("move " + shipUid + " to " + target.GetComponent<IslandData>().Uid);
                     });
                 }
+
+                Acknowledge(json);
             }
             #endregion
 
@@ -70,7 +79,7 @@ namespace Assets.Sources.game
                     var ship = spawn;
                     Debug.Log("spawn units scheduled at: " + json["scheduleId"]);
 
-                    ScheduleAt(json["scheduleId"].ToObject<long>(), () =>
+                    ScheduleAt(json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
                         var island = Registry.Islands[ship["island_uid"].ToObject<int>()];
@@ -112,6 +121,8 @@ namespace Assets.Sources.game
                         Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.Uid + "|type=" + islandData.IslandType + "] for player [" + shipData.PlayerData.uid + "]");
                     });
                 }
+
+                Acknowledge(json);
             }
             #endregion
 
@@ -210,8 +221,6 @@ namespace Assets.Sources.game
             }
             else if (message.Equals("turn-done"))
             {
-                Debug.Log("turn done message received");
-
                 // can be done on cached player datas and therefore doesn't need the main thread => timing improvmemt one loop less
                 ExecuteOnMainThread.Enqueue(() =>
                 {
@@ -250,12 +259,12 @@ namespace Assets.Sources.game
             }
             #endregion
 
-
             else
             {
                 // todo more events 
                 Debug.Log("Unhandled Message: " + json);
             }
+
         }
     }
 }

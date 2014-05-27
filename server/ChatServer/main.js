@@ -787,6 +787,12 @@ io.sockets.on('connection', function (socket) {
         sendTextMessageInRoomToEveryoneElse(socket, parseJson(data));
     });
 
+    socket.on('acknowledged', function(data) {
+        console.log("acknowledged stringify " + JSON.stringify(data));
+        console.log("acknowledged parseJson " + parseJson(data));
+        sendTextMessageInRoomToEveryoneElse(socket, parseJson(data));
+    });
+
     socket.on('client-game-ready', function(data) {
 
         console.log("Receiving client-game-ready");

@@ -24,7 +24,7 @@ namespace Assets.Sources.network
         public event Action<String> OnReconnectEvent;
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
-        public bool LoggingEnabled = true;
+        public bool LoggingEnabled = false;
 
         public string Ip = "undefined";
 
