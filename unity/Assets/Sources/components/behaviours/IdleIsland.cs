@@ -60,7 +60,7 @@ namespace Assets.Sources.components.behaviours
             );
         }
 	
-        public void Update () {
+        public void FixedUpdate () {
 
             transform.localRotation = originalRotation * Quaternion.Euler(
                 rotation.x * Mathf.Sin(Time.time * rotSpeed.x), 
