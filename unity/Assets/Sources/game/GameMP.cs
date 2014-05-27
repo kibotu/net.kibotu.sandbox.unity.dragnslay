@@ -17,7 +17,7 @@ namespace Assets.Sources.game
         public int ScheduledTotal;
         public int ScheduledToDo;
         public int ScheduledDone;
-        public long Turn;
+        public int Turn;
         public bool LoggingEnabled = false;
 
         public readonly static Dictionary<long, Queue<Action>> ExecuteOnMainThreadScheduled = new Dictionary<long, Queue<Action>>();
@@ -125,6 +125,8 @@ namespace Assets.Sources.game
         {
             if(_hasSendTurnDoneMessage) 
                 return;
+
+            Registry.Player[ClientUid].GetComponent<PlayerData>().Turn = Turn;
 
             SocketHandler.EmitNow("turn-done", PackageFactory.CreateDoneMessage(Turn));
 

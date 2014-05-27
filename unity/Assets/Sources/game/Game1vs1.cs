@@ -34,7 +34,7 @@ namespace Assets.Sources.game
 
         public override void OnJSONEvent(JObject json)
         {
-            //Debug.Log("message : " + json);
+            Debug.Log("message : " + json);
 
             var message = json["message"].ToString();
 
@@ -68,6 +68,8 @@ namespace Assets.Sources.game
                 foreach (var spawn in json["spawns"])
                 {
                     var ship = spawn;
+                    Debug.Log("spawn units scheduled at: " + json["scheduleId"]);
+
                     ScheduleAt(json["scheduleId"].ToObject<long>(), () =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
@@ -208,13 +210,15 @@ namespace Assets.Sources.game
             }
             else if (message.Equals("turn-done"))
             {
+                Debug.Log("turn done message received");
+
                 // can be done on cached player datas and therefore doesn't need the main thread => timing improvmemt one loop less
                 ExecuteOnMainThread.Enqueue(() =>
                 {
                     // IMPORTANT handle different player turns
 
                     var playerData = Registry.Player[json["playeruid"].ToString()].GetComponent<PlayerData>();
-                    playerData.Turn = json["turn"].ToObject<long>();
+                    playerData.Turn = json["turn"].ToObject<int>();
                 });
             }
             else if (message.Equals("server-game-ready"))

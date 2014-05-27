@@ -5,7 +5,7 @@ namespace Assets.Sources.components.data
     public class PlayerData : MonoBehaviour
     {
         public string uid;
-        public long Turn;
+        public int Turn;
         public int fbId;
         public Color color;
         public int level;
