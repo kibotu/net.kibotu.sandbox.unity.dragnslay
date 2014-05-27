@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Sources.components.behaviours.camera;
+using UnityEngine;
 
 namespace Assets.Sources.components.behaviours
 {
@@ -10,6 +11,7 @@ namespace Assets.Sources.components.behaviours
         [Range(0,1)]
         [SerializeField]
         public float randomValue */
+
 
         public void Start()
         {

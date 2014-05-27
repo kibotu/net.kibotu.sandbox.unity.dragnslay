@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Assets.Sources.components.data;
 using Assets.Sources.utility;
 using Newtonsoft.Json.Linq;
 using SimpleJson;
 using SocketIO.Client;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
+
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
 #endif
@@ -21,6 +24,7 @@ namespace Assets.Sources.network
         public event Action<String> OnReconnectEvent;
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
+        public bool LoggingEnabled = false;
 
         public string Ip = "undefined";
 
@@ -107,7 +111,8 @@ namespace Assets.Sources.network
         public static void Emit(string name, string message)
         {
             var msg = new MessageData {name = name, message = message};
-            Debug.Log("Enqueue " + msg.name + " " + msg.message);
+            if(SharedConnection.LoggingEnabled) 
+                Debug.Log("Enqueue '" + msg.name + "' " + msg.message);
             SharedConnection.messageQueue.Enqueue(msg);
         }
 
@@ -128,6 +133,9 @@ namespace Assets.Sources.network
             #elif UNITY_ANDROID
                 _socket.CallStatic("Emit", msg.name, msg.message);
             #endif
+
+            if(LoggingEnabled) 
+                Debug.Log("EmitNow '" + msg.name + "' " + msg.message);
         }
 
         public void Update()
@@ -137,7 +145,6 @@ namespace Assets.Sources.network
                 EmitNow(messageQueue.Dequeue());
             }
         }
-
         #endregion
 
         #region delegates

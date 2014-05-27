@@ -9,6 +9,10 @@ namespace Assets.Sources.menu
         public void Start()
         {
 //            ShowMainMenu();
+
+            // settings
+            Application.targetFrameRate = 30;
+
         }
 
         public void ShowMainMenu()

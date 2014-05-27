@@ -1,4 +1,9 @@
-﻿using Assets.Sources.components.data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Assets.Sources.components.data;
+using Assets.Sources.model;
+using Assets.Sources.network;
 using Assets.Sources.states;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -7,17 +12,22 @@ namespace Assets.Sources.game
 {
     public abstract class GameMp : Game
     {
-        public static string HostUid;
+        public int CurrentTurn;
         public float TurnFrequency;
-        public static long Turn;
+        public int ScheduledTotal;
+        public int ScheduledToDo;
+        public int ScheduledDone;
+        public long Turn;
+        public bool LoggingEnabled = false;
 
-        public void Start()
+        public readonly static Dictionary<long, Queue<Action>> ExecuteOnMainThreadScheduled = new Dictionary<long, Queue<Action>>();
+
+        public virtual void Start()
         {
             // 1) creating game
-            _gameState = GameState.Creating;
+            GameState = GameState.Creating;
             StartTime = 0;
             Turn = 0;
-            TurnFrequency = 1000;
         }
 
         /**
@@ -28,8 +38,12 @@ namespace Assets.Sources.game
         {
             base.Update();
 
+            // stats for inspector
+            CurrentTurn = (int) Turn;
+            ScheduledToDo = ExecuteOnMainThreadScheduled.Count;
+
             // 3) is running?
-            if (_gameState != GameState.Running)
+            if (GameState != GameState.Running)
                 return;
 
             // accept player commands
@@ -43,14 +57,14 @@ namespace Assets.Sources.game
             else
             {
                 // yes  ->  'done' message & timing & count
-                doneMessage();
+                DoneMessage();
                 Timing();
                 Count();
                 // increment 'command turn'
                 incrementCommandTurn();
 
                 // 'done' message for all players? 
-                if (!doneMessageOfAllPlayer())
+                if (!DoneMessageOfAllPlayer())
                 {
                     // no   -> process drop & timeout checks
                     processDrop();
@@ -59,7 +73,7 @@ namespace Assets.Sources.game
                 else
                 {
                     // yes  -> advance turn counter
-                    advanceTurnCounter();
+                    AdvanceTurnCounter();
                     // adjust timing for new turn
                     adjustTimingForNewTurn();
                     // do game turn (render, etc.)
@@ -71,7 +85,7 @@ namespace Assets.Sources.game
 
         private void checkTimeOut()
         {
-
+            // what happens if someone misses a 'turn-done' message?
         }
 
         private void processDrop()
@@ -79,9 +93,15 @@ namespace Assets.Sources.game
 
         }
 
-        private bool doneMessageOfAllPlayer()
+        private bool DoneMessageOfAllPlayer()
         {
-            return true;
+            var hasTurnDone = false;
+            foreach (var playerData in Registry.Player.Values.Select(player => player.GetComponent<PlayerData>()).Where(playerData => playerData.playerType != PlayerData.PlayerType.Neutral))
+            {
+                hasTurnDone = playerData.Turn == Turn;
+            }
+
+            return hasTurnDone;
         }
 
         private void incrementCommandTurn()
@@ -96,12 +116,19 @@ namespace Assets.Sources.game
 
         private void Timing()
         {
-
+            StartTime -= TurnFrequency;
         }
 
-        private void doneMessage()
-        {
+        private bool _hasSendTurnDoneMessage = false;
 
+        private void DoneMessage()
+        {
+            if(_hasSendTurnDoneMessage) 
+                return;
+
+            SocketHandler.EmitNow("turn-done", PackageFactory.CreateDoneMessage(Turn));
+
+            _hasSendTurnDoneMessage = true;
         }
 
         private void analyzeGameAndPingSpeed()
@@ -117,19 +144,61 @@ namespace Assets.Sources.game
 
         private void adjustTimingForNewTurn()
         {
-            StartTime -= TurnFrequency;
+            
         }
 
-        protected abstract void DoGameTurn();
+        /// <summary>
+        /// Schedules an action to a specific turn. Adds action to a queue, if there are multiple events at the same turn scheduled.
+        /// </summary>
+        /// <param name="turn">Turn number.</param>
+        /// <param name="action">Action to be executed.</param>
+        public void ScheduleAt(long turn, Action action)
+        {
+            ++ScheduledTotal;
 
-        private void advanceTurnCounter()
+            // see if already an action is scheduld at turn, if so add to queue, if not, create new queue
+            Queue<Action> queue;
+            ExecuteOnMainThreadScheduled.TryGetValue(turn, out queue);
+            if (queue == null)
+            {
+                queue = new Queue<Action>();
+                queue.Enqueue(action);
+                ExecuteOnMainThreadScheduled.Add(turn, queue);
+            }
+            else
+            {
+                queue.Enqueue(action);
+            }
+        }
+
+        protected virtual void DoGameTurn()
+        {
+            // execute all scheduled tasks for this turn
+            Queue<Action> actions;
+            ExecuteOnMainThreadScheduled.TryGetValue(Turn, out actions);
+            if (actions != null)
+            {
+                // dequeue
+                while (actions.Count > 0)
+                {
+                    actions.Dequeue().Invoke();
+                    if (LoggingEnabled) Debug.Log("Execute scheduled action at turn: " + Turn);
+                    ++ScheduledDone;
+                }
+                // remove actions when done
+                ExecuteOnMainThreadScheduled.Remove(Turn);
+            }
+            _hasSendTurnDoneMessage = false;
+        }
+
+        private void AdvanceTurnCounter()
         {
             ++Turn;
         }
 
-        internal static long ScheduleId()
+        public static long ScheduleId()
         {
-            return Turn + 2;
+            return ((GameMp)Shared).Turn + 2;
         }
 
         public bool IsHost()

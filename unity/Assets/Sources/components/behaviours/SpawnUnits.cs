@@ -2,65 +2,54 @@
 using Assets.Sources.components.data;
 using Assets.Sources.game;
 using Assets.Sources.model;
-using Assets.Sources.network;
 using Assets.Sources.utility;
-using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Assets.Sources.components.behaviours
 {
     public class SpawnUnits : MonoBehaviour
     {
-        private float _startTime;
+        public float _startTime;
         public IslandData Island;
-        private int _initAmountChildren;
 
-        public float StartTime
-        {
-            get { return Island.ShipBuildTime() - _startTime; }
-        }
-
-        public void Start()
+        public virtual void Start()
         {
             _startTime = 0;
-            Island = GetComponent<IslandData>();
-            _initAmountChildren = transform.childCount;
+
+            if(Game.IsSinglePlayer())
+                Island = GetComponent<IslandData>();
         }
 
-        public void FixedUpdate ()
+        private bool HasReachedMaxSpawn()
         {
-            if (!Game.IsRunning()) return;
+            return Game.Shared.World.MaxPopulationLimitReached() || IslandData.AmountFriendlyUnits(Island) >= Island.MaxSpawn;
+        }
 
+        public virtual void FixedUpdate()
+        {
+            // 1) check against polulation limits
+            if (HasReachedMaxSpawn())
+            {
+                _startTime = 0;
+                return;
+            }
+
+            // 2) check against spawn time
             _startTime += Time.deltaTime;
             if (_startTime < Island.ShipBuildTime()) return;
-            _startTime -= Island.ShipBuildTime();
 
-            // ship can already have other stuff
-            if (transform.childCount >= _initAmountChildren + Island.maxSpawn) return;
-
-            if (Game.IsSinglePlayer())
-            {
-                SpawnUnit();
-            }
-            else
-            {
-                SocketHandler.Emit("spawn-unit", PackageFactory.CreateSpawnMessage(
-                    new[] { new JObject
-                    {
-                        {"island_uid", gameObject.GetComponent<IslandData>().uid},
-                        {"uid" , -1}
-                    }}));
-            }
+            // 3) trigger spawn
+            Spawn();
         }
 
-        public void SpawnUnit()
+        public virtual void Spawn()
         {
             var shipUid = UidGenerator.GetNewUid();
-            var island = Registry.Islands[gameObject.GetComponent<IslandData>().uid];
+            var island = Registry.Islands[gameObject.GetComponent<IslandData>().Uid];
             var islandData = island.GetComponent<IslandData>();
 
             // 1) create ship by type
-            var go = GameObjectFactory.CreateShip(shipUid, islandData.shipType, islandData.PlayerData.playerType);
+            var go = GameObjectFactory.CreateShip(shipUid, islandData.ShipType, islandData.PlayerData.playerType);
 
             // 2) append ship at island
             go.transform.Translate(island.transform.position);
@@ -68,7 +57,7 @@ namespace Assets.Sources.components.behaviours
 
             // 3) set ship data
             var shipData = go.AddComponent<ShipData>();
-            shipData.shipType = islandData.shipType;
+            shipData.shipType = islandData.ShipType;
             shipData.uid = shipUid;
             shipData.PlayerData = islandData.PlayerData;
 
@@ -83,7 +72,16 @@ namespace Assets.Sources.components.behaviours
             go.AddComponent<Assault>();
             go.AddComponent<Defence>();
 
+            // 7) reset spawn timer
+            ResetSpawnTimer();
+
             // Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType  + "] for player [" + shipData.playerUid + "]");
+        }
+
+        public virtual void ResetSpawnTimer()
+        {
+            //Debug.Log("ShipBuildTime: " + Island.ShipBuildTime());
+            _startTime -= Island.ShipBuildTime();
         }
     }
 }

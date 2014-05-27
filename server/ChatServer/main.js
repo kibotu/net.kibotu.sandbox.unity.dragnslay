@@ -380,27 +380,25 @@ process.argv.forEach(function (val, index, array) {
 });
 
 // development
-server.configure('development', function(){
-    server.set('network_interface', process.argv[2] ? process.argv[2] : 'Ethernet');  // LAN: 'Ethernet', WLAN: 'Wi-Fi', WAN: 'ip'
-    server.set('ip_dirty', process.argv[3] ? process.argv[3] : false);
-    server.set('tcp_port', 1337);
-    server.set('udp_port', 1338);
-    server.set('views', __dirname + '/views');
-    server.set('view engine', 'jade');
-    server.use(express.errorHandler());
-    server.locals.pretty = true;
-    server.use(express.favicon());
-    server.use(express.logger('dev'));
-    server.use(express.cookieParser('keyboard unicorn'));
-    server.use(express.urlencoded());
-    server.use(express.json());
-    server.use(express.methodOverride());
-    server.use(express.session({secret: 'keyboard unicorn', key: 'express.sid'}));
-    // server.use(function (req, res) { res.end('<h2>Hello, your session id is ' + req.sessionID + '</h2>');  });
-    server.use(server.router);
-    server.use(express.static(path.join(__dirname, 'public')));
-    server.use(express.static(__dirname + '/components'));
-});
+server.set('network_interface', process.argv[2] ? process.argv[2] : 'Ethernet');  // LAN: 'Ethernet', WLAN: 'Wi-Fi', WAN: 'ip'
+server.set('ip_dirty', process.argv[3] ? process.argv[3] : false);
+server.set('tcp_port', 1337);
+server.set('udp_port', 1338);
+server.set('views', __dirname + '/views');
+server.set('view engine', 'jade');
+//server.use(express.errorHandler());
+server.locals.pretty = true;
+//server.use(express.favicon());
+//server.use(express.logger('dev'));
+//server.use(express.cookieParser('keyboard unicorn'));
+//server.use(express.urlencoded());
+//server.use(express.json());
+//server.use(express.methodOverride());
+//server.use(express.session({secret: 'keyboard unicorn', key: 'express.sid'}));
+// server.use(function (req, res) { res.end('<h2>Hello, your session id is ' + req.sessionID + '</h2>');  });
+//server.use(server.router);
+server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(__dirname + '/components'));
 
 server.get('/', routes.index);
 server.get('/users', user.list);
@@ -542,6 +540,10 @@ var sendAllInRoomTextMessage = function(socket, messageChannel, messageSocket) {
     socket.broadcast.to(socket.room).emit('message',messageChannel);
 };
 
+var sendTextMessageInRoomToEveryoneElse = function(socket, messageChannel) {
+    socket.broadcast.to(socket.room).emit("message",messageChannel);
+};
+
 // usernames which are currently connected to the chat
 var users = {};
 
@@ -670,7 +672,6 @@ io.sockets.on('connection', function (socket) {
     setInterval(function() {
         socket.startTime = Date.now();
         socket.emit('message', { message: 'ping'});
-        console.log("starttime: " + socket.startTime);
     }, 2000);
 
     // handshake unique id, which persists over multiple connections
@@ -779,6 +780,11 @@ io.sockets.on('connection', function (socket) {
 
         // 3) update rooms
         updateRooms();
+    });
+
+    socket.on('turn-done', function(data) {
+        //socket.emit('message',parseJson(data));
+        sendTextMessageInRoomToEveryoneElse(socket, parseJson(data));
     });
 
     socket.on('client-game-ready', function(data) {

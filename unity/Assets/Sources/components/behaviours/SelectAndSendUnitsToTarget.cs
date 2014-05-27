@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Sources.components.behaviours.camera;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.utility;
@@ -15,16 +16,18 @@ namespace Assets.Sources.components.behaviours
         private readonly Color _colorHighlight = new Color(0.5f, 0.5f, 0.5f);
         public IslandData IslandData;
         private LineRenderer _lineRenderer;
+        private MoveCamera cameraMovement;
 
         public int Uid
         {
-            get { return _uid == -1 ? _uid = GetComponent<IslandData>().uid : _uid; }
+            get { return _uid == -1 ? _uid = GetComponent<IslandData>().Uid : _uid; }
         }
 
         public void Start()
         {
             InitLineRender();
             IslandData = GetComponent<IslandData>();
+            cameraMovement = GameObject.Find("Main Camera").GetComponent<MoveCamera>();
         }
 
         private void DyeSelected()
@@ -41,12 +44,14 @@ namespace Assets.Sources.components.behaviours
         {
             DyeSelected();
             if (!Selected.Contains(Uid)) Selected.Add(Uid);
+            cameraMovement.enabled = false;
         }
 
         public void Deselect()
         {
             RestoreColor();
             Selected.Remove(Uid);
+            cameraMovement.enabled = true;
         }
 
         public void SendUnits()

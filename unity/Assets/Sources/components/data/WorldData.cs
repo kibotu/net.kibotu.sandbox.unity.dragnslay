@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Assets.Sources.game;
-using Assets.Sources.menu;
 using Assets.Sources.model;
 using UnityEngine;
 
@@ -8,6 +7,8 @@ namespace Assets.Sources.components.data
 {
     public class WorldData : MonoBehaviour
     {
+        public readonly int MaxPopulationLimit = 50;
+
         public void Awake()
         {
             Registry.Init();
@@ -58,6 +59,11 @@ namespace Assets.Sources.components.data
                 default:
                     return Color.clear;
             }
+        }
+
+        public bool MaxPopulationLimitReached()
+        {
+            return Registry.Ships.Count >= MaxPopulationLimit;
         }
     }
 }

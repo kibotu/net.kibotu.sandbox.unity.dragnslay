@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Sources.components
 {
+    [Obsolete("Not used anymore", false)]
     internal class CameraZoomPinch : MonoBehaviour
     {
         public float MAXSCALE = 5.0F;

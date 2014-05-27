@@ -35,7 +35,7 @@ namespace Assets.Sources.components.behaviours
         public void Start() {
             if (Math.Abs(Yoffset) < Epsilon) Yoffset = Random.Range(-2f, 2f);
             if(Center == null) Center = transform.parent;
-            if (Math.Abs(Radius) < Epsilon) Radius = Random.Range(5f, 10f);
+            if (Math.Abs(Radius) < Epsilon) Radius = Random.Range(3f, 7f);
             if (Math.Abs(CirculationTerm) < Epsilon) CirculationTerm = Random.Range(4f, 12f);
             if(Heightvariance == Vector2.zero) Heightvariance = new Vector2(-2f, 2f);
             if (Math.Abs(Heightchangetime) < Epsilon) Heightchangetime = CirculationTerm / 2f; 
@@ -60,7 +60,7 @@ namespace Assets.Sources.components.behaviours
         {
             _time += Time.deltaTime;
             Height = ComputeHeightVariation();
-            return RotateAroundCenterY(transform.position, _time, Radius, Center.position, CirculationTerm, Height);
+            return RotateAroundCenterY(transform.position, _time, GetRadius(), Center.position, CirculationTerm, Height);
         }
 
         private float ComputeHeightVariation()
@@ -97,7 +97,7 @@ namespace Assets.Sources.components.behaviours
         public Quaternion GetFinalRotation()
         {
             // beware this is the most complicated way i could come up with to rotate the plane along the tangent of the circle
-            var targetDir = RotateAroundCenterY(transform.position, (_time + CirculationTerm / 360), Radius, Center.position, CirculationTerm, Height) - transform.position;
+            var targetDir = RotateAroundCenterY(transform.position, (_time + CirculationTerm / 360), GetRadius(), Center.position, CirculationTerm, Height) - transform.position;
             var step = 1000 * Time.deltaTime;
             var newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             // Debug.DrawRay(transform.position, newDir, Color.red);
@@ -123,6 +123,11 @@ namespace Assets.Sources.components.behaviours
         public static float Phi(float t, float tu)
         {
             return (Mathf.Abs(tu) < Epsilon) ? 2f * Mathf.PI * t : 2f * Mathf.PI * t / tu;
+        }
+
+        public float GetRadius()
+        {
+            return Radius*transform.lossyScale.x;
         }
     }
 }

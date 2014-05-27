@@ -5,6 +5,88 @@ $( document ).ready(function() {
     var sl = 12; // substring length to shorten names
     var os_stats_update_interval = 30000;
 
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
+
+    var options = {
+        chart: {
+        type: 'spline',
+        animation: Highcharts.svg, // don't animate in old IE
+        marginRight: 10,
+        events: {
+            load: function() {
+
+//                var series = this.series[0];
+//                setInterval(function() {
+//
+//                    var x = (new Date()).getTime(), // current time
+//                    y = 0;
+//                    series.addPoint([x, y], true, true);
+//                }, 1000);
+            }
+        }
+    },
+    title: {
+        text: 'Current Ping Rate'
+    },
+    xAxis: {
+        type: 'datetime',
+            tickPixelInterval: 100
+    },
+    yAxis: {
+        title: {
+            text: 'Milliseconds'
+        },
+        plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+        }]
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>'+ this.series.name +'</b><br/>'+
+                Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+                Highcharts.numberFormat(this.y, 2);
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    series: [{
+        name: 'Ping',
+        marker: {
+            radius: 3
+        },
+        lineWidth: 2,
+        data: (function() {
+            // generate an array of random data
+            var data = [],
+                time = (new Date()).getTime(),
+                i;
+
+//            data.push(time, 0);
+
+            for (i = -100; i <= 0; i++) {
+                data.push({
+                    x: time + i * 1000,
+                    y: 0
+                });
+            }
+            return data;
+        })()
+    }]};
+
+
+    // var chart =  new Highcharts.Chart(options);
+    $('.glview').highcharts(options);
+
 //    $.getJSON("http://www.telize.com/geoip", function(json) {
 //            //console.log(JSON.stringify(json));
 //            console.log(json)
@@ -108,6 +190,16 @@ $( document ).ready(function() {
 
                 if(data.message == 'latency') {
                     $("#latency").html("[" + data.latency + " ms]");
+
+                    var chart = $('.glview').highcharts();
+
+                    chart.series[0].addPoint([ (new Date()).getTime(), data.latency], true, true);
+                    return;
+                }
+
+                if(data.message == 'turn-done') {
+                    data.playeruid = $("#name").val();
+                    socket.emit('turn-done', data);
                     return;
                 }
 

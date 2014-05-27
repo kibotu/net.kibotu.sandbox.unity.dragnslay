@@ -5,6 +5,7 @@ namespace Assets.Sources.components.data
     public class PlayerData : MonoBehaviour
     {
         public string uid;
+        public long Turn;
         public int fbId;
         public Color color;
         public int level;
@@ -26,6 +27,17 @@ namespace Assets.Sources.components.data
         public enum PlayerType
         {
             Player, Offensive, Neutral
+        }
+
+        public static PlayerType GetPlayerType(string type)
+        {
+            switch (type)
+            {
+                case "player" : return PlayerType.Player;
+                case "offensive": return PlayerType.Offensive;
+                case "neutral": 
+                default: return PlayerType.Neutral;
+            }
         }
     }
 }

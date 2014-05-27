@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 // @see asynchronity http://www.dannygoodayle.com/2013/06/11/asynchronous-synchronous-unity-beginners/
@@ -20,7 +21,7 @@ namespace Assets.Sources.utility
         {
             var www = new WWW(url);
             yield return www;
-            action.Invoke(JsonHelper.DeserializeToDictionary(www.text));
+            action.Invoke(JsonHelper.DeserializeToDictionary(Encoding.UTF8.GetString(www.bytes)));
         }
     }
 }

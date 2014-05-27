@@ -1,15 +1,11 @@
-﻿using Assets.Sources.game;
+﻿using System;
+using Assets.Sources.game;
 using Newtonsoft.Json.Linq;
 
 namespace Assets.Sources.network
 {
-    class PackageFactory
+    static class PackageFactory
     {
-        // static 
-        private PackageFactory()
-        {
-        }
-
         private static long _packageId;
 
         public static JObject CreateHelloWorldMessage()
@@ -125,6 +121,16 @@ namespace Assets.Sources.network
                 {"message",     "schedule-ping"},
                 {"packageId",   ++_packageId},
                 {"scheduleId",  GameMp.ScheduleId()}
+            };
+        }
+
+        public static JObject CreateDoneMessage(long turn)
+        {
+            return new JObject{
+                {"message",     "turn-done"},
+                {"turn",        turn},
+                {"playeruid",   Game.Shared.ClientUid},
+                {"packageId",   ++_packageId}
             };
         }
     }

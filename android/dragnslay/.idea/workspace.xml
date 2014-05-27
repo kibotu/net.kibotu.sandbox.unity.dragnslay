@@ -2,17 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\CameraTouchController.cs" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\CameraTouchController.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\CameraZoomPinch.cs" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\CameraZoomPinch.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\PlayMaker\Screenshots\Scenes.TrainingsLevel.PropperIsland.FSM.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\PlayMaker\Screenshots\Scenes.playmakermove.IslandFSM.FSM (Prefab).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\PlayMaker\Screenshots\Scenes.playmakermove.PropperIsland.FSM.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/IslandFSM.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/IslandFSM.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/view/NetworkView.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/view/NetworkView.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/PapershipFSM.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/PapershipFSM.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../resources" afterPath="$PROJECT_DIR$/../../resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/combat/Assault.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/combat/Assault.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/IslandData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/IslandData.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/Menu.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/Menu.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/utility/NetworkHelper.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/utility/NetworkHelper.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/Orbiting.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/Orbiting.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/PlayerData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/PlayerData.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectAndSendUnitsToTarget.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectAndSendUnitsToTarget.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/depricated/SendUnits.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/depricated/SendUnits.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/SocketHandler.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/SocketHandler.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" afterPath="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SpawnIsland.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SpawnIsland.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SpawnUnits.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SpawnUnits.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/WorldData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/WorldData.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade" afterPath="$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/package.json" afterPath="$PROJECT_DIR$/../../server/ChatServer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/views/preview.jade" afterPath="$PROJECT_DIR$/../../server/ChatServer/views/preview.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameMp.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameMp.cs" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,94 +100,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="675" column="31" selection-start="21753" selection-end="21753" vertical-scroll-proportion="0.0" vertical-offset="11165" max-vertical-offset="15776">
+            <state line="928" column="22" selection-start="29249" selection-end="29249" vertical-scroll-proportion="0.81386864" vertical-offset="15330" max-vertical-offset="15878">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogcatLoggerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/tests/net/kibotu/logger/android/LogcatLoggerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1003">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllTests.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsoleLogger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="901">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/game/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="code.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="code.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="70" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.46532845" vertical-offset="1581" max-vertical-offset="5967">
+            <state line="364" column="13" selection-start="11699" selection-end="11704" vertical-scroll-proportion="0.0" vertical-offset="6188" max-vertical-offset="7531">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server-events.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/server-events.jade">
+      <file leaf-file-name="chatform.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
+            <state line="8" column="14" selection-start="186" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="374">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/layout.jade">
+      <file leaf-file-name="client-events.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+            <state line="14" column="179" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="952">
+              <folding>
+                <marker date="1386786838077" expanded="true" signature="21:237" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="259:469" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="491:661" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="683:899" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="921:1117" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="1139:1349" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="1371:1600" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="1622:1851" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="1873:1974" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="1996:2100" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="2122:2223" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="2245:2340" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="2362:2442" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="2464:2562" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="2584:2682" placeholder="..." />
+                <marker date="1386786838077" expanded="true" signature="2704:2802" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preview.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/preview.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="58" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global-header-includes.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade">
+      <file leaf-file-name="queue.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/queue.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/admin.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="32" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1241">
+            <state line="0" column="6" selection-start="1" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
               <folding />
             </state>
           </provider>
@@ -204,9 +206,11 @@
         <option value="$PROJECT_DIR$/../../server/ChatServer/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/Logger.java" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/layout.jade" />
-        <option value="$PROJECT_DIR$/../../server/ChatServer/main.js" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/views/admin.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/views/preview.jade" />
         <option value="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
+        <option value="$PROJECT_DIR$/../../server/ChatServer/main.js" />
       </list>
     </option>
   </component>
@@ -299,6 +303,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dragnslay-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,20 +328,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ChatServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DragnSlay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -415,16 +415,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dragnslay-android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -459,7 +449,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="appearance" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -743,7 +733,11 @@
       <workItem from="1400597663243" duration="3182000" />
       <workItem from="1400604587520" duration="5067000" />
       <workItem from="1400614056337" duration="7083000" />
-      <workItem from="1400655698861" duration="703000" />
+      <workItem from="1400655698861" duration="3665000" />
+      <workItem from="1400702377051" duration="11913000" />
+      <workItem from="1400799470386" duration="46302000" />
+      <workItem from="1401014846235" duration="5498000" />
+      <workItem from="1401188406867" duration="1288000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -753,7 +747,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98144000" />
+    <option name="totallyTimeSpent" value="166107000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -777,7 +771,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -799,8 +793,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19947916" sideWeight="0.5694444" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38790408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19947916" sideWeight="0.5694444" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38790408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -839,69 +833,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="74" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="46" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="15521">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="74" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="37" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="15521">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="74" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="37" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="15521">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="74" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="50" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="15521">
@@ -1057,16 +988,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="179" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.035416666" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/utils/uid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="25" selection-start="367" selection-end="367" vertical-scroll-proportion="0.4827586" vertical-offset="0" max-vertical-offset="0" />
@@ -1104,16 +1025,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/tests/net/kibotu/logger/AllTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
+        <state line="10" column="6" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/src/game/game.js">
@@ -1123,54 +1035,129 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/node-highcharts/lib/node-highcharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/node-highcharts/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/node-highcharts/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.6-src/core-modules-sources/lib/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="473" column="9" selection-start="13303" selection-end="13303" vertical-scroll-proportion="0.0" vertical-offset="7531" max-vertical-offset="8908" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/node_modules/express/lib/express.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="12" selection-start="1534" selection-end="1534" vertical-scroll-proportion="0.6666667" vertical-offset="1122" max-vertical-offset="1683" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="61" selection-start="387" selection-end="387" vertical-scroll-proportion="0.18181819" vertical-offset="0" max-vertical-offset="561" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/tests/net/kibotu/logger/android/LogcatLoggerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/desktop/src/net/kibotu/logger/ConsoleLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="36" selection-start="595" selection-end="595" vertical-scroll-proportion="0.18181819" vertical-offset="306" max-vertical-offset="901" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/server-events.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
-          <folding />
-        </state>
+        <state line="23" column="14" selection-start="935" selection-end="935" vertical-scroll-proportion="0.6969697" vertical-offset="0" max-vertical-offset="561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536" />
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../net.kibotu.logger/android/tests/net/kibotu/logger/android/LogcatLoggerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="675" column="31" selection-start="21753" selection-end="21753" vertical-scroll-proportion="0.0" vertical-offset="11165" max-vertical-offset="15776">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/admin.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="32" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1241">
+        <state line="11" column="32" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1241" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/chat.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/chatform.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="186" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/queue.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="6" selection-start="1" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/client-events.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="179" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0" vertical-offset="404" max-vertical-offset="952">
+          <folding>
+            <marker date="1386786838077" expanded="true" signature="21:237" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="259:469" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="491:661" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="683:899" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="921:1117" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="1139:1349" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="1371:1600" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="1622:1851" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="1873:1974" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="1996:2100" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="2122:2223" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="2245:2340" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="2362:2442" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="2464:2562" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="2584:2682" placeholder="..." />
+            <marker date="1386786838077" expanded="true" signature="2704:2802" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/preview.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="58" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="70" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.46532845" vertical-offset="1581" max-vertical-offset="5967">
+        <state line="364" column="13" selection-start="11699" selection-end="11704" vertical-scroll-proportion="0.0" vertical-offset="6188" max-vertical-offset="7531">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="928" column="22" selection-start="29249" selection-end="29249" vertical-scroll-proportion="0.81386864" vertical-offset="15330" max-vertical-offset="15878">
           <folding />
         </state>
       </provider>

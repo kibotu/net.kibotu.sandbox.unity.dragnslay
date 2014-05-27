@@ -1,8 +1,5 @@
-using System;
-using System.Diagnostics;
 using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.combat;
-using Assets.Sources.components.behaviours.depricated;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
@@ -21,7 +18,7 @@ namespace Assets.Sources.game
             GameMode = Mode.Game1vs1;
         }
 
-        public void Start()
+        public override void Start()
         {
             base.Start();
 
@@ -29,22 +26,10 @@ namespace Assets.Sources.game
             SocketHandler.Connect(1337);
         }
 
-        public void stack()
-        {
-
-            StackTrace stackTrace = new StackTrace();           // get call stack
-            StackFrame[] stackFrames = stackTrace.GetFrames();  // get method calls (frames)
-
-            // write call stack method names
-            foreach (StackFrame stackFrame in stackFrames)
-            {
-                Debug.Log(stackFrame.GetMethod().Name);   // write method name
-            }
-        }
-
         protected override void DoGameTurn()
         {
-            Debug.Log("Game-Loop Turn: " + Turn);
+            base.DoGameTurn();
+            //Debug.Log("Game-Loop Turn: " + Turn);
         }
 
         public override void OnJSONEvent(JObject json)
@@ -60,17 +45,17 @@ namespace Assets.Sources.game
 
                 foreach (var shipId in json["ships"])
                 {
-                    var ship_uid = shipId.ToObject<int>();
+                    var shipUid = shipId.ToObject<int>();
                     ExecuteOnMainThread.Enqueue(() =>
                     {
                         // 1) add move component to ship
-                        var move = Registry.Ships[ship_uid].AddComponent<Move>();
-                        move.speed = 25;
+                        var move = Registry.Ships[shipUid].AddComponent<MoveToTarget>();
+                        move.Velocity = 25;
 
                         // 2) set move destination
-                        move.destination = target.transform.FindChild("Sphere");
+                        move.Target = target;
 
-                        Debug.Log("move " + ship_uid + " to " + target.GetComponent<IslandData>().uid);
+                        Debug.Log("move " + shipUid + " to " + target.GetComponent<IslandData>().Uid);
                     });
                 }
             }
@@ -83,22 +68,23 @@ namespace Assets.Sources.game
                 foreach (var spawn in json["spawns"])
                 {
                     var ship = spawn;
-                    ExecuteOnMainThread.Enqueue(() =>
+                    ScheduleAt(json["scheduleId"].ToObject<long>(), () =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
                         var island = Registry.Islands[ship["island_uid"].ToObject<int>()];
                         var islandData = island.GetComponent<IslandData>();
 
                         // 1) create ship by type
-                        var go = GameObjectFactory.CreateShip(shipUid, islandData.shipType, islandData.PlayerData.playerType);
+                        var go = GameObjectFactory.CreateShip(shipUid, islandData.ShipType, islandData.PlayerData.playerType);
 
                         // 2) append ship at island
                         go.transform.Translate(island.transform.position);
                         go.transform.parent = island.transform;
+                        go.transform.localScale = new Vector3(1f, 1f, 1f);
 
                         // 3) set ship data
                         var shipData = go.AddComponent<ShipData>();
-                        shipData.shipType = islandData.shipType;
+                        shipData.shipType = islandData.ShipType;
                         shipData.uid = shipUid;
                         shipData.PlayerData = islandData.PlayerData;
 
@@ -118,7 +104,10 @@ namespace Assets.Sources.game
                             go.AddComponent<Defence>();
                         }
 
-                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.uid + "|type=" + islandData.islandType + "] for player [" + shipData.PlayerData.uid + "]");
+                        // 7) re-enable spawning
+                        island.GetComponentInChildren<SpawnUnitsMp>().ResetSpawnTimer();
+
+                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.Uid + "|type=" + islandData.IslandType + "] for player [" + shipData.PlayerData.uid + "]");
                     });
                 }
             }
@@ -138,6 +127,8 @@ namespace Assets.Sources.game
                     ExecuteOnMainThread.Enqueue(() =>
                         {
                             var player = GameObjectFactory.CreatePlayer(raw["uid"].ToString());
+                            var playerData = player.GetComponent<PlayerData>();
+                            playerData.playerType = PlayerData.GetPlayerType(raw["type"].ToString());
 
                             var islands = raw["islands"];
                             foreach (var data in islands)
@@ -153,7 +144,7 @@ namespace Assets.Sources.game
                                 // 2) set island transformation
                                 var position = island["position"]; // island position
                                 go.transform.position = new Vector3(position[0].ToObject<float>(), position[1].ToObject<float>(), position[2].ToObject<float>());
-                                go.transform.localScale = new Vector3(Scale, Scale, Scale);
+                                go.transform.localScale = new Vector3(Scale,Scale,Scale);
 
                                 // 3) colorize
                                 go.renderer.material.color = World.GetNextPlayerColor();
@@ -162,27 +153,31 @@ namespace Assets.Sources.game
                                 var islandData = go.GetComponent<IslandData>();
 
                                 // 4.1) set uid
-                                islandData.uid = islandUid;
+                                islandData.Uid = islandUid;
 
                                 // 4.2) island type
-                                islandData.islandType = islandType;
+                                islandData.IslandType = islandType;
 
                                 // 4.3) set ownership
-                                islandData.PlayerData = player.GetComponent<PlayerData>();
-                                Debug.Log(islandData.gameObject.name + " belongs to " + islandData.PlayerData.uid);
+                                islandData.PlayerData = playerData;
+                                // Debug.Log(islandData.gameObject.name + " belongs to " + islandData.PlayerData.uid);
 
-                                islandData.maxSpawn = islandMaxSpawn;
+                                islandData.MaxSpawn = islandMaxSpawn;
 
                                 // 4.4) life data
                                 go.AddComponent<LifeData>();
 
                                 // 4.5) set spawning ship types
-                                islandData.shipType = island["ship-type"].ToObject<int>();
-
+                                islandData.ShipType = island["ship-type"].ToObject<int>();
 
                                 // 4.6) host handles spawnings
-                                if(IsHost())
-                                    go.AddComponent<SpawnUnits>();
+                                if (IsHost())
+                                {
+                                    var spawnunits = go.transform.GetComponentInChildren<SpawnUnitsMp>();
+                                    spawnunits.Island = islandData;
+                                    islandData.SpawnRate = 3f;
+                                    spawnunits.enabled = true;
+                                }
 
                                 // 4.7) set prototype ship
                                 }
@@ -194,6 +189,7 @@ namespace Assets.Sources.game
             }
             #endregion
 
+            # region lifecycle
             else if (message.Equals("start-game"))
             {
                 StartGame();
@@ -210,6 +206,30 @@ namespace Assets.Sources.game
             {
                 StopGame();
             }
+            else if (message.Equals("turn-done"))
+            {
+                // can be done on cached player datas and therefore doesn't need the main thread => timing improvmemt one loop less
+                ExecuteOnMainThread.Enqueue(() =>
+                {
+                    // IMPORTANT handle different player turns
+
+                    var playerData = Registry.Player[json["playeruid"].ToString()].GetComponent<PlayerData>();
+                    playerData.Turn = json["turn"].ToObject<long>();
+                });
+            }
+            else if (message.Equals("server-game-ready"))
+            {
+                // request game data
+                SocketHandler.Emit("request", PackageFactory.CreateRequestGameData());
+            }
+            else if (message.Equals("waiting-for-player"))
+            {
+                foreach (var uid in json["player"])
+                {
+                    Debug.Log("Waiting for player: " + uid);
+                }
+            }
+            #endregion
 
             #region authentification
             else if (message.Equals("Welcome!"))
@@ -226,18 +246,7 @@ namespace Assets.Sources.game
             }
             #endregion
 
-            else if (message.Equals("server-game-ready"))
-            {
-                // request game data
-                SocketHandler.Emit("request", PackageFactory.CreateRequestGameData());
-            }
-            else if (message.Equals("waiting-for-player"))
-            {
-                foreach (var uid in json["player"])
-                {
-                    Debug.Log("Waiting for player: " + uid);
-                }
-            }
+
             else
             {
                 // todo more events 

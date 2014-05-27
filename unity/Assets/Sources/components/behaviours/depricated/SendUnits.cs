@@ -23,7 +23,7 @@ namespace Assets.Sources.components.behaviours.depricated
 
             _isDragging = false;
             _isOver = false;
-            _id = gameObject.GetComponent<IslandData>().uid;
+            _id = gameObject.GetComponent<IslandData>().Uid;
             if(_selected == null) _selected = new List<int>();
         }
 
@@ -147,7 +147,7 @@ namespace Assets.Sources.components.behaviours.depricated
                         var plane = Registry.Ships[pair.Key];
 
                         // only move if you own it
-                        if (plane.GetComponent<ShipData>().PlayerData.uid != Game.ClientUid) continue;
+                        if (plane.GetComponent<ShipData>().PlayerData.uid != Game.Shared.ClientUid) continue;
 
                         if (plane.GetComponent<ShipData>().uid != pair.Key)
                             Debug.Log("WARNING! ship id != registry id on move-units");
@@ -157,7 +157,7 @@ namespace Assets.Sources.components.behaviours.depricated
                     }
                 }
                 if (toMovePlanes.Count > 0) 
-                        SocketHandler.Emit("move-unit", PackageFactory.CreateMoveUnitMessage(destination.GetComponent<IslandData>().uid, toMovePlanes.ToArray()));
+                        SocketHandler.Emit("move-unit", PackageFactory.CreateMoveUnitMessage(destination.GetComponent<IslandData>().Uid, toMovePlanes.ToArray()));
             }
         }
 

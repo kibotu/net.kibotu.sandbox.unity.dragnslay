@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Assets.Sources.components
 {
+    [Obsolete("Not used anymore", false)]
     internal class CameraTouchController : MonoBehaviour
     {
         public GameObject Camera;
