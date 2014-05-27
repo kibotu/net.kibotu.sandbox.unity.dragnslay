@@ -1,5 +1,4 @@
-﻿using System;
-using Assets.Sources.game;
+﻿using Assets.Sources.game;
 using Assets.Sources.model;
 using Assets.Sources.utility;
 using UnityEngine;

@@ -65,6 +65,15 @@ namespace Assets.Sources.menu.view
             SocketHandler.SharedConnection.OnDisconnectEvent += OnDisconnectEvent;
         }
 
+        public void ScheduleBlinkOk()
+        {
+            Game.ExecuteOnMainThread.Enqueue(() =>
+            {
+                ok.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete
+                   += () => ok.colorFromTo(0.25f, Color.white, Color.grey, Easing.Bounce.easeInOut);
+            });
+        }
+
         public void OnConnected(string error)
         {
             connected.color = Color.white;

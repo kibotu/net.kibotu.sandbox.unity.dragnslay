@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using Assets.Sources.components.behaviours;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
 using Assets.Sources.states;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using NetworkView = Assets.Sources.menu.view.NetworkView;
 
 namespace Assets.Sources.game
 {
@@ -20,6 +19,7 @@ namespace Assets.Sources.game
         public int ScheduledToDo;
         public int ScheduledDone;
         public bool LoggingEnabled = false;
+        private NetworkView networkView;
 
         public readonly static Dictionary<long, List<Package>> ExecuteOnMainThreadScheduled = new Dictionary<long, List<Package>>();
 
@@ -38,6 +38,8 @@ namespace Assets.Sources.game
         public override void Update()
         {
             base.Update();
+
+            if (networkView == null) networkView = GameObject.Find("Menu").GetComponent<NetworkView>();
 
             // stats for inspector
             ScheduledToDo = ExecuteOnMainThreadScheduled.Count;
@@ -186,7 +188,11 @@ namespace Assets.Sources.game
                         package.Action = action;
 
                     if (isVerified)
+                    {
                         package.Verified = true;
+                        networkView.ScheduleBlinkOk();
+                    }
+                        
                 }
             }
         }
