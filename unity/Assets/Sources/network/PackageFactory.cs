@@ -22,8 +22,6 @@ namespace Assets.Sources.network
         /// 
         /// <param name="ships">All send ships.</param>
         /// <param name="target">Target destination.</param>
-        /// <param name="packetId">package id - must be executed in correct order</param>
-        /// <param name="scheduleId">Target destination.</param>
         /// 
         /// <returns>Generated JsonObject.</returns>
         public static JObject CreateMoveUnitMessage(int target, int[] ships)

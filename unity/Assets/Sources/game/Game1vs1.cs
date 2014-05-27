@@ -40,32 +40,37 @@ namespace Assets.Sources.game
 
             var message = json["message"].ToString();
 
+            #region acknowledge
             if (message.Equals("acknowledged"))
             {
                 Verify(json["packageId"].ToObject<int>(), json["scheduleId"].ToObject<int>());
             }
+            #endregion
 
             #region move-unit
             else if (message.Equals("move-unit"))
             {
                 var target = Registry.Islands[json["target"].ToObject<int>()];
 
-                foreach (var shipId in json["ships"])
+                foreach (var shipUid in json["ships"].Select(shipId => shipId.ToObject<int>()))
                 {
-                    var shipUid = shipId.ToObject<int>();
-                    ExecuteOnMainThread.Enqueue(() =>
+                    var uid = shipUid;
+                    ScheduleAt(json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
                     {
                         // 1) add move component to ship
-                        var move = Registry.Ships[shipUid].AddComponent<MoveToTarget>();
-                        move.Velocity = 25;
+                        var move = Registry.Ships[uid].AddComponent<MoveToTarget>();
+                        
+                        // 2) change speed
+                        move.Velocity = 150f;
 
-                        // 2) set move destination
+                        // 3) set move destination
                         move.Target = target;
 
-                        Debug.Log("move " + shipUid + " to " + target.GetComponent<IslandData>().Uid);
+                        Debug.Log("move " + uid + " to " + target.GetComponent<IslandData>().Uid);
                     });
                 }
 
+                // 4) acknowledge
                 Acknowledge(json);
             }
             #endregion
@@ -118,7 +123,7 @@ namespace Assets.Sources.game
                         // 7) re-enable spawning
                         island.GetComponentInChildren<SpawnUnitsMp>().ResetSpawnTimer();
 
-                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.Uid + "|type=" + islandData.IslandType + "] for player [" + shipData.PlayerData.uid + "]");
+//                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.Uid + "|type=" + islandData.IslandType + "] for player [" + shipData.PlayerData.uid + "]");
                     });
                 }
 

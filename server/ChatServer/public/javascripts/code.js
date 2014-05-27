@@ -210,6 +210,11 @@ $( document ).ready(function() {
                     return;
                 }
 
+                if(data.message == 'move-unit') {
+                    socket.emit('acknowledged', { message : 'acknowledged', packageId : data.packageId, scheduleId : data.scheduleId });
+                    return;
+                }
+
                 messages.push(data);
                 var html = '';
                 for(var i=0; i < messages.length; ++i) {

@@ -669,6 +669,7 @@ io.sockets.on('connection', function (socket) {
     var address = socket.handshake.address;
     console.log("New connection from " + address.address + ":" + address.port);
 
+    // enable latency spam
 //    setInterval(function() {
 //        socket.startTime = Date.now();
 //        socket.emit('message', { message: 'ping'});
@@ -788,8 +789,6 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('acknowledged', function(data) {
-        console.log("acknowledged stringify " + JSON.stringify(data));
-        console.log("acknowledged parseJson " + parseJson(data));
         sendTextMessageInRoomToEveryoneElse(socket, parseJson(data));
     });
 

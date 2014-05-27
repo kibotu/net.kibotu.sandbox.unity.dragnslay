@@ -53,6 +53,7 @@ namespace Assets.Sources.model
         {
             var go = CreateGameObject(Rocket);
             go.AddComponent<RocketMove>();
+            go.transform.localScale = new Vector3(15f, 15f, 15f);
             return go;
         }
 

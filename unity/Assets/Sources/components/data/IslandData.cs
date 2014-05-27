@@ -90,6 +90,20 @@ namespace Assets.Sources.components.data
             return sum == 0 ? 1f : friendly/(float)sum;
         }
 
+        public static ArrayList GetFriendlyShips(IslandData island, string thisUid)
+        {
+            var enemyShips = new ArrayList(island.transform.childCount - 1);
+            for (var i = 0; i < island.transform.childCount; ++i)
+            {
+                var ship = island.transform.GetChild(i).gameObject;
+                var otherShipData = ship.GetComponent<ShipData>(); // possibly cachable
+                if (otherShipData == null) continue; // skip non ship gameobjects
+                if (otherShipData.PlayerData.uid == thisUid)
+                    enemyShips.Add(ship);
+            }
+            return enemyShips;
+        }
+
         public static ArrayList GetEnemyShips(IslandData island, string thisUid)
         {
             var enemyShips = new ArrayList(island.transform.childCount - 1);

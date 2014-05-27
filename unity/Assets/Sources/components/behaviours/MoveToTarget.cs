@@ -6,7 +6,7 @@ namespace Assets.Sources.components.behaviours
     public class MoveToTarget : MonoBehaviour
     {
         public GameObject Target;
-        public float Velocity = 7f;
+        public float Velocity = 20f;
         public float RotationVelocity = 50f;
 
         private Orbiting _orbiting;

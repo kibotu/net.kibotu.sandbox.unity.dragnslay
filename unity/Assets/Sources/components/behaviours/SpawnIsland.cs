@@ -1,4 +1,4 @@
-﻿using Assets.Sources.components.behaviours.camera;
+﻿using Assets.Sources.game;
 using UnityEngine;
 
 namespace Assets.Sources.components.behaviours
@@ -17,6 +17,12 @@ namespace Assets.Sources.components.behaviours
         {
             _waterfall = transform.FindChild("Water Fountain").particleEmitter;
             StopWaterFall();
+
+            // add send units script
+            if (Game.IsSinglePlayer())
+                gameObject.AddComponent<SelectAndSendUnitsToTarget>();
+            else
+                gameObject.AddComponent<SelectAndSendUnitsToTargetMp>();
         }
 
         public void StartWaterFall()

@@ -14,7 +14,7 @@ namespace Assets.Sources.components.behaviours
         private int _uid = -1;
         private Color _oldColor;
         private readonly Color _colorHighlight = new Color(0.5f, 0.5f, 0.5f);
-        public IslandData IslandData;
+        public IslandData Island;
         private LineRenderer _lineRenderer;
         private MoveCamera cameraMovement;
 
@@ -26,7 +26,7 @@ namespace Assets.Sources.components.behaviours
         public void Start()
         {
             InitLineRender();
-            IslandData = GetComponent<IslandData>();
+            Island = GetComponent<IslandData>();
             cameraMovement = GameObject.Find("Main Camera").GetComponent<MoveCamera>();
         }
 
@@ -37,7 +37,7 @@ namespace Assets.Sources.components.behaviours
 
         private void RestoreColor()
         {
-            renderer.material.color = IslandData.PlayerData.color;
+            renderer.material.color = Island.PlayerData.color;
         }
 
         public void Select()
@@ -63,15 +63,20 @@ namespace Assets.Sources.components.behaviours
             // 1) already there
             if (target == null || target == gameObject) return;
 
-            // 3) send own units to destination
+            Send(target);
+        }
+
+        protected virtual void Send(GameObject target)
+        {
+            // 2) send own units to destination
             for (var i = 0; i < transform.childCount; ++i)
             {
-                var papership = transform.GetChild(i);
-                if (papership.name.StartsWith("Papership"))
+                var ship = transform.GetChild(i);
+                if (ship.name.StartsWith("Papership") || ship.name.StartsWith("Steelship"))
                 {
-                    if (papership.GetComponent<ShipData>().PlayerData.playerType == PlayerData.PlayerType.Player && papership.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
+                    if (ship.GetComponent<ShipData>().PlayerData.playerType == PlayerData.PlayerType.Player && ship.GetComponent<PlayMakerFSM>().ActiveStateName != "Moving")
                     {
-                        var move = papership.gameObject.AddComponent<MoveToTarget>();
+                        var move = ship.gameObject.AddComponent<MoveToTarget>();
                         move.Target = target;
                         Deselect();
                     }

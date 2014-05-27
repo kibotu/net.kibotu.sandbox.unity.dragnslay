@@ -219,7 +219,12 @@ namespace Assets.Sources.game
                 {
                     var package = queue[0];
                     if (package.Verified)
-                        package.Action.Invoke();
+                    {
+                        if(package.Action != null) 
+                            package.Action.Invoke();
+                        else
+                            Debug.LogError("Action 'null' for " + package.PackageId);
+                    }
                     else
                         Debug.LogError("Scheduled Package " + package.PackageId + " at Turn " + Turn + " not verified. ");
 
