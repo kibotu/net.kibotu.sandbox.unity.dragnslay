@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\Player\Ai.prefab" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\Player\Ai.prefab.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\Player\Player.prefab" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\Player\Player.prefab.meta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync" afterPath="$PROJECT_DIR$/../AndroidAsync" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/MultiplayerLevel.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger" afterPath="$PROJECT_DIR$/../net.kibotu.logger" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" afterPath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/HUDFPS.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/HUDFPS.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/view/NetworkView.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/menu/view/NetworkView.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/model/Prefabs.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/model/Prefabs.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectAndSendUnitsToTarget.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectAndSendUnitsToTarget.cs" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\Player.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger/android/project.properties" afterPath="$PROJECT_DIR$/../net.kibotu.logger/android/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,7 +70,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="679" column="67" selection-start="21863" selection-end="21863" vertical-scroll-proportion="0.5685885" vertical-offset="11257" max-vertical-offset="15963">
+            <state line="8" column="6" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27037773" vertical-offset="0" max-vertical-offset="16048">
               <folding />
             </state>
           </provider>
@@ -437,7 +421,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="" />
+    <property name="SearchEverywhereHistory" value=")" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -721,7 +705,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet" working-dir="$PROJECT_DIR$/../../server">
+    <configuration default="false" name="DragnSlay - Server - Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet" node-parameters="--expose-gc" working-dir="$PROJECT_DIR$/../../server">
       <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.debug" />
       <RunnerSettings RunnerId="NodeJS.run" />
@@ -729,13 +713,13 @@
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - WAN" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="ip" working-dir="$PROJECT_DIR$/../../server">
+    <configuration default="false" name="DragnSlay - Server - WAN" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="ip" node-parameters="--expose-gc" working-dir="$PROJECT_DIR$/../../server">
       <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi" working-dir="$PROJECT_DIR$/../../server">
+    <configuration default="false" name="DragnSlay - Server - Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi" node-parameters="--expose-gc" working-dir="$PROJECT_DIR$/../../server">
       <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
@@ -829,7 +813,7 @@
       <workItem from="1401188406867" duration="1288000" />
       <workItem from="1401190350508" duration="19141000" />
       <workItem from="1401229331360" duration="731000" />
-      <workItem from="1401265822155" duration="3721000" />
+      <workItem from="1401265822155" duration="6604000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -839,7 +823,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197141000" />
+    <option name="totallyTimeSpent" value="200024000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1249,7 +1233,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="679" column="67" selection-start="21863" selection-end="21863" vertical-scroll-proportion="0.5685885" vertical-offset="11257" max-vertical-offset="15963">
+        <state line="8" column="6" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27037773" vertical-offset="0" max-vertical-offset="16048">
           <folding />
         </state>
       </provider>

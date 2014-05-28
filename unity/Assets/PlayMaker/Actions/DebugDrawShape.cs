@@ -2,7 +2,7 @@ using UnityEngine;
 using HutongGames.PlayMaker;
 
 [ActionCategory(ActionCategory.Debug)]
-[Tooltip("Draw gizmos shape")]
+//[Tooltip("Draw gizmos shape")]
 public class DebugDrawShape : FsmStateAction
 {
 	public enum ShapeType {Sphere, Cube, WireSphere, WireCube}
@@ -11,9 +11,9 @@ public class DebugDrawShape : FsmStateAction
 	public FsmOwnerDefault gameObject;
 	public ShapeType shape;
 	public FsmColor color;
-	[Tooltip("Use this for sphere gizmos")]
+//	[Tooltip("Use this for sphere gizmos")]
 	public FsmFloat radius;
-	[Tooltip("Use this for cube gizmos")]
+//	[Tooltip("Use this for cube gizmos")]
 	public FsmVector3 size;
 	
 	public override void Reset ()

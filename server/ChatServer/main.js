@@ -2,6 +2,12 @@ process.env.NODE_ENV = 'development';
 process.stdout.setEncoding('utf8');
 process.stderr.setEncoding('utf8');
 
+// https://www.npmjs.org/package/memwatch
+// http://simonmcmanus.wordpress.com/2013/01/03/forcing-garbage-collection-with-node-js-and-v8/
+setInterval(function() {
+    global.gc();
+},1000);
+
 // nice to know: http://codetunnel.com/blog/post/9-javascript-tips-you-may-not-know#null-undefined-and-delete
 var nodetime = require('nodetime').profile({
     accountKey: '95c1612507ed5224a07691cfdb47436e9467c146',
@@ -19,13 +25,14 @@ var Enqueue = function(callback) {
     MainQueue.queue.push(callback);
 };
 
+/*
 setInterval(function() {
 
     while(MainQueue.queue.length > 0) {
         MainQueue.queue.shift()();
     }
 
-},16);
+},16);*/
 
 var express = require('express');
 var socketHandler = require('./src/network/sockethandler');
@@ -691,10 +698,8 @@ io.sockets.on('connection', function (socket) {
 
     // pong
     socket.on('pong', function (data) {
-        data = parseJson(data);
         var latency = Date.now() -  socket.startTime;
         socket.emit('message', { message: 'latency', latency: latency});
-        console.log(latency);
     });
 
     // ping

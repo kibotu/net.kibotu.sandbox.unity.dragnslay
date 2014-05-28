@@ -11,7 +11,6 @@ namespace Assets.Sources.menu
 //            ShowMainMenu();
 
             // settings
-            Application.targetFrameRate = 30;
 
         }
 

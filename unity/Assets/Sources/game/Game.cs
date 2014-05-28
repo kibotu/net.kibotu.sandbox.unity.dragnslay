@@ -8,7 +8,10 @@ namespace Assets.Sources.game
 {
     public abstract class Game : MonoBehaviour
     {
-        public float StartTime;
+        [Range(1, 300)]
+        public int TargetFrameRate = 30;
+        public bool VerticalSynchronization = false;
+        protected float StartTime;
         public readonly static Queue<Action> ExecuteOnMainThread = new Queue<Action>();
         public string ClientUid = "Client";
         public string HostUid;
@@ -31,6 +34,8 @@ namespace Assets.Sources.game
 
         public virtual void Update()
         {
+            Application.targetFrameRate = TargetFrameRate;
+            QualitySettings.vSyncCount = VerticalSynchronization ? 1 : 0;
             Time.timeScale = Timescale;
             MainThreadQueue = ExecuteOnMainThread.Count;
 
