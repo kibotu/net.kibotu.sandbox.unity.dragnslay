@@ -12,13 +12,9 @@ namespace Assets.Sources.menu.view
         private UISprite activity;
         private UISprite ok;
         private UISprite error;
-        public GameObject ping;
 
         public void Start ()
         {
-
-            ping = GameObject.Find("Ping");
-
             // @ see http://forum.unity3d.com/threads/87917-Prime31-UIToolkit-Multi-Resolution-GUI-Solution-Ready-for-Use-and-it-s-free/page79
             // @ see http://timshaya.wordpress.com/category/uitoolkit/
 
@@ -91,21 +87,6 @@ namespace Assets.Sources.menu.view
 
         public void OnJSONEvent(JObject json)
         {
-            var message = json["message"].ToString();
-
-            if (message.Equals("ping"))
-            {
-                SocketHandler.EmitNow("pong", PackageFactory.CreatePong());
-            }
-
-            if (message.Equals("latency"))
-            {
-                Game.ExecuteOnMainThread.Enqueue(() =>
-                {
-                    ping.guiText.text = json["latency"].ToString();
-                });
-            }
-
             Game.ExecuteOnMainThread.Enqueue(() =>
             {
                 activity.colorFromTo(0.25f, Color.grey, Color.white, Easing.Bounce.easeInOut).onComplete

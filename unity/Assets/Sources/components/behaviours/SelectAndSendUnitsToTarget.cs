@@ -89,11 +89,17 @@ namespace Assets.Sources.components.behaviours
             var c1 = Color.green;
             var c2 = Color.red;
             const int lengthOfLineRenderer = 2;
+
+            if (gameObject.GetComponent<LineRenderer>())
+            {
+                return;
+            }
+
             _lineRenderer = gameObject.AddComponent<LineRenderer>();
             // @see http://answers.unity3d.com/questions/57303/changing-replacement-shaders-at-runtime.html
             _lineRenderer.material = new Material(Resources.Load("Shader/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
             _lineRenderer.SetColors(c1, c2);
-            _lineRenderer.SetWidth(0.4f, 0.4f);
+            _lineRenderer.SetWidth(20f,20f);
             _lineRenderer.castShadows = false;
             _lineRenderer.receiveShadows = false;
             _lineRenderer.SetVertexCount(lengthOfLineRenderer);
@@ -101,6 +107,11 @@ namespace Assets.Sources.components.behaviours
 
         public void Update()
         {
+            if (_lineRenderer == null)
+            {
+                return;
+            }
+
             if (!Selected.IsEmpty() && Selected.Contains(Uid))
             {
                 _lineRenderer.SetVertexCount(3);

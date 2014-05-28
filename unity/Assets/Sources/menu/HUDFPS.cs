@@ -44,7 +44,7 @@ namespace Assets.Sources.menu
             {
                 // display two fractional digits (f2 format)
                 float fps = accum / frames;
-                string format = System.String.Format("{0:F2} FPS", fps);
+                string format = System.String.Format("{0:F2} Fps", fps);
                 guiText.text = format;
 
                 if (fps < 30)

@@ -670,10 +670,10 @@ io.sockets.on('connection', function (socket) {
     console.log("New connection from " + address.address + ":" + address.port);
 
     // enable latency spam
-//    setInterval(function() {
-//        socket.startTime = Date.now();
-//        socket.emit('message', { message: 'ping'});
-//    }, 2000);
+    setInterval(function() {
+        socket.startTime = Date.now();
+        socket.emit('message', { message: 'ping'});
+    }, 2000);
 
     // handshake unique id, which persists over multiple connections
     // 1) tell client its uid

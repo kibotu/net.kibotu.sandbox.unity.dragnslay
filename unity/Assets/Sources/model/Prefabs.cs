@@ -6,6 +6,7 @@ namespace Assets.Sources.model
 {
     public class Prefabs : MonoBehaviour
     {
+        public GameObject Empty;
         public GameObject Papership;
         public GameObject Steelship;
         public GameObject Island;
@@ -59,12 +60,30 @@ namespace Assets.Sources.model
 
         public GameObject GetNewPlayer()
         {
-            return CreateGameObject(Player);
+            var go = CreateGameObject(Player);
+            AddToPlayers(go);
+            return go;
+        }
+
+        private void AddToPlayers(GameObject go)
+        {
+            var player = GameObject.Find("Players");
+            if (player == null)
+            {
+                var empty = CreateGameObject(Empty);
+                empty.name = "Players";
+                empty.transform.parent = GameObject.Find("Game").transform;
+                go.transform.parent = empty.transform;
+            }
+            else
+                go.transform.parent = player.transform;
         }
 
         public GameObject GetNewAi()
         {
-            return CreateGameObject(Ai);
+            var go = CreateGameObject(Ai);
+            AddToPlayers(go);
+            return go;
         }
 
         public GameObject GetNewShockwave()

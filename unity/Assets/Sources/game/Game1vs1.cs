@@ -28,12 +28,6 @@ namespace Assets.Sources.game
             SocketHandler.Connect(1337);
         }
 
-        protected override void DoGameTurn()
-        {
-            base.DoGameTurn();
-            //Debug.Log("Game-Loop Turn: " + Turn);
-        }
-
         public override void OnJSONEvent(JObject json)
         {
 //            Debug.Log("message : " + json);
