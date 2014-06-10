@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Sources.components.data
@@ -6,6 +7,7 @@ namespace Assets.Sources.components.data
     {
         public string uid;
         public int Turn;
+        public List<int> AckwowledgedPackages;
         public int fbId;
         public Color color;
         public int level;
@@ -21,7 +23,7 @@ namespace Assets.Sources.components.data
 
         public void Start()
         {
-          
+            AckwowledgedPackages = new List<int>();
         }
 
         public enum PlayerType

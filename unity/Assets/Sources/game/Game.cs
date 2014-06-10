@@ -22,7 +22,7 @@ namespace Assets.Sources.game
         public int MainThreadQueue;
 
         public enum Mode { SinglePlayer, Game1vs1, Game2vs2 }
-        public static Mode GameMode = Mode.SinglePlayer;
+        public Mode GameMode = Mode.SinglePlayer;
 
         protected static GameState GameState;
 
@@ -75,7 +75,7 @@ namespace Assets.Sources.game
 
         public static bool IsSinglePlayer()
         {
-            return GameMode == Mode.SinglePlayer;
+            return Shared.GameMode == Mode.SinglePlayer;
         }
     }
 }

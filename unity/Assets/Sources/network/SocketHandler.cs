@@ -17,6 +17,8 @@ namespace Assets.Sources.network
 {
     class SocketHandler : MonoBehaviour
     {
+        #region delegates
+
         public event Action<String> OnConnectEvent;
         public event Action<JObject> OnJSONEvent;
         public event Action<String> OnStringEvent;
@@ -25,6 +27,10 @@ namespace Assets.Sources.network
         public event Action<String> OnErrorEvent;
         public event Action<String> OnDisconnectEvent;
         public bool LoggingEnabled = false;
+
+        #endregion
+
+        #region init
 
         public string Ip = "undefined";
 
@@ -46,6 +52,8 @@ namespace Assets.Sources.network
         {
             get { return _instance ?? (_instance = new GameObject("SocketHandler").AddComponent<SocketHandler>()); }
         }
+
+        #endregion
 
         #region connect
 

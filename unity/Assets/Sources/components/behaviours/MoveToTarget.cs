@@ -12,9 +12,9 @@ namespace Assets.Sources.components.behaviours
         private Orbiting _orbiting;
         private Vector3 _finalDestination;
 
-        private PlayMakerFSM fsm;
+        protected PlayMakerFSM fsm;
 
-        public void Start()
+        public virtual void Start()
         {
             // transform.parent = target.transform; instantly sending back possible however if called too fast, nullpointer, also problematique with attacking while flying
             _orbiting = gameObject.GetComponent<Orbiting>();
@@ -40,9 +40,14 @@ namespace Assets.Sources.components.behaviours
             {
                 transform.parent = Target.transform;
                 _orbiting.enabled = true;
-                fsm.SendEvent("Arrive");
+                Arrive();
                 Destroy(this);
             }
+        }
+
+        public virtual void Arrive()
+        {
+            fsm.SendEvent("Arrive");
         }
 
         public void Reset()

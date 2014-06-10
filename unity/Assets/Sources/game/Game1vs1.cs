@@ -20,16 +20,9 @@ namespace Assets.Sources.game
             GameMode = Mode.Game1vs1;
         }
 
-        public override void Start()
-        {
-            base.Start();
-
-            SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
-            SocketHandler.Connect(1337);
-        }
-
         public override void OnJSONEvent(JObject json)
         {
+            base.OnJSONEvent(json);
 //            Debug.Log("message : " + json);
 
             var message = json["message"].ToString();
@@ -41,6 +34,17 @@ namespace Assets.Sources.game
             }
             #endregion
 
+            #region unit-arrival
+            else if (message.Equals("unit-arrival"))
+            {
+                ScheduleAt("unit-arrival", json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
+                {
+                    var uid = json["uid"].ToObject<int>();
+                    Registry.Ships[uid].GetComponent<PlayMakerFSM>().SendEvent("Arrive");
+                });
+            }
+            #endregion
+
             #region move-unit
             else if (message.Equals("move-unit"))
             {
@@ -49,10 +53,10 @@ namespace Assets.Sources.game
                 foreach (var shipUid in json["ships"].Select(shipId => shipId.ToObject<int>()))
                 {
                     var uid = shipUid;
-                    ScheduleAt(json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
+                    ScheduleAt("move-unit", json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
                     {
                         // 1) add move component to ship
-                        var move = Registry.Ships[uid].AddComponent<MoveToTarget>();
+                        var move = Registry.Ships[uid].AddComponent<MoveToTargetMp>();
                         
                         // 2) change speed
                         move.Velocity = 150f;
@@ -63,9 +67,6 @@ namespace Assets.Sources.game
                         Debug.Log("move " + uid + " to " + target.GetComponent<IslandData>().Uid);
                     });
                 }
-
-                // 4) acknowledge
-                Acknowledge(json);
             }
             #endregion
 
@@ -78,7 +79,7 @@ namespace Assets.Sources.game
                     var ship = spawn;
                     Debug.Log("spawn units scheduled at: " + json["scheduleId"]);
 
-                    ScheduleAt(json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
+                    ScheduleAt("spawn-unit", json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
                     {
                         var shipUid = ship["uid"].ToObject<int>();
                         var island = Registry.Islands[ship["island_uid"].ToObject<int>()];
@@ -120,8 +121,6 @@ namespace Assets.Sources.game
 //                        Debug.Log("spawn [uid=" + shipUid + "|type=" + shipData.shipType + "] at [uid=" + islandData.Uid + "|type=" + islandData.IslandType + "] for player [" + shipData.PlayerData.uid + "]");
                     });
                 }
-
-                Acknowledge(json);
             }
             #endregion
 
@@ -201,48 +200,6 @@ namespace Assets.Sources.game
             }
             #endregion
 
-            # region lifecycle
-            else if (message.Equals("start-game"))
-            {
-                StartGame();
-            }
-            else if (message.Equals("pause-game"))
-            {
-                PauseGame();
-            }
-            else if (message.Equals("resume-game"))
-            {
-                ResumeGame();
-            }
-            else if (message.Equals("stop-game"))
-            {
-                StopGame();
-            }
-            else if (message.Equals("turn-done"))
-            {
-                // can be done on cached player datas and therefore doesn't need the main thread => timing improvmemt one loop less
-                ExecuteOnMainThread.Enqueue(() =>
-                {
-                    // IMPORTANT handle different player turns
-
-                    var playerData = Registry.Player[json["playeruid"].ToString()].GetComponent<PlayerData>();
-                    playerData.Turn = json["turn"].ToObject<int>();
-                });
-            }
-            else if (message.Equals("server-game-ready"))
-            {
-                // request game data
-                SocketHandler.Emit("request", PackageFactory.CreateRequestGameData());
-            }
-            else if (message.Equals("waiting-for-player"))
-            {
-                foreach (var uid in json["player"])
-                {
-                    Debug.Log("Waiting for player: " + uid);
-                }
-            }
-            #endregion
-
             #region authentification
             else if (message.Equals("Welcome!"))
             {
@@ -255,6 +212,18 @@ namespace Assets.Sources.game
 
                 // join
                 // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
+            }
+            #endregion
+
+            #region handled somewhere else
+            else if (message.Equals("latency"))
+            {
+                // handled in networkview
+            }
+
+            else if (message.Equals("ping"))
+            {
+                // handled in networkview
             }
             #endregion
 

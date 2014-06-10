@@ -134,6 +134,7 @@ $( document ).ready(function() {
     var socket;
 
     var useConnectionAlert = false;
+    var receivedPackages = [];
 
     var connect = function(serverJson) {
 
@@ -201,17 +202,18 @@ $( document ).ready(function() {
 
                 if(data.message == 'turn-done') {
                     data.playeruid = $("#name").val();
+                    if(receivedPackages.length > 0) {
+                        data.packages = receivedPackages;
+                        receivedPackages = [];
+                    }
                     socket.emit('turn-done', data);
                     return;
                 }
 
-                if(data.message == 'spawn-unit') {
-                    socket.emit('acknowledged', { message : 'acknowledged', packageId : data.packageId, scheduleId : data.scheduleId });
-                    return;
-                }
-
-                if(data.message == 'move-unit') {
-                    socket.emit('acknowledged', { message : 'acknowledged', packageId : data.packageId, scheduleId : data.scheduleId });
+                if( data.message == 'spawn-unit' ||
+                    data.message == 'move-unit' ||
+                    data.message == 'unit-arrival') {
+                    receivedPackages.push(data.packageId);
                     return;
                 }
 

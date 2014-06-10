@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\Player.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync" afterPath="$PROJECT_DIR$/../AndroidAsync" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger" afterPath="$PROJECT_DIR$/../net.kibotu.logger" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" afterPath="$PROJECT_DIR$/../AndroidAsync/AndroidAsync/AndroidAsync.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/Game1vs1.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameMP.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/game/GameMP.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/Package.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/Package.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/PackageFactory.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/PlayerData.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/data/PlayerData.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/network/SocketHandler.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/network/SocketHandler.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../server/ChatServer/main.js" afterPath="$PROJECT_DIR$/../../server/ChatServer/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger/android/project.properties" afterPath="$PROJECT_DIR$/../net.kibotu.logger/android/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +83,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="6" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27037773" vertical-offset="0" max-vertical-offset="16048">
+            <state line="880" column="50" selection-start="27809" selection-end="27809" vertical-scroll-proportion="0.74291116" vertical-offset="14567" max-vertical-offset="16065">
               <folding />
             </state>
           </provider>
@@ -79,7 +92,7 @@
       <file leaf-file-name="code.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="66" selection-start="6630" selection-end="6630" vertical-scroll-proportion="0.0" vertical-offset="3723" max-vertical-offset="7752">
+            <state line="219" column="52" selection-start="6548" selection-end="6548" vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="7786">
               <folding />
             </state>
           </provider>
@@ -725,19 +738,19 @@
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - update Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet true" working-dir="$PROJECT_DIR$/../../server">
+    <configuration default="false" name="DragnSlay - Server - update Ethernet" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Ethernet true" node-parameters="--expose-gc" working-dir="$PROJECT_DIR$/../../server">
       <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - update WAN" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="ip true" working-dir="$PROJECT_DIR$/../../server">
+    <configuration default="false" name="DragnSlay - Server - update WAN" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="ip true" node-parameters="--expose-gc" working-dir="$PROJECT_DIR$/../../server">
       <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="false" name="DragnSlay - Server - update Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi true" working-dir="$PROJECT_DIR$/../../server">
+    <configuration default="false" name="DragnSlay - Server - update Wi-Fi" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="C:/Program Files (x86)/nodejs/node" path-to-js-file="ChatServer/main.js" application-parameters="Wi-Fi true" node-parameters="--expose-gc" working-dir="$PROJECT_DIR$/../../server">
       <browser start="false" url="" with-js-debugger="false" />
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
@@ -813,7 +826,9 @@
       <workItem from="1401188406867" duration="1288000" />
       <workItem from="1401190350508" duration="19141000" />
       <workItem from="1401229331360" duration="731000" />
-      <workItem from="1401265822155" duration="6604000" />
+      <workItem from="1401265822155" duration="7922000" />
+      <workItem from="1402037955704" duration="584000" />
+      <workItem from="1402365197190" duration="9354000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -823,7 +838,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200024000" />
+    <option name="totallyTimeSpent" value="211280000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -846,7 +861,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -870,7 +885,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19947916" sideWeight="0.5694444" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40771636" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40771636" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1162,11 +1177,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536" />
-      </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/admin.jade">
@@ -1226,14 +1241,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/public/javascripts/code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="66" selection-start="6630" selection-end="6630" vertical-scroll-proportion="0.0" vertical-offset="3309" max-vertical-offset="7752">
+        <state line="219" column="52" selection-start="6548" selection-end="6548" vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="7786">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27037773" vertical-offset="0" max-vertical-offset="16048">
+        <state line="880" column="50" selection-start="27809" selection-end="27809" vertical-scroll-proportion="0.74291116" vertical-offset="14567" max-vertical-offset="16065">
           <folding />
         </state>
       </provider>

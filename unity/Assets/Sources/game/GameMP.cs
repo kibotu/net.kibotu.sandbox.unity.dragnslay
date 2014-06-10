@@ -5,7 +5,9 @@ using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
 using Assets.Sources.states;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SimpleJson;
 using UnityEngine;
 using NetworkView = Assets.Sources.menu.view.NetworkView;
 
@@ -29,6 +31,9 @@ namespace Assets.Sources.game
             GameState = GameState.Creating;
             StartTime = 0;
             Turn = 0;
+
+            SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
+            SocketHandler.Connect(1337);
         }
 
         /**
@@ -128,8 +133,8 @@ namespace Assets.Sources.game
             if(_hasSendTurnDoneMessage) 
                 return;
 
-            Registry.Player[ClientUid].GetComponent<PlayerData>().Turn = Turn;
-
+            Registry.Player[ClientUid].GetComponent<PlayerData>().Turn = Turn; // todo cache me, due main call loop
+//            List<int> packages;
             SocketHandler.EmitNow("turn-done", PackageFactory.CreateDoneMessage(Turn));
 
             _hasSendTurnDoneMessage = true;
@@ -154,18 +159,19 @@ namespace Assets.Sources.game
         /// <summary>
         /// Schedules an action to a specific turn. Adds action to a queue, if there are multiple events at the same turn scheduled.
         /// </summary>
+        /// <param name="name">Action name.</param>
         /// <param name="turn">Turn number.</param>
         /// <param name="packageId">Package Id.</param>
         /// <param name="action">Action to be executed.</param>
         /// <param name="isVerified">True if acknowledged.</param>
-        public void ScheduleAt(long turn, int packageId, Action action, bool isVerified = false)
+        public void ScheduleAt(string name, long turn, int packageId, Action action, bool isVerified = false)
         {
             if(action != null)
                 ++ScheduledTotal;
 
             // see if already an action is scheduld at turn, if so add to queue, if not, create new queue
             List<Package> queue;
-            var p = new Package {PackageId = packageId, Action = action, Verified = isVerified};
+            var p = new Package {Name = name, PackageId = packageId, Action = action, Verified = isVerified};
             ExecuteOnMainThreadScheduled.TryGetValue(turn, out queue);
             if (queue == null)
             {
@@ -197,9 +203,10 @@ namespace Assets.Sources.game
             }
         }
 
+        [Obsolete("Not used anymore", false)]
         protected void Verify(int packageId, int scheduledId)
         {
-            ScheduleAt(scheduledId, packageId, null, true);
+            ScheduleAt(null, scheduledId, packageId, null, true);
         }
 
         public void Acknowledge(JObject json)
@@ -218,15 +225,19 @@ namespace Assets.Sources.game
                 while (queue.Count > 0)
                 {
                     var package = queue[0];
-                    if (package.Verified)
+                    if (IsAcknowledged(package))
                     {
-                        if(package.Action != null) 
+                        if (package.Action != null)
+                        {
                             package.Action.Invoke();
+                            ClearAcknowledgedPacakgeFromPlayer(package);
+                        }
+                            
                         else
-                            Debug.LogError("Action 'null' for " + package.PackageId);
+                            Debug.LogError("Action 'null' for " + package.PackageId + " " + package.Name);
                     }
                     else
-                        Debug.LogError("Scheduled Package " + package.PackageId + " at Turn " + Turn + " not verified. ");
+                        Debug.LogError("Scheduled Package '" + package.Name + "' '" + package.PackageId + "' at Turn '" + Turn + "' not verified. ");
 
                     queue.Remove(package);
                     if (LoggingEnabled) Debug.Log("Execute scheduled action at turn: " + Turn);
@@ -236,6 +247,19 @@ namespace Assets.Sources.game
                 ExecuteOnMainThreadScheduled.Remove(Turn);
             }
             _hasSendTurnDoneMessage = false;
+        }
+
+        private static bool IsAcknowledged(Package package)
+        {
+            return Registry.Player.Values.Select(player => player.GetComponent<PlayerData>()).Where(playerData => playerData.playerType != PlayerData.PlayerType.Neutral).Any(playerData => playerData.AckwowledgedPackages.Contains(package.PackageId));
+        }
+
+        private void ClearAcknowledgedPacakgeFromPlayer(Package package)
+        {
+            foreach (var player in Registry.Player.Values)
+            {
+                player.GetComponent<PlayerData>().AckwowledgedPackages.Remove(package.PackageId);
+            }
         }
 
         private void AdvanceTurnCounter()
@@ -253,6 +277,72 @@ namespace Assets.Sources.game
             return Shared.HostUid == Shared.ClientUid;
         }
 
-        public abstract void OnJSONEvent(JObject message);
+        public virtual void OnJSONEvent(JObject json)
+        {
+            var message = json["message"].ToString();
+
+            #region package needs acknowledgement
+            if (json["ack"] != null && json["ack"].ToObject<Boolean>())
+            {
+                Debug.Log("ack: " + json["packages"]);
+                // todo add packageId to turn done message
+            }
+            #endregion
+
+            # region lifecycle
+            if (message.Equals("start-game"))
+            {
+                StartGame();
+            }
+            else if (message.Equals("pause-game"))
+            {
+                PauseGame();
+            }
+            else if (message.Equals("resume-game"))
+            {
+                ResumeGame();
+            }
+            else if (message.Equals("stop-game"))
+            {
+                StopGame();
+            }
+            else if (message.Equals("server-game-ready"))
+            {
+                // request game data
+                SocketHandler.Emit("request", PackageFactory.CreateRequestGameData());
+            }
+            else if (message.Equals("waiting-for-player"))
+            {
+                foreach (var uid in json["player"])
+                {
+                    Debug.Log("Waiting for player: " + uid);
+                }
+            }
+            #endregion
+
+            #region turn
+            // the biggest advantage of this turn approach are one sided communications of the main traffic for player commands and therefore half ping time responsivity
+            else if (message.Equals("turn-done"))
+            {
+                // can be done on cached player datas and therefore doesn't need the main thread => timing improvmemt one loop less
+                ExecuteOnMainThread.Enqueue(() =>
+                {
+                    // IMPORTANT handle different player turns
+
+                    var playerData = Registry.Player[json["playeruid"].ToString()].GetComponent<PlayerData>();
+                    playerData.Turn = json["turn"].ToObject<int>();
+
+                    // append acknowledged packages to turn
+                    JToken packages;
+                    json.TryGetValue("packages", out packages);
+                    if (packages != null)
+                    {
+                        // Debug.Log("packages: " + packages.ToObject<List<int>>());
+                        playerData.AckwowledgedPackages.AddRange(packages.ToObject<int[]>());
+                    }
+                });
+            }
+            #endregion
+        }
     }
 }

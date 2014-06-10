@@ -23,6 +23,7 @@ namespace Assets.Sources.components.behaviours
                 gameObject.AddComponent<SelectAndSendUnitsToTarget>();
             else
                 gameObject.AddComponent<SelectAndSendUnitsToTargetMp>();
+                
         }
 
         public void StartWaterFall()

@@ -31,7 +31,8 @@ namespace Assets.Sources.network
                 {"ships",       new JArray(ships)},
                 {"target",      target},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         true}
             };
         }
 
@@ -41,7 +42,8 @@ namespace Assets.Sources.network
                 {"message",     "spawn-unit"},
                 {"spawns",      new JArray(spawns) },
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         true}
             };
         }
 
@@ -51,7 +53,8 @@ namespace Assets.Sources.network
                 {"message",     uid},
                 {"uid",         uid},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         false}
             };
         }
 
@@ -61,7 +64,8 @@ namespace Assets.Sources.network
                 {"message",     name},
                 {"game-type",   gameType},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         false}
             };
         }
 
@@ -70,7 +74,8 @@ namespace Assets.Sources.network
             return new JObject{
                 {"message",     "game-data"},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         false}
             };
         }
 
@@ -79,7 +84,8 @@ namespace Assets.Sources.network
             var json = new JObject{
                 {"message",     name},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         true}
             };
 
             for (var i = 0; i < keyValuePairs.Length; i += 2)
@@ -93,7 +99,8 @@ namespace Assets.Sources.network
             return new JObject{
                 {"message",     "client-game-ready"},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         false}
             };   
         }
 
@@ -101,7 +108,8 @@ namespace Assets.Sources.network
         {
             return new JObject{
                 {"message",     "ping"},
-                {"packageId",   ++_packageId}
+                {"packageId",   ++_packageId},
+                {"ack",         false}
             };  
         }
 
@@ -109,7 +117,8 @@ namespace Assets.Sources.network
         {
             return new JObject{
                 {"message",     "pong"},
-                {"packageId",   ++_packageId}
+                {"packageId",   ++_packageId},
+                {"ack",         false}
             };
         }
 
@@ -118,7 +127,8 @@ namespace Assets.Sources.network
             return new JObject{
                 {"message",     "schedule-ping"},
                 {"packageId",   ++_packageId},
-                {"scheduleId",  GameMp.ScheduleId()}
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         false}
             };
         }
 
@@ -128,7 +138,8 @@ namespace Assets.Sources.network
                 {"message",     "turn-done"},
                 {"turn",        turn},
                 {"playeruid",   Game.Shared.ClientUid},
-                {"packageId",   ++_packageId}
+                {"packageId",   ++_packageId},
+                {"ack",         false}
             };
         }
 
@@ -137,7 +148,19 @@ namespace Assets.Sources.network
             return new JObject{
                 {"message",     "acknowledged"},
                 {"packageId",   packageId},
-                {"scheduleId",  scheduledId}
+                {"scheduleId",  scheduledId},
+                {"ack",         false}
+            };
+        }
+
+        public static JObject CreateArrivalMessage(int uid)
+        { 
+            return new JObject{
+                {"message",     "unit-arrival"},
+                {"uid",         uid},
+                {"packageId",   ++_packageId},
+                {"scheduleId",  GameMp.ScheduleId()},
+                {"ack",         false}  
             };
         }
     }

@@ -865,16 +865,17 @@ io.sockets.on('connection', function (socket) {
             if(spawn.uid == -1) spawn.uid = uid();
         });
 
-        // send all spawn message
-        sendAllInRoomTextMessage(socket, data);
+        sendTextMessageInRoomToEveryoneElse(socket, data);
     });
 
     socket.on("move-unit", function(data) {
-
         data = parseJson(data);
+        sendTextMessageInRoomToEveryoneElse(socket, data);
+    });
 
-        // send all move message
-        sendAllInRoomTextMessage(socket, data);
+    socket.on("unit-arrival", function(data) {
+        data = parseJson(data);
+        sendTextMessageInRoomToEveryoneElse(socket, data);
     });
 
     // reconnects
