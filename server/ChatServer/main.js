@@ -458,7 +458,6 @@ udp_socket.bind(server.get('udp_port'), function() {
 });
 
 // @see https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO
-io.configure( function() {
     io.set('close timeout', 60 * 15); // 15 min
     io.set('heartbeat timeout', 60 * 2);
     io.set('heartbeat interval', 60);
@@ -466,7 +465,7 @@ io.configure( function() {
     io.set('reconnect', true);
     io.set('reconnection delay', 500);
     io.set('max reconnection attempts', 10);
-    io.enable('browser client minification');  // send minified client
+//    io.enable('browser client minification');  // send minified client
     //io.enable('browser client etag');          // apply etag caching logic based on version number
     //io.enable('browser client gzip');          // gzip the file
     io.set('transports', [
@@ -480,7 +479,6 @@ io.configure( function() {
         accept(null, true);
         console.log("Authorization : " + JSON.stringify(data));
     });
-});
 
 // { roomId : game_data }
 var cachedGames = {};
