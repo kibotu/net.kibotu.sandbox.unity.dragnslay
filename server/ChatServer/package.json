@@ -38,6 +38,7 @@
 		"nodetime" : "latest",
 		"os-monitor" : "latest",
 		"traceback" : "latest",
-		"node-highcharts" : "latest"
+		"node-highcharts" : "latest",
+        "engine.io" : "latest"
     }
 }

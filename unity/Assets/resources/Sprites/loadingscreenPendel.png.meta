@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: bf3d250ed1d88364694d132982321ca4
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: loadingscreenPendel
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 2
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8

@@ -432,6 +432,15 @@ var io = require('socket.io').listen(server.listen(server.get('tcp_port'),"0.0.0
     });
 }));
 
+//var io = require('socket.io').listen(engine.listen(server.get('tcp_port'),"0.0.0.0", function() {
+//
+//    updateServerJson(function(geoJson) {
+//        uploadIps(geoJson);
+//        console.log("info: tcp server listening on "+getIpAddress()[server.get('network_interface')]+":"+server.get('tcp_port'));
+//        console.log("info: udp server listening on "+getIpAddress()[server.get('network_interface')]+":"+server.get('udp_port'));
+//    });
+//}));
+
 var udp_socket = dgram.createSocket('udp4');
 udp_socket.bind(server.get('udp_port'), function() {
 
@@ -458,26 +467,26 @@ udp_socket.bind(server.get('udp_port'), function() {
 });
 
 // @see https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO
-    io.set('close timeout', 60 * 15); // 15 min
-    io.set('heartbeat timeout', 60 * 2);
-    io.set('heartbeat interval', 60);
-    io.set('log level', 5);
-    io.set('reconnect', true);
-    io.set('reconnection delay', 500);
-    io.set('max reconnection attempts', 10);
+//    io.set('close timeout', 60 * 15); // 15 min
+//    io.set('heartbeat timeout', 60 * 2);
+//    io.set('heartbeat interval', 60);
+//    io.set('log level', 5);
+//    io.set('reconnect', true);
+//    io.set('reconnection delay', 500);
+//    io.set('max reconnection attempts', 10);
 //    io.enable('browser client minification');  // send minified client
     //io.enable('browser client etag');          // apply etag caching logic based on version number
     //io.enable('browser client gzip');          // gzip the file
-    io.set('transports', [
-          'websocket'
-        , 'flashsocket'
-        , 'htmlfile'
-        , 'xhr-polling'
-        , 'jsonp-polling'
-    ]);
+    io.set('transports',
+        ['websocket',
+        'flashsocket',
+        'htmlfile',
+        'xhr-polling',
+        'jsonp-polling',
+        'polling']);
     io.set('authorization', function (data, accept) {
         accept(null, true);
-        console.log("Authorization : " + JSON.stringify(data));
+//        console.log("Authorization : " + JSON.stringify(data));
     });
 
 // { roomId : game_data }
@@ -662,17 +671,23 @@ var allPlayersAreReady = function(socket) {
     return ready;
 };
 
-// never fired~
 io.sockets.on('connect', function (socket){
     var address = socket.handshake.address;
-    console.log("New connection from " + address.address + ":" + address.port);
+    console.log("New connect from " + address.address + ":" + address.port);
 });
 
 io.sockets.on('connection', function (socket) {
 
+    setInterval(function() {
+        socket.emit('message', { message: 'hello world'});
+        console.log("emit hello world");
+    },1000);
+
     // new client has connected
     var address = socket.handshake.address;
     console.log("New connection from " + address.address + ":" + address.port);
+
+    socket.emit('message', { message: 'hello world'});
 
     // enable latency spam
     setInterval(function() {
@@ -713,7 +728,7 @@ io.sockets.on('connection', function (socket) {
     // get os stats
     socket.on('os-stats', function(data) {
         getOsInfos(function(osStats) {
-            osStats.clients = io.sockets.clients().length;
+//            osStats.clients = io.sockets.adapter.rooms[rooms[0]].length; // TODO connected clients
             socket.emit('os-stats', osStats);
         });
     });

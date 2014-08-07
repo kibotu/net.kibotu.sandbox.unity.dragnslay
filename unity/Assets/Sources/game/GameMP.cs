@@ -33,7 +33,7 @@ namespace Assets.Sources.game
             Turn = 0;
 
             SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
-            SocketHandler.Connect(1337);
+            SocketHandler.Connect("",1337);
         }
 
         /**

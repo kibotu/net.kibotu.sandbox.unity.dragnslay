@@ -138,44 +138,45 @@ $( document ).ready(function() {
 
     var connect = function(serverJson) {
 
-        socket = io.connect('http://' + serverJson[serverJson['network_interface']] + ':1337/');
+        socket = io('http://' + serverJson[serverJson['network_interface']] + ':1337');
 
         /** CLIENT   https://github.com/LearnBoost/socket.io/wiki/Exposed-events **/
 
             // "connect" is emitted when the socket connected successfully
-        socket.socket.on('connect', function () {
+        socket.on('connect', function () {
             if(useConnectionAlert) createAlert('Connected.', 'alert-success');
         });
 
         // disconnect" is emitted when the socket disconnected
-        socket.socket.on('disconnect', function () {
+        socket.on('disconnect', function () {
             if(useConnectionAlert) createAlert('Disconnected.', 'alert-danger');
         });
 
         // "connect_failed" is emitted when socket.io fails to establish a connection to the server and has no more transports to fallback to
-        socket.socket.on('connect_failed', function () {
+        socket.on('connect_failed', function () {
             if(useConnectionAlert) createAlert('Connect Failed.', 'alert-danger');
         });
 
         // "error" is emitted when an error occurs and it cannot be handled by the other event types.
-        socket.socket.on('error', function () {
+        socket.on('error', function () {
             if(useConnectionAlert) createAlert('Connection error.', 'alert-danger');
         });
 
         // "reconnect_failed" is emitted when socket.io fails to re-establish a working connection after the connection was dropped
-        socket.socket.on('reconnect_failed', function () {
+        socket.on('reconnect_failed', function () {
             if(useConnectionAlert) createAlert('Reconnection failed.', 'alert-danger');
         });
 
         // "reconnect" is emitted when socket.io successfully reconnected to the server.
-        socket.socket.on('reconnect', function () {
+        socket.on('reconnect', function () {
             if(useConnectionAlert) createAlert('Reconnected.', 'alert-success');
         });
 
         // "reconnecting" is emitted when the socket is attempting to reconnect with the server.
-        socket.socket.on('reconnecting', function () {
+        socket.on('reconnecting', function () {
             if(useConnectionAlert) createAlert('Reconnecting...', 'alert-info');
         });
+
 
         var isInGame = false;
 
