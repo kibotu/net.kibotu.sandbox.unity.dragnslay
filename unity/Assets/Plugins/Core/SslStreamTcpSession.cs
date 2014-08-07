@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using Debug = UnityEngine.Debug;
 
 namespace SuperSocket.ClientEngine
 {
@@ -39,13 +41,14 @@ namespace SuperSocket.ClientEngine
         {
             ProcessConnect(sender as Socket, null, e);
         }
-
+        
         protected override void OnGetSocket(SocketAsyncEventArgs e)
         {
             try
             {
 #if !SILVERLIGHT
-//                var sslStream = new SslStream(new System.Net.NetworkStream(Client), false, ValidateRemoteCertificate);
+                Debug.LogError("Warning using ssl, but no SslStream has been created.");
+//                var sslStream = new SslStream(new System.Net.NetworkStream(Client, false, ValidateRemoteCertificate));
 #else
                 var sslStream = new SslStream(new NetworkStream(Client));
 #endif

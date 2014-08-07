@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
-using Debug = UnityEngine.Debug;
 
 namespace SuperSocket.ClientEngine
 {
@@ -28,7 +26,6 @@ namespace SuperSocket.ClientEngine
 
         protected override void SocketEventArgsCompleted(object sender, SocketAsyncEventArgs e)
         {
-            Debug.Log("SocketEventArgsCompleted");
             if (e.LastOperation == SocketAsyncOperation.Connect)
             {
                 ProcessConnect(sender as Socket, null, e);
@@ -69,8 +66,6 @@ namespace SuperSocket.ClientEngine
 
         private void ProcessReceive(SocketAsyncEventArgs e)
         {
-            Debug.Log("ProcessReceive");
-
             if (e.SocketError != SocketError.Success)
             {
                 if(EnsureSocketClosed())
@@ -93,8 +88,6 @@ namespace SuperSocket.ClientEngine
 
         void StartReceive()
         {
-            Debug.Log("StartReceive");
-
             bool raiseEvent;
 
             var client = Client;

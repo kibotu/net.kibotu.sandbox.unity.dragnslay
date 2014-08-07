@@ -52,7 +52,7 @@ namespace SuperSocket.ClientEngine.Proxy
 #if SILVERLIGHT && !WINDOWS_PHONE
                 ProxyEndPoint.ConnectAsync(ClientAccessPolicyProtocol, ProcessConnect, targetEndPoint);
 #else
-//                ProxyEndPoint.ConnectAsync(ProcessConnect, targetEndPoint); // todo proxy endpoint
+                ProxyEndPoint.ConnectAsync(ProcessConnect, targetEndPoint);
 #endif
             }
             catch (Exception e)

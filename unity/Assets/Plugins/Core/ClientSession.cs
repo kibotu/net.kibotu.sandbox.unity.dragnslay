@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using Debug = UnityEngine.Debug;
 
 namespace SuperSocket.ClientEngine
 {
@@ -31,9 +29,6 @@ namespace SuperSocket.ClientEngine
             if (remoteEndPoint == null)
                 throw new ArgumentNullException("remoteEndPoint");
 
-
-            Debug.Log("ClientSession " + remoteEndPoint);
-
             RemoteEndPoint = remoteEndPoint;
         }
 
@@ -51,44 +46,14 @@ namespace SuperSocket.ClientEngine
         }
 
 //#if NO_SPINWAIT_CLASS
-        public void Send(ArraySegment<byte> segment)
-        {
-            if (TrySend(segment))
-                return;
-
-            while (true)
-            {
-                Thread.SpinWait(1);
-
-                if (TrySend(segment))
-                    return;
-            }
-        }
-
-        public void Send(IList<ArraySegment<byte>> segments)
-        {
-            if (TrySend(segments))
-                return;
-
-            while (true)
-            {
-                Thread.SpinWait(1);
-
-                if (TrySend(segments))
-                    return;
-            }
-        }
-//#else
 //        public void Send(ArraySegment<byte> segment)
 //        {
 //            if (TrySend(segment))
 //                return;
 //
-//            var spinWait = new SpinWait();
-//
 //            while (true)
 //            {
-//                spinWait.SpinOnce();
+//                Thread.SpinWait(1);
 //
 //                if (TrySend(segment))
 //                    return;
@@ -100,16 +65,48 @@ namespace SuperSocket.ClientEngine
 //            if (TrySend(segments))
 //                return;
 //
-//            var spinWait = new SpinWait();
-//
 //            while (true)
 //            {
-//                spinWait.SpinOnce();
+//                Thread.SpinWait(1);
 //
 //                if (TrySend(segments))
 //                    return;
 //            }
 //        }
+//#else
+        public void Send(ArraySegment<byte> segment)
+        {
+            if (TrySend(segment))
+                return;
+
+//            var spinWait = new SpinWait();
+
+            while (true)
+            {
+//                spinWait.SpinOnce();
+                Thread.Sleep(1);
+
+                if (TrySend(segment))
+                    return;
+            }
+        }
+
+        public void Send(IList<ArraySegment<byte>> segments)
+        {
+            if (TrySend(segments))
+                return;
+
+//            var spinWait = new SpinWait();
+
+            while (true)
+            {
+//                spinWait.SpinOnce();
+                Thread.Sleep(1);
+
+                if (TrySend(segments))
+                    return;
+            }
+        }
 //#endif
 
         public abstract void Close();
@@ -190,7 +187,6 @@ namespace SuperSocket.ClientEngine
 
         protected virtual void OnDataReceived(byte[] data, int offset, int length)
         {
-            Debug.Log("OnDataReceived");
             var handler = m_DataReceived;
             if (handler == null)
                 return;
