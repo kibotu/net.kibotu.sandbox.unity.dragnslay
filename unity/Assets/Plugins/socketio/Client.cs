@@ -132,14 +132,9 @@ namespace SocketIOClient
 			this.registrationManager = new RegistrationManager();
 			this.outboundQueue =  (new ConcurrentQueue<string>());
 			this.dequeuOutBoundMsgTask = new Thread(dequeuOutboundMessages);
-			//this.dequeuOutBoundMsgTask = Task.Factory.StartNew(() => dequeuOutboundMessages(), TaskCreationOptions.LongRunning);
+//			this.dequeuOutBoundMsgTask = Task.Factory.StartNew(() => dequeuOutboundMessages(), TaskCreationOptions.LongRunning);
 			this.dequeuOutBoundMsgTask.Start();
 		}
-           private void AcceptClient(IAsyncResult aResult)
-        {
-            Debug.Log("AcceptClient");
-            Debug.Log(aResult.ToString());
-        }
 
 		/// <summary>
 		/// Initiate the connection with Socket.IO service
@@ -176,8 +171,6 @@ namespace SocketIOClient
 			            this.wsClient.Closed += wsClient_Closed;
 
 			            this.wsClient.Open();
-
-//                        Emit("message", "{\"message\":\"test\"}");
 			        }
 			        else
 			        {

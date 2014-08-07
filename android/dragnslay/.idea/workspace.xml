@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Common\Properties\AssemblyInfo.Net20.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Common\Properties\AssemblyInfo.Net20.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Core\Properties\AssemblyInfo.Net20.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Core\Properties\AssemblyInfo.Net20.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Protocol\Properties\AssemblyInfo.Net20.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Protocol\Properties\AssemblyInfo.Net20.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Proxy\Properties\AssemblyInfo.Net20.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Proxy\Properties\AssemblyInfo.Net20.cs.meta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/AsyncTcpSession.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/AsyncTcpSession.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/ClientSession.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/ClientSession.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/HttpConnectProxy.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/HttpConnectProxy.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/Socks4Connector.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/Socks4Connector.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/Socks4aConnector.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/Socks4aConnector.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/Socks5Connector.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Proxy/Socks5Connector.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/SslStream.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/SslStream.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/SslStreamTcpSession.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/SslStreamTcpSession.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/TcpClientSession.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/Core/TcpClientSession.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Common\Properties.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Core\Properties.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Protocol\Properties.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Plugins\Proxy\Properties.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Plugins/socketio/Client.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Plugins/socketio/Client.cs" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -793,7 +778,7 @@
       <workItem from="1402037955704" duration="584000" />
       <workItem from="1402365197190" duration="9354000" />
       <workItem from="1406930136915" duration="3367000" />
-      <workItem from="1407232067507" duration="38811000" />
+      <workItem from="1407232067507" duration="39753000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -803,7 +788,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253458000" />
+    <option name="totallyTimeSpent" value="254400000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">

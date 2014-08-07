@@ -36,6 +36,7 @@ namespace Assets.Sources.network
 
         #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 //        private Namespace _socket;
+        private SocketIOClient.Client _socket;
         #elif UNITY_ANDROID 
         private static AndroidJavaClass _socket;
         private const string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
@@ -61,7 +62,7 @@ namespace Assets.Sources.network
         {
             SocketIOClient.Client socket;
 
-            socket = new SocketIOClient.Client("http://188.106.177.88:1337/");
+            socket = new SocketIOClient.Client("http://"+host+":"+port+"/");
             socket.On("message", (fn) =>
             {
                 Debug.Log("connect - socket");
@@ -69,7 +70,7 @@ namespace Assets.Sources.network
 
 //                Dictionary<string, string> args = new Dictionary<string, string>();
 //                args.Add("message", "what's up?");
-//                socket.Emit("SEND", args);
+                socket.Emit("message", PackageFactory.CreateHelloWorldMessage());
             });
             socket.Error += (sender, e) =>
             {
@@ -87,7 +88,7 @@ namespace Assets.Sources.network
 //          
 //            #elif UNITY_ANDROID 
 
-            AndroidJNIHelper.debug = true;
+//            AndroidJNIHelper.debug = true;
 //            if (_socket == null)
 //            {
 //                _socket = new AndroidJavaClass(SocketHandlerClass);
@@ -105,8 +106,24 @@ namespace Assets.Sources.network
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
                 _instance.Ip = "http://" + result[(string)result["network_interface"]] + ":" + port + "/";
-//                SharedConnection._socket = new SocketIOClient().Connect(_instance.Ip);
+                SharedConnection._socket = new SocketIOClient.Client(_instance.Ip);
+
+                SharedConnection._socket.On("message", (fn) =>
+                {
+                    Debug.Log("connect - socket");
+                    Debug.Log("response " + fn.MessageText + " " + fn.Json.ToJsonString() + " " + fn.RawMessage);
+
+                    //                Dictionary<string, string> args = new Dictionary<string, string>();
+                    //                args.Add("message", "what's up?");
+                    SharedConnection._socket.Emit("message", PackageFactory.CreateHelloWorldMessage());
+                });
+                SharedConnection._socket.Error += (sender, e) =>
+                {
+                    Debug.Log("socket Error: " + e.Message.ToString());
+                };
+
                 SharedConnection.SetDelegates();
+                SharedConnection._socket.Connect();
             });
 
             #elif UNITY_ANDROID
