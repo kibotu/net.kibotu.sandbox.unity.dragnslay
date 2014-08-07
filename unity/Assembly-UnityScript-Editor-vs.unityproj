@@ -116,6 +116,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\Plugins\Common\GenericDelegates.cs.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Resources\Shader\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
@@ -218,18 +219,6 @@
  </Reference>
  <Reference Include="SimpleJson">
  <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SimpleJson.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Common">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SuperSocket.ClientEngine.Common.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Core">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SuperSocket.ClientEngine.Core.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Protocol">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SuperSocket.ClientEngine.Protocol.dll</HintPath>
- </Reference>
- <Reference Include="SuperSocket.ClientEngine.Proxy">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SuperSocket.ClientEngine.Proxy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

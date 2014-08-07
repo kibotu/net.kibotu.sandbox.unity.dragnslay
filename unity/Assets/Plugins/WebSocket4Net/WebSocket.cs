@@ -466,10 +466,7 @@ namespace WebSocket4Net
 
         private void OnClosed()
         {
-            var fireBaseClose = false;
-
-            if (m_StateCode == WebSocketStateConst.Closing || m_StateCode == WebSocketStateConst.Open || m_StateCode == WebSocketStateConst.Connecting)
-                fireBaseClose = true;
+            var fireBaseClose = m_StateCode == WebSocketStateConst.Closing || m_StateCode == WebSocketStateConst.Open || m_StateCode == WebSocketStateConst.Connecting;
 
             m_StateCode = WebSocketStateConst.Closed;
 
@@ -555,6 +552,8 @@ namespace WebSocket4Net
 
         private void OnDataReceived(byte[] data, int offset, int length)
         {
+            Debug.Log("on receive " + length);
+
             while (true)
             {
                 int left;
@@ -579,6 +578,7 @@ namespace WebSocket4Net
 
         internal void FireError(Exception error)
         {
+            Debug.Log("FireError");
             OnError(error);
         }
 
@@ -620,6 +620,7 @@ namespace WebSocket4Net
 
         private void OnError(ErrorEventArgs e)
         {
+            Debug.Log("OnError2");
             var handler = m_Error;
 
             if (handler == null)
@@ -630,6 +631,7 @@ namespace WebSocket4Net
 
         private void OnError(Exception e)
         {
+            Debug.Log("OnError");
             OnError(new ErrorEventArgs(e));
         }
 
