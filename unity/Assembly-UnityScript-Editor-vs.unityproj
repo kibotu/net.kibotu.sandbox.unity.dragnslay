@@ -231,9 +231,6 @@
  <Reference Include="SuperSocket.ClientEngine.Proxy">
  <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SuperSocket.ClientEngine.Proxy.dll</HintPath>
  </Reference>
- <Reference Include="WebSocket4Net">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/WebSocket4Net.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>

@@ -193,9 +193,6 @@
  <Reference Include="SuperSocket.ClientEngine.Proxy">
  <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/SuperSocket.ClientEngine.Proxy.dll</HintPath>
  </Reference>
- <Reference Include="WebSocket4Net">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Plugins/WebSocket4Net.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
