@@ -92,8 +92,7 @@ namespace WebSocket4Net
 
         public JsonWebSocket(string uri, string subProtocol, List<KeyValuePair<string, string>> cookies, List<KeyValuePair<string, string>> customHeaderItems, string userAgent, string origin, WebSocketVersion version)
         {
-//            m_WebSocket = new WebSocket(uri, subProtocol, cookies, customHeaderItems, userAgent, origin, version);
-            // TODO jsonwebsocket constructor
+            m_WebSocket = new WebSocket(uri, subProtocol, cookies, customHeaderItems, userAgent, origin, version);
             m_WebSocket.EnableAutoSendPing = true;
             SubscribeEvents();
         }

@@ -21,7 +21,7 @@ namespace SocketIOClient
 		{
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException("nameSpace", "Parameter cannot be null");
-			if (name.Contains(':'))
+			if (LINQ.Contains(name,':'))
 				throw new ArgumentException("Parameter cannot contain ':' characters", "nameSpace");
 		}
 			

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -9,6 +10,7 @@ using System.Threading;
 using SuperSocket.ClientEngine;
 using SuperSocket.ClientEngine.Protocol;
 using WebSocket4Net.Protocol;
+using Debug = UnityEngine.Debug;
 
 namespace WebSocket4Net
 {
@@ -402,6 +404,7 @@ namespace WebSocket4Net
 
         internal void FireMessageReceived(string message)
         {
+            Debug.Log("FireMessageReceived");
             if (m_MessageReceived == null)
                 return;
 

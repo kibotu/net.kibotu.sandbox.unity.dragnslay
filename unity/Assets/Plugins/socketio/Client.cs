@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using SimpleJson;
 using SocketIOClient.Eventing;
 using SocketIOClient.Messages;
 using WebSocket4Net;
@@ -34,7 +35,7 @@ namespace SocketIOClient
 		/// <summary>
 		/// Underlying WebSocket implementation
 		/// </summary>
-		protected WebSocket wsClient;
+        protected WebSocket wsClient;
 		/// <summary>
 		/// RegistrationManager for dynamic events
 		/// </summary>
@@ -152,25 +153,25 @@ namespace SocketIOClient
 			        {
 			            // ws://188.106.177.88:1337/socket.io/1/websocket/KWdZrUn5dt76E3DFAAAi
 			            // ws://188.106.177.88:1337/EIO=2&transport=websocket&sKWdZrUn5dt76E3DFAAAi
-			            var socketUri = string.Format("{0}://{1}:{2}/{4}/?EIO=1&transport=websocket&sid={3}",
+			            var socketUri = string.Format("{0}://{1}:{2}/{4}/?EIO=2&transport=websocket&sid={3}",
 			                uri.Scheme == Uri.UriSchemeHttps ? "wss" : "ws", uri.Host, uri.Port, HandShake.SID,"socket.io");
 
 			            Debug.Log("Connect request: " + socketUri);
-//			            this.wsClient = new WebSocket(socketUri,
+			            this.wsClient = new WebSocket(socketUri,
 //								string.Format("{0}://{1}:{2}/socket.io/1/websocket/{3}", wsScheme, uri.Host, uri.Port, this.HandShake.SID),
-//			                string.Empty,
-//			                this.socketVersion);
-                        wsClient = new WebSocket();
-			            wsClient.TargetUri = socketUri;
+			                string.Empty,
+			                this.socketVersion);
+
 			            this.wsClient.EnableAutoSendPing = true;
 			                // #4 tkiley: Websocket4net client library initiates a websocket heartbeat, causes delivery problems
 			            this.wsClient.Opened += this.wsClient_OpenEvent;
-			            this.wsClient.MessageReceived += this.wsClient_MessageReceived;
+                        this.wsClient.MessageReceived += wsClient_MessageReceived;
 			            this.wsClient.Error += this.wsClient_Error;
-
 			            this.wsClient.Closed += wsClient_Closed;
 
 			            this.wsClient.Open();
+
+//                        Emit("message", "{\"message\":\"test\"}");
 			        }
 			        else
 			        {
@@ -181,7 +182,7 @@ namespace SocketIOClient
 			    }
 			    catch (Exception ex)
 			    {
-			        Debug.Log(string.Format("Connect threw an exception...{0}", ex.Message));
+			        Debug.Log(string.Format("Connect threw an exception...{0}", ex));
 			        this.OnErrorEvent(this, new ErrorEventArgs("SocketIO.Client.Connect threw an exception", ex));
 			    }
 			}
