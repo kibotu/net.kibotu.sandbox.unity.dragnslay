@@ -11,7 +11,7 @@ namespace WebSocket4Net.Protocol
 
         public ProtocolProcessorFactory(params IProtocolProcessor[] processors)
         {
-            m_OrderedProcessors = LINQ.ToArray(LINQ.OrderByDescending(processors,p => (int)p.Version));
+            m_OrderedProcessors = LINQ.ToArray(LINQ.OrderByDescending(processors, p => (int)p.Version));
         }
 
         public IProtocolProcessor GetProcessorByVersion(WebSocketVersion version)

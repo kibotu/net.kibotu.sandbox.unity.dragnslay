@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -10,7 +9,6 @@ using System.Threading;
 using SuperSocket.ClientEngine;
 using SuperSocket.ClientEngine.Protocol;
 using WebSocket4Net.Protocol;
-using Debug = UnityEngine.Debug;
 
 namespace WebSocket4Net
 {
@@ -243,7 +241,6 @@ namespace WebSocket4Net
 
             if (uri.StartsWith(m_UriPrefix, StringComparison.OrdinalIgnoreCase))
             {
-                Debug.Log("create client");
                 client = CreateClient(uri);
             }
             else if (uri.StartsWith(m_SecureUriPrefix, StringComparison.OrdinalIgnoreCase))
@@ -268,7 +265,6 @@ namespace WebSocket4Net
 
         void client_DataReceived(object sender, DataEventArgs e)
         {
-            Debug.Log("client_DataReceived");
             OnDataReceived(e.Data, e.Offset, e.Length);
         }
 
@@ -315,7 +311,7 @@ namespace WebSocket4Net
                 Client.Proxy = Proxy;
 
 #if !__IOS__
-//            Client.NoDeplay = NoDelay;
+            Client.NoDeplay = NoDelay;
 #endif
 
 #if SILVERLIGHT
@@ -406,7 +402,6 @@ namespace WebSocket4Net
 
         internal void FireMessageReceived(string message)
         {
-            Debug.Log("FireMessageReceived");
             if (m_MessageReceived == null)
                 return;
 
@@ -423,7 +418,6 @@ namespace WebSocket4Net
 
         internal void FireDataReceived(byte[] data)
         {
-            Debug.Log("FireDataReceived");
             if (m_DataReceived == null)
                 return;
 
@@ -469,7 +463,10 @@ namespace WebSocket4Net
 
         private void OnClosed()
         {
-            var fireBaseClose = m_StateCode == WebSocketStateConst.Closing || m_StateCode == WebSocketStateConst.Open || m_StateCode == WebSocketStateConst.Connecting;
+            var fireBaseClose = false;
+
+            if (m_StateCode == WebSocketStateConst.Closing || m_StateCode == WebSocketStateConst.Open || m_StateCode == WebSocketStateConst.Connecting)
+                fireBaseClose = true;
 
             m_StateCode = WebSocketStateConst.Closed;
 
@@ -555,8 +552,6 @@ namespace WebSocket4Net
 
         private void OnDataReceived(byte[] data, int offset, int length)
         {
-            Debug.Log("on receive " + System.Text.Encoding.UTF8.GetString(data));
-
             while (true)
             {
                 int left;
@@ -581,7 +576,6 @@ namespace WebSocket4Net
 
         internal void FireError(Exception error)
         {
-            Debug.Log("FireError");
             OnError(error);
         }
 
@@ -623,7 +617,6 @@ namespace WebSocket4Net
 
         private void OnError(ErrorEventArgs e)
         {
-            Debug.Log("OnError2");
             var handler = m_Error;
 
             if (handler == null)
@@ -634,7 +627,6 @@ namespace WebSocket4Net
 
         private void OnError(Exception e)
         {
-            Debug.Log("OnError");
             OnError(new ErrorEventArgs(e));
         }
 

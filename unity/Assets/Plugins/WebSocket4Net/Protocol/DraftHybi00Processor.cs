@@ -204,7 +204,7 @@ namespace WebSocket4Net.Protocol
             Int64 intK2 = Int64.Parse(k2);
 
             //Dividing on number of spaces
-            int k1Spaces = LINQ.Count(secKey1, c => c == ' ');
+            int k1Spaces = LINQ.Count(secKey1,c => c == ' ');
             int k2Spaces = LINQ.Count(secKey2, c => c == ' ');
             int k1FinalNum = (int)(intK1 / k1Spaces);
             int k2FinalNum = (int)(intK2 / k2Spaces);

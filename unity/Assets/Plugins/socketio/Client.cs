@@ -427,7 +427,7 @@ namespace SocketIOClient
 		// websocket client events - open, messages, errors, closing
 		private void wsClient_OpenEvent(object sender, EventArgs e)
 		{
-            Debug.Log("wsClient_OpenEvent " + e);
+            Debug.Log("wsClient_OpenEvent " + e.ToString());
 
 			this.socketHeartBeatTimer = new Timer(OnHeartBeatTimerCallback, new object(), HandShake.HeartbeatInterval, HandShake.HeartbeatInterval);
 			this.ConnectionOpenEvent.Set();

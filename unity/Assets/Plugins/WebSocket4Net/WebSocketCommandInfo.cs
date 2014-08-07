@@ -104,7 +104,7 @@ namespace WebSocket4Net
             }
             else
             {
-                var resultBuffer = new byte[Enumerable.Sum(frames, t => (int)t.ActualPayloadLength)];
+                var resultBuffer = new byte[LINQ.Sum(frames, f => (int)f.ActualPayloadLength)];
 
                 int copied = 0;
 
