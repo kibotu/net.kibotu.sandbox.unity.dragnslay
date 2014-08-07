@@ -5,6 +5,7 @@ using System.Diagnostics;
 //using System.Threading.Tasks;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Threading;
 using SimpleJson;
 using SocketIOClient.Eventing;
@@ -134,6 +135,11 @@ namespace SocketIOClient
 			//this.dequeuOutBoundMsgTask = Task.Factory.StartNew(() => dequeuOutboundMessages(), TaskCreationOptions.LongRunning);
 			this.dequeuOutBoundMsgTask.Start();
 		}
+           private void AcceptClient(IAsyncResult aResult)
+        {
+            Debug.Log("AcceptClient");
+            Debug.Log(aResult.ToString());
+        }
 
 		/// <summary>
 		/// Initiate the connection with Socket.IO service
@@ -187,6 +193,7 @@ namespace SocketIOClient
 			    }
 			}
 		}
+
 		public IEndPointClient Connect(string endPoint)
 		{
             Debug.Log("Connect");

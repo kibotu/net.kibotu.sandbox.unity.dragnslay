@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Collections.Concurrent;
 using System.Threading;
+using Debug = UnityEngine.Debug;
 
 namespace SuperSocket.ClientEngine
 {
@@ -113,8 +115,14 @@ namespace SuperSocket.ClientEngine
 #if SILVERLIGHT && !WINDOWS_PHONE
             RemoteEndPoint.ConnectAsync(ClientAccessPolicyProtocol, ProcessConnect, null);
 #else
-//            RemoteEndPoint.ConnectAsync(ProcessConnect, null); // todo async connect
+            RemoteEndPoint.ConnectAsync(ProcessConnect, null);
 #endif
+        }
+
+        private void AcceptClient(IAsyncResult aResult)
+        {
+            Debug.Log("AcceptClient");
+            Debug.Log(aResult.ToString());
         }
 
         void Proxy_Completed(object sender, ProxyEventArgs e)
@@ -133,6 +141,7 @@ namespace SuperSocket.ClientEngine
 
         protected void ProcessConnect(Socket socket, object state, SocketAsyncEventArgs e)
         {
+            Debug.Log("ProcessConnect");
             if (e != null && e.SocketError != SocketError.Success)
             {
                 e.Dispose();

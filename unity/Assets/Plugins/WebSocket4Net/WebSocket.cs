@@ -243,6 +243,7 @@ namespace WebSocket4Net
 
             if (uri.StartsWith(m_UriPrefix, StringComparison.OrdinalIgnoreCase))
             {
+                Debug.Log("create client");
                 client = CreateClient(uri);
             }
             else if (uri.StartsWith(m_SecureUriPrefix, StringComparison.OrdinalIgnoreCase))
@@ -267,6 +268,7 @@ namespace WebSocket4Net
 
         void client_DataReceived(object sender, DataEventArgs e)
         {
+            Debug.Log("client_DataReceived");
             OnDataReceived(e.Data, e.Offset, e.Length);
         }
 
@@ -421,6 +423,7 @@ namespace WebSocket4Net
 
         internal void FireDataReceived(byte[] data)
         {
+            Debug.Log("FireDataReceived");
             if (m_DataReceived == null)
                 return;
 
@@ -552,7 +555,7 @@ namespace WebSocket4Net
 
         private void OnDataReceived(byte[] data, int offset, int length)
         {
-            Debug.Log("on receive " + length);
+            Debug.Log("on receive " + System.Text.Encoding.UTF8.GetString(data));
 
             while (true)
             {

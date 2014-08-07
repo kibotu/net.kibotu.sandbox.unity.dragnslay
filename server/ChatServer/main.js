@@ -672,20 +672,17 @@ var allPlayersAreReady = function(socket) {
 };
 
 io.sockets.on('connect', function (socket){
-    var address = socket.handshake.address;
-    console.log("New connect from " + address.address + ":" + address.port);
+    console.log("New connect from " + socket.request.connection.remoteAddress + ":" + socket.request.connection.remotePort);
 });
 
 io.sockets.on('connection', function (socket) {
-
 //    setInterval(function() {
 //        socket.emit('message', { message: 'hello world'});
 //        console.log("emit hello world");
 //    },1000);
 
     // new client has connected
-    var address = socket.handshake.address;
-    console.log("New connection from " + address.address + ":" + address.port);
+    console.log("New connection from " + socket.request.connection.remoteAddress + ":" + socket.request.connection.remotePort);
 
     socket.emit('message', { message: 'hello world'});
 

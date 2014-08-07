@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Debug = UnityEngine.Debug;
 
 namespace SuperSocket.ClientEngine
 {
@@ -28,6 +30,9 @@ namespace SuperSocket.ClientEngine
         {
             if (remoteEndPoint == null)
                 throw new ArgumentNullException("remoteEndPoint");
+
+
+            Debug.Log("ClientSession " + remoteEndPoint);
 
             RemoteEndPoint = remoteEndPoint;
         }
@@ -185,6 +190,7 @@ namespace SuperSocket.ClientEngine
 
         protected virtual void OnDataReceived(byte[] data, int offset, int length)
         {
+            Debug.Log("OnDataReceived");
             var handler = m_DataReceived;
             if (handler == null)
                 return;
