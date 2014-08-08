@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Assets.Sources.components.data;
 using Assets.Sources.utility;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SocketIO;
 using UnityEngine;
@@ -50,21 +51,30 @@ namespace Assets.Sources.network
 
         #region connect
 
+        private void ConnectInternal(string host, int port)
+        {
+            _socket = new GameObject("SocketHandler").AddComponent<SocketIOComponent>();
+            _socket.SetUri(host, port);
+            _socket.Init();
+            _socket.Connect();
+            SetDelegates();
+        }
+
         public static void Connect(string host, int port)
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-            SharedConnection.SetDelegates();
-          
-            #elif UNITY_ANDROID 
+                SharedConnection.ConnectInternal(host, port);
 
-            AndroidJNIHelper.debug = true;
-            if (_socket == null)
-            {
-                _socket = new AndroidJavaClass(SocketHandlerClass);
-                // System.Threading.Thread(_socket.CallStatic("connect", host, port));
-                _socket.CallStatic("connect", host, port);
-            }
+            #elif UNITY_ANDROID 
+            
+                AndroidJNIHelper.debug = true;
+                if (_socket == null)
+                {
+                    _socket = new AndroidJavaClass(SocketHandlerClass);
+                    // System.Threading.Thread(_socket.CallStatic("connect", host, port));
+                    _socket.CallStatic("connect", host, port);
+                }
 
             #endif
         }
@@ -73,40 +83,18 @@ namespace Assets.Sources.network
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-            NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
-            {
-                SharedConnection._socket = new GameObject("SocketHandler").AddComponent<SocketIOComponent>();
-                SharedConnection._socket.SetUri(result[(string)result["network_interface"]].ToString(), Int32.Parse(result["tcp_port"].ToString()));
-                SharedConnection._socket.Init();
-                SharedConnection._socket.Connect();
-                SharedConnection.SetDelegates();
-            });
+                NetworkHelper.DownloadJson("http://www.kibotu.net/server", result => SharedConnection.ConnectInternal(result[(string)result["network_interface"]].ToString(), Int32.Parse(result["tcp_port"].ToString())));
 
             #elif UNITY_ANDROID
 
-            AndroidJNIHelper.debug = true;
-            if (_socket == null)
-            {
-                _socket = new AndroidJavaClass(SocketHandlerClass);
-                _socket.CallStatic("connect", port);
-            }
+                AndroidJNIHelper.debug = true;
+                if (_socket == null)
+                {
+                    _socket = new AndroidJavaClass(SocketHandlerClass);
+                    _socket.CallStatic("connect", port);
+                }
             
             #endif
-        }
-
-        public void TestOpen(SocketIOEvent e)
-        {
-            Debug.Log("[SocketIO] Open received: " + e.name + " " + e.data);
-        }
-
-        public void TestError(SocketIOEvent e)
-        {
-            Debug.Log("[SocketIO] Error received: " + e.name + " " + e.data);
-        }
-
-        public void TestClose(SocketIOEvent e)
-        {
-            Debug.Log("[SocketIO] Close received: " + e.name + " " + e.data);
         }
 
         #endregion
@@ -144,7 +132,7 @@ namespace Assets.Sources.network
         protected void EmitNow(MessageData msg)
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-//               _socket.Emit(msg.name, msg.message);
+               _socket.Emit(msg.name, msg.message);
             #elif UNITY_ANDROID
                 _socket.CallStatic("Emit", msg.name, msg.message);
             #endif
@@ -173,7 +161,7 @@ namespace Assets.Sources.network
             _socket.On("error", ErrorCallback);
             _socket.On("close", DisconnectCallback);
             _socket.On("reconnect", ReconnectCallback);
-            _socket.On("message", StringCallback);
+            _socket.On("message", JSONCallback);
 
             #endif
         }
@@ -196,10 +184,9 @@ namespace Assets.Sources.network
 //            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
         }
 
-        protected void JSONCallback(JObject message)
+        protected void JSONCallback(SocketIOEvent message)
         {
-            Debug.Log("JSONCallback " + message);
-            OnJSONEvent(message);
+            OnJSONEvent((JObject)JsonConvert.DeserializeObject(message.data.ToString())); // #cloud todo use only one jsonobject lib
         }
 
         protected void ReconnectCallback(SocketIOEvent message)

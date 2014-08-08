@@ -709,6 +709,7 @@ io.sockets.on('connection', function (socket) {
     socket.on('pong', function (data) {
         var latency = Date.now() -  socket.startTime;
         socket.emit('message', { message: 'latency', latency: latency});
+//        console.log("received pong" + " " + data);
     });
 
     // ping
