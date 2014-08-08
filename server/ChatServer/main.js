@@ -282,6 +282,8 @@ var getIpAddress = function() {
         });
     }
     ips['network_interface'] = server.get('network_interface');
+    ips['tcp_port'] = server.get('tcp_port');
+    ips['udp_port'] = server.get('udp_port');
     _.extend(ips, server.get('server-geo-infos'));
     return ips;
 };

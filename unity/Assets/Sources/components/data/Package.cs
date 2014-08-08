@@ -1,5 +1,4 @@
 ﻿using System;
-using SimpleJson;
 
 namespace Assets.Sources.components.data
 {
@@ -8,7 +7,7 @@ namespace Assets.Sources.components.data
         public string Name;
         public int PackageId;
         public Action Action;
-        public JsonObject raw;
+        public JSONObject raw;
 
         [Obsolete("Not used anymore", false)]
         public bool Verified;

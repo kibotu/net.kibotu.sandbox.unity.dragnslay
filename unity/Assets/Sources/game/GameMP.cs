@@ -5,9 +5,7 @@ using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
 using Assets.Sources.states;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SimpleJson;
 using UnityEngine;
 using NetworkView = Assets.Sources.menu.view.NetworkView;
 
@@ -33,7 +31,7 @@ namespace Assets.Sources.game
             Turn = 0;
 
             SocketHandler.SharedConnection.OnJSONEvent += OnJSONEvent;
-            SocketHandler.Connect(1337);
+            SocketHandler.Connect();
         }
 
         /**

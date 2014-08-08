@@ -76,7 +76,7 @@ namespace Assets.Sources.game
             {
                 foreach (var spawn in json["spawns"])
                 {
-                    var ship = spawn;
+                    var ship = (JObject)spawn;
                     Debug.Log("spawn units scheduled at: " + json["scheduleId"]);
 
                     ScheduleAt("spawn-unit", json["scheduleId"].ToObject<long>(), json["packageId"].ToObject<int>(), () =>
@@ -134,7 +134,7 @@ namespace Assets.Sources.game
 
                 foreach (var playerDataRaw in playerDatas)
                 {
-                    var raw = playerDataRaw;
+                    var raw = (JObject)playerDataRaw;
                     ExecuteOnMainThread.Enqueue(() =>
                         {
                             var player = GameObjectFactory.CreatePlayer(raw["uid"].ToString());
@@ -144,7 +144,7 @@ namespace Assets.Sources.game
                             var islands = raw["islands"];
                             foreach (var data in islands)
                             {
-                                var island = data;
+                                var island = (JObject)data;
                                 var islandUid = island["uid"].ToObject<int>();
                                 var islandType = island["type"].ToObject<int>();
                                 var islandMaxSpawn = island["max-spawn"].ToObject<int>();

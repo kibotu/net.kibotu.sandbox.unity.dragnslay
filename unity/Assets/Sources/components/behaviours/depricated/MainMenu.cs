@@ -89,7 +89,7 @@ namespace Assets.Sources.menu.view
             var game = new GameObject("Game").AddComponent<Game1vs1>();
             SocketHandler.SharedConnection.OnJSONEvent += game.OnJSONEvent;
 
-            SocketHandler.Connect(1337);
+            SocketHandler.Connect();
             GameObject.Find("Menu").GetComponent<Menu>().ShowGameHud();
 
             // hide connect button

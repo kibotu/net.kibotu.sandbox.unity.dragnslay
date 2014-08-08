@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Assets.Sources.components.data;
 using Assets.Sources.utility;
 using Newtonsoft.Json.Linq;
-//using SimpleJson;
-//using SocketIO.Client;
+using SocketIO;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -15,7 +13,7 @@ using Debug = UnityEngine.Debug;
 
 namespace Assets.Sources.network
 {
-    class SocketHandler : MonoBehaviour
+    class SocketHandler
     {
         #region delegates
 
@@ -32,27 +30,21 @@ namespace Assets.Sources.network
 
         #region init
 
-        public string Ip = "undefined";
-
         #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-//        private Namespace _socket;
-        private SocketIOClient.Client _socket;
         #elif UNITY_ANDROID 
         private static AndroidJavaClass _socket;
         private const string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
         #endif
         private static SocketHandler _instance;
-        private Queue<MessageData> messageQueue;
+        private SocketIOComponent _socket;
+        private readonly Queue<MessageData> _messageQueue;
 
-        public void Awake()
+        public SocketHandler()
         {
-            messageQueue = new Queue<MessageData>();
+            _messageQueue = new Queue<MessageData>();
         }
 
-        public static SocketHandler SharedConnection
-        {
-            get { return _instance ?? (_instance = new GameObject("SocketHandler").AddComponent<SocketHandler>()); }
-        }
+        public static SocketHandler SharedConnection { get { return _instance ?? (_instance = new SocketHandler()); } }
 
         #endregion
 
@@ -60,70 +52,34 @@ namespace Assets.Sources.network
 
         public static void Connect(string host, int port)
         {
-            SocketIOClient.Client socket;
+            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-            socket = new SocketIOClient.Client("http://"+host+":"+port+"/");
-            socket.On("message", (fn) =>
+            SharedConnection.SetDelegates();
+          
+            #elif UNITY_ANDROID 
+
+            AndroidJNIHelper.debug = true;
+            if (_socket == null)
             {
-                Debug.Log("connect - socket");
-                Debug.Log("response " + fn.MessageText + " " + fn.Json.ToJsonString() + " " + fn.RawMessage);
+                _socket = new AndroidJavaClass(SocketHandlerClass);
+                // System.Threading.Thread(_socket.CallStatic("connect", host, port));
+                _socket.CallStatic("connect", host, port);
+            }
 
-//                Dictionary<string, string> args = new Dictionary<string, string>();
-//                args.Add("message", "what's up?");
-                socket.Emit("message", PackageFactory.CreateHelloWorldMessage());
-            });
-            socket.Error += (sender, e) =>
-            {
-                Debug.Log("socket Error: " + e.Message.ToString());
-            };
-            socket.Connect();
-//
-//
-//            _instance.Ip = "http://" + host + ":" + port + "/";
-//
-//            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-//
-//            SharedConnection._socket = new SocketIOClient().Connect(_instance.Ip);
-//            SharedConnection.SetDelegates();
-//          
-//            #elif UNITY_ANDROID 
-
-//            AndroidJNIHelper.debug = true;
-//            if (_socket == null)
-//            {
-//                _socket = new AndroidJavaClass(SocketHandlerClass);
-//                // System.Threading.Thread(_socket.CallStatic("connect", host, port));
-//                _socket.CallStatic("connect", host, port);
-//            }
-
-//            #endif
+            #endif
         }
 
-        public static void Connect(int port)
+        public static void Connect()
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
             NetworkHelper.DownloadJson("http://www.kibotu.net/server", result =>
             {
-                _instance.Ip = "http://" + result[(string)result["network_interface"]] + ":" + port + "/";
-                SharedConnection._socket = new SocketIOClient.Client(_instance.Ip);
-
-                SharedConnection._socket.On("message", (fn) =>
-                {
-                    Debug.Log("connect - socket");
-                    Debug.Log("response " + fn.MessageText + " " + fn.Json.ToJsonString() + " " + fn.RawMessage);
-
-                    //                Dictionary<string, string> args = new Dictionary<string, string>();
-                    //                args.Add("message", "what's up?");
-                    SharedConnection._socket.Emit("message", PackageFactory.CreateHelloWorldMessage());
-                });
-                SharedConnection._socket.Error += (sender, e) =>
-                {
-                    Debug.Log("socket Error: " + e.Message.ToString());
-                };
-
-                SharedConnection.SetDelegates();
+                SharedConnection._socket = new GameObject("SocketHandler").AddComponent<SocketIOComponent>();
+                SharedConnection._socket.SetUri(result[(string)result["network_interface"]].ToString(), Int32.Parse(result["tcp_port"].ToString()));
+                SharedConnection._socket.Init();
                 SharedConnection._socket.Connect();
+                SharedConnection.SetDelegates();
             });
 
             #elif UNITY_ANDROID
@@ -136,6 +92,21 @@ namespace Assets.Sources.network
             }
             
             #endif
+        }
+
+        public void TestOpen(SocketIOEvent e)
+        {
+            Debug.Log("[SocketIO] Open received: " + e.name + " " + e.data);
+        }
+
+        public void TestError(SocketIOEvent e)
+        {
+            Debug.Log("[SocketIO] Error received: " + e.name + " " + e.data);
+        }
+
+        public void TestClose(SocketIOEvent e)
+        {
+            Debug.Log("[SocketIO] Close received: " + e.name + " " + e.data);
         }
 
         #endregion
@@ -157,7 +128,7 @@ namespace Assets.Sources.network
             var msg = new MessageData {name = name, message = message};
             if(SharedConnection.LoggingEnabled) 
                 Debug.Log("Enqueue '" + msg.name + "' " + msg.message);
-            SharedConnection.messageQueue.Enqueue(msg);
+            SharedConnection._messageQueue.Enqueue(msg);
         }
 
         public static void EmitNow(string name, JObject message)
@@ -184,9 +155,9 @@ namespace Assets.Sources.network
 
         public void Update()
         {
-            while (messageQueue.Count > 0) // todo merge multiple messages into one
+            while (_messageQueue.Count > 0) // todo merge multiple messages into one
             {
-                EmitNow(messageQueue.Dequeue());
+                EmitNow(_messageQueue.Dequeue());
             }
         }
         #endregion
@@ -197,22 +168,32 @@ namespace Assets.Sources.network
         {
             #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 
-//            _socket.On("connect", (args, callback) => ConnectCallback("Successfully connected. " + _socket.Name));
-//            _socket.On("message", (args, callback) => { foreach (JObject t in args) JSONCallback(t); });
+            _socket.On("open", ConnectCallback);
+            _socket.On("connect", ConnectCallback2);
+            _socket.On("error", ErrorCallback);
+            _socket.On("close", DisconnectCallback);
+            _socket.On("reconnect", ReconnectCallback);
+            _socket.On("message", StringCallback);
 
             #endif
         }
 
-        protected void ConnectCallback(string error)
+        protected void ConnectCallback(SocketIOEvent error)
         {
             Debug.Log("ConnectCallback " + error);
-            OnConnectEvent(error);
+            OnConnectEvent(error.name + " " + error.data);
         }
 
-        protected void StringCallback(string message)
+        protected void ConnectCallback2(SocketIOEvent error)
+        {
+            Debug.Log("ConnectCallback2 " + error);
+            OnConnectEvent(error.name + " " + error.data);
+        }
+
+        protected void StringCallback(SocketIOEvent message)
         {
             Debug.Log("StringCallback " + message);
-            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
+//            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
         }
 
         protected void JSONCallback(JObject message)
@@ -221,28 +202,28 @@ namespace Assets.Sources.network
             OnJSONEvent(message);
         }
 
-        protected void ReconnectCallback(string message)
+        protected void ReconnectCallback(SocketIOEvent message)
         {
             Debug.Log("ReconnectCallback " + message);
-            OnReconnectEvent(message);
+            OnReconnectEvent(message.name);
         }
 
-        protected void DisconnectCallback(string error)
+        protected void DisconnectCallback(SocketIOEvent error)
         {
-            Debug.Log("ConnectCallback " + error);
-            DisconnectCallback(error);
+            Debug.Log("DisconnectCallback " + error);
+            OnDisconnectEvent(error.name);
         }
 
-        protected void ErrorCallback(string error)
+        protected void ErrorCallback(SocketIOEvent error)
         {
             Debug.Log("ErrorCallback " + error);
-            OnErrorEvent(error);
+            OnErrorEvent(error.name);
         }
 
-        protected void ConnectionFailedCallback(string message)
+        protected void ConnectionFailedCallback(SocketIOEvent message)
         {
-            Debug.Log("ConnectionFailedCallback " + message);
-            OnConnectionFailedEvent(message);
+            Debug.Log("ConnectionFailedCallback " + message.name + " " + message.data);
+            OnConnectionFailedEvent(message.name + " " + message.data);
         }
 
         #endregion

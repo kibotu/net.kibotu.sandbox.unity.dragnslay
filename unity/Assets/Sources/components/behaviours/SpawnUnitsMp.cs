@@ -46,7 +46,7 @@ namespace Assets.Sources.components.behaviours
         {
             foreach (var spawn in json["spawns"])
             {
-                var ship = spawn;
+                var ship = (JObject)spawn;
                 Debug.Log("spawn units scheduled at: " + json["scheduleId"]);
 
                 ((GameMp) Game.Shared).ScheduleAt("spawn-unit", json["scheduleId"].ToObject<long>(),
