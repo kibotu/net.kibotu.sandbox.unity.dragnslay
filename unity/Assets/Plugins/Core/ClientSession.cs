@@ -187,6 +187,8 @@ namespace SuperSocket.ClientEngine
 
         protected virtual void OnDataReceived(byte[] data, int offset, int length)
         {
+            UnityEngine.Debug.Log(System.Text.Encoding.UTF8.GetString(data));
+
             var handler = m_DataReceived;
             if (handler == null)
                 return;

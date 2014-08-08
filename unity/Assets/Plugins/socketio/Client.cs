@@ -6,10 +6,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
+using Newtonsoft.Json.Linq;
 using SimpleJson;
 using SocketIOClient.Eventing;
 using SocketIOClient.Messages;
+using SuperSocket.ClientEngine;
 using WebSocket4Net;
 using Debug = UnityEngine.Debug;
 
@@ -154,13 +157,14 @@ namespace SocketIOClient
 			        {
 			            // ws://188.106.177.88:1337/socket.io/1/websocket/KWdZrUn5dt76E3DFAAAi
 			            // ws://188.106.177.88:1337/EIO=2&transport=websocket&sKWdZrUn5dt76E3DFAAAi
-			            var socketUri = string.Format("{0}://{1}:{2}/{4}/?EIO=2&transport=websocket&sid={3}",
+			            var socketUri = string.Format("{0}://{1}:{2}/{4}/?EIO=0&transport=websocket&sid={3}",
 			                uri.Scheme == Uri.UriSchemeHttps ? "wss" : "ws", uri.Host, uri.Port, HandShake.SID,"socket.io");
 
 			            Debug.Log("Connect request: " + socketUri);
 			            this.wsClient = new WebSocket(socketUri,
 //								string.Format("{0}://{1}:{2}/socket.io/1/websocket/{3}", wsScheme, uri.Host, uri.Port, this.HandShake.SID),
-			                string.Empty,
+//                            "Sec-WebSocket-Protocol",
+                            "",
 			                this.socketVersion);
 
 			            this.wsClient.EnableAutoSendPing = true;
@@ -171,6 +175,8 @@ namespace SocketIOClient
 			            this.wsClient.Closed += wsClient_Closed;
 
 			            this.wsClient.Open();
+
+//                        Emit("message", CreateHelloWorldMessage());
 			        }
 			        else
 			        {
@@ -186,6 +192,16 @@ namespace SocketIOClient
 			    }
 			}
 		}
+
+        public static JObject CreateHelloWorldMessage()
+        {
+            return new JObject
+            {
+                {"message",     "hallo welt"},
+                {"username",    "android"},
+                {"name",        "message"}
+            };
+        }
 
 		public IEndPointClient Connect(string endPoint)
 		{
@@ -630,7 +646,6 @@ namespace SocketIOClient
 	            try
 	            {
 //                    var query = "&t=" + Math.Round((DateTimeOffset.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds, 0);
-	                
                     var request = string.Format("{0}://{1}:{2}/{4}/?EIO=3&transport=polling&b64=0{3}", uri.Scheme, uri.Host, uri.Port, uri.Query, "socket.io");
                     response = client.DownloadString(request);
                     //            var handshakeUrl = string.Format("{0}://{1}:{2}/{4}/1/{3}", uri.Scheme, uri.Host, uri.Port, query, resource);

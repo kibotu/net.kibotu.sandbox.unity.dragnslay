@@ -673,13 +673,10 @@ var allPlayersAreReady = function(socket) {
 
 io.sockets.on('connect', function (socket){
     console.log("New connect from " + socket.request.connection.remoteAddress + ":" + socket.request.connection.remotePort);
-});
 
+});
+var bla = false;
 io.sockets.on('connection', function (socket) {
-//    setInterval(function() {
-//        socket.emit('message', { message: 'hello world'});
-//        console.log("emit hello world");
-//    },1000);
 
     // new client has connected
     console.log("New connection from " + socket.request.connection.remoteAddress + ":" + socket.request.connection.remotePort);

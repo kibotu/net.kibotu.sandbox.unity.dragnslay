@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
@@ -66,6 +67,10 @@ namespace SuperSocket.ClientEngine
 
         private void ProcessReceive(SocketAsyncEventArgs e)
         {
+
+            UnityEngine.Debug.Log("ProcessReceive");
+//            UnityEngine.Debug.Log(System.Text.Encoding.UTF8.GetString(e.Buffer));
+
             if (e.SocketError != SocketError.Success)
             {
                 if(EnsureSocketClosed())
@@ -82,6 +87,8 @@ namespace SuperSocket.ClientEngine
                 return;
             }
 
+            UnityEngine.Debug.Log("ProcessReceive 2");
+            UnityEngine.Debug.Log("ProcessReceive 3 " + Encoding.UTF8.GetString(e.Buffer));
             OnDataReceived(e.Buffer, e.Offset, e.BytesTransferred);
             StartReceive();
         }

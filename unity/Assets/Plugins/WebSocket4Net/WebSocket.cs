@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -552,6 +553,8 @@ namespace WebSocket4Net
 
         private void OnDataReceived(byte[] data, int offset, int length)
         {
+            UnityEngine.Debug.Log(System.Text.Encoding.UTF8.GetString(data));
+
             while (true)
             {
                 int left;
