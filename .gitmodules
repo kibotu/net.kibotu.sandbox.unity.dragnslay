@@ -7,3 +7,6 @@
 [submodule "resources"]
 	path = resources
 	url = git@github.com:JanPaschen/net.kibotu.sandbox.unity.resources.git
+[submodule "unity/Assets/Plugins/unity-socket.io"]
+	path = unity/Assets/Plugins/unity-socket.io
+	url = ../unity-socket.io.git
