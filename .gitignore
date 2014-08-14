@@ -6,7 +6,7 @@ UnityGenerated/
 Library/
 Temp/
 Obj/
-out/
+deploy/
 *.meta
  
 # ===================================== #
