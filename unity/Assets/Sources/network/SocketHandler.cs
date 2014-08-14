@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Sources.components.data;
+using Assets.Sources.game;
 using Assets.Sources.utility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -31,11 +32,11 @@ namespace Assets.Sources.network
         #region init
         private static SocketHandler _instance;
         private SocketIOComponent _socket;
-        private readonly Queue<MessageData> _messageQueue;
+//        private readonly Queue<MessageData> _messageQueue;
 
         public SocketHandler()
         {
-            _messageQueue = new Queue<MessageData>();
+//            _messageQueue = new Queue<MessageData>();
 #if UNITY_EDITOR
             EditorApplication.playmodeStateChanged += HandleOnPlayModeChanged;
 #endif
@@ -52,6 +53,7 @@ namespace Assets.Sources.network
             _socket = new GameObject("SocketHandler").AddComponent<SocketIOComponent>();
             _socket.SetUri(host, port);
             _socket.Init();
+            Debug.Log("Connecting to: " + SharedConnection._socket.url);
             _socket.Connect();
             SetDelegates();
         }
@@ -98,7 +100,7 @@ namespace Assets.Sources.network
             var msg = new MessageData {name = name, message = message};
             if(SharedConnection.LoggingEnabled) 
                 Debug.Log("Enqueue '" + msg.name + "' " + msg.message);
-            SharedConnection._messageQueue.Enqueue(msg);
+            Game.ExecuteOnMainThread.Enqueue(() => SharedConnection.EmitNow(msg));
         }
 
         public static void EmitNow(string name, JObject message)
@@ -119,29 +121,18 @@ namespace Assets.Sources.network
                 Debug.Log("EmitNow '" + msg.name + "' " + msg.message);
         }
 
-        public void Update()
-        {
-            while (_messageQueue.Count > 0) // todo merge multiple messages into one
-            {
-                EmitNow(_messageQueue.Dequeue());
-            }
-        }
         #endregion
 
         #region delegates
 
         private void SetDelegates()
         {
-            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-
             _socket.On("open", ConnectCallback);
             _socket.On("connect", ConnectCallback2);
             _socket.On("error", ErrorCallback);
             _socket.On("close", DisconnectCallback);
             _socket.On("reconnect", ReconnectCallback);
             _socket.On("message", JSONCallback);
-
-            #endif
         }
 
         protected void ConnectCallback(SocketIOEvent error)
@@ -158,12 +149,13 @@ namespace Assets.Sources.network
 
         protected void StringCallback(SocketIOEvent message)
         {
-            Debug.Log("StringCallback " + message);
+//            Debug.Log("StringCallback " + message);
 //            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
         }
 
         protected void JSONCallback(SocketIOEvent message)
         {
+            //            Debug.Log("JSONCallback " + message);
             OnJSONEvent((JObject)JsonConvert.DeserializeObject(message.data.ToString())); // #cloud todo use only one jsonobject lib
         }
 

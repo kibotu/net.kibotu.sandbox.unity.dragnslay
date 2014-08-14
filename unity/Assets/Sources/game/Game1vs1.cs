@@ -209,7 +209,7 @@ namespace Assets.Sources.game
 
                 // create
                 SocketHandler.Emit("join-game", PackageFactory.CreateGameTypeGameMessage("join-game", "game1vs1"));
-
+               
                 // join
                 // SocketHandler.SharedConnection.Emit("create-game", PackageFactory.CreateGameTypeGameMessage("create-game", "game1vs1"));
             }

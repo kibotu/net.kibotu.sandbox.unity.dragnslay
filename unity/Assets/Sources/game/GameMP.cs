@@ -311,10 +311,11 @@ namespace Assets.Sources.game
             }
             else if (message.Equals("waiting-for-player"))
             {
-                foreach (var uid in json["player"])
-                {
-                    Debug.Log("Waiting for player: " + uid);
-                }
+                Debug.Log("message " + json);
+//                foreach (var uid in json["player"])
+//                {
+//                    Debug.Log("Waiting for player: " + uid);
+//                }
             }
             #endregion
 

@@ -683,8 +683,6 @@ io.sockets.on('connection', function (socket) {
     // new client has connected
     console.log("New connection from " + socket.request.connection.remoteAddress + ":" + socket.request.connection.remotePort);
 
-    socket.emit('message', { message: 'hello world'});
-
     // enable latency spam
     setInterval(function() {
         socket.startTime = Date.now();
