@@ -5,12 +5,11 @@ using Assets.Sources.utility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SocketIO;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using Debug = UnityEngine.Debug;
-
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-
-#endif
 
 namespace Assets.Sources.network
 {
@@ -30,12 +29,6 @@ namespace Assets.Sources.network
         #endregion
 
         #region init
-
-        #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-        #elif UNITY_ANDROID 
-        private static AndroidJavaClass _socket;
-        private const string SocketHandlerClass = "net.kibotu.sandbox.network.SocketClient";
-        #endif
         private static SocketHandler _instance;
         private SocketIOComponent _socket;
         private readonly Queue<MessageData> _messageQueue;
@@ -43,6 +36,9 @@ namespace Assets.Sources.network
         public SocketHandler()
         {
             _messageQueue = new Queue<MessageData>();
+#if UNITY_EDITOR
+            EditorApplication.playmodeStateChanged += HandleOnPlayModeChanged;
+#endif
         }
 
         public static SocketHandler SharedConnection { get { return _instance ?? (_instance = new SocketHandler()); } }
@@ -62,39 +58,25 @@ namespace Assets.Sources.network
 
         public static void Connect(string host, int port)
         {
-            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-
-                SharedConnection.ConnectInternal(host, port);
-
-            #elif UNITY_ANDROID 
-            
-                AndroidJNIHelper.debug = true;
-                if (_socket == null)
-                {
-                    _socket = new AndroidJavaClass(SocketHandlerClass);
-                    // System.Threading.Thread(_socket.CallStatic("connect", host, port));
-                    _socket.CallStatic("connect", host, port);
-                }
-
-            #endif
+            SharedConnection.ConnectInternal(host, port);
         }
 
         public static void Connect()
         {
-            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+            NetworkHelper.DownloadJson("http://www.kibotu.net/server", result => SharedConnection.ConnectInternal(result[(string)result["network_interface"]].ToString(), Int32.Parse(result["tcp_port"].ToString())));
+        }
 
-                NetworkHelper.DownloadJson("http://www.kibotu.net/server", result => SharedConnection.ConnectInternal(result[(string)result["network_interface"]].ToString(), Int32.Parse(result["tcp_port"].ToString())));
+        public static void Disconnect()
+        {
+            SharedConnection._socket.Disconnect();
+        }
 
-            #elif UNITY_ANDROID
-
-                AndroidJNIHelper.debug = true;
-                if (_socket == null)
-                {
-                    _socket = new AndroidJavaClass(SocketHandlerClass);
-                    _socket.CallStatic("connect", port);
-                }
-            
-            #endif
+        void HandleOnPlayModeChanged()
+        {
+#if UNITY_EDITOR
+            if (!EditorApplication.isPlaying)
+#endif
+                Disconnect();
         }
 
         #endregion
@@ -131,11 +113,7 @@ namespace Assets.Sources.network
 
         protected void EmitNow(MessageData msg)
         {
-            #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
-               _socket.Emit(msg.name, msg.message);
-            #elif UNITY_ANDROID
-                _socket.CallStatic("Emit", msg.name, msg.message);
-            #endif
+            _socket.Emit(msg.name, msg.message);
 
             if(LoggingEnabled) 
                 Debug.Log("EmitNow '" + msg.name + "' " + msg.message);
