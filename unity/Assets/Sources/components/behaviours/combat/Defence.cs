@@ -23,7 +23,7 @@ namespace Assets.Sources.components.behaviours.combat
             Destroy(gameObject);
             var explosion = Prefabs.Instance.GetNewExplosion();
             explosion.transform.position = transform.position;
-            explosion.GetComponent<DetonatorShockwave>().color = GetComponent<ShipData>().PlayerData.color;
+//            explosion.GetComponent<DetonatorShockwave>().color = GetComponent<ShipData>().PlayerData.color;
             
             Registry.Ships.Remove(GetComponent<ShipData>().uid);
 

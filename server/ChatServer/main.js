@@ -677,7 +677,6 @@ io.sockets.on('connect', function (socket){
     console.log("New connect from " + socket.request.connection.remoteAddress + ":" + socket.request.connection.remotePort);
 
 });
-var bla = false;
 io.sockets.on('connection', function (socket) {
 
     // new client has connected
