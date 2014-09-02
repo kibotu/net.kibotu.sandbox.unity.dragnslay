@@ -12,6 +12,11 @@ using System.Collections.Generic;
 [CustomEditor(typeof(PlayMakerFSM))]
 public class FsmComponentInspector : Editor
 {
+    private static GUIContent restartOnEnableLabel = new GUIContent(Strings.Label_Reset_On_Disable, Strings.Tooltip_Reset_On_Disable);
+    private static GUIContent showStateLabelLabel = new GUIContent(Strings.Label_Show_State_Label, Strings.Tooltip_Show_State_Label);
+    private static GUIContent enableDebugFlowLabel = new GUIContent(Strings.FsmEditorSettings_Enable_DebugFlow, Strings.FsmEditorSettings_Enable_DebugFlow_Tooltip);
+    //private static GUIContent quickLoadLabel = new GUIContent("Quick Load", "Skip data validation when loading FSM. Faster, but can fail if actions have changed since FSM was saved.");
+
     // Inspector targets
 
     private PlayMakerFSM fsmComponent;   // Inspector target
@@ -97,6 +102,15 @@ public class FsmComponentInspector : Editor
             GUI.enabled = false;
         }
 
+        // Resave warning
+        /*
+        if (fsm.needsResave)
+        {
+            EditorGUI.BeginDisabledGroup(false);
+            EditorGUILayout.HelpBox("NOTE: Action data has changed since FSM was saved. Please resave FSM to update actions.", MessageType.Warning);
+            EditorGUI.EndDisabledGroup();
+        }*/
+
         // Edit Description
 
         fsm.Description = FsmEditorGUILayout.TextAreaWithHint(fsm.Description, Strings.Label_Description___, GUILayout.MinHeight(60));
@@ -122,9 +136,10 @@ public class FsmComponentInspector : Editor
 
         // Edit FSM Settings
         
-        fsm.RestartOnEnable = GUILayout.Toggle(fsm.RestartOnEnable, new GUIContent(Strings.Label_Reset_On_Disable, Strings.Tooltip_Reset_On_Disable));
-        fsm.ShowStateLabel = GUILayout.Toggle(fsm.ShowStateLabel, new GUIContent(Strings.Label_Show_State_Label, Strings.Tooltip_Show_State_Label));
-        fsm.EnableDebugFlow = GUILayout.Toggle(fsm.EnableDebugFlow, new GUIContent(Strings.FsmEditorSettings_Enable_DebugFlow, Strings.FsmEditorSettings_Enable_DebugFlow_Tooltip));
+        fsm.RestartOnEnable = GUILayout.Toggle(fsm.RestartOnEnable, restartOnEnableLabel);
+        fsm.ShowStateLabel = GUILayout.Toggle(fsm.ShowStateLabel, showStateLabelLabel);
+        fsm.EnableDebugFlow = GUILayout.Toggle(fsm.EnableDebugFlow, enableDebugFlowLabel);
+        //fsm.QuickLoad = GUILayout.Toggle(fsm.QuickLoad, quickLoadLabel);
 
         // The rest of the GUI is readonly so we can check for changes here
 

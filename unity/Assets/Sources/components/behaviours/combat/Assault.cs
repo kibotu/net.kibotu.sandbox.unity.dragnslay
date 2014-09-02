@@ -47,7 +47,7 @@ namespace Assets.Sources.components.behaviours.combat
 //            Debug.Log(ShipData.playerUid +"[" + ShipData.uid + "] attacks " + enemyShip.GetComponent<ShipData>().playerUid + "[" + enemyShip.GetComponent<ShipData>().uid + "]");
 
             var rocket = Prefabs.Instance.GetNewRocket();
-            var behaviour = rocket.GetComponent<RocketMove>();
+            var behaviour = rocket.AddComponent<RocketMove>();
             behaviour.Attacker = gameObject.transform.position;
             behaviour.AttackDamage = AssaultShipData.AttackDamage;
             behaviour.Defender = enemyShip;

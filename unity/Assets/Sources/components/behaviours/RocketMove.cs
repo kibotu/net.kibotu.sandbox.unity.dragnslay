@@ -13,6 +13,7 @@ namespace Assets.Sources.components.behaviours
         public float Velocity;
         public float Acceleration;
         private float _startTime;
+		public Vector3 dir;
 
         public void Start()
         {
@@ -39,7 +40,7 @@ namespace Assets.Sources.components.behaviours
             }; 
 
             // rotate along forward axe of camera towards target
-            var dir = transform.position.Direction(Defender.transform.position);
+            dir = transform.position.Direction(Defender.transform.position);
          
 
             // allign to camera (billboard)
@@ -48,13 +49,13 @@ namespace Assets.Sources.components.behaviours
             transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * dir);
 
             // if reached, apply damage and destroy rocket
-            if (Vector3.Distance(transform.position, Defender.transform.position) < transform.lossyScale.y)
+            if (Vector3.Distance(transform.position, Defender.transform.position) < 0.75f) // transform.lossyScale.y)
             {
                 //var hit = Prefabs.Instance.GetNewSmallExplosion();
                 //hit.transform.position = gameObject.transform.position;
                 //hit.transform.parent = Defender.transform;
                 Destroy(gameObject);
-                Defender.GetComponent<Defence>().Defend(AttackDamage);
+				Defender.GetComponent<Defence>().Defend(this);
             }
         }
     }

@@ -7,13 +7,30 @@ namespace Assets.Sources.components.behaviours.combat
     public class Defence : MonoBehaviour
     {
         public LifeData LifeData;
-        private float _startTime;
+        public float _startTime;
         private bool _isExploding;
+		private GameObject shield;
+		public float ShieldDistance = 0.7f;
 
         public void Start()
         {
             LifeData = GetComponent<LifeData>();
         }
+
+		public void Defend(RocketMove rocket) 
+		{
+			// reduce hitpoints
+			Defend(rocket.AttackDamage);
+			
+			// spawn shield
+			if(shield == null) shield = Prefabs.Instance.GetNewShield();
+			else 
+				shield.GetComponent<FadeOutAndDestroy>().Reset();
+
+			shield.transform.forward = -rocket.dir;
+			shield.transform.position = transform.position - rocket.dir * ShieldDistance;
+			shield.transform.parent = transform;
+		}
 
         public void Defend(float damage)
         {

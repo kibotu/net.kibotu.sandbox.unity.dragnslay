@@ -16,6 +16,7 @@ namespace Assets.Sources.model
         public GameObject Ai;
         public GameObject SmallExplosion;
         public GameObject Shockwave;
+		public GameObject Shield;
 
         public void Awake()
         {
@@ -53,8 +54,8 @@ namespace Assets.Sources.model
         public GameObject GetNewRocket()
         {
             var go = CreateGameObject(Rocket);
-            go.AddComponent<RocketMove>();
-            go.transform.localScale = new Vector3(15f, 15f, 15f);
+            //go.AddComponent<RocketMove>();
+            //go.transform.localScale = new Vector3(15f, 15f, 15f);
             return go;
         }
 
@@ -95,6 +96,11 @@ namespace Assets.Sources.model
         {
             return CreateGameObject(Steelship);
         }
+
+		public GameObject GetNewShield()
+		{
+			return CreateGameObject(Shield);
+		}
     }
 }
 

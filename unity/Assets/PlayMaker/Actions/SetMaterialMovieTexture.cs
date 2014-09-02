@@ -7,7 +7,7 @@ using UnityEngine;
 namespace HutongGames.PlayMaker.Actions
 {
 	[ActionCategory(ActionCategory.Material)]
-	[Tooltip("Sets a named texture in a game object's material to a movie texure.")]
+	[Tooltip("Sets a named texture in a game object's material to a movie texture.")]
 	public class SetMaterialMovieTexture : FsmStateAction
 	{
 		[Tooltip("The GameObject that the material is applied to.")]
