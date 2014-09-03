@@ -21,7 +21,7 @@ namespace Assets.Sources.menu
 
         public void ShowGameHud()
         {
-            GameObject.Find("MiniMapCamera").camera.enabled = false;
+           // GameObject.Find("MiniMapCamera").camera.enabled = false;
                 
             gameObject.AddComponent<BoostsView>();
             gameObject.AddComponent<NetworkView>();

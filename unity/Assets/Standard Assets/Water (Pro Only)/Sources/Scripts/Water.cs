@@ -84,9 +84,7 @@ public class Water : MonoBehaviour
 			// Setup oblique projection matrix so that near plane is our reflection
 			// plane. This way we clip everything below/above it for free.
 			Vector4 clipPlane = CameraSpacePlane( reflectionCamera, pos, normal, 1.0f );
-			Matrix4x4 projection = cam.projectionMatrix;
-			CalculateObliqueMatrix (ref projection, clipPlane);
-			reflectionCamera.projectionMatrix = projection;
+			reflectionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlane);
 			
 			reflectionCamera.cullingMask = ~(1<<4) & m_ReflectLayers.value; // never render water layer
 			reflectionCamera.targetTexture = m_ReflectionTexture;
@@ -108,9 +106,7 @@ public class Water : MonoBehaviour
 			// Setup oblique projection matrix so that near plane is our reflection
 			// plane. This way we clip everything below/above it for free.
 			Vector4 clipPlane = CameraSpacePlane( refractionCamera, pos, normal, -1.0f );
-			Matrix4x4 projection = cam.projectionMatrix;
-			CalculateObliqueMatrix (ref projection, clipPlane);
-			refractionCamera.projectionMatrix = projection;
+			refractionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlane);
 			
 			refractionCamera.cullingMask = ~(1<<4) & m_RefractLayers.value; // never render water layer
 			refractionCamera.targetTexture = m_RefractionTexture;
@@ -347,25 +343,6 @@ public class Water : MonoBehaviour
 		return new Vector4( cnormal.x, cnormal.y, cnormal.z, -Vector3.Dot(cpos,cnormal) );
 	}
 	
-	// Adjusts the given projection matrix so that near plane is the given clipPlane
-	// clipPlane is given in camera space. See article in Game Programming Gems 5 and
-	// http://aras-p.info/texts/obliqueortho.html
-	private static void CalculateObliqueMatrix (ref Matrix4x4 projection, Vector4 clipPlane)
-	{
-		Vector4 q = projection.inverse * new Vector4(
-			sgn(clipPlane.x),
-			sgn(clipPlane.y),
-			1.0f,
-			1.0f
-		);
-		Vector4 c = clipPlane * (2.0F / (Vector4.Dot (clipPlane, q)));
-		// third row = clip plane - fourth row
-		projection[2] = c.x - projection[3];
-		projection[6] = c.y - projection[7];
-		projection[10] = c.z - projection[11];
-		projection[14] = c.w - projection[15];
-	}
-
 	// Calculates reflection matrix around the given plane
 	private static void CalculateReflectionMatrix (ref Matrix4x4 reflectionMat, Vector4 plane)
 	{

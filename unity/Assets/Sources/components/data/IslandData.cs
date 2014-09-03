@@ -7,13 +7,19 @@ namespace Assets.Sources.components.data
 {
     public class IslandData : MonoBehaviour
     {
-        public int Uid;
+		private int _uid = -1;
         public int ShipType;
         public PlayerData PlayerData;
         public int IslandType;
         public float SpawnRate; // spawn per second
         public int MaxSpawn;
         public float CurrentRespawnRate;
+
+		public int Uid
+		{
+			get { return _uid == -1 ? _uid = UidGenerator.GetNewUid() : _uid; }
+			set { _uid = value; } 
+		}
 
         public void Start() {
 

@@ -77,7 +77,7 @@ CGINCLUDE
 	sampler2D _ReflectionTex;
 	sampler2D _RefractionTex;
 	sampler2D _ShoreTex;
-	sampler2D _CameraDepthTexture;
+	sampler2D_float _CameraDepthTexture;
 
 	// colors in use
 	uniform float4 _RefrColorDepth;
@@ -156,7 +156,7 @@ CGINCLUDE
 		return o;
 	}
 
-	half4 frag( v2f i ) : COLOR
+	half4 frag( v2f i ) : SV_Target
 	{				
 		half3 worldNormal = PerPixelNormal(_BumpMap, i.bumpCoords, VERTEX_WORLD_NORMAL, PER_PIXEL_DISPLACE);
 		half3 viewVector = normalize(i.viewInterpolator.xyz);
@@ -166,7 +166,7 @@ CGINCLUDE
 		half4 grabWithOffset = i.grabPassPos + distortOffset;
 		
 		half4 rtRefractionsNoDistort = tex2Dproj(_RefractionTex, UNITY_PROJ_COORD(i.grabPassPos));
-		half refrFix = UNITY_SAMPLE_DEPTH(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(grabWithOffset)));
+		half refrFix = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(grabWithOffset));
 		half4 rtRefractions = tex2Dproj(_RefractionTex, UNITY_PROJ_COORD(grabWithOffset));
 		
 		#ifdef WATER_REFLECTIVE
@@ -186,7 +186,7 @@ CGINCLUDE
 		half4 edgeBlendFactors = half4(1.0, 0.0, 0.0, 0.0);
 		
 		#ifdef WATER_EDGEBLEND_ON
-			half depth = UNITY_SAMPLE_DEPTH(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos)));
+			half depth = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos));
 			depth = LinearEyeDepth(depth);
 			edgeBlendFactors = saturate(_InvFadeParemeter * (depth-i.screenPos.w));		
 		#endif	
@@ -252,7 +252,7 @@ CGINCLUDE
 		return o;
 	}
 
-	half4 frag300( v2f_noGrab i ) : COLOR
+	half4 frag300( v2f_noGrab i ) : SV_Target
 	{		
 		half3 worldNormal = PerPixelNormal(_BumpMap, i.bumpCoords, VERTEX_WORLD_NORMAL, PER_PIXEL_DISPLACE);
 		half3 viewVector = normalize(i.viewInterpolator.xyz);
@@ -272,7 +272,7 @@ CGINCLUDE
 		half4 edgeBlendFactors = half4(1.0, 0.0, 0.0, 0.0);
 		
 		#ifdef WATER_EDGEBLEND_ON
-			half depth = UNITY_SAMPLE_DEPTH(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos)));
+			half depth = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos));
 			depth = LinearEyeDepth(depth);
 			edgeBlendFactors = saturate(_InvFadeParemeter * (depth-i.screenPos.z));		
 		#endif		
@@ -314,7 +314,7 @@ CGINCLUDE
 
 	}
 
-	half4 frag200( v2f_simple i ) : COLOR
+	half4 frag200( v2f_simple i ) : SV_Target
 	{		
 		half3 worldNormal = PerPixelNormal(_BumpMap, i.bumpCoords, half3(0,1,0), PER_PIXEL_DISPLACE);
 		half3 viewVector = normalize(i.viewInterpolator.xyz);

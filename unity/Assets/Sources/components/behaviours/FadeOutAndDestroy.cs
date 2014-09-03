@@ -23,7 +23,7 @@ public class FadeOutAndDestroy : MonoBehaviour {
 	public Color c;
 
 	private void Fade() {
-		if(renderer == null || renderer.material == null || renderer.material.color == null)
+		if(renderer == null || renderer.material == null)
 			return;
 
 		c = StartColor;

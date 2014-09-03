@@ -25,9 +25,10 @@ namespace Assets.Sources.components.behaviours
 
         public void Start()
         {
+			Registry.Islands.Add(Uid, this.gameObject);
             InitLineRender();
             Island = GetComponent<IslandData>();
-            cameraMovement = GameObject.Find("Main Camera").GetComponent<MoveCamera>();
+            cameraMovement = Camera.main.GetComponent<MoveCamera>();
         }
 
         private void DyeSelected()
@@ -91,15 +92,13 @@ namespace Assets.Sources.components.behaviours
             const int lengthOfLineRenderer = 2;
 
             if (gameObject.GetComponent<LineRenderer>())
-            {
                 return;
-            }
 
             _lineRenderer = gameObject.AddComponent<LineRenderer>();
             // @see http://answers.unity3d.com/questions/57303/changing-replacement-shaders-at-runtime.html
             _lineRenderer.material = new Material(Resources.Load("Shader/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
             _lineRenderer.SetColors(c1, c2);
-            _lineRenderer.SetWidth(20f,20f);
+            _lineRenderer.SetWidth(3f,3f);
             _lineRenderer.castShadows = false;
             _lineRenderer.receiveShadows = false;
             _lineRenderer.SetVertexCount(lengthOfLineRenderer);
@@ -117,7 +116,7 @@ namespace Assets.Sources.components.behaviours
                 _lineRenderer.SetVertexCount(3);
                 _lineRenderer.SetPosition(0, transform.position);
                 _lineRenderer.SetPosition(1, Registry.Islands[Selected.Last()].transform.position);
-                _lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
+				_lineRenderer.SetPosition(2, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)));
             }
             else
             {

@@ -64,5 +64,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
-  additionalBone: 0
+  additionalBone: 1
   userData: 
