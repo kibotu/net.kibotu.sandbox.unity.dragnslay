@@ -183,12 +183,6 @@
  <Reference Include="PlayMaker">
  <HintPath>D:/programming/sandbox/unity/unity/Assets/PlayMaker/PlayMaker.dll</HintPath>
  </Reference>
- <Reference Include="nunit.framework">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Promises-CSharp/Tests/Libraries/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="NSpec">
- <HintPath>D:/programming/sandbox/unity/unity/Assets/Promises-CSharp/Tests/Libraries/nspec/NSpec.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
