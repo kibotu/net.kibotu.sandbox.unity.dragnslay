@@ -201,6 +201,12 @@
  <Reference Include="PlayMaker">
  <HintPath>D:/programming/sandbox/unity/unity/Assets/PlayMaker/PlayMaker.dll</HintPath>
  </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>D:/programming/sandbox/unity/unity/Assets/Promises-CSharp/Tests/Libraries/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="NSpec">
+ <HintPath>D:/programming/sandbox/unity/unity/Assets/Promises-CSharp/Tests/Libraries/nspec/NSpec.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
