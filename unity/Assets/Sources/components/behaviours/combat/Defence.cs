@@ -23,7 +23,11 @@ namespace Assets.Sources.components.behaviours.combat
 			Defend(rocket.AttackDamage);
 			
 			// spawn shield
-			if(shield == null) shield = Prefabs.Instance.GetNewShield();
+		    if (shield == null)
+		    {
+		        shield = Prefabs.Instance.GetNewShield();
+                shield.renderer.material.SetColor("_Tint", Color.red);
+		    }
 			else 
 				shield.GetComponent<FadeOutAndDestroy>().Reset();
 
