@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Assets.Sources.components.behaviours.camera;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
@@ -96,7 +97,7 @@ namespace Assets.Sources.components.behaviours
 
             _lineRenderer = gameObject.AddComponent<LineRenderer>();
             // @see http://answers.unity3d.com/questions/57303/changing-replacement-shaders-at-runtime.html
-            _lineRenderer.material = new Material(Resources.Load("Shader/Mobile Particles Additive Culled", typeof(Shader)) as Shader);
+            _lineRenderer.material = Resources.Load("Materials/LineMaterial", typeof(Material)) as Material;
             _lineRenderer.SetColors(c1, c2);
             _lineRenderer.SetWidth(3f,3f);
             _lineRenderer.castShadows = false;
@@ -104,12 +105,15 @@ namespace Assets.Sources.components.behaviours
             _lineRenderer.SetVertexCount(lengthOfLineRenderer);
         }
 
+        public float ScrollSpeed = 0.5f;
+
         public void Update()
         {
             if (_lineRenderer == null)
-            {
                 return;
-            }
+
+            var offset = Time.time * ScrollSpeed;
+            _lineRenderer.material.mainTextureOffset = new Vector2(offset % 1, 0);
 
             if (!Selected.IsEmpty() && Selected.Contains(Uid))
             {

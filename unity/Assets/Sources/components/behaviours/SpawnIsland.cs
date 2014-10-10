@@ -21,6 +21,7 @@ namespace Assets.Sources.components.behaviours
             // add send units script
             if (Game.IsSinglePlayer())
                 gameObject.AddComponent<SelectAndSendUnitsToTarget>();
+
             else
                 gameObject.AddComponent<SelectAndSendUnitsToTargetMp>();
                 
