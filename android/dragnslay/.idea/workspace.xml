@@ -2,87 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\icosphereshield.prefab" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Prefabs\icosphereshield.prefab.meta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/CombatTest.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/CombatTest.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/IslandFSM.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/Approved/IslandFSM.prefab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Promises-CSharp" afterPath="$PROJECT_DIR$/../../unity/Assets/Promises-CSharp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/TrainingsLevel.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/TrainingsLevel.unity" />
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\unity\Assets\Resources\Meshes\icosphereshield.blend" afterPath="$PROJECT_DIR$/../../unity/Assets/Resources/Meshes/icosphereshield.blend" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Prefabs/icosphereshield_smooth.prefab" afterPath="$PROJECT_DIR$/../../unity/Assets/Prefabs/icosphereshield_smooth.prefab" />
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\unity\Assets\Resources\Materials\shield.mat" afterPath="$PROJECT_DIR$/../../unity/Assets/Resources/Materials/shield.mat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/2D Side Scroller.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/2D Side Scroller.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/ActivateTrigger.cs.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/ActivateTrigger.cs.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/ActivateTrigger.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/ActivateTrigger.cs" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\camera\CameraController.cs" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\camera\CameraController.cs.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-firstpass.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-vs.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Camera Relative Controls.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Camera Relative Controls.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/CameraRelativeControl.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/CameraRelativeControl.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/CameraRelativeSetup.unity.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/CameraRelativeSetup.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/DragRigidbody.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/DragRigidbody.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/DragRigidbody.js" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/General Scripts/DragRigidbody.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Dual Joysticks.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Dual Joysticks.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Dual TouchPads.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Dual TouchPads.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/FadeOutAndDestroy.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/FadeOutAndDestroy.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/First Person Controls.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/First Person Controls.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/First Person Tilt Controls.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/First Person Tilt Controls.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/FirstPersonControl.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/FirstPersonControl.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/FirstPersonSetup.unity.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/FirstPersonSetup.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/FirstPersonTilt.unity.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/FirstPersonTilt.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/FollowTransform.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/FollowTransform.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/Joystick.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/Joystick.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/JoystickThumb.psd.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/JoystickThumb.psd.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Background.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Background.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Detail.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Miscellaneous Shaders/Mobile Detail.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap AlphaTest.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap AlphaTest.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Only.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Only.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Reflective.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Lightmap Shaders (Legacy)/Mobile Lightmap Reflective.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Particle Shaders/Mobile Multiply Culled.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Particle Shaders/Mobile Multiply Culled.shader.meta" />
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\unity\Assets\Resources\Shader\Mobile Particles Additive Culled.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Resources/Shader/Mobile Particles Additive Culled.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Transparent Vertex Color.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Transparent Vertex Color.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Vertex Colored.shader.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Shaders/Vertex Colored Shaders/Mobile Vertex Colored.shader.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/MouseOrbit.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/MouseOrbit.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/MouseOrbit.js" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/MouseOrbit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/ObliqueNear.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/ObliqueNear.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/ObliqueNear.js" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/ObliqueNear.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Player Relative Controls.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Player Relative Controls.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/PlayerRelativeControl.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/PlayerRelativeControl.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/PlayerRelativeSetup.unity.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/PlayerRelativeSetup.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Roll A Ball.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Roll A Ball.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/RollABall.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/RollABall.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/RollABall.js" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/RollABall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/RotationConstraint.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/RotationConstraint.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectAndSendUnitsToTarget.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectAndSendUnitsToTarget.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/SidescrollControl.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/SidescrollControl.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/SidescrollSetup.unity.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/SidescrollSetup.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Single Joystick.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Single Joystick.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Single TouchPad.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Single TouchPad.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Skybox.fbx.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/Skybox.fbx.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/SmoothFollow.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/SmoothFollow.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/SmoothFollow2D.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/SmoothFollow2D.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/SmoothLookAt.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/SmoothLookAt.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/SmoothLookAt.js" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets/Scripts/Camera Scripts/SmoothLookAt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SpawnIsland.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SpawnIsland.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/TapControlSetup.unity.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Control Setups/TapControlSetup.unity.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/TapToMove Controls.prefab.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Prefabs/TapToMove Controls.prefab.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/ThumbAreaLeft.psd.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/ThumbAreaLeft.psd.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/ThumbAreaRight.psd.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/ThumbAreaRight.psd.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/ZoomCamera.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/ZoomCamera.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Materials/grid.mat.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Materials/grid.mat.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/grid.psd.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/grid.psd.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Materials/gridFor2D.mat.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Materials/gridFor2D.mat.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/skyBox.tga.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Textures/skyBox.tga.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Materials/skybox.mat.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Materials/skybox.mat.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/tapcontrol.js.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/tapcontrol.js.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/tapcontrol.js" afterPath="$PROJECT_DIR$/../../unity/Assets/Standard Assets (Mobile)/Scripts/tapcontrol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/camera/MoveCamera.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/camera/MoveCamera.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/TouchController.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/TouchController.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
-      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -148,8 +75,8 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29642057" vertical-offset="11431" max-vertical-offset="16218">
-              <caret line="688" column="13" selection-start-line="688" selection-start-column="13" selection-end-line="688" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.35346755" vertical-offset="11431" max-vertical-offset="16218">
+              <caret line="691" column="29" selection-start-line="691" selection-start-column="29" selection-end-line="691" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -1234,8 +1161,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29642057" vertical-offset="11431" max-vertical-offset="16218">
-          <caret line="688" column="13" selection-start-line="688" selection-start-column="13" selection-end-line="688" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.35346755" vertical-offset="11431" max-vertical-offset="16218">
+          <caret line="691" column="29" selection-start-line="691" selection-start-column="29" selection-end-line="691" selection-end-column="29" />
           <folding />
         </state>
       </provider>

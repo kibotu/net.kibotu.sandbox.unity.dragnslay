@@ -4,19 +4,23 @@ using UnityEngine;
 
 namespace Assets.Sources.components
 {
-    public class TouchController : MonoBehaviour {
+    public class TouchController : MonoBehaviour
+    {
+        public enum Mode
+        {
+            Idle,
+            Selecting,
+            CameraMovement
+        }
 
-        public enum Mode { Idle, Selecting, CameraMovement }
-
+        public MoveCamera CamCtrl;
         public Mode ControlMode = Mode.Idle;
-
-        public CameraController CamCtrl;
         public SelectionController SelCtrl;
 
-        public GameObject go;
+        public GameObject Dragable;
 
-        void Update () {
-
+        private void Update()
+        {
             // figure out number of fingers
             // 1 finger => 
 //            SelCtrl.ToggleAddToList();
@@ -29,41 +33,44 @@ namespace Assets.Sources.components
 
             switch (ControlMode)
             {
-                    case Mode.CameraMovement:
-                        // 1) move
-                        Debug.Log("moving camera");
-                        CamCtrl.Move(Input.GetTouch(0).deltaPosition);
-                        // 2) zoom
-                        break;
-                    case Mode.Selecting:
-                        var inputPosWorld = TouchInputToWorld(); 
-                        inputPosWorld.z = go.transform.position.z;
-                        go.transform.position = inputPosWorld;
-                        break;
-                    case Mode.Idle:
-                        break;
-            }
+                case Mode.CameraMovement:
+                    CamCtrl.UpdateCamera();
+                    break;
+                case Mode.Selecting:
+//                    DragDrop();
 
-//            if (Input.touchCount == 1)
-//            {
-//                if (Input.GetTouch(0).tapCount == 1)
-//                {
-//                    Debug.Log("Single Tap with one finger.");
-//                    RaycastHit hit;
-//                    var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-//                    if (Physics.Raycast(ray, out hit))
-//                    {
-//                        Debug.Log(hit.transform.name);
-//                    }
-//                }
-//            }
+                    // 1) on hit => selecting mode
+                    // 2) else camera movement
+                    RaycastHit hit;
+                    var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        Debug.Log(hit.transform.name);
+                    }
+                    else
+                    {
+                        ControlMode = Mode.CameraMovement;
+                        CamCtrl.UpdateCamera();
+                    }
+
+                    break;
+                case Mode.Idle:
+                    break;
+            }
+        }
+
+        private void DragDrop()
+        {
+            Vector3 inputPosWorld = TouchInputToWorld();
+            inputPosWorld.z = Dragable.transform.position.z;
+            Dragable.transform.position = inputPosWorld;
         }
 
         public Vector3 TouchInputToWorld()
         {
             Vector3 inputPosScreen = Input.GetTouch(0).position;
-            inputPosScreen.z = -CamCtrl.Camera.transform.position.z;
-            return CamCtrl.Camera.ScreenToWorldPoint(inputPosScreen);
+            inputPosScreen.z = -CamCtrl.Cam.transform.position.z;
+            return CamCtrl.Cam.ScreenToWorldPoint(inputPosScreen);
         }
 
         private void UpdateTouchMode()

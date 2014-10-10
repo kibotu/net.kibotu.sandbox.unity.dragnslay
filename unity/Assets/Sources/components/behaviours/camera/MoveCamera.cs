@@ -20,10 +20,11 @@ namespace Assets.Sources.components.behaviours.camera
         private float Velocity = 0.75f;
         public bool InvertMouse = true;
 
+        public Camera Cam;
         public Transform Bounds;
         public float BoxRatio = Mathf.PI / 2;
 
-        void Update()
+        public void UpdateCamera()
         {
             UpdateInputState();
 
@@ -32,14 +33,14 @@ namespace Assets.Sources.components.behaviours.camera
                 Rotate();
 
             // Move the camera on it's XY plane
-            if (_isPanning)
+            if (_isPanning && !_isZooming)
                 Pan();
 
             // Move the camera linearly along Z axis
             if (_isZooming)
                 Zoom();
 
-            Camera.main.transform.position = SetBounds();
+            Cam.transform.position = SetBounds();
         }
 
         private void UpdateInputState()
@@ -76,28 +77,28 @@ namespace Assets.Sources.components.behaviours.camera
 
         private void Rotate()
         {
-            var pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin);
-            Camera.main.transform.RotateAround(Camera.main.transform.position, Camera.main.transform.right, -pos.y*TurnSpeed);
-            Camera.main.transform.RotateAround(Camera.main.transform.position, Vector3.up, pos.x*TurnSpeed);
+            var pos = Cam.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin);
+            Cam.transform.RotateAround(Cam.transform.position, Cam.transform.right, -pos.y*TurnSpeed);
+            Cam.transform.RotateAround(Cam.transform.position, Vector3.up, pos.x*TurnSpeed);
         }
 
         private void Pan()
         {
-            var pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin);
+            var pos = Cam.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin);
             var move = new Vector3(pos.x*PanSpeed*(InvertMouse ? -1 : 1), pos.y*PanSpeed*(InvertMouse ? -1 : 1), 0);
-            Camera.main.transform.Translate(move, Space.Self);
+            Cam.transform.Translate(move, Space.Self);
         }
 
         private void Zoom()
         {
-            var pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin);
-            var move = pos.y*ZoomSpeed*(InvertMouse ? 1 : -1)*Camera.main.transform.forward;
-            Camera.main.transform.Translate(move, Space.World);
+            var pos = Cam.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin);
+            var move = pos.y*ZoomSpeed*(InvertMouse ? 1 : -1)*Cam.transform.forward;
+            Cam.transform.Translate(move, Space.World);
         }
 
         private Vector3 SetBounds()
         {
-            var cP = Camera.main.transform.position;
+            var cP = Cam.transform.position;
             cP.x = Mathf.Clamp(cP.x, Bounds.position.x - Bounds.localScale.x / BoxRatio, Bounds.position.x + Bounds.localScale.x / BoxRatio);
             cP.y = Mathf.Clamp(cP.y, Bounds.position.y - Bounds.localScale.y / BoxRatio, Bounds.position.y + Bounds.localScale.y / BoxRatio);
             cP.z = Mathf.Clamp(cP.z, Bounds.position.z - Bounds.localScale.z / BoxRatio, Bounds.position.z + Bounds.localScale.z / BoxRatio);

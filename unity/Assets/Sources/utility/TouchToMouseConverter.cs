@@ -279,7 +279,8 @@ namespace Assets.Sources.utility
 
         private void toOldDrag()
         {
-            beforeTransform.SendMessage("OnMouseDrag", null, SendMessageOptions.DontRequireReceiver);
+            if (beforeTransform) 
+                beforeTransform.SendMessage("OnMouseDrag", null, SendMessageOptions.DontRequireReceiver);
         }
 
         private void toMouseExit()
