@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ca9d69-5c63-4990-8f80-a7723ae0a2be" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\camera\CameraController.cs" afterPath="" />
-      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\behaviours\camera\CameraController.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\AnimateTexture.cs" afterPath="" />
+      <change type="DELETED" beforePath="D:\programming\sandbox\unity\unity\Assets\Sources\components\AnimateTexture.cs.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Scenes/Touch/DragnDrop.unity" afterPath="$PROJECT_DIR$/../../unity/Assets/Scenes/Touch/DragnDrop.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/../../unity/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger" afterPath="$PROJECT_DIR$/../net.kibotu.logger" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor-vs.unityproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" afterPath="$PROJECT_DIR$/../../unity/Assembly-UnityScript-Editor.unityproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/camera/MoveCamera.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/camera/MoveCamera.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Drawing Lines/Source/LinesRenderer.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Drawing Lines/Source/LinesRenderer.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Drawing Lines/Source/MeshUtils.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Drawing Lines/Source/MeshUtils.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectionController.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/behaviours/SelectionController.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/Assets/Sources/components/TouchController.cs" afterPath="$PROJECT_DIR$/../../unity/Assets/Sources/components/TouchController.cs" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\unity\Assets\Resources\line 1.png.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Resources/line 1.png.meta" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\unity\Assets\Resources\line.png.meta" afterPath="$PROJECT_DIR$/../../unity/Assets/Resources/line.png.meta" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatclient/project.properties" afterPath="$PROJECT_DIR$/../chatclient/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../net.kibotu.logger/android/project.properties" afterPath="$PROJECT_DIR$/../net.kibotu.logger/android/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../networkclient/project.properties" afterPath="$PROJECT_DIR$/../networkclient/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity-csharp.sln" afterPath="$PROJECT_DIR$/../../unity/unity-csharp.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../unity/unity.sln" afterPath="$PROJECT_DIR$/../../unity/unity.sln" />
+      <change type="MODIFICATION" beforePath="D:\programming\sandbox\unity\android\DragnSlay\.idea\workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dragnslay-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +87,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35346755" vertical-offset="11431" max-vertical-offset="16218">
+            <state vertical-scroll-proportion="0.7707317" vertical-offset="11431" max-vertical-offset="16218">
               <caret line="691" column="29" selection-start-line="691" selection-start-column="29" selection-end-line="691" selection-end-column="29" />
               <folding />
             </state>
@@ -243,6 +255,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -253,7 +266,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,7 +329,7 @@
       <recent name="net.kibotu.sandbox.network" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.DragnSlay - Server - WAN">
+  <component name="RunManager" selected="Android Application.DragnSlay - Android">
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -692,7 +704,9 @@
       <workItem from="1412501478450" duration="72000" />
       <workItem from="1412849495038" duration="1410000" />
       <workItem from="1412874988781" duration="217000" />
-      <workItem from="1412887927738" duration="617000" />
+      <workItem from="1412887927738" duration="1216000" />
+      <workItem from="1413028490568" duration="138000" />
+      <workItem from="1413028706685" duration="106000" />
     </task>
     <task id="LOCAL-00001" summary="bla">
       <created>1385758248514</created>
@@ -702,7 +716,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285716000" />
+    <option name="totallyTimeSpent" value="286559000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -742,7 +756,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5184591" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5176471" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1083,13 +1097,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-header-includes.jade">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16868798" vertical-offset="0" max-vertical-offset="907">
           <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/views/global-js-includes.jade">
@@ -1161,7 +1175,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../server/ChatServer/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35346755" vertical-offset="11431" max-vertical-offset="16218">
+        <state vertical-scroll-proportion="0.7707317" vertical-offset="11431" max-vertical-offset="16218">
           <caret line="691" column="29" selection-start-line="691" selection-start-column="29" selection-end-line="691" selection-end-column="29" />
           <folding />
         </state>
@@ -1220,7 +1234,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>desktop</last-edited>
+          <last-edited>DragnSlay - Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

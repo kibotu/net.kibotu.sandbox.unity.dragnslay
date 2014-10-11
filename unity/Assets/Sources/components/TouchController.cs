@@ -15,20 +15,13 @@ namespace Assets.Sources.components
 
         public MoveCamera CamCtrl;
         public Mode ControlMode = Mode.Idle;
-        public SelectionController SelCtrl;
 
         public GameObject Dragable;
+        public SelectionController SelCtrl;
+        private GameObject _currentSelected;
 
         private void Update()
         {
-            // figure out number of fingers
-            // 1 finger => 
-//            SelCtrl.ToggleAddToList();
-
-            // 2 finger => 
-            // CamCtrl.Move();
-            // CamCtrl.Zoom();
-
             UpdateTouchMode();
 
             switch (ControlMode)
@@ -37,24 +30,38 @@ namespace Assets.Sources.components
                     CamCtrl.UpdateCamera();
                     break;
                 case Mode.Selecting:
-//                    DragDrop();
+                    //  DragDrop();
 
                     // 1) on hit => selecting mode
                     // 2) else camera movement
                     RaycastHit hit;
-                    var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                     if (Physics.Raycast(ray, out hit))
                     {
-                        Debug.Log(hit.transform.name);
+                        if (_currentSelected == null)
+                        {
+                            _currentSelected = hit.transform.gameObject;
+                            SelCtrl.ToggleAddToList(_currentSelected);
+                        }
                     }
                     else
                     {
+                        _currentSelected = null;
                         ControlMode = Mode.CameraMovement;
                         CamCtrl.UpdateCamera();
                     }
 
                     break;
                 case Mode.Idle:
+                default:
+                    if (_currentSelected != null)
+                    {
+                        SelCtrl.FinalTarget(_currentSelected);
+                        _currentSelected = null;
+                    }
+                    else
+                        SelCtrl.DeselectAll();
+
                     break;
             }
         }

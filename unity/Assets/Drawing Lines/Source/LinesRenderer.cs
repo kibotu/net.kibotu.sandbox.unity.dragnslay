@@ -12,7 +12,7 @@ namespace Assets.Source
         public void Awake()
         {
             _mesh = new Mesh();
-            Material = new Material(Shader) {color = new Color(1, 0, 0, 0.3f)};
+//            Material = new Material(Shader) {color = new Color(1, 0, 0, 1f)};
         }
 
         public void AddLine(Vector3 p, Vector3 q)

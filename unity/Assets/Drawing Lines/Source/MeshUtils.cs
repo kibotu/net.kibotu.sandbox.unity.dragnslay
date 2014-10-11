@@ -6,10 +6,11 @@ namespace Assets.Source
     {
         public static void AddLine(this Mesh m, Vector3[] quad, bool tmp)
         {
+            // add quad
             int vl = m.vertices.Length;
 
             Vector3[] vs = m.vertices;
-            if (!tmp || vl == 0) vs = ResizeVertices(vs, 4);
+            if (!tmp || vl == 0) vs = ResizeVectorArray(vs, 4);
             else vl -= 4;
 
             vs[vl] = quad[0];
@@ -17,6 +18,31 @@ namespace Assets.Source
             vs[vl + 2] = quad[2];
             vs[vl + 3] = quad[3];
 
+            // add normals
+            int nl = m.normals.Length;
+
+            Vector3[] ns = m.normals;
+            if (!tmp || nl == 0) ns = ResizeVectorArray(ns, 4);
+            else nl -= 4;
+
+            ns[nl] = new Vector3(0,0,-1);
+            ns[nl + 1] = new Vector3(0, 0, -1);
+            ns[nl + 2] = new Vector3(0, 0, -1);
+            ns[nl + 3] = new Vector3(0, 0, -1);
+
+            // add uvs
+            int uvl = m.uv.Length;
+
+            Vector2[] uvs = m.uv;
+            if (!tmp || uvl == 0) uvs = ResizeVectorArray(uvs, 4);
+            else uvl -= 4;
+
+            uvs[uvl] = new Vector2(0, 1);
+            uvs[uvl + 1] = new Vector2(0, -1);
+            uvs[uvl + 2] = new Vector2(1, 1);
+            uvs[uvl + 3] = new Vector2(1, -1);
+
+            // add indices
             int tl = m.triangles.Length;
 
             int[] ts = m.triangles;
@@ -30,13 +56,22 @@ namespace Assets.Source
             ts[tl + 5] = vl + 2;
 
             m.vertices = vs;
+            m.normals = ns;
+            m.uv = uvs;
             m.triangles = ts;
             m.RecalculateBounds();
         }
 
-        public static Vector3[] ResizeVertices(Vector3[] ovs, int ns)
+        public static Vector3[] ResizeVectorArray(Vector3[] ovs, int ns)
         {
             Vector3[] nvs = new Vector3[ovs.Length + ns];
+            for (int i = 0; i < ovs.Length; i++) nvs[i] = ovs[i];
+            return nvs;
+        }
+
+        public static Vector2[] ResizeVectorArray(Vector2[] ovs, int ns)
+        {
+            Vector2[] nvs = new Vector2[ovs.Length + ns];
             for (int i = 0; i < ovs.Length; i++) nvs[i] = ovs[i];
             return nvs;
         }
