@@ -1,5 +1,6 @@
 ﻿using Assets.Sources.components.behaviours;
 using Assets.Sources.components.behaviours.camera;
+using Assets.Sources.utility;
 using UnityEngine;
 
 namespace Assets.Sources.components
@@ -16,7 +17,6 @@ namespace Assets.Sources.components
         public MoveCamera CamCtrl;
         public Mode ControlMode = Mode.Idle;
 
-        public GameObject Dragable;
         public SelectionController SelCtrl;
         private GameObject _currentSelected;
 
@@ -30,8 +30,6 @@ namespace Assets.Sources.components
                     CamCtrl.UpdateCamera();
                     break;
                 case Mode.Selecting:
-                    //  DragDrop();
-
                     // 1) on hit => selecting mode
                     // 2) else camera movement
                     RaycastHit hit;
@@ -47,8 +45,12 @@ namespace Assets.Sources.components
                     else
                     {
                         _currentSelected = null;
-                        ControlMode = Mode.CameraMovement;
-                        CamCtrl.UpdateCamera();
+
+                        if (SelCtrl.Selected.IsEmpty())
+                        {
+                            ControlMode = Mode.CameraMovement;
+                            CamCtrl.UpdateCamera();
+                        }
                     }
 
                     break;
@@ -64,13 +66,6 @@ namespace Assets.Sources.components
 
                     break;
             }
-        }
-
-        private void DragDrop()
-        {
-            Vector3 inputPosWorld = TouchInputToWorld();
-            inputPosWorld.z = Dragable.transform.position.z;
-            Dragable.transform.position = inputPosWorld;
         }
 
         public Vector3 TouchInputToWorld()

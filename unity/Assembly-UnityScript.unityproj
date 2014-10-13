@@ -76,7 +76,7 @@
      <None Include="Assets\Resources\Ui\in_game_atlas.txt" />
      <None Include="Assets\Drawing Lines\Source\BlackLine.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
-     <None Include="Assets\Plugins\unity-socket.io\SocketIO\JSONObject\readme.txt" />
+     <None Include="Assets\Plugins\Android\unity-socket.io\SocketIO\JSONObject\readme.txt" />
      <None Include="Assets\PlayMaker\Readme.txt" />
      <None Include="Assets\Resources\Shader\TintedTexture.shader" />
      <None Include="Assets\Plugins\UIToolkit\UIToolkit\Shaders\UIToolkit Alpha Enabled (Default).shader" />

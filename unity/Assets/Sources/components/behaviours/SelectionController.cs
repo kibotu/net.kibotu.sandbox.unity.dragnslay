@@ -6,7 +6,7 @@ namespace Assets.Sources.components.behaviours
 {
     public class SelectionController : MonoBehaviour {
 
-        public static readonly List<GameObject> Selected = new List<GameObject>();
+        public readonly List<GameObject> Selected = new List<GameObject>();
         public GameObject AnimatedTiledLine;
         private readonly List<GameObject> _lines = new List<GameObject>();
 
