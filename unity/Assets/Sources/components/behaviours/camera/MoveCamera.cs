@@ -1,4 +1,5 @@
 ﻿using System;
+using HutongGames.PlayMaker.Actions;
 using UnityEngine;
 
 namespace Assets.Sources.components.behaviours.camera
@@ -9,7 +10,7 @@ namespace Assets.Sources.components.behaviours.camera
     public class MoveCamera : MonoBehaviour
     {
         public float TurnSpeed = 4.0f;		// Speed of camera turning when mouse moves in along an axis
-        public float PanSpeed = 1.0f;		// Speed of the camera when being panned
+        public float PanSpeed = 2.0f;		// Speed of the camera when being panned
         public float ZoomSpeed = 4.0f;		// Speed of the camera going back and forth
 
         private Vector3 _mouseOrigin;	    // Position of cursor when mouse dragging starts
@@ -24,7 +25,11 @@ namespace Assets.Sources.components.behaviours.camera
         public Transform Bounds;
         public float BoxRatio = Mathf.PI / 2;
         public Vector3 Velocity = new Vector3(0,0,0);
-        public Vector3 Friction = new Vector3(0.9f,0.9f,0.9f);
+        public Vector3 Friction = new Vector3(0.1f,0.1f,0.1f);
+
+        public void Start()
+        {
+        }
 
         public void Update()
         {
@@ -42,9 +47,9 @@ namespace Assets.Sources.components.behaviours.camera
             Velocity.y *= Mathf.Pow(Friction.y, Time.deltaTime);
             Velocity.z *= Mathf.Pow(Friction.z, Time.deltaTime);
 
-            if (Mathf.Abs(Velocity.x) < 0.1f) Velocity.x = 0;
-            if (Mathf.Abs(Velocity.y) < 0.1f) Velocity.y = 0;
-            if (Mathf.Abs(Velocity.z) < 0.1f) Velocity.z = 0;
+            if (Mathf.Abs(Velocity.x) < 0.01f) Velocity.x = 0;
+            if (Mathf.Abs(Velocity.y) < 0.01f) Velocity.y = 0;
+            if (Mathf.Abs(Velocity.z) < 0.01f) Velocity.z = 0;
 
             Cam.transform.Translate(Velocity, Space.Self);
         }
@@ -70,10 +75,12 @@ namespace Assets.Sources.components.behaviours.camera
 
         private void UpdateInputState()
         {
-            _isPanning = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved;
+            _isPanning = Input.GetMouseButton(0) || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved;
+
+            if (Input.GetMouseButtonDown(0))
+                _mouseOrigin = Input.mousePosition;
 
             // Get mouse origin
-            _mouseOrigin = Input.mousePosition;
             _isZooming = Input.GetMouseButtonDown(1);
         }
 
@@ -82,9 +89,16 @@ namespace Assets.Sources.components.behaviours.camera
             return Mathf.Abs(Cam.transform.position.z / (Bounds.position.z + Bounds.transform.localScale.z));
         }
 
+        private Vector2 prevMousePosition;
+
         private void Fling()
         {
-            var pos = Cam.ScreenToViewportPoint(Input.GetTouch(0).deltaPosition);
+            if (Vector2.Distance(prevMousePosition, Input.mousePosition) < 0.1f)
+                return;
+
+            prevMousePosition = Input.mousePosition;
+            
+            var pos = Cam.ScreenToViewportPoint(Input.mousePosition - _mouseOrigin); // Input.GetTouch(0).deltaPosition);
             Velocity = new Vector3((InvertMouse ? -1 : 1) * pos.x * GetZoom() * PanSpeed, (InvertMouse ? -1 : 1) * pos.y * GetZoom() * PanSpeed);
         }
 

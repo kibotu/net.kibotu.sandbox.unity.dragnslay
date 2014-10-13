@@ -33,7 +33,7 @@ namespace Assets.Sources.components
                     // 1) on hit => selecting mode
                     // 2) else camera movement
                     RaycastHit hit;
-                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //  | Input.GetTouch(0).position
                     if (Physics.Raycast(ray, out hit))
                     {
                         if (_currentSelected == null)
@@ -46,6 +46,7 @@ namespace Assets.Sources.components
                     {
                         _currentSelected = null;
 
+                        // move camera if nothing has been selected at first touch
                         if (SelCtrl.Selected.IsEmpty())
                         {
                             ControlMode = Mode.CameraMovement;
@@ -70,13 +71,18 @@ namespace Assets.Sources.components
 
         public Vector3 TouchInputToWorld()
         {
-            Vector3 inputPosScreen = Input.GetTouch(0).position;
+            Vector3 inputPosScreen = Input.mousePosition; // Input.GetTouch(0).position;
             inputPosScreen.z = -CamCtrl.Cam.transform.position.z;
             return CamCtrl.Cam.ScreenToWorldPoint(inputPosScreen);
         }
 
         private void UpdateTouchMode()
         {
+            if(Input.GetMouseButtonUp(0))
+                ControlMode = Mode.Idle;
+
+            if (ControlMode != Mode.Idle) return;
+
             switch (Input.touchCount)
             {
                 case 2:
@@ -90,6 +96,10 @@ namespace Assets.Sources.components
                     ControlMode = Mode.Idle;
                     break;
             }
+
+            ControlMode = Input.GetMouseButton(0)
+                ? Input.GetMouseButton(1) ? Mode.CameraMovement : Mode.Selecting
+                : Mode.Idle;
         }
     }
 }
