@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 865845571710a91449c8b040595d20b4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: banner
+    21300002: btn_aktion
+    21300004: chat
+    21300006: optionpannel
+    21300008: button
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Web
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: Android
+    maxTextureSize: 4096
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: banner
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 758
+        width: 608
+        height: 264
+      alignment: 9
+      pivot: {x: .501644731, y: .469696969}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: btn_aktion
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 626
+        width: 232
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: button
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 35
+        width: 329
+        height: 185
+      alignment: 9
+      pivot: {x: .503039539, y: .510810792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chat
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 222
+        width: 325
+        height: 800
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: optionpannel
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 212
+        height: 209
+      alignment: 9
+      pivot: {x: .566037714, y: .45693779}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -1,0 +1,15 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: mainMenu.png (1024 x 1024)
+# $TexturePacker:SmartUpdate:0af5a36589ca6ad331981c067f1311ae:e0d344ca37cd824c70944b52779f8091:411c17126ab34d097f5ec0b389d1155e$
+#
+
+banner;329;758;608;264;0.5016447368421053;0.4696969696969697
+btn_aktion;547;626;232;130;0.5;0.5
+button;216;35;329;185;0.5030395136778115;0.5108108108108108
+chat;2;222;325;800;0.5;0.5
+optionpannel;2;11;212;209;0.5660377358490566;0.4569377990430622

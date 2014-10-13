@@ -6,16 +6,9 @@ namespace Assets.Sources.menu
 {
     public class Menu : MonoBehaviour
     {
-        public void Start()
-        {
-//            ShowMainMenu();
-
-            // settings
-
-        }
-
         public void ShowMainMenu()
         {
+            Debug.Log("ShowMainMenu");
             gameObject.AddComponent<MainMenu>();
         }
 

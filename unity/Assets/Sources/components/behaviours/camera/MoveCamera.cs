@@ -27,10 +27,6 @@ namespace Assets.Sources.components.behaviours.camera
         public Vector3 Velocity = new Vector3(0,0,0);
         public Vector3 Friction = new Vector3(0.1f,0.1f,0.1f);
 
-        public void Start()
-        {
-        }
-
         public void Update()
         {
             ApplyFriction();
@@ -69,8 +65,6 @@ namespace Assets.Sources.components.behaviours.camera
             // Move the camera linearly along Z axis
             if (_isZooming)
                 Zoom();
-
-//            Cam.transform.Translate(Velocity, Space.Self);
         }
 
         private void UpdateInputState()
