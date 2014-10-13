@@ -13,3 +13,6 @@
 [submodule "unity/Assets/Promises-CSharp"]
 	path = unity/Assets/Promises-CSharp
 	url = https://github.com/kibotu/Promises-CSharp.git
+[submodule "unity/Assets/Plugins/Android/unity-socket.io"]
+	path = unity/Assets/Plugins/Android/unity-socket.io
+	url = ../unity-socket.io.git
