@@ -5,7 +5,7 @@ using Assets.Sources.game;
 using Assets.Sources.utility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SocketIO;
+//using SocketIO;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -31,7 +31,7 @@ namespace Assets.Sources.network
 
         #region init
         private static SocketHandler _instance;
-        private SocketIOComponent _socket;
+//        private SocketIOComponent _socket;
 //        private readonly Queue<MessageData> _messageQueue;
 
         public SocketHandler()
@@ -50,12 +50,12 @@ namespace Assets.Sources.network
 
         private void ConnectInternal(string host, int port)
         {
-            _socket = new GameObject("SocketHandler").AddComponent<SocketIOComponent>();
-            _socket.SetUri(host, port);
-            _socket.Init();
-            Debug.Log("Connecting to: " + SharedConnection._socket.url);
-            _socket.Connect();
-            SetDelegates();
+//            _socket = new GameObject("SocketHandler").AddComponent<SocketIOComponent>();
+//            _socket.SetUri(host, port);
+//            _socket.Init();
+//            Debug.Log("Connecting to: " + SharedConnection._socket.url);
+//            _socket.Connect();
+//            SetDelegates();
         }
 
         public static void Connect(string host, int port)
@@ -70,7 +70,7 @@ namespace Assets.Sources.network
 
         public static void Disconnect()
         {
-            SharedConnection._socket.Disconnect();
+//            SharedConnection._socket.Disconnect();
         }
 
         void HandleOnPlayModeChanged()
@@ -115,7 +115,7 @@ namespace Assets.Sources.network
 
         protected void EmitNow(MessageData msg)
         {
-            _socket.Emit(msg.name, msg.message);
+//            _socket.Emit(msg.name, msg.message);
 
             if(LoggingEnabled) 
                 Debug.Log("EmitNow '" + msg.name + "' " + msg.message);
@@ -127,61 +127,61 @@ namespace Assets.Sources.network
 
         private void SetDelegates()
         {
-            _socket.On("open", ConnectCallback);
-            _socket.On("connect", ConnectCallback2);
-            _socket.On("error", ErrorCallback);
-            _socket.On("close", DisconnectCallback);
-            _socket.On("reconnect", ReconnectCallback);
-            _socket.On("message", JSONCallback);
+//            _socket.On("open", ConnectCallback);
+//            _socket.On("connect", ConnectCallback2);
+//            _socket.On("error", ErrorCallback);
+//            _socket.On("close", DisconnectCallback);
+//            _socket.On("reconnect", ReconnectCallback);
+//            _socket.On("message", JSONCallback);
         }
 
-        protected void ConnectCallback(SocketIOEvent error)
-        {
-            Debug.Log("ConnectCallback " + error);
-            OnConnectEvent(error.name + " " + error.data);
-        }
+//        protected void ConnectCallback(SocketIOEvent error)
+//        {
+//            Debug.Log("ConnectCallback " + error);
+//            OnConnectEvent(error.name + " " + error.data);
+//        }
 
-        protected void ConnectCallback2(SocketIOEvent error)
-        {
-            Debug.Log("ConnectCallback2 " + error);
-            OnConnectEvent(error.name + " " + error.data);
-        }
+//        protected void ConnectCallback2(SocketIOEvent error)
+//        {
+//            Debug.Log("ConnectCallback2 " + error);
+//            OnConnectEvent(error.name + " " + error.data);
+//        }
 
-        protected void StringCallback(SocketIOEvent message)
-        {
-//            Debug.Log("StringCallback " + message);
-//            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
-        }
+//        protected void StringCallback(SocketIOEvent message)
+//        {
+////            Debug.Log("StringCallback " + message);
+////            foreach (JObject t in JArray.Parse(message)) JSONCallback(t); 
+//        }
 
-        protected void JSONCallback(SocketIOEvent message)
-        {
-            //            Debug.Log("JSONCallback " + message);
-            OnJSONEvent((JObject)JsonConvert.DeserializeObject(message.data.ToString())); // #cloud todo use only one jsonobject lib
-        }
+//        protected void JSONCallback(SocketIOEvent message)
+//        {
+//            //            Debug.Log("JSONCallback " + message);
+//            OnJSONEvent((JObject)JsonConvert.DeserializeObject(message.data.ToString())); // #cloud todo use only one jsonobject lib
+//        }
 
-        protected void ReconnectCallback(SocketIOEvent message)
-        {
-            Debug.Log("ReconnectCallback " + message);
-            OnReconnectEvent(message.name);
-        }
+//        protected void ReconnectCallback(SocketIOEvent message)
+//        {
+//            Debug.Log("ReconnectCallback " + message);
+//            OnReconnectEvent(message.name);
+//        }
 
-        protected void DisconnectCallback(SocketIOEvent error)
-        {
-            Debug.Log("DisconnectCallback " + error);
-            OnDisconnectEvent(error.name);
-        }
+//        protected void DisconnectCallback(SocketIOEvent error)
+//        {
+//            Debug.Log("DisconnectCallback " + error);
+//            OnDisconnectEvent(error.name);
+//        }
 
-        protected void ErrorCallback(SocketIOEvent error)
-        {
-            Debug.Log("ErrorCallback " + error);
-            OnErrorEvent(error.name);
-        }
+//        protected void ErrorCallback(SocketIOEvent error)
+//        {
+//            Debug.Log("ErrorCallback " + error);
+//            OnErrorEvent(error.name);
+//        }
 
-        protected void ConnectionFailedCallback(SocketIOEvent message)
-        {
-            Debug.Log("ConnectionFailedCallback " + message.name + " " + message.data);
-            OnConnectionFailedEvent(message.name + " " + message.data);
-        }
+//        protected void ConnectionFailedCallback(SocketIOEvent message)
+//        {
+//            Debug.Log("ConnectionFailedCallback " + message.name + " " + message.data);
+//            OnConnectionFailedEvent(message.name + " " + message.data);
+//        }
 
         #endregion
     }

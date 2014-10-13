@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Net.Configuration;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using Assets.Sources.game;

@@ -41,9 +41,10 @@ namespace Assets.Sources.utility
             // ... which is pretty much equivalent to the code on this page:
             // http://developer.android.com/reference/android/util/DisplayMetrics.html
 
+#if UNITY_ANDROID
             using (
-            AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"),
-            metricsClass = new AndroidJavaClass("android.util.DisplayMetrics")
+                AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"),
+                metricsClass = new AndroidJavaClass("android.util.DisplayMetrics")
             )
             {
                 using (
@@ -63,6 +64,7 @@ namespace Assets.Sources.utility
                     YDPI = metricsInstance.Get<float>("ydpi");
                 }
             }
+#endif
         }
     }
 }
