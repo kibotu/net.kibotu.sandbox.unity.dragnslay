@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Assets.Sources.menu.transition;
-using HutongGames.PlayMaker.Actions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,17 +30,17 @@ namespace Assets.Sources.menu
 
         public void LoadLevel(String level)
         {
-            Application.LoadLevelAdditiveAsync(level);
+            Application.LoadLevel(level);
         }
 
         public void ShowMainMenu()
         {
             var go = Instantiate(MainMenu) as GameObject;
-            const float fadeInTime = 3f;
+            const float fadeInTime = 1.5f;
             foreach (var image in go.GetComponentsInChildren<Image>())
             {
                 if (image.gameObject.name == "Banner")
-                    image.ScaleOverTime(new Vector3(0.35f, 0.35f, 0.35f), new Vector3(0.7f, 0.7f, 0.7f), 5f);
+                    image.ScaleOverTime(new Vector3(0.35f, 0.35f, 0.35f), new Vector3(0.7f, 0.7f, 0.7f), 0.7f);
 
                 if (image.gameObject.name == "Profile" || 
                     image.gameObject.name == "Market" || 
@@ -50,7 +48,7 @@ namespace Assets.Sources.menu
                     image.gameObject.name == "Play Online" ||
                     image.gameObject.name == "Play Saga" ||
                     image.gameObject.name == "Settings")
-                    image.ScaleOverTime(new Vector3(0.3f, 0.2f, 0.2f), new Vector3(0.4f, 0.4f, 0.4f), 5f);
+                    image.ScaleOverTime(new Vector3(0.25f, 0.2f, 0.2f), new Vector3(0.4f, 0.4f, 0.4f), 0.7f);
 
 
                 image.CrossFadeAlpha(0.0f,0,false);
@@ -63,8 +61,6 @@ namespace Assets.Sources.menu
                 text.CrossFadeAlpha(1f, fadeInTime, false);
             }
         }
-
-       
 
         public void ShowGameHud()
         {
