@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using GooglePlayGames;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,6 +63,11 @@ namespace Assets.Sources.menu
             }
         }
 
+        public void Start()
+        {
+            PlayGamesPlatform.Activate();
+        }
+
         public void ShowGameHud()
         {
             
@@ -73,6 +79,8 @@ namespace Assets.Sources.menu
 
         public void ShowProfile()
         {
+//            Social.ShowAchievementsUI();
+//            Social.ShowLeaderboardUI();
         }
 
         public void ShowUpgrades()
@@ -93,6 +101,7 @@ namespace Assets.Sources.menu
 
         public void ShowInviteFriendsScreen()
         {
+           
         }
 
         public void PlaySagaScreen()
@@ -101,10 +110,12 @@ namespace Assets.Sources.menu
 
         public void PlayOnlineScreen()
         {
+            
         }
 
         public void ShowSettings()
         {
+           
         }
     }
 
