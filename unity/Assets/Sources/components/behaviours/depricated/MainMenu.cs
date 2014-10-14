@@ -118,7 +118,7 @@ namespace Assets.Sources.menu.view
 
         public void OnShopClicked(UIButton button)
         {
-            GameObject.Find("Menu").GetComponent<Menu>().ShowShop();
+//            GameObject.Find("Menu").GetComponent<Menu>().ShowShop();
         }
     }
 }

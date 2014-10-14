@@ -7,6 +7,7 @@ TextureImporter:
     21300004: chat
     21300006: optionpannel
     21300008: button
+    21300010: button2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -70,7 +71,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 547
-        y: 626
+        y: 484
         width: 232
         height: 130
       alignment: 0
@@ -85,6 +86,16 @@ TextureImporter:
         height: 185
       alignment: 9
       pivot: {x: .503039539, y: .510810792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: button2
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 616
+        width: 325
+        height: 140
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: chat
       rect:
