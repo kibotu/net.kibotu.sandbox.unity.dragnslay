@@ -17,7 +17,7 @@ namespace Assets.Sources.menu.view
         private UIButton profileBtn;
         public UIText text;
         
-        public void Start () 
+        public void Start2 () 
         {
             Debug.Log("Show main menu.");
 
@@ -118,18 +118,7 @@ namespace Assets.Sources.menu.view
 
         public void OnShopClicked(UIButton button)
         {
-            GameObject.Find("Menu").GetComponent<Menu>().ShowShop();
-        }
-
-        public void OnDestroy()
-        {
-            banner.destroy();
-            queue1vs1Btn.destroy();
-            queue2vs2Btn.destroy();
-            customGameBtn.destroy();
-            settingsBtn.destroy();
-            profileBtn.destroy();
-            shopBtn.destroy();
+//            GameObject.Find("Menu").GetComponent<Menu>().ShowShop();
         }
     }
 }
