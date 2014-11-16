@@ -70,7 +70,7 @@ namespace Assets.Scripts.network.googleplayservice
         public void QuickMatchRT()
         {
             Debug.Log("StartQuickMatchRT");
-            GooglePlayServiceHelper.Shared.StartQuickMatchRT(1,1);
+            GooglePlayServiceHelper.Shared.StartQuickMatchRT(new InvitationListener(), 1, 1);
         }
 
         public void QuickMatchTB()

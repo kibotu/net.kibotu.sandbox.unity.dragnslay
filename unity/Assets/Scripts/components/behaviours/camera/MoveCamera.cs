@@ -31,7 +31,7 @@ namespace Assets.Sources.components.behaviours.camera
         {
             ApplyFriction();
 
-            Cam.transform.position = SetBounds();
+            Camera.main.transform.position = SetBounds();
         }
 
         private void ApplyFriction()

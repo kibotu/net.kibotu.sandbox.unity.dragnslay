@@ -116,9 +116,9 @@ namespace Assets.Scripts.network.googleplayservice
 
         #endregion
 
-        public void StartQuickMatchRT(int minOpponents, int maxOpponents, int variant = 0)
+        public void StartQuickMatchRT(RealTimeMultiplayerListener listener, int minOpponents, int maxOpponents, int variant = 0)
         {
-            Login(()=>PlayGamesPlatform.Instance.RealTime.CreateQuickGame(minOpponents, maxOpponents, variant, new InvitationListener()));
+            Login(()=>PlayGamesPlatform.Instance.RealTime.CreateQuickGame(minOpponents, maxOpponents, variant, listener));
         }
 
         public void StartQuickMatchTurnBased(int minOpponents, int maxOpponents, int variant = 0)

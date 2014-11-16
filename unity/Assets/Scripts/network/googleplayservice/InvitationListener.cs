@@ -6,9 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.network.googleplayservice
 {
-
     public class InvitationListener : RealTimeMultiplayerListener
     {
+
+
         public void OnRoomSetupProgress(float percent)
         {
             Debug.Log("OnRoomSetupProgress: " + percent);

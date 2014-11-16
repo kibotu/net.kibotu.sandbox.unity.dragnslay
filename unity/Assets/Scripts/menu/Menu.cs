@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Assets.Scripts.network.googleplayservice;
+using Assets.Sources.utility;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi.Multiplayer;
 using UnityEngine;
@@ -9,6 +10,11 @@ namespace Assets.Scripts.menu
 {
     public class Menu : MonoBehaviour
     {
+        public enum Level
+        {
+            MainMenu, LoadingScreen, Hud, LoseScreen, WinScreen, Level01, Windmill, CombatDemo
+        }
+
         public GameObject MainMenu;
         public GameObject Hud;
         public GameObject Market;
@@ -17,6 +23,7 @@ namespace Assets.Scripts.menu
         public GameObject LoseScreen;
         public GameObject LoadingScreen;
         public GameObject Upgrades;
+        public InvitationListener InvitationListener;
 
         #region Singleton
 
@@ -42,6 +49,15 @@ namespace Assets.Scripts.menu
         }
 
         #endregion
+
+        public void Awake()
+        {
+            DontDestroyOnLoad(this);
+            InvitationListener = new InvitationListener();
+
+            // random background scene
+            Application.LoadLevelAdditiveAsync(Random.Range(0, 2) == 0 ? Level.Windmill.Name() : Level.CombatDemo.Name());
+        }
 
         public void Start()
         {
@@ -75,7 +91,7 @@ namespace Assets.Scripts.menu
                     // accept invite on click
                     inbox.FriendInviteBtn1.onClick.AddListener(() =>
                     {
-                        GooglePlayServiceHelper.Shared.AcceptInvitation(invitation.InvitationId, new InvitationListener());
+                        GooglePlayServiceHelper.Shared.AcceptInvitation(invitation.InvitationId, InvitationListener);
 
                         inbox.FriendInviteBtn1.GetComponent<Image>().enabled = false;
                         inbox.FriendInviteBtn1.GetComponentInChildren<Text>().enabled = false;
@@ -167,7 +183,8 @@ namespace Assets.Scripts.menu
 
         public void PlayOnlineScreen()
         {
-              GooglePlayServiceHelper.Shared.StartQuickMatchRT(1,1);
+            Application.LoadLevel(Level.Level01.Name());
+            GooglePlayServiceHelper.Shared.StartQuickMatchRT(InvitationListener, 1, 1);
         }
 
         public void ShowSettings()
