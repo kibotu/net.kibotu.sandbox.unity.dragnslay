@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Collections.Generic;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi.Multiplayer;
 using Newtonsoft.Json.Linq;
@@ -9,10 +8,10 @@ namespace Assets.Scripts.network.googleplayservice
 {
     public sealed class GooglePlayServiceHelper
     {
-        #region singleton
+        #region Singleton
 
         private static volatile GooglePlayServiceHelper _instance;
-        private static object syncRoot = new Object();
+        private static readonly object SyncRoot = new Object();
         private GooglePlayServiceHelper() { }
 
         public static GooglePlayServiceHelper Shared
@@ -21,7 +20,7 @@ namespace Assets.Scripts.network.googleplayservice
             {
                 if (_instance == null)
                 {
-                    lock (syncRoot)
+                    lock (SyncRoot)
                     {
                         if (_instance == null)
                             _instance = new GooglePlayServiceHelper();
@@ -50,11 +49,19 @@ namespace Assets.Scripts.network.googleplayservice
 
         #endregion
 
-        public void Login()
+        #region Authentication
+
+        public void Login(System.Action callback)
         {
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-            if (Social.localUser.authenticated) return;
+            if (Social.localUser.authenticated)
+            {
+                if(callback != null) 
+                    callback();
+
+                return;
+            }
 
             PlayGamesPlatform.Activate();
 
@@ -62,8 +69,15 @@ namespace Assets.Scripts.network.googleplayservice
             Social.localUser.Authenticate(success =>
             {
                 Debug.Log(success ? "Successfully authenticated" : "Authentication failed.");
-                PlayGamesPlatform.Instance.RegisterInvitationDelegate(OnInvitationReceived);
+                
+                if(callback != null) 
+                    callback();
             });
+        }
+
+        public void Login()
+        {
+            Login(null);
         }
 
         public void Logout()
@@ -74,64 +88,62 @@ namespace Assets.Scripts.network.googleplayservice
             ((PlayGamesPlatform)Social.Active).SignOut();
         }
 
+        #endregion
+
+        #region build in screens
+
         public void ShowAchievements()
         {
-            Login();
-            PlayGamesPlatform.Instance.ShowAchievementsUI();
+            Login(() => PlayGamesPlatform.Instance.ShowAchievementsUI());
         }
         public void ShowLeaderboard()
         {
-            Login();
-            PlayGamesPlatform.Instance.ShowLeaderboardUI();
-        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-
-        public void OnInvitationReceived(Invitation invitation, bool shouldAutoAccept)
+            Login(() => PlayGamesPlatform.Instance.ShowLeaderboardUI());
+        }
+        public void ShowInvitationScreen(int minOpponents, int maxOpponents, int variant = 0)
         {
-            Debug.Log("OnInvitationReceived invitation from " + invitation.Inviter.DisplayName);
-            if (shouldAutoAccept)
+            Login(() =>
             {
-                Debug.Log("Accepting.");
-                PlayGamesPlatform.Instance.RealTime.AcceptInvitation(invitation.InvitationId, new InvitationListener());
-            }
-            else
-            {
-                ShowInbox();
-            }
+                RealTimeMultiplayerListener listener = new InvitationListener();
+                PlayGamesPlatform.Instance.RealTime.CreateWithInvitationScreen(minOpponents, maxOpponents, variant, listener);
+            });
         }
 
-        public void ShowInvitationScreen()
+        public void ShowInbox()
         {
-            Login();
-            const int MinOpponents = 1, MaxOpponents = 1;
-            const int GameVariant = 0;
-            RealTimeMultiplayerListener listener = new InvitationListener();
-            PlayGamesPlatform.Instance.RealTime.CreateWithInvitationScreen(MinOpponents, MaxOpponents, GameVariant, listener);
+            Login(()=> PlayGamesPlatform.Instance.RealTime.AcceptFromInbox(new InvitationListener()));
+        }
+
+        #endregion
+
+        public void StartQuickMatchRT(int minOpponents, int maxOpponents, int variant = 0)
+        {
+            Login(()=>PlayGamesPlatform.Instance.RealTime.CreateQuickGame(minOpponents, maxOpponents, variant, new InvitationListener()));
+        }
+
+        public void StartQuickMatchTurnBased(int minOpponents, int maxOpponents, int variant = 0)
+        {
+            Login(()=>PlayGamesPlatform.Instance.TurnBased.CreateQuickMatch(minOpponents, maxOpponents, variant, OnMatchStarted)); 
+        }
+
+        public void AcceptInvitation(string invitationId, RealTimeMultiplayerListener listener) 
+        {
+            if (!Social.localUser.authenticated)
+                return;
+
+            PlayGamesPlatform.Instance.RealTime.AcceptInvitation(invitationId, listener);
         }
 
         public void LeaveRoom()
         {
-            Debug.Log("Leave Room.");
+            if (!Social.localUser.authenticated)
+                return;
+
             PlayGamesPlatform.Instance.RealTime.LeaveRoom();
         }
 
-        public void StartQuickMatchRT()
-        {
-            Debug.Log("StartQuickMatchRT");
-            const int MinOpponents = 1, MaxOpponents = 1;
-            const int GameVariant = 0;
-            PlayGamesPlatform.Instance.RealTime.CreateQuickGame(MinOpponents, MaxOpponents, GameVariant, new InvitationListener());
-        }
+        private void OnMatchStarted(bool success, TurnBasedMatch match) {
 
-        public void StartQuickMatchTurnBased()
-        {
-            Debug.Log("StartQuickMatchTurnBased");
-            const int MinOpponents = 1;
-            const int MaxOpponents = 1;
-            const int Variant = 0;  // default
-            PlayGamesPlatform.Instance.TurnBased.CreateQuickMatch(MinOpponents, MaxOpponents, Variant,  OnMatchStarted);
-        }
-
-        public void OnMatchStarted(bool success, TurnBasedMatch match) {
             if (success) {
                 Debug.Log("Match Started.");
                 foreach (var participiant in match.Participants)
@@ -150,21 +162,26 @@ namespace Assets.Scripts.network.googleplayservice
             }
         }
 
-        public void ShowInbox()
-        {
-            Debug.Log("Show inbox.");
-            PlayGamesPlatform.Instance.RealTime.AcceptFromInbox(new InvitationListener());
-        }
+        #region send message
 
         public void BroadcastMessage(string message)
         {
+            if (!Social.localUser.authenticated) 
+                return;
 
             PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), GetBytes(message));
         }
         public void BroadcastMessage(JObject message)
         {
+            if (!Social.localUser.authenticated) 
+                return;
+
             PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), ToBytes(message));
         }
+
+        #endregion
+
+        #region Serialization
 
         public static byte[] ToBytes(JObject json)
         {
@@ -187,6 +204,16 @@ namespace Assets.Scripts.network.googleplayservice
             char[] chars = new char[bytes.Length / sizeof(char)];
             System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
             return new string(chars);
+        }
+
+        #endregion
+
+        public void InviteFriends(string player)
+        {
+            // todo experimental invite player by player id, however id changes arbitary 
+            IList<string> list = new []{player};
+
+             PlayGamesPlatform.Instance.RealTime.CreateQuickGame(1,1,list,0,new InvitationListener());
         }
     }
 }

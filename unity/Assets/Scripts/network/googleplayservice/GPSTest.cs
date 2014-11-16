@@ -23,6 +23,11 @@ namespace Assets.Scripts.network.googleplayservice
 
         #region GPS
 
+        public void InviteById()
+        {
+            GooglePlayServiceHelper.Shared.InviteFriends("p_CKPdgbXW7-recRAB");
+        }
+
         public void Login()
         {
             GooglePlayServiceHelper.Shared.Login();
@@ -54,25 +59,29 @@ namespace Assets.Scripts.network.googleplayservice
 
         public void ShowInvitationScreen()
         {
-            GooglePlayServiceHelper.Shared.ShowInvitationScreen();
+            GooglePlayServiceHelper.Shared.ShowInvitationScreen(1,1);
         }
         public void ShowInbox()
         {
+            Debug.Log("Show inbox.");
             GooglePlayServiceHelper.Shared.ShowInbox();
         }
 
         public void QuickMatchRT()
         {
-            GooglePlayServiceHelper.Shared.StartQuickMatchRT();
+            Debug.Log("StartQuickMatchRT");
+            GooglePlayServiceHelper.Shared.StartQuickMatchRT(1,1);
         }
 
         public void QuickMatchTB()
         {
-            GooglePlayServiceHelper.Shared.StartQuickMatchTurnBased();
+            Debug.Log("StartQuickMatchTurnBased");
+            GooglePlayServiceHelper.Shared.StartQuickMatchTurnBased(1,1);
         }
 
         public void LeaveRoom()
         {
+            Debug.Log("Leave Room.");
             GooglePlayServiceHelper.Shared.LeaveRoom();
         }
 

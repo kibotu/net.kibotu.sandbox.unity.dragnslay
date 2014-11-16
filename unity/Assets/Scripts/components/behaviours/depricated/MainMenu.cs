@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.menu;
 using Assets.Sources.game;
 using Assets.Sources.network;
 using UnityEngine;
@@ -65,7 +66,6 @@ namespace Assets.Sources.menu.view
             profileBtn.positionFromCenter(0, 0);
             profileBtn.positionFromTop(bannerHeight + padding * 5, 0);
             profileBtn.scaleFromTo(1.0f, Vector3.zero, new Vector3(0.3f, 0.3f, 0), Easing.Quintic.easeOut);
-            profileBtn.onTouchUpInside += OnProfileClicked;
 
             shopBtn = UIButton.create(atlas, "shop.png", "shop.png", 0, 0);
             shopBtn.highlightedTouchOffsets = new UIEdgeOffsets(30);
@@ -109,11 +109,6 @@ namespace Assets.Sources.menu.view
         public void OnSettingsClicked(UIButton button)
         {
 
-        }
-
-        public void OnProfileClicked(UIButton button)
-        {
-            GameObject.Find("Menu").GetComponent<Menu>().ShowProfile();
         }
 
         public void OnShopClicked(UIButton button)

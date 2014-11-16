@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using Assets.Scripts.network.googleplayservice;
 using GooglePlayGames;
+using GooglePlayGames.BasicApi.Multiplayer;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Sources.menu
+namespace Assets.Scripts.menu
 {
     public class Menu : MonoBehaviour
     {
@@ -17,11 +18,69 @@ namespace Assets.Sources.menu
         public GameObject LoadingScreen;
         public GameObject Upgrades;
 
-        private static Menu _instance;
+        #region Singleton
 
-        public Menu Shared
+        private static volatile Menu _instance;
+        private static readonly object SyncRoot = new Object();
+        private Menu() { }
+
+        public static Menu Shared
         {
-            get { return _instance ?? (_instance = new Menu()); }
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (SyncRoot)
+                    {
+                        if (_instance == null)
+                            _instance = new Menu();
+                    }
+                }
+
+                return _instance;
+            }
+        }
+
+        #endregion
+
+        public void Start()
+        {
+            var inbox = GetComponent<InvitationInbox>();
+
+            GooglePlayServiceHelper.Shared.Login(()=> PlayGamesPlatform.Instance.RegisterInvitationDelegate(
+                (Invitation invitation, bool shouldAutoAccept) =>
+                {
+                    Debug.Log("OnInvitationReceived invitation from " + invitation.Inviter.DisplayName);
+
+                    if (shouldAutoAccept)
+                    {
+                        Debug.Log("Should auto accept.");
+                    }
+                    else
+                    {
+                        Debug.Log("Should not auto accept.");
+                    }
+
+                    // show invitation button
+                    inbox.FriendInviteBtn1.GetComponent<Image>().enabled = true;
+                    inbox.FriendInviteBtn1.GetComponentInChildren<Text>().enabled = true;
+
+                    // set inviter name
+                    var text = inbox.FriendInviteBtn1.GetComponentInChildren<Text>();
+                    text.text = invitation.Inviter.DisplayName;
+
+                    // clean button
+                    inbox.FriendInviteBtn1.onClick.RemoveAllListeners();
+
+                    // accept invite on click
+                    inbox.FriendInviteBtn1.onClick.AddListener(() =>
+                    {
+                        GooglePlayServiceHelper.Shared.AcceptInvitation(invitation.InvitationId, new InvitationListener());
+
+                        inbox.FriendInviteBtn1.GetComponent<Image>().enabled = false;
+                        inbox.FriendInviteBtn1.GetComponentInChildren<Text>().enabled = false;
+                    });
+                }));
         }
 
         public void Remove(GameObject go)
@@ -29,7 +88,7 @@ namespace Assets.Sources.menu
             Destroy(go);
         }
 
-        public void LoadLevel(String level)
+        public void LoadLevel(string level)
         {
             Application.LoadLevel(level);
         }
@@ -63,11 +122,6 @@ namespace Assets.Sources.menu
             }
         }
 
-        public void Start()
-        {
-            PlayGamesPlatform.Activate();
-        }
-
         public void ShowGameHud()
         {
             
@@ -77,10 +131,13 @@ namespace Assets.Sources.menu
         {
         }
 
-        public void ShowProfile()
+        public void ShowAchievements()
         {
-//            Social.ShowAchievementsUI();
-//            Social.ShowLeaderboardUI();
+            GooglePlayServiceHelper.Shared.ShowAchievements();
+        }
+        public void ShowLeaderboard()
+        {
+            GooglePlayServiceHelper.Shared.ShowLeaderboard();
         }
 
         public void ShowUpgrades()
@@ -101,7 +158,7 @@ namespace Assets.Sources.menu
 
         public void ShowInviteFriendsScreen()
         {
-           
+            GooglePlayServiceHelper.Shared.ShowInvitationScreen(1,1);
         }
 
         public void PlaySagaScreen()
@@ -110,12 +167,17 @@ namespace Assets.Sources.menu
 
         public void PlayOnlineScreen()
         {
-            
+              GooglePlayServiceHelper.Shared.StartQuickMatchRT(1,1);
         }
 
         public void ShowSettings()
         {
            
+        }
+
+        public void ShowInbox()
+        {
+            GooglePlayServiceHelper.Shared.ShowInbox();
         }
     }
 
@@ -130,7 +192,7 @@ namespace Assets.Sources.menu
         {
             float startTime = 0;
             rect.localScale = from;
-            while (Math.Abs(rect.localScale.magnitude - to.magnitude) > Mathf.Epsilon)
+            while (Mathf.Abs(rect.localScale.magnitude - to.magnitude) > Mathf.Epsilon)
             {
                 startTime += Time.deltaTime;
                 rect.localScale = Vector3.Lerp(from, to, startTime / time);
