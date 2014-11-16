@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using GooglePlayGames;
 using GooglePlayGames.BasicApi.Multiplayer;
 using UnityEngine;
 
-namespace Assets.Sources.network.googleplayservice
+namespace Assets.Scripts.network.googleplayservice
 {
-
 
     public class InvitationListener : RealTimeMultiplayerListener
     {
@@ -16,6 +17,15 @@ namespace Assets.Sources.network.googleplayservice
         public void OnRoomConnected(bool success)
         {
             Debug.Log("OnRoomConnected: " + success);
+
+            if (success)
+            {
+                List<Participant> participants = PlayGamesPlatform.Instance.RealTime.GetConnectedParticipants();
+                foreach (var participiant in participants)
+                {
+                    Debug.Log(participiant + " connected to room.");
+                }
+            }
         }
 
         public void OnLeftRoom()
@@ -28,7 +38,7 @@ namespace Assets.Sources.network.googleplayservice
             Debug.Log("OnRoomConnected: " + participantIds.Count());
             foreach (var participiant in participantIds)
             {
-                Debug.Log(participantIds + " has joined the room.");
+                Debug.Log(participiant + " has joined the room.");
             }
         }
 
@@ -37,13 +47,13 @@ namespace Assets.Sources.network.googleplayservice
             Debug.Log("OnPeersDisconnected: " + participantIds.Count());
             foreach (var participiant in participantIds)
             {
-                Debug.Log(participantIds + " has left the room.");
+                Debug.Log(participiant + " has left the room.");
             }
         }
 
         public void OnRealTimeMessageReceived(bool isReliable, string senderId, byte[] data)
         {
-            Debug.Log("OnRealTimeMessageReceived: reliably: " + isReliable + " senderId: " + senderId + " bytes: " + data.Count());
+            Debug.Log("OnRealTimeMessageReceived: reliably: " + isReliable + " senderId: " + senderId + " bytes: " + data.Count() + " msg: " + GooglePlayServiceHelper.ToJObject(data));
         }
     }
 }
