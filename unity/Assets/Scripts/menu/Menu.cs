@@ -104,11 +104,6 @@ namespace Assets.Scripts.menu
             Destroy(go);
         }
 
-        public void LoadLevel(string level)
-        {
-            Application.LoadLevel(level);
-        }
-
         public void ShowMainMenu()
         {
             var go = Instantiate(MainMenu) as GameObject;
@@ -183,7 +178,6 @@ namespace Assets.Scripts.menu
 
         public void PlayOnlineScreen()
         {
-            Application.LoadLevel(Level.Level01.Name());
             GooglePlayServiceHelper.Shared.StartQuickMatchRT(InvitationListener, 1, 1);
         }
 

@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.menu;
+using Assets.Sources.utility;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi.Multiplayer;
 using UnityEngine;
@@ -26,6 +29,9 @@ namespace Assets.Scripts.network.googleplayservice
                 {
                     Debug.Log(participiant + " connected to room.");
                 }
+
+                Application.LoadLevel(Menu.Level.Level01.Name());
+                Application.LoadLevelAdditiveAsync(Menu.Level.Hud.Name());
             }
         }
 
