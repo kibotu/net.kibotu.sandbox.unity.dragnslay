@@ -10,6 +10,11 @@ namespace Assets.Sources.components
     {
         private const int margin = 20;
 
+		public bool Show {
+			get { return show; }
+			set { show = value; }
+		}
+
         private static readonly Dictionary<LogType, Color> logTypeColors = new Dictionary<LogType, Color>
         {
             {LogType.Assert, Color.white},
@@ -50,7 +55,7 @@ namespace Assets.Sources.components
             if (Input.GetKeyDown(toggleKey))
             {
                 show = !show;
-            }
+			}
         }
 
         private void OnGUI()
