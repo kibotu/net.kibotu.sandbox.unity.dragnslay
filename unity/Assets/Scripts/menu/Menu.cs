@@ -5,6 +5,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi.Multiplayer;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace Assets.Scripts.menu
 {
@@ -12,7 +13,7 @@ namespace Assets.Scripts.menu
     {
         public enum Level
         {
-            MainMenu, LoadingScreen, Hud, LoseScreen, WinScreen, Level01, Windmill, CombatDemo
+            MainMenu, LoadingScreen, Hud, LoseScreen, WinScreen, Level01, Windmill, CombatDemo, MultiplayerTest
         }
 
         public GameObject MainMenu;
@@ -23,7 +24,6 @@ namespace Assets.Scripts.menu
         public GameObject LoseScreen;
         public GameObject LoadingScreen;
         public GameObject Upgrades;
-        public InvitationListener InvitationListener;
 
         #region Singleton
 
@@ -53,7 +53,36 @@ namespace Assets.Scripts.menu
         public void Awake()
         {
             DontDestroyOnLoad(this);
-            InvitationListener = new InvitationListener();
+			MultiplayerListenerRTS RtsHandler = GooglePlayServiceHelper.Shared.RtsHandler;
+
+			// load leve01 if player successfully connect
+			RtsHandler.RoomConnected += (success) => {
+				if (success)
+				{
+					List<Participant> participants = PlayGamesPlatform.Instance.RealTime.GetConnectedParticipants();
+					foreach (var participiant in participants)
+					{
+						Debug.Log(participiant + " connected to room.");
+					}
+					
+					Application.LoadLevel(Menu.Level.MultiplayerTest.Name());
+					//Application.LoadLevelAdditiveAsync(Menu.Level.Hud.Name());
+				}
+			};
+
+			RtsHandler.RoomSetupProgress += (progress) => Debug.Log("Progress: " + progress);
+
+			RtsHandler.PeersConnected += (participantIds) => {
+				foreach (var participiant in participantIds) {
+					Debug.Log (participiant + " has joined the room.");
+				}
+			};
+
+			RtsHandler.PeersDisconnected += (participantIds) => {
+				foreach (var participiant in participantIds) {
+					Debug.Log (participiant + " has left the room.");
+				}
+			};
 
             // random background scene
             Application.LoadLevelAdditiveAsync(Random.Range(0, 2) == 0 ? Level.Windmill.Name() : Level.CombatDemo.Name());
@@ -91,7 +120,7 @@ namespace Assets.Scripts.menu
                     // accept invite on click
                     inbox.FriendInviteBtn1.onClick.AddListener(() =>
                     {
-                        GooglePlayServiceHelper.Shared.AcceptInvitation(invitation.InvitationId, InvitationListener);
+                        GooglePlayServiceHelper.Shared.AcceptInvitation(invitation.InvitationId);
 
                         inbox.FriendInviteBtn1.GetComponent<Image>().enabled = false;
                         inbox.FriendInviteBtn1.GetComponentInChildren<Text>().enabled = false;
@@ -178,7 +207,7 @@ namespace Assets.Scripts.menu
 
         public void PlayOnlineScreen()
         {
-            GooglePlayServiceHelper.Shared.StartQuickMatchRT(InvitationListener, 1, 1);
+            GooglePlayServiceHelper.Shared.StartQuickMatchRT(1, 1);
         }
 
         public void ShowSettings()
