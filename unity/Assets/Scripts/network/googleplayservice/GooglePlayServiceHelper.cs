@@ -49,6 +49,12 @@ namespace Assets.Scripts.network.googleplayservice
 
         #endregion
 
+		#region rts handler
+
+		public volatile MultiplayerListenerRTS RtsHandler = new MultiplayerListenerRTS(); 
+
+		#endregion
+
         #region Authentication
 
         public void Login(System.Action callback)
@@ -104,21 +110,20 @@ namespace Assets.Scripts.network.googleplayservice
         {
             Login(() =>
             {
-                RealTimeMultiplayerListener listener = new InvitationListener();
-                PlayGamesPlatform.Instance.RealTime.CreateWithInvitationScreen(minOpponents, maxOpponents, variant, listener);
+				PlayGamesPlatform.Instance.RealTime.CreateWithInvitationScreen(minOpponents, maxOpponents, variant, RtsHandler);
             });
         }
 
         public void ShowInbox()
         {
-            Login(()=> PlayGamesPlatform.Instance.RealTime.AcceptFromInbox(new InvitationListener()));
+            Login(()=> PlayGamesPlatform.Instance.RealTime.AcceptFromInbox(RtsHandler));
         }
 
         #endregion
 
-        public void StartQuickMatchRT(RealTimeMultiplayerListener listener, int minOpponents, int maxOpponents, int variant = 0)
+        public void StartQuickMatchRT(int minOpponents, int maxOpponents, int variant = 0)
         {
-            Login(()=>PlayGamesPlatform.Instance.RealTime.CreateQuickGame(minOpponents, maxOpponents, variant, listener));
+            Login(()=>PlayGamesPlatform.Instance.RealTime.CreateQuickGame(minOpponents, maxOpponents, variant, RtsHandler));
         }
 
         public void StartQuickMatchTurnBased(int minOpponents, int maxOpponents, int variant = 0)
@@ -126,12 +131,12 @@ namespace Assets.Scripts.network.googleplayservice
             Login(()=>PlayGamesPlatform.Instance.TurnBased.CreateQuickMatch(minOpponents, maxOpponents, variant, OnMatchStarted)); 
         }
 
-        public void AcceptInvitation(string invitationId, RealTimeMultiplayerListener listener) 
+        public void AcceptInvitation(string invitationId) 
         {
             if (!Social.localUser.authenticated)
                 return;
 
-            PlayGamesPlatform.Instance.RealTime.AcceptInvitation(invitationId, listener);
+			PlayGamesPlatform.Instance.RealTime.AcceptInvitation(invitationId, RtsHandler);
         }
 
         public void LeaveRoom()
@@ -171,6 +176,7 @@ namespace Assets.Scripts.network.googleplayservice
 
             PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), GetBytes(message));
         }
+
         public void BroadcastMessage(JObject message)
         {
             if (!Social.localUser.authenticated) 
@@ -210,10 +216,12 @@ namespace Assets.Scripts.network.googleplayservice
 
         public void InviteFriends(string player)
         {
+			throw new System.NotImplementedException ();
+
             // todo experimental invite player by player id, however id changes arbitary 
             IList<string> list = new []{player};
 
-             PlayGamesPlatform.Instance.RealTime.CreateQuickGame(1,1,list,0,new InvitationListener());
+			PlayGamesPlatform.Instance.RealTime.CreateQuickGame(1,1,list,0,RtsHandler);
         }
     }
 }
