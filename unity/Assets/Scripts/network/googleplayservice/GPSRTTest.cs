@@ -3,6 +3,7 @@ using System.Collections;
 using Assets.Sources.components;
 using UnityEngine.UI;
 using Assets.Scripts.network.googleplayservice;
+using Newtonsoft.Json.Linq;
 
 public class GPSRTTest : MonoBehaviour {
 
@@ -17,6 +18,9 @@ public class GPSRTTest : MonoBehaviour {
 	public Text SendBytes;
 	public Text ReceivedBytes;
 
+	// gps packages
+	public Text LastPackageId;
+
 	// game logic
 	public GameLifecycle Game;
 	public Text Turn;
@@ -28,6 +32,13 @@ public class GPSRTTest : MonoBehaviour {
 
 	public void Start() {
 		//GooglePlayServiceHelper.Shared.BroadcastMessage ();
+
+		GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += onJson;
+	}
+
+	public void onJson(JObject json, string senderId, bool isReliable) {
+		LastPackageId.text = "" + json ["packageId"].ToObject<int> ();
+		var ack = json ["ack"].ToObject<bool> ();
 	}
 
 	public void ToggleConnectionType(Text field) {       
@@ -48,6 +59,8 @@ public class GPSRTTest : MonoBehaviour {
 	public void SetTimescale(Slider slider) {
 		Time.timeScale  = slider.value;
 	}
+
+
 
 	void Update() {
 		QualitySettings.vSyncCount = VerticalSynchronization ? 1 : 0;

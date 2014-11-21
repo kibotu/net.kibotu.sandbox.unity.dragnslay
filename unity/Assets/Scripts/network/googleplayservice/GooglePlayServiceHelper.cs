@@ -44,7 +44,7 @@ namespace Assets.Scripts.network.googleplayservice
 
         public bool UseReliableMessages()
         {
-            return Type == ConnectionType.UDP;
+            return Type == ConnectionType.TCP;
         }
 
         #endregion
@@ -159,7 +159,7 @@ namespace Assets.Scripts.network.googleplayservice
                 string s = "Hello World.";
                 bool reliably = Type == ConnectionType.TCP;
                 Debug.Log("Send message reliably: " + reliably);
-                PlayGamesPlatform.Instance.RealTime.SendMessageToAll(reliably,GetBytes(s));
+                PlayGamesPlatform.Instance.RealTime.SendMessageToAll(reliably,ToBytes(s));
                 // go to the game screen and play!
             } else {
                 Debug.Log("Match failed.");
@@ -174,7 +174,7 @@ namespace Assets.Scripts.network.googleplayservice
             if (!Social.localUser.authenticated) 
                 return;
 
-            PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), GetBytes(message));
+			PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), ToBytes(message));
         }
 
         public void BroadcastMessage(JObject message)
@@ -191,14 +191,14 @@ namespace Assets.Scripts.network.googleplayservice
 
         public static byte[] ToBytes(JObject json)
         {
-            return GetBytes(json.ToString());
+			return ToBytes(json.ToString());
         }
         public static JObject ToJObject(byte[] data)
         {
             return JObject.Parse(GetString(data)); 
         }
 
-        public static byte[] GetBytes(string str)
+		public static byte[] ToBytes(string str)
         {
             byte[] bytes = new byte[str.Length * sizeof(char)];
             System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);

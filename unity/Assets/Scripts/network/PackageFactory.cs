@@ -6,7 +6,7 @@ namespace Assets.Sources.network
 {
     static class PackageFactory
     {
-        private static long _packageId;
+        private static int _packageId;
 
         public static JObject CreateHelloWorldMessage()
         {

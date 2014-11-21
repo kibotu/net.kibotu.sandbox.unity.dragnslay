@@ -13,7 +13,16 @@ public class Ping : MonoBehaviour {
 	public void Start()
 	{
 		GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += OnJSONEvent;
+	}
+
+	public void SendPing() 
+	{
 		GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePing());
+	}
+
+	public void SendPong() 
+	{
+		GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePong());
 	}
 	
 	public void OnJSONEvent(JObject json, string senderId, bool isReliable)
@@ -23,14 +32,14 @@ public class Ping : MonoBehaviour {
 		if (message.Equals("ping"))
 		{
 			PingTime = Time.time;
-			GooglePlayServiceHelper.Shared.BroadcastMessage(PackageFactory.CreatePong());
+			GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePong());
 		}
 
 		if (message.Equals("pong"))
 		{
 			PingLabel.text = Time.time - PingTime + "ms";
 			PingTime = 0;
-			GooglePlayServiceHelper.Shared.BroadcastMessage(PackageFactory.CreatePing());
+			GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePing());
 		}
 	}
 }
