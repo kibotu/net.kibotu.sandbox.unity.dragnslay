@@ -34,18 +34,20 @@ public class GPSRTTest : MonoBehaviour {
 		//GooglePlayServiceHelper.Shared.BroadcastMessage ();
 
 		GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += onJson;
+
+
 	}
 
-	public void onJson(JObject json, string senderId, bool isReliable) {
+	public void onJson(JObject json, string senderId) {
 		LastPackageId.text = "" + json ["packageId"].ToObject<int> ();
 		var ack = json ["ack"].ToObject<bool> ();
 	}
 
 	public void ToggleConnectionType(Text field) {       
-		GooglePlayServiceHelper.Shared.Type = GooglePlayServiceHelper.Shared.Type == GooglePlayServiceHelper.ConnectionType.TCP 
-			? GooglePlayServiceHelper.ConnectionType.UDP 
-			: GooglePlayServiceHelper.ConnectionType.TCP;
-		field.text = GooglePlayServiceHelper.Shared.Type.ToString();
+		GooglePlayServiceHelper.Shared.RtsHandler.Type = GooglePlayServiceHelper.Shared.RtsHandler.Type == MultiplayerListenerRTS.ConnectionType.TCP
+            ? MultiplayerListenerRTS.ConnectionType.UDP
+            : MultiplayerListenerRTS.ConnectionType.TCP;
+		field.text = GooglePlayServiceHelper.Shared.RtsHandler.Type.ToString();
 	}
 
 	public void ToggleConsole() {

@@ -1,4 +1,0 @@
-4.6.0f2:1.9.8.0
-/Applications/Unity_4.6.rc2/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll
-/Applications/Unity_4.6.rc2/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll
-/Applications/Unity_4.6.rc2/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using GooglePlayGames;
-using GooglePlayGames.BasicApi.Multiplayer;
-using Newtonsoft.Json.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Assets.Scripts.network.googleplayservice
 {
@@ -29,22 +28,6 @@ namespace Assets.Scripts.network.googleplayservice
 
                 return _instance;
             }
-        }
-
-        #endregion
-
-        #region Connection Type
-
-        public enum ConnectionType
-        {
-            TCP, UDP
-        }
-
-        public ConnectionType Type { get; set; }
-
-        public bool UseReliableMessages()
-        {
-            return Type == ConnectionType.TCP;
         }
 
         #endregion
@@ -126,11 +109,6 @@ namespace Assets.Scripts.network.googleplayservice
             Login(()=>PlayGamesPlatform.Instance.RealTime.CreateQuickGame(minOpponents, maxOpponents, variant, RtsHandler));
         }
 
-        public void StartQuickMatchTurnBased(int minOpponents, int maxOpponents, int variant = 0)
-        {
-            Login(()=>PlayGamesPlatform.Instance.TurnBased.CreateQuickMatch(minOpponents, maxOpponents, variant, OnMatchStarted)); 
-        }
-
         public void AcceptInvitation(string invitationId) 
         {
             if (!Social.localUser.authenticated)
@@ -146,73 +124,6 @@ namespace Assets.Scripts.network.googleplayservice
 
             PlayGamesPlatform.Instance.RealTime.LeaveRoom();
         }
-
-        private void OnMatchStarted(bool success, TurnBasedMatch match) {
-
-            if (success) {
-                Debug.Log("Match Started.");
-                foreach (var participiant in match.Participants)
-                {
-                    Debug.Log(participiant + " connected to room.");
-                }
-
-                string s = "Hello World.";
-                bool reliably = Type == ConnectionType.TCP;
-                Debug.Log("Send message reliably: " + reliably);
-                PlayGamesPlatform.Instance.RealTime.SendMessageToAll(reliably,ToBytes(s));
-                // go to the game screen and play!
-            } else {
-                Debug.Log("Match failed.");
-                // show error message
-            }
-        }
-
-        #region send message
-
-        public void BroadcastMessage(string message)
-        {
-            if (!Social.localUser.authenticated) 
-                return;
-
-			PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), ToBytes(message));
-        }
-
-        public void BroadcastMessage(JObject message)
-        {
-            if (!Social.localUser.authenticated) 
-                return;
-
-            PlayGamesPlatform.Instance.RealTime.SendMessageToAll(UseReliableMessages(), ToBytes(message));
-        }
-
-        #endregion
-
-        #region Serialization
-
-        public static byte[] ToBytes(JObject json)
-        {
-			return ToBytes(json.ToString());
-        }
-        public static JObject ToJObject(byte[] data)
-        {
-            return JObject.Parse(GetString(data)); 
-        }
-
-		public static byte[] ToBytes(string str)
-        {
-            byte[] bytes = new byte[str.Length * sizeof(char)];
-            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-            return bytes;
-        }
-
-        public static string GetString(byte[] bytes)
-        {
-            char[] chars = new char[bytes.Length / sizeof(char)];
-            System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
-            return new string(chars);
-        }
-
-        #endregion
 
         public void InviteFriends(string player)
         {

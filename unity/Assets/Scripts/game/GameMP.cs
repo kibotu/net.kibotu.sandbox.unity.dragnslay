@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.network;
 using Assets.Sources.components.data;
 using Assets.Sources.model;
 using Assets.Sources.network;
@@ -267,7 +268,7 @@ namespace Assets.Sources.game
 
         public static long ScheduleId()
         {
-            return ((GameMp)Shared).Turn + 2;
+            return 0; //; ((GameMp)Shared).Turn + 2;
         }
 
         public static bool IsHost()

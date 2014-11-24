@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using Assets.Scripts.network;
 using Assets.Sources.components.behaviours.combat;
 using Assets.Sources.components.data;
 using Assets.Sources.game;

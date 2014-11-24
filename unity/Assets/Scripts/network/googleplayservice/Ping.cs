@@ -1,45 +1,71 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using Assets.Scripts.network.googleplayservice;
+﻿using System.Linq;
+using HutongGames.PlayMaker.Actions;
 using Newtonsoft.Json.Linq;
-using Assets.Sources.network;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class Ping : MonoBehaviour {
+namespace Assets.Scripts.network.googleplayservice
+{
+    public class Ping : MonoBehaviour {
 
-	public Text PingLabel; 
-	public float PingTime;
+        public Text PingLabel; 
+        public float PingTime;
 
-	public void Start()
-	{
-		GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += OnJSONEvent;
-	}
+        public void Start()
+        {
+            GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += OnJSONEvent;
+        }
 
-	public void SendPing() 
-	{
-		GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePing());
-	}
+        public void SendPing()
+        {
+            PingTime = Time.time;
+            GooglePlayServiceHelper.Shared.RtsHandler.BroadcastMessage (PackageFactory.CreatePing());
+        }
 
-	public void SendPong() 
-	{
-		GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePong());
-	}
-	
-	public void OnJSONEvent(JObject json, string senderId, bool isReliable)
-	{
-		var message = json["message"].ToString();
+        private static void ackTest()
+        {
+            Debug.Log("count: " + PackageDameon.Unverified.Count());
+
+            var pingJson = PackageFactory.CreatePing();
+            PackageDameon.Unverified.Add(pingJson);
+            Debug.Log("count: " + PackageDameon.Unverified.Count());
+
+            Debug.Log("ping: " + pingJson);
+
+            var ack = PackageFactory.CreateReceivedMessage(pingJson["packageId"].ToObject<int>(),
+                pingJson["scheduleId"].ToObject<int>());
+
+            Debug.Log("ack: " + ack);
+
+            var startJson = PackageDameon.Unverified.Acknowledge(ack);
+
+            Debug.Log("startJson: " + startJson);
+
+            Debug.Log("equals? " + startJson.Equals(pingJson));
+            Debug.Log("count: " + PackageDameon.Unverified.Count());
+        }
+
+        public void SendPong()
+        {
+            GooglePlayServiceHelper.Shared.RtsHandler.BroadcastMessage(PackageFactory.CreatePong());
+        }
+
+        public void OnJSONEvent(JObject json, string senderId)
+        {
+            var message = json["message"].ToString();
 		
-		if (message.Equals("ping"))
-		{
-			PingTime = Time.time;
-			GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePong());
-		}
+            if (message.Equals("ping"))
+            {
+                PingTime = Time.time;
+                GooglePlayServiceHelper.Shared.RtsHandler.BroadcastMessage(PackageFactory.CreatePong());
+            }
 
-		if (message.Equals("pong"))
-		{
-			PingLabel.text = Time.time - PingTime + "ms";
-			PingTime = 0;
-			GooglePlayServiceHelper.Shared.BroadcastMessage (PackageFactory.CreatePing());
-		}
-	}
+            if (message.Equals("pong"))
+            {
+                PingLabel.text = Time.time - PingTime + "ms";
+                PingTime = Time.time;
+                GooglePlayServiceHelper.Shared.RtsHandler.BroadcastMessage(PackageFactory.CreatePing());
+            }
+        }
+    }
 }

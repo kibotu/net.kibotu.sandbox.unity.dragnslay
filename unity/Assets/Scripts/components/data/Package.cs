@@ -7,6 +7,7 @@ namespace Assets.Sources.components.data
         public string Name;
         public int PackageId;
         public Action Action;
+        public byte[] Raw;
 //        public JSONObject raw;
 
         [Obsolete("Not used anymore", false)]

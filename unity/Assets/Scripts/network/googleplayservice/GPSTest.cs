@@ -48,13 +48,13 @@ namespace Assets.Scripts.network.googleplayservice
         public void SwapToTCP()
         {
             Debug.Log("Using TCP");
-            GooglePlayServiceHelper.Shared.Type = GooglePlayServiceHelper.ConnectionType.TCP;
+            GooglePlayServiceHelper.Shared.RtsHandler.Type = MultiplayerListenerRTS.ConnectionType.TCP;
 
         }
         public void SwapToUDP()
         {
             Debug.Log("Using UDP");
-            GooglePlayServiceHelper.Shared.Type = GooglePlayServiceHelper.ConnectionType.UDP;
+            GooglePlayServiceHelper.Shared.RtsHandler.Type = MultiplayerListenerRTS.ConnectionType.UDP;
         }
 
         public void ShowInvitationScreen()
@@ -71,12 +71,6 @@ namespace Assets.Scripts.network.googleplayservice
         {
             Debug.Log("StartQuickMatchRT");
             GooglePlayServiceHelper.Shared.StartQuickMatchRT(1, 1);
-        }
-
-        public void QuickMatchTB()
-        {
-            Debug.Log("StartQuickMatchTurnBased");
-            GooglePlayServiceHelper.Shared.StartQuickMatchTurnBased(1,1);
         }
 
         public void LeaveRoom()
@@ -166,14 +160,9 @@ namespace Assets.Scripts.network.googleplayservice
         }
         #endregion
 
-        public void BroadcastGpsMessage(string message)
-        {
-            GooglePlayServiceHelper.Shared.BroadcastMessage(message);
-        }
-
         public void BroadcastGpsMessage(JObject message)
         {
-            GooglePlayServiceHelper.Shared.BroadcastMessage(message);
+            GooglePlayServiceHelper.Shared.RtsHandler.BroadcastMessage(message);
         }
     }
 }
