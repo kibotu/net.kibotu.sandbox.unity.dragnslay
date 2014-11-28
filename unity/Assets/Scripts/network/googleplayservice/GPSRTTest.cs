@@ -32,10 +32,7 @@ public class GPSRTTest : MonoBehaviour {
 
 	public void Start() {
 		//GooglePlayServiceHelper.Shared.BroadcastMessage ();
-
-		GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += onJson;
-
-
+		//GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += onJson;
 	}
 
 	public void onJson(JObject json, string senderId) {
@@ -67,7 +64,7 @@ public class GPSRTTest : MonoBehaviour {
 	void Update() {
 		QualitySettings.vSyncCount = VerticalSynchronization ? 1 : 0;
 
-		Turn.text = Game.Turn.ToString();
+		Turn.text = GameLifecycle.Turn.ToString();
 		TurnFrequency.text = Game.TurnFrequency.ToString();
 		ScheduledTotal.text = Game.ScheduledTotal.ToString();
 		ScheduledTotal.text = Game.ScheduledTotal.ToString();

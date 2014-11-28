@@ -13,7 +13,7 @@ namespace Assets.Scripts.network.googleplayservice
 
         public void Start()
         {
-            GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += OnJSONEvent;
+         //   GooglePlayServiceHelper.Shared.RtsHandler.RealTimeMessageReceived += OnJSONEvent;
         }
 
         public void SendPing()

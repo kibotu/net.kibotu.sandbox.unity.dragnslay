@@ -133,12 +133,11 @@ namespace Assets.Scripts.network
             };
         }
 
-        public static JObject CreateDoneMessage(long turn)
+        public static JObject CreateDoneMessage(int turn)
         {
             return new JObject{
                 {"message",     "turn-done"},
                 {"turn",        turn},
-                {"playeruid",   Game.Shared.ClientUid},
                 {"packageId",   ++PackageDameon.CurrentPackageId},
                 {"ack",         false}
             };
@@ -159,7 +158,7 @@ namespace Assets.Scripts.network
                 {"message",     "unit-arrival"},
                 {"uid",         uid},
                 {"packageId",   ++PackageDameon.CurrentPackageId},
-                {"scheduleId",  GameMp.ScheduleId()},
+				{"scheduleId",  GameLifecycle.ScheduleId()},
                 {"ack",         false}  
             };
         }

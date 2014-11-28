@@ -86,23 +86,23 @@ namespace Assets.Scripts.network.googleplayservice
 			var currentMessage = ToJObject (data);
             // 1) acknowledge package
 
-            Debug.Log("Received: reliably: " + isReliable + " senderId: " + senderId + " bytes: " + data.Count() + " msg: " + currentMessage + " ack: " + currentMessage["message"].Equals("acknowledged"));
+          //  Debug.Log("Received: reliably: " + isReliable + " senderId: " + senderId + " bytes: " + data.Count() + " msg: " + currentMessage + " ack: " + currentMessage["message"].Equals("acknowledged"));
 
-            if (currentMessage["message"].Equals("acknowledged"))
-            {
+            //if (currentMessage["message"].Equals("acknowledged"))
+          //  {
                 // forward acknowledged message
-                var json = PackageDameon.Unverified.Acknowledge(currentMessage);
-                if (RealTimeMessageReceived != null && json != null)
-                    RealTimeMessageReceived(json, senderId);
-            }
-            else
-            {
+             //   var json = PackageDameon.Unverified.Acknowledge(currentMessage);
+			if (RealTimeMessageReceived != null && currentMessage != null)
+				RealTimeMessageReceived(currentMessage, senderId);
+           // }
+          //  else
+          //  {
                 // 1) send acknowledge message
-                BroadcastMessage(PackageFactory.CreateReceivedMessage(currentMessage["packageId"].ToObject<int>(), currentMessage["scheduleId"].ToObject<int>()));
+              //  BroadcastMessage(PackageFactory.CreateReceivedMessage(currentMessage["packageId"].ToObject<int>(), currentMessage["scheduleId"].ToObject<int>()));
 
                 // 2) put into unverified list
-                PackageDameon.Unverified.Add(currentMessage);
-            }
+              //  PackageDameon.Unverified.Add(currentMessage);
+          //  }
         }
 
         #endregion
